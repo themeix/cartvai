@@ -28,7 +28,7 @@ $copyright_text = str_replace(
 	$raw_copyright
 );
 ?>
-<footer class="cv-footer-warm-boutique cv:text-stone-700 cv:mt-auto cv:border-t cv:border-stone-200/80" style="background-color: var(--cv-footer-bg, #fdf8f5);">
+<footer class="cv-footer-warm-boutique cv:mt-auto cv:border-t" style="background-color: var(--cv-footer-bg, #fdf8f5); color: var(--cv-footer-text, #57534e); border-color: var(--cv-footer-border, #e7e5e4);">
 	<!-- Main 5-Column Luxury Layout -->
 	<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:py-14 cv:lg:py-16">
 		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 cv:lg:grid-cols-12 cv:gap-8 cv:lg:gap-10">

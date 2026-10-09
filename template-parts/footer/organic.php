@@ -29,7 +29,7 @@ $copyright_text = str_replace(
 	$raw_copyright
 );
 ?>
-<footer class="cv-footer-organic cv:text-slate-200 cv:mt-auto" style="background-color: var(--cv-footer-bg, #0d3b2e);">
+<footer class="cv-footer-organic cv:mt-auto" style="background-color: var(--cv-footer-bg, #0d3b2e); color: var(--cv-footer-text, #cbd5e1);">
 	<!-- Main Footer Multi-Column Grid -->
 	<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:py-12 cv:lg:py-16">
 		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 cv:lg:grid-cols-12 cv:gap-8 cv:lg:gap-10">
@@ -205,25 +205,23 @@ $copyright_text = str_replace(
 		</div>
 	</div>
 
-	<!-- Copyright Bar -->
-	<div class="cv:border-t cv:border-white/10 cv:py-4 cv:text-center cv:text-xs cv:text-emerald-100/70" style="background-color: var(--cv-footer-sub-bg, rgba(0,0,0,0.15));">
-		<div class="cv:max-w-7xl cv:mx-auto cv:px-4">
-			<?php echo esc_html( $copyright_text ); ?>
-		</div>
-	</div>
-
-	<!-- White Bottom Payment Methods Strip -->
-	<div class="cv:bg-white cv:py-4 cv:border-t cv:border-slate-100">
-		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:flex cv:flex-col cv:sm:flex-row cv:items-center cv:justify-between cv:gap-3">
-			<?php
-			get_template_part(
-				'template-parts/components/payment-badges',
-				null,
-				array( 'show_label' => true )
-			);
-			?>
-			<div class="cv:text-[11px] cv:font-semibold cv:text-slate-400">
-				<span><?php esc_html_e( '100% Verified & Secure SSL Checkout', 'cartvai-theme' ); ?></span>
+	<!-- Sub-footer: Copyright & Payment Strip -->
+	<div class="cv-sub-footer cv:border-t cv:py-6" style="background-color: var(--cv-footer-sub-bg, #07241b); border-color: var(--cv-footer-border, rgba(255, 255, 255, 0.1));">
+		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:flex cv:flex-col cv:md:flex-row cv:items-center cv:justify-between cv:gap-4 cv:text-xs cv:text-emerald-100/80">
+			<div>
+				<?php echo esc_html( $copyright_text ); ?>
+			</div>
+			<div class="cv:flex cv:flex-wrap cv:items-center cv:gap-3">
+				<?php
+				get_template_part(
+					'template-parts/components/payment-badges',
+					null,
+					array( 'show_label' => true )
+				);
+				?>
+				<span class="cv:text-[11px] cv:font-semibold cv:text-emerald-300/70 cv:hidden cv:sm:inline">
+					<?php esc_html_e( '100% Verified & Secure SSL Checkout', 'cartvai-theme' ); ?>
+				</span>
 			</div>
 		</div>
 	</div>

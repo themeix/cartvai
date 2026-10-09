@@ -151,7 +151,7 @@ function cartvai_theme_render_settings_page() {
 
 			'footer_about_text'                  => isset( $_POST['footer_about_text'] ) ? sanitize_textarea_field( wp_unslash( $_POST['footer_about_text'] ) ) : '',
 			'footer_store_address'               => isset( $_POST['footer_store_address'] ) ? sanitize_text_field( wp_unslash( $_POST['footer_store_address'] ) ) : '',
-			'contact_email'                      => isset( $_POST['contact_email'] ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : '',
+			'contact_email'                      => ( isset( $_POST['contact_email'] ) && '' !== trim( $_POST['contact_email'] ) && false === strpos( $_POST['contact_email'], 'localhost' ) ) ? sanitize_email( wp_unslash( $_POST['contact_email'] ) ) : 'support@cartvai.com',
 			'footer_security_note'               => isset( $_POST['footer_security_note'] ) ? sanitize_text_field( wp_unslash( $_POST['footer_security_note'] ) ) : '',
 			'footer_copyright_text'              => isset( $_POST['footer_copyright_text'] ) ? sanitize_text_field( wp_unslash( $_POST['footer_copyright_text'] ) ) : '',
 			'footer_bg_color'                    => isset( $_POST['footer_bg_color'] ) ? sanitize_hex_color( $_POST['footer_bg_color'] ) : '',
@@ -1142,14 +1142,23 @@ function cartvai_theme_render_settings_page() {
 								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Customize footer colors and assign menus to individual footer columns from 1 place.', 'cartvai-theme' ); ?></p>
 							</div>
 
+							<?php
+							$footer_preset_defs = function_exists( 'cartvai_get_footer_preset_defaults' )
+								? cartvai_get_footer_preset_defaults( $footer_style )
+								: array(
+									'footer_bg'      => '#0d3b2e',
+									'footer_heading' => '#ffffff',
+									'footer_sub_bg'  => '#07241b',
+								);
+							?>
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 18px;">
 								<!-- Footer Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Custom Footer Background', 'cartvai-theme' ); ?></label>
 									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $footer_bg_color ?: '#0d3b2e' ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="footer_bg_color" placeholder="#0d3b2e" value="<?php echo esc_attr( $footer_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $footer_bg_color ?: $footer_preset_defs['footer_bg'] ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="footer_bg_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_bg'] ); ?>" value="<?php echo esc_attr( $footer_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -1158,16 +1167,16 @@ function cartvai_theme_render_settings_page() {
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Footer Heading Color', 'cartvai-theme' ); ?></label>
 									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color for column titles and subtitles.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $footer_heading_color ?: '#ffffff' ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="footer_heading_color" placeholder="#ffffff" value="<?php echo esc_attr( $footer_heading_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $footer_heading_color ?: $footer_preset_defs['footer_heading'] ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="footer_heading_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_heading'] ); ?>" value="<?php echo esc_attr( $footer_heading_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
 								<!-- Sub-Footer / Copyright Row Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Sub-Footer / Copyright Row Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'e.g. rgba(0,0,0,0.15), #06241c, or transparent.', 'cartvai-theme' ); ?></span>
-									<input type="text" name="footer_sub_bg_color" placeholder="transparent or #06241c" value="<?php echo esc_attr( $footer_sub_bg_color ); ?>" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'e.g. #07241b, #020617, or transparent.', 'cartvai-theme' ); ?></span>
+									<input type="text" name="footer_sub_bg_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_sub_bg'] ); ?>" value="<?php echo esc_attr( $footer_sub_bg_color ); ?>" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 								</div>
 							</div>
 

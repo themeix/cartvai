@@ -20,52 +20,74 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function cartvai_theme_option( $key, $default = '' ) {
 	$not_set = '__CV_NOT_SET__';
+	$val     = $not_set;
 
-	// 1. In Customizer preview, ALWAYS prioritize the live preview value (including boolean false)
+	// 1. In Customizer preview, ALWAYS prioritize the live preview value
 	if ( is_customize_preview() ) {
 		$mod = get_theme_mod( 'cartvai_' . $key, $not_set );
-		if ( $not_set !== $mod ) {
-			return $mod;
+		if ( $not_set !== $mod && '' !== $mod ) {
+			$val = $mod;
 		}
 	}
 
-	// 2. Check Theme Mod (if explicitly set, even if boolean false)
-	$mods = get_theme_mods();
-	if ( is_array( $mods ) && array_key_exists( 'cartvai_' . $key, $mods ) ) {
-		return $mods[ 'cartvai_' . $key ];
-	}
-
-	// 3. Check theme settings option array
-	$options = get_option( 'cartvai_theme_settings', array() );
-	if ( is_array( $options ) && array_key_exists( $key, $options ) ) {
-		return $options[ $key ];
-	}
-
-	// 4. Check CARTVAI_Settings (plugin settings integration)
-	if ( class_exists( 'CARTVAI_Settings' ) ) {
-		$plugin_val = CARTVAI_Settings::get( $key, $not_set );
-		if ( $not_set !== $plugin_val ) {
-			return $plugin_val;
-		}
-
-		// Also check design_ prefix (e.g. primary_color -> design_primary_color)
-		$design_map = array(
-			'primary_color'       => 'design_primary_color',
-			'primary_hover_color' => 'design_primary_deep_color',
-			'primary_light_color' => 'design_primary_light_color',
-			'border_color'        => 'design_border_color',
-			'heading_color'       => 'design_heading_color',
-			'text_color'          => 'design_text_color',
-		);
-		if ( isset( $design_map[ $key ] ) ) {
-			$mapped_val = CARTVAI_Settings::get( $design_map[ $key ], $not_set );
-			if ( $not_set !== $mapped_val ) {
-				return $mapped_val;
+	// 2. Check Theme Mod (if explicitly set and not empty string)
+	if ( $not_set === $val ) {
+		$mods = get_theme_mods();
+		if ( is_array( $mods ) && array_key_exists( 'cartvai_' . $key, $mods ) ) {
+			$mod = $mods[ 'cartvai_' . $key ];
+			if ( '' !== $mod && null !== $mod ) {
+				$val = $mod;
 			}
 		}
 	}
 
-	return $default;
+	// 3. Check theme settings option array
+	if ( $not_set === $val ) {
+		$options = get_option( 'cartvai_theme_settings', array() );
+		if ( is_array( $options ) && array_key_exists( $key, $options ) ) {
+			$opt = $options[ $key ];
+			if ( '' !== $opt && null !== $opt ) {
+				$val = $opt;
+			}
+		}
+	}
+
+	// 4. Check CARTVAI_Settings (plugin settings integration)
+	if ( $not_set === $val && class_exists( 'CARTVAI_Settings' ) ) {
+		$plugin_val = CARTVAI_Settings::get( $key, $not_set );
+		if ( $not_set !== $plugin_val && '' !== $plugin_val ) {
+			$val = $plugin_val;
+		} else {
+			// Also check design_ prefix (e.g. primary_color -> design_primary_color)
+			$design_map = array(
+				'primary_color'       => 'design_primary_color',
+				'primary_hover_color' => 'design_primary_deep_color',
+				'primary_light_color' => 'design_primary_light_color',
+				'border_color'        => 'design_border_color',
+				'heading_color'       => 'design_heading_color',
+				'text_color'          => 'design_text_color',
+			);
+			if ( isset( $design_map[ $key ] ) ) {
+				$mapped_val = CARTVAI_Settings::get( $design_map[ $key ], $not_set );
+				if ( $not_set !== $mapped_val && '' !== $mapped_val ) {
+					$val = $mapped_val;
+				}
+			}
+		}
+	}
+
+	if ( $not_set === $val || ( '' === $val && '' !== $default ) ) {
+		$val = $default;
+	}
+
+	// Central safety check for contact email: never show empty or localhost addresses on frontend
+	if ( 'contact_email' === $key ) {
+		if ( empty( $val ) || false !== strpos( (string) $val, 'localhost' ) || false !== strpos( (string) $val, 'example.com' ) ) {
+			return ! empty( $default ) ? $default : 'support@cartvai.com';
+		}
+	}
+
+	return $val;
 }
 
 /**
@@ -94,6 +116,67 @@ function cartvai_get_footer_style() {
 	$allowed = array( 'ecommerce', 'organic', 'warm_boutique', 'default', 'minimal' );
 
 	return in_array( $style, $allowed, true ) ? $style : 'ecommerce';
+}
+
+/**
+ * Get preset default colors for a footer style.
+ *
+ * @param string|null $footer_style Optional footer style slug.
+ * @return array Associative array of CSS color values.
+ */
+function cartvai_get_footer_preset_defaults( $footer_style = null ) {
+	if ( empty( $footer_style ) ) {
+		$footer_style = cartvai_get_footer_style();
+	}
+
+	switch ( $footer_style ) {
+		case 'organic':
+			return array(
+				'footer_bg'      => '#0d3b2e',
+				'footer_text'    => '#cbd5e1',
+				'footer_heading' => '#ffffff',
+				'footer_link'    => '#a7f3d0',
+				'footer_border'  => 'rgba(255, 255, 255, 0.1)',
+				'footer_sub_bg'  => '#07241b',
+			);
+		case 'warm_boutique':
+			return array(
+				'footer_bg'      => '#fdf8f5',
+				'footer_text'    => '#57534e',
+				'footer_heading' => '#1c1917',
+				'footer_link'    => '#44403c',
+				'footer_border'  => '#e7e5e4',
+				'footer_sub_bg'  => '#f5ece5',
+			);
+		case 'default':
+			return array(
+				'footer_bg'      => '#ffffff',
+				'footer_text'    => '#64748b',
+				'footer_heading' => '#0f172a',
+				'footer_link'    => '#334155',
+				'footer_border'  => '#e2e8f0',
+				'footer_sub_bg'  => '#f8fafc',
+			);
+		case 'minimal':
+			return array(
+				'footer_bg'      => '#ffffff',
+				'footer_text'    => '#64748b',
+				'footer_heading' => '#0f172a',
+				'footer_link'    => '#334155',
+				'footer_border'  => '#f1f5f9',
+				'footer_sub_bg'  => '#ffffff',
+			);
+		case 'ecommerce':
+		default:
+			return array(
+				'footer_bg'      => '#030712',
+				'footer_text'    => '#94a3b8',
+				'footer_heading' => '#ffffff',
+				'footer_link'    => '#d1d5db',
+				'footer_border'  => '#1f2937',
+				'footer_sub_bg'  => '#020617',
+			);
+	}
 }
 
 /**

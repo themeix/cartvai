@@ -36,32 +36,38 @@ a {
 /* ==========================================================================
    Footer Dynamic Styling from Theme Settings / Customizer
    ========================================================================== */
-footer.cv-footer-ecommerce,
-footer.cv-footer-organic,
-footer.cv-footer-warm-boutique,
+footer.cv-footer-organic {
+  background-color: var(--cv-footer-bg, #0d3b2e) !important;
+  color: var(--cv-footer-text, #cbd5e1);
+  border-color: var(--cv-footer-border, rgba(255, 255, 255, 0.1));
+}
+
+footer.cv-footer-warm-boutique {
+  background-color: var(--cv-footer-bg, #fdf8f5) !important;
+  color: var(--cv-footer-text, #57534e);
+  border-color: var(--cv-footer-border, #e7e5e4);
+}
+
+footer.cv-footer-ecommerce {
+  background-color: var(--cv-footer-bg, #030712) !important;
+  color: var(--cv-footer-text, #94a3b8);
+  border-color: var(--cv-footer-border, #1f2937);
+}
+
 footer.cv-footer-minimal,
 footer.cv-footer-centered,
 footer.cv-site-footer {
-  background-color: var(--cv-footer-bg, #030712) !important;
-  color: var(--cv-footer-text, #94a3b8) !important;
-  border-color: var(--cv-footer-border, #1f2937) !important;
+  background-color: var(--cv-footer-bg, #ffffff) !important;
+  color: var(--cv-footer-text, #64748b);
+  border-color: var(--cv-footer-border, #e2e8f0);
 }
 
 .cv-footer-ecommerce h2,
 .cv-footer-ecommerce h3,
 .cv-footer-ecommerce h4,
-.cv-footer-centered h2,
-.cv-footer-centered h3,
-.cv-footer-centered h4,
-.cv-footer-minimal h2,
-.cv-footer-minimal h3,
-.cv-footer-minimal h4,
 .cv-footer-organic h2,
 .cv-footer-organic h3,
-.cv-footer-organic h4,
-.cv-site-footer h2,
-.cv-site-footer h3,
-.cv-site-footer h4 {
+.cv-footer-organic h4 {
   color: var(--cv-footer-heading, #ffffff) !important;
 }
 
@@ -69,6 +75,18 @@ footer.cv-site-footer {
 .cv-footer-warm-boutique h3,
 .cv-footer-warm-boutique h4 {
   color: var(--cv-footer-heading, #1c1917) !important;
+}
+
+.cv-footer-minimal h2,
+.cv-footer-minimal h3,
+.cv-footer-minimal h4,
+.cv-footer-centered h2,
+.cv-footer-centered h3,
+.cv-footer-centered h4,
+.cv-site-footer h2,
+.cv-site-footer h3,
+.cv-site-footer h4 {
+  color: var(--cv-footer-heading, #0f172a) !important;
 }
 
 .cv-footer-ecommerce h4,
@@ -91,7 +109,7 @@ footer.cv-site-footer {
 .cv-footer-minimal a,
 .cv-footer-centered a,
 .cv-site-footer a {
-  color: var(--cv-footer-link, #d1d5db);
+  color: var(--cv-footer-link, inherit);
 }
 
 .cv-footer-ecommerce a:hover,
@@ -103,26 +121,30 @@ footer.cv-site-footer {
   color: var(--cartvai-primary, #ffffff);
 }
 
-.cv-footer-ecommerce .cv-sub-footer,
-.cv-footer-ecommerce .cv-sub-footer p,
-.cv-footer-ecommerce .cv-sub-footer div,
-.cv-footer-centered .cv-sub-footer,
-.cv-footer-centered .cv-sub-footer p,
-.cv-footer-centered .cv-sub-footer div,
-.cv-footer-minimal .cv-sub-footer,
-.cv-footer-minimal .cv-sub-footer p,
-.cv-footer-minimal .cv-sub-footer div,
-.cv-footer-organic .cv-sub-footer,
-.cv-footer-organic .cv-sub-footer p,
-.cv-footer-organic .cv-sub-footer div,
-.cv-footer-warm-boutique .cv-sub-footer,
-.cv-footer-warm-boutique .cv-sub-footer p,
-.cv-footer-warm-boutique .cv-sub-footer div,
-.cv-site-footer .cv-sub-footer,
-.cv-site-footer .cv-sub-footer p,
-.cv-site-footer .cv-sub-footer div {
+.cv-footer-organic .cv-sub-footer {
+  background-color: var(--cv-footer-sub-bg, #07241b) !important;
+  color: var(--cv-footer-text, #cbd5e1);
+  border-color: var(--cv-footer-border, rgba(255, 255, 255, 0.1)) !important;
+}
+
+.cv-footer-warm-boutique .cv-sub-footer {
+  background-color: var(--cv-footer-sub-bg, #f5ece5) !important;
+  color: var(--cv-footer-text, #57534e);
+  border-color: var(--cv-footer-border, #e7e5e4) !important;
+}
+
+.cv-footer-ecommerce .cv-sub-footer {
   background-color: var(--cv-footer-sub-bg, #020617) !important;
-  color: var(--cv-footer-text, #94a3b8) !important;
+  color: var(--cv-footer-text, #94a3b8);
+  border-color: var(--cv-footer-border, #1f2937) !important;
+}
+
+.cv-footer-minimal .cv-sub-footer,
+.cv-footer-centered .cv-sub-footer,
+.cv-site-footer .cv-sub-footer {
+  background-color: var(--cv-footer-sub-bg, #f8fafc) !important;
+  color: var(--cv-footer-text, #64748b);
+  border-color: var(--cv-footer-border, #e2e8f0) !important;
 }
 
 /* ==========================================================================

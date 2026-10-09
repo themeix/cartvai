@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 ?>
-<footer class="cv-footer-minimal cv:bg-white cv:border-t cv:border-gray-100 cv:py-8 cv:mt-auto">
+<footer class="cv-footer-minimal cv:border-t cv:py-8 cv:mt-auto" style="background-color: var(--cv-footer-bg, #ffffff); color: var(--cv-footer-text, #64748b); border-color: var(--cv-footer-border, #f1f5f9);">
 	<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8">
 		<div class="cv:flex cv:flex-col cv:sm:flex-row cv:items-center cv:justify-between cv:gap-4">
 			<div class="cv:text-xs cv:text-gray-500">

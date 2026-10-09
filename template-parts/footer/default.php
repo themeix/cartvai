@@ -18,7 +18,7 @@ $copyright_text = str_replace(
 
 $has_widgets = is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' );
 ?>
-<footer class="cv-site-footer cv:bg-white cv:border-t cv:border-gray-200 cv:mt-auto">
+<footer class="cv-site-footer cv:border-t cv:mt-auto" style="background-color: var(--cv-footer-bg, #ffffff); color: var(--cv-footer-text, #64748b); border-color: var(--cv-footer-border, #e2e8f0);">
 	<?php if ( $has_widgets ) : ?>
 		<div class="cv:max-w-7xl cv:mx-auto cv:py-12 cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:border-b cv:border-gray-100">
 			<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 cv:lg:grid-cols-4 cv:gap-8">

@@ -99,12 +99,48 @@ function cartvai_theme_scripts() {
 		$main_bar_tagline = $is_dark_main_bg ? '#fcd34d' : '#d97706';
 
 		// Footer Styling Tokens
-		$footer_bg_color       = cartvai_theme_option( 'footer_bg_color', '#030712' );
-		$footer_text_color     = cartvai_theme_option( 'footer_text_color', '#94a3b8' );
-		$footer_heading_color  = cartvai_theme_option( 'footer_heading_color', '#ffffff' );
-		$footer_link_color     = cartvai_theme_option( 'footer_link_color', '#d1d5db' );
-		$footer_border_color   = cartvai_theme_option( 'footer_border_color', '#1f2937' );
-		$footer_sub_bg_color   = cartvai_theme_option( 'footer_sub_bg_color', '#020617' );
+		$footer_style   = function_exists( 'cartvai_get_footer_style' ) ? cartvai_get_footer_style() : 'ecommerce';
+		$footer_presets = function_exists( 'cartvai_get_footer_preset_defaults' )
+			? cartvai_get_footer_preset_defaults( $footer_style )
+			: array(
+				'footer_bg'      => '#030712',
+				'footer_text'    => '#94a3b8',
+				'footer_heading' => '#ffffff',
+				'footer_link'    => '#d1d5db',
+				'footer_border'  => '#1f2937',
+				'footer_sub_bg'  => '#020617',
+			);
+
+		$custom_footer_bg      = cartvai_theme_option( 'footer_bg_color', '' );
+		$custom_footer_text    = cartvai_theme_option( 'footer_text_color', '' );
+		$custom_footer_heading = cartvai_theme_option( 'footer_heading_color', '' );
+		$custom_footer_link    = cartvai_theme_option( 'footer_link_color', '' );
+		$custom_footer_border  = cartvai_theme_option( 'footer_border_color', '' );
+		$custom_footer_sub_bg  = cartvai_theme_option( 'footer_sub_bg_color', '' );
+
+		// Recovery guard: If footer style is 'organic' and stored background was saved as white or old dark fallback, restore organic preset
+		if ( 'organic' === $footer_style ) {
+			if ( in_array( strtolower( (string) $custom_footer_bg ), array( '#ffffff', '#fff', '#f8fafc', '#f1f5f9', '#030712' ), true ) ) {
+				$custom_footer_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_footer_sub_bg ), array( '#020617', '#ffffff', '#fff' ), true ) ) {
+				$custom_footer_sub_bg = '';
+			}
+		} elseif ( 'warm_boutique' === $footer_style ) {
+			if ( in_array( strtolower( (string) $custom_footer_bg ), array( '#030712', '#000000', '#020617' ), true ) ) {
+				$custom_footer_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_footer_sub_bg ), array( '#020617', '#000000' ), true ) ) {
+				$custom_footer_sub_bg = '';
+			}
+		}
+
+		$footer_bg_color      = ! empty( $custom_footer_bg ) ? $custom_footer_bg : $footer_presets['footer_bg'];
+		$footer_text_color    = ! empty( $custom_footer_text ) ? $custom_footer_text : $footer_presets['footer_text'];
+		$footer_heading_color = ! empty( $custom_footer_heading ) ? $custom_footer_heading : $footer_presets['footer_heading'];
+		$footer_link_color    = ! empty( $custom_footer_link ) ? $custom_footer_link : $footer_presets['footer_link'];
+		$footer_border_color  = ! empty( $custom_footer_border ) ? $custom_footer_border : $footer_presets['footer_border'];
+		$footer_sub_bg_color  = ! empty( $custom_footer_sub_bg ) ? $custom_footer_sub_bg : $footer_presets['footer_sub_bg'];
 
 		$footer_tokens  = "--cv-footer-bg: {$footer_bg_color}; ";
 		$footer_tokens .= "--cv-footer-text: {$footer_text_color}; ";

@@ -43,7 +43,7 @@ $copyright_text = str_replace(
 	$raw_copyright
 );
 ?>
-<footer class="cv-footer-ecommerce cv:bg-gray-950 cv:text-gray-300 cv:mt-auto" style="<?php echo ! empty( cartvai_theme_option( 'footer_bg_color', '' ) ) ? 'background-color: var(--cv-footer-bg);' : ''; ?>">
+<footer class="cv-footer-ecommerce cv:text-gray-300 cv:mt-auto" style="background-color: var(--cv-footer-bg, #030712); color: var(--cv-footer-text, #94a3b8); border-color: var(--cv-footer-border, #1f2937);">
 	<!-- Trust Reassurance Band -->
 	<?php if ( $trust_enabled ) : ?>
 		<div class="cv-trust-band cv:border-b cv:border-gray-800 cv:py-8">
