@@ -1,0 +1,59 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ambientGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="headbandGrad" x1="40" y1="30" x2="200" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="50%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#94a3b8"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde68a"/>
+      <stop offset="50%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <linearGradient id="earcupGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Backdrop Glow -->
+  <circle cx="120" cy="120" r="100" fill="url(#ambientGlow)"/>
+
+  <!-- Headset Group with Shadow -->
+  <g filter="url(#dropShadow)">
+    <!-- Top Arc / Headband -->
+    <path d="M55 125 C55 60, 80 32, 120 32 C160 32, 185 60, 185 125" stroke="url(#headbandGrad)" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Inner Cushion Arc -->
+    <path d="M72 105 C72 70, 92 48, 120 48 C148 48, 168 70, 168 105" stroke="#334155" stroke-width="6" stroke-linecap="round"/>
+
+    <!-- Left Fork / Arm -->
+    <rect x="50" y="112" width="10" height="28" rx="4" fill="url(#goldAccent)"/>
+    <!-- Right Fork / Arm -->
+    <rect x="180" y="112" width="10" height="28" rx="4" fill="url(#goldAccent)"/>
+
+    <!-- Left Ear Cup Base -->
+    <rect x="42" y="126" width="26" height="52" rx="13" fill="url(#earcupGrad)"/>
+    <rect x="44" y="128" width="22" height="48" rx="11" stroke="url(#goldAccent)" stroke-width="1.5" fill="none"/>
+    <!-- Left Ear Cushion -->
+    <rect x="62" y="132" width="8" height="40" rx="4" fill="#475569"/>
+
+    <!-- Right Ear Cup Base -->
+    <rect x="172" y="126" width="26" height="52" rx="13" fill="url(#earcupGrad)"/>
+    <rect x="174" y="128" width="22" height="48" rx="11" stroke="url(#goldAccent)" stroke-width="1.5" fill="none"/>
+    <!-- Right Ear Cushion -->
+    <rect x="170" y="132" width="8" height="40" rx="4" fill="#475569"/>
+
+    <!-- Left Ambient LED Ring -->
+    <circle cx="55" cy="152" r="5" fill="url(#goldAccent)"/>
+    <!-- Right Ambient LED Ring -->
+    <circle cx="185" cy="152" r="5" fill="url(#goldAccent)"/>
+  </g>
+</svg>

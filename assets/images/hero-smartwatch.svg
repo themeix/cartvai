@@ -1,0 +1,46 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="watchStrap" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#334155"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="watchBody" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="ringAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <filter id="watchShadow" x="-10%" y="-10%" width="125%" height="125%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#watchShadow)">
+    <!-- Top Strap -->
+    <rect x="74" y="15" width="52" height="45" rx="8" fill="url(#watchStrap)"/>
+    <!-- Bottom Strap -->
+    <rect x="74" y="140" width="52" height="45" rx="8" fill="url(#watchStrap)"/>
+
+    <!-- Watch Body -->
+    <rect x="56" y="52" width="88" height="96" rx="26" fill="url(#watchBody)" stroke="#64748b" stroke-width="2"/>
+    <!-- Watch Crown Button -->
+    <rect x="144" y="80" width="6" height="20" rx="3" fill="#94a3b8"/>
+
+    <!-- Screen Bezel & Display -->
+    <rect x="64" y="60" width="72" height="80" rx="18" fill="url(#screenGrad)"/>
+
+    <!-- Activity Rings / Screen UI -->
+    <circle cx="100" cy="100" r="24" stroke="#1e293b" stroke-width="5"/>
+    <circle cx="100" cy="100" r="24" stroke="url(#ringAccent)" stroke-width="5" stroke-dasharray="110" stroke-dashoffset="30" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="16" stroke="#10b981" stroke-width="4" stroke-dasharray="75" stroke-dashoffset="15" stroke-linecap="round"/>
+
+    <!-- Time Display -->
+    <text x="100" y="104" fill="#ffffff" font-size="10" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, sans-serif" text-anchor="middle">10:42</text>
+  </g>
+</svg>

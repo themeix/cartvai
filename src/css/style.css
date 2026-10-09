@@ -268,8 +268,8 @@ nav[aria-label="Breadcrumb"] a:hover {
 
 /* Primary Navigation Sizing, Spacing & Typography */
 .cv-primary-nav {
-  padding-top: var(--cv-nav-bar-py, 13px) !important;
-  padding-bottom: var(--cv-nav-bar-py, 13px) !important;
+  padding-top: var(--cv-nav-bar-py, 2px) !important;
+  padding-bottom: var(--cv-nav-bar-py, 2px) !important;
   gap: var(--cv-nav-link-gap, 28px) !important;
 }
 
@@ -332,8 +332,8 @@ nav[aria-label="Breadcrumb"] a:hover {
   background-color: var(--cv-nav-bar-bg, #0a2f24);
   border-top: none;
   border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.15));
-  padding-top: var(--cv-nav-bar-py, 13px);
-  padding-bottom: var(--cv-nav-bar-py, 13px);
+  padding-top: var(--cv-nav-bar-py, 2px);
+  padding-bottom: var(--cv-nav-bar-py, 2px);
   position: relative;
 }
 
@@ -592,6 +592,18 @@ nav[aria-label="Breadcrumb"] a:hover {
 
 .cv-price-regular {
   text-decoration: line-through;
+}
+
+/* Product image placeholder */
+.cartvai-image-placeholder {
+  background: #f3f4f6 !important;
+  background-image: none !important;
+  color: #9ca3af !important;
+}
+
+.cartvai-image-placeholder .cartvai-placeholder-icon,
+.cartvai-image-placeholder svg {
+  color: #9ca3af !important;
 }
 
 /* Branding & Site Logo responsive rules */
@@ -1208,20 +1220,63 @@ nav[aria-label="Breadcrumb"] a:hover {
   margin-bottom: 2.75rem;
 }
 
+/* Generous modern whitespace between homepage sections */
+.cv-shelf-section {
+  margin-top: 4.5rem !important;
+  margin-bottom: 2rem !important;
+  width: 100%;
+}
+
+.cv-shelf-section:first-of-type {
+  margin-top: 3.5rem !important;
+}
+
 .cv-shelf-header {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.625rem;
+  gap: 1.25rem;
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  padding-bottom: 1rem;
   border-bottom: 1px solid #f1f5f9;
 }
 
+@media (max-width: 768px) {
+  .cv-shelf-section {
+    margin-top: 3rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  .cv-shelf-section:first-of-type {
+    margin-top: 2.25rem !important;
+  }
+}
+
+.cv-shelf-title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cv-shelf-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary, #059669);
+  margin-bottom: 0.125rem;
+}
+
 .cv-shelf-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #0f172a;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+  margin: 0 !important;
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
@@ -1231,24 +1286,67 @@ nav[aria-label="Breadcrumb"] a:hover {
   content: "";
   display: inline-block;
   width: 4px;
-  height: 1.125rem;
-  background-color: var(--color-primary);
+  height: 1.25rem;
+  background-color: var(--color-primary, #059669);
   border-radius: 9999px;
+}
+
+.cv-shelf-subtitle {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin: 0 !important;
+  line-height: 1.4;
 }
 
 .cv-shelf-link {
   font-size: 0.8125rem;
-  font-weight: 600;
-  color: #64748b;
+  font-weight: 700;
+  color: #475569;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  transition: color 0.15s ease, transform 0.15s ease;
+  gap: 0.35rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 0.625rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 .cv-shelf-link:hover {
-  color: var(--color-primary);
+  background-color: var(--color-primary, #059669);
+  border-color: var(--color-primary, #059669);
+  color: #ffffff !important;
   transform: translateX(2px);
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.18);
+}
+
+.cv-shelf-rating-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .cv-shelf-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .cv-shelf-title {
+    font-size: 1.25rem;
+  }
 }
 
 /* Wide Featured Product Card (Top Selling 2x2 Grid) */
@@ -2716,9 +2814,8 @@ hr.wp-block-separator,
   box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.25), 0 8px 10px -6px rgba(6, 78, 59, 0.2) !important;
   display: flex !important;
   flex-direction: column !important;
-  align-items: flex-start !important;
   justify-content: center !important;
-  min-height: 380px !important;
+  min-height: 400px !important;
 }
 
 .cv-hero-main-banner::before {
@@ -2729,7 +2826,7 @@ hr.wp-block-separator,
   width: 320px;
   height: 320px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, rgba(6, 78, 59, 0) 70%);
+  background: radial-gradient(circle, rgba(52, 211, 153, 0.25) 0%, rgba(6, 78, 59, 0) 70%);
   pointer-events: none;
 }
 
@@ -2738,16 +2835,40 @@ hr.wp-block-separator,
   position: absolute;
   bottom: -40px;
   right: 15%;
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.12) 0%, rgba(6, 78, 59, 0) 70%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(6, 78, 59, 0) 70%);
   pointer-events: none;
+}
+
+.cv-hero-main-banner-inner,
+.cv-hero-columns,
+.cv-hero-main-banner > .cv-hero-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  gap: 2rem !important;
+  position: relative !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .cv-hero-main-banner-inner,
+  .cv-hero-columns,
+  .cv-hero-main-banner > .cv-hero-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 }
 
 .cv-hero-badge {
   display: inline-flex !important;
   align-items: center !important;
+  gap: 0.5rem !important;
   padding: 0.35rem 0.85rem !important;
   border-radius: 9999px !important;
   background: rgba(255, 255, 255, 0.12) !important;
@@ -2758,6 +2879,17 @@ hr.wp-block-separator,
   text-transform: uppercase !important;
   margin-bottom: 1rem !important;
   backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.cv-hero-badge-pulse {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: #fbbf24;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 .cv-hero-main-banner .wp-block-buttons {
@@ -2771,88 +2903,267 @@ hr.wp-block-separator,
 }
 
 .cv-hero-content-col {
-  flex: 1;
-  max-width: 32rem;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1 1 0% !important;
+  max-width: 32rem !important;
+  z-index: 2 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
 }
 
 .cv-hero-visual-col {
-  display: none;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  position: relative !important;
+  z-index: 2 !important;
+  flex-shrink: 0 !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-@media (min-width: 1024px) {
+@media (max-width: 768px) {
   .cv-hero-visual-col {
-    display: flex;
+    display: none !important;
   }
 }
 
 .cv-hero-showcase-box {
-  width: 200px;
-  height: 200px;
-  border-radius: 1.5rem;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 1.25rem;
+  width: 220px !important;
+  min-height: 220px !important;
+  border-radius: 1.75rem !important;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  padding: 1.5rem !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-.cv-hero-showcase-box img {
-  max-height: 140px;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4));
+.cv-hero-showcase-box:hover {
+  transform: translateY(-4px) scale(1.02) !important;
 }
 
-.cv-hero-glass-pill {
-  position: absolute;
-  bottom: -14px;
-  background: #ffffff;
-  color: #0f172a;
-  padding: 0.35rem 0.85rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
-  white-space: nowrap;
+.cv-hero-product-preview,
+.cv-hero-showcase-img-wrap,
+.cv-hero-showcase-box .wp-block-image,
+.cv-hero-showcase-box figure {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  margin-bottom: 0.5rem !important;
 }
 
-.cv-hero-glass-pill span {
-  color: #f59e0b;
+.cv-hero-product-preview img,
+.cv-hero-showcase-img-wrap img,
+.cv-hero-showcase-box .wp-block-image img,
+.cv-hero-showcase-box figure img {
+  max-height: 140px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.4)) !important;
 }
 
 .cv-hero-floating-badge {
-  position: absolute;
-  top: -12px;
-  right: -10px;
-  background: #fbbf24;
-  color: #0f172a;
-  padding: 0.3rem 0.65rem;
-  border-radius: 9999px;
-  font-size: 0.6875rem;
-  font-weight: 800;
-  box-shadow: 0 6px 14px rgba(251, 191, 36, 0.4);
-  letter-spacing: 0.025em;
-  white-space: nowrap;
+  position: absolute !important;
+  top: -12px !important;
+  right: -10px !important;
+  background: #fbbf24 !important;
+  color: #0f172a !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.6875rem !important;
+  font-weight: 800 !important;
+  box-shadow: 0 6px 14px rgba(251, 191, 36, 0.45) !important;
+  letter-spacing: 0.03em !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
 }
 
+.cv-hero-floating-rating,
+.cv-hero-glass-pill {
+  position: absolute !important;
+  bottom: -14px !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  padding: 0.4rem 0.95rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.4rem !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22) !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+}
 
+.cv-hero-floating-rating span,
+.cv-hero-glass-pill span {
+  color: #f59e0b !important;
+}
+
+.cv-hero-promo-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.25rem !important;
+  height: 100% !important;
+  justify-content: space-between !important;
+}
+
+.cv-hero-promo-card {
+  border-radius: 1.25rem !important;
+  padding: 1.75rem 1.5rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+  flex: 1 1 0% !important;
+}
+
+.cv-hero-promo-card:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.cv-hero-promo-card--blue {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%) !important;
+  border: 1px solid rgba(16, 185, 129, 0.3) !important;
+}
+
+.cv-hero-promo-card--blue:hover {
+  border-color: rgba(16, 185, 129, 0.55) !important;
+}
+
+.cv-hero-promo-card--amber {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%) !important;
+  border: 1px solid rgba(245, 158, 11, 0.35) !important;
+}
+
+.cv-hero-promo-card--amber:hover {
+  border-color: rgba(245, 158, 11, 0.6) !important;
+}
+
+.cv-hero-promo-card .cv-promo-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  font-size: 0.6875rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 9999px !important;
+  margin-bottom: 0.625rem !important;
+}
+
+.cv-hero-promo-card--blue .cv-promo-badge {
+  background: rgba(5, 150, 105, 0.15) !important;
+  color: #065f46 !important;
+}
+
+.cv-hero-promo-card--amber .cv-promo-badge {
+  background: rgba(217, 119, 6, 0.18) !important;
+  color: #92400e !important;
+}
+
+.cv-hero-promo-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem !important;
+  padding-top: 0.875rem !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+.cv-hero-promo-price {
+  font-size: 0.8125rem !important;
+  font-weight: 800 !important;
+}
+
+.cv-hero-promo-card--blue .cv-hero-promo-price {
+  color: #065f46 !important;
+}
+
+.cv-hero-promo-card--amber .cv-hero-promo-price {
+  color: #92400e !important;
+}
+
+.cv-hero-promo-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  padding: 0.5rem 0.95rem !important;
+  border-radius: 0.625rem !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.cv-hero-promo-card--blue .cv-hero-promo-btn {
+  background: #065f46 !important;
+  color: #ffffff !important;
+}
+
+.cv-hero-promo-card--blue .cv-hero-promo-btn:hover {
+  background: #044e39 !important;
+  transform: translateX(2px) !important;
+}
+
+.cv-hero-promo-card--amber .cv-hero-promo-btn {
+  background: #d97706 !important;
+  color: #ffffff !important;
+}
+
+.cv-hero-promo-card--amber .cv-hero-promo-btn:hover {
+  background: #b45309 !important;
+  transform: translateX(2px) !important;
+}
+
+.cv-hero-promo-card .wp-block-buttons {
+  margin-top: 0.5rem !important;
+}
+
+.cv-hero-promo-card .wp-block-button__link {
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.625rem !important;
+  transition: all 0.15s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+}
+
+.cv-hero-promo-card--blue .wp-block-button__link {
+  background-color: #065f46 !important;
+  color: #ffffff !important;
+}
+
+.cv-hero-promo-card--blue .wp-block-button__link:hover {
+  background-color: #044e39 !important;
+  transform: translateX(2px) !important;
+}
+
+.cv-hero-promo-card--amber .wp-block-button__link {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+.cv-hero-promo-card--amber .wp-block-button__link:hover {
+  background-color: #b45309 !important;
+  transform: translateX(2px) !important;
+}
 
 .cv-promo-badge {
   display: inline-block;
@@ -2897,6 +3208,49 @@ hr.wp-block-separator,
   flex-shrink: 0;
   background: #eff6ff;
   color: #2563eb;
+  font-size: 1.25rem;
+  margin: 0 !important;
+}
+
+.cv-trust-icon--shipping {
+  background: #eff6ff !important;
+  color: #2563eb !important;
+}
+
+.cv-trust-icon--shield {
+  background: #ecfdf5 !important;
+  color: #059669 !important;
+}
+
+.cv-trust-icon--returns {
+  background: #fffbeb !important;
+  color: #d97706 !important;
+}
+
+.cv-trust-icon--support {
+  background: #f5f3ff !important;
+  color: #7c3aed !important;
+}
+
+.cv-trust-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.15rem !important;
+}
+
+.cv-trust-title {
+  font-size: 0.9375rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+}
+
+.cv-trust-desc {
+  font-size: 0.8125rem !important;
+  color: #64748b !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
 }
 
 /* Promo Duo Cards */
@@ -2931,7 +3285,10 @@ hr.wp-block-separator,
   margin-bottom: 1.75rem !important;
 }
 
-.cv-hero-btn-primary .wp-block-button__link {
+.cv-hero-main-banner .cv-hero-btn-primary .wp-block-button__link,
+.cv-homepage .cv-hero-btn-primary .wp-block-button__link,
+.wp-block-button.cv-hero-btn-primary:not(.is-style-outline) .wp-block-button__link,
+.cv-hero-btn-primary a {
   background-color: #fbbf24 !important;
   color: #030712 !important;
   font-weight: 700 !important;
@@ -2939,26 +3296,40 @@ hr.wp-block-separator,
   padding: 0.75rem 1.5rem !important;
   transition: all 0.2s ease !important;
   display: inline-block !important;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4) !important;
+  border: none !important;
 }
 
-.cv-hero-btn-primary .wp-block-button__link:hover {
+.cv-hero-main-banner .cv-hero-btn-primary .wp-block-button__link:hover,
+.cv-homepage .cv-hero-btn-primary .wp-block-button__link:hover,
+.wp-block-button.cv-hero-btn-primary:not(.is-style-outline) .wp-block-button__link:hover,
+.cv-hero-btn-primary a:hover {
   background-color: #f59e0b !important;
+  color: #000000 !important;
   transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5) !important;
 }
 
-.cv-hero-btn-secondary .wp-block-button__link {
+.cv-hero-main-banner .cv-hero-btn-secondary .wp-block-button__link,
+.cv-homepage .cv-hero-btn-secondary .wp-block-button__link,
+.wp-block-button.cv-hero-btn-secondary .wp-block-button__link,
+.cv-hero-btn-secondary a {
   background-color: rgba(255, 255, 255, 0.15) !important;
   color: #ffffff !important;
   font-weight: 600 !important;
   border-radius: 0.75rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
   padding: 0.75rem 1.5rem !important;
   transition: all 0.2s ease !important;
   display: inline-block !important;
 }
 
-.cv-hero-btn-secondary .wp-block-button__link:hover {
-  background-color: rgba(255, 255, 255, 0.25) !important;
+.cv-hero-main-banner .cv-hero-btn-secondary .wp-block-button__link:hover,
+.cv-homepage .cv-hero-btn-secondary .wp-block-button__link:hover,
+.wp-block-button.cv-hero-btn-secondary .wp-block-button__link:hover,
+.cv-hero-btn-secondary a:hover {
+  background-color: rgba(255, 255, 255, 0.28) !important;
+  color: #ffffff !important;
 }
 
 .cv-hero-perks {

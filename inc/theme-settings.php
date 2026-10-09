@@ -517,10 +517,6 @@ function cartvai_theme_render_settings_page() {
 							<span class="dashicons dashicons-arrow-down-alt2"></span>
 							<span><?php esc_html_e( 'Footer Settings', 'cartvai' ); ?></span>
 						</button>
-						<button type="button" class="cv-tab-btn" data-tab="tab-homepage" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: transparent; color: #64748b; transition: all 0.15s;">
-							<span class="dashicons dashicons-admin-home"></span>
-							<span><?php esc_html_e( 'Homepage Settings', 'cartvai' ); ?></span>
-						</button>
 					</nav>
 				</div>
 
@@ -1143,8 +1139,9 @@ function cartvai_theme_render_settings_page() {
 							</div>
 
 							<?php
-							$footer_preset_defs = function_exists( 'cartvai_get_footer_preset_defaults' )
-								? cartvai_get_footer_preset_defaults( $footer_style )
+							$active_footer_style = ! empty( $current_footer ) ? $current_footer : 'ecommerce';
+							$footer_preset_defs  = function_exists( 'cartvai_get_footer_preset_defaults' )
+								? cartvai_get_footer_preset_defaults( $active_footer_style )
 								: array(
 									'footer_bg'      => '#0d3b2e',
 									'footer_heading' => '#ffffff',
@@ -1233,199 +1230,6 @@ function cartvai_theme_render_settings_page() {
 								<span style="font-size: 11px; color: #94a3b8;"><?php esc_html_e( 'Recommended image: transparent PNG or SVG banner strip (height: 28px - 48px). Leave empty to show clean default vector badges.', 'cartvai' ); ?></span>
 							</div>
 						</div>
-					</div>
-
-					<!-- ==========================================
-					     TAB 5: HOMEPAGE SETTINGS (Hero & Sections)
-					     ========================================== -->
-					<div id="tab-homepage" class="cv-tab-panel" style="display: none; flex-direction: column; gap: 20px;">
-						
-						<!-- Block Editor Callout Tip -->
-						<div style="background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
-							<div style="display: flex; align-items: center; gap: 12px;">
-								<span class="dashicons dashicons-layout" style="font-size: 24px; width: 24px; height: 24px; color: #2563eb;"></span>
-								<div>
-									<strong style="font-size: 13px; color: #1e3a8a; display: block;"><?php esc_html_e( 'WordPress Native Block Patterns Available', 'cartvai' ); ?></strong>
-									<span style="font-size: 12px; color: #3b82f6;"><?php esc_html_e( 'You can also visually build or edit your homepage in the Gutenberg block editor using the "Cartvai" block patterns (+ -> Patterns -> Cartvai).', 'cartvai' ); ?></span>
-								</div>
-							</div>
-							<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=page' ) ); ?>" class="button button-secondary" style="font-weight: 600; white-space: nowrap;">
-								<?php esc_html_e( 'View Pages →', 'cartvai' ); ?>
-							</a>
-						</div>
-
-						<!-- Main Hero Banner Settings -->
-						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between;">
-								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Main Hero Banner (Left 8 Columns)', 'cartvai' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control the main headline, callout badge, CTA buttons, and banner media image.', 'cartvai' ); ?></p>
-								</div>
-								<span style="font-size: 11px; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 9999px;"><?php esc_html_e( 'Hero Showcase', 'cartvai' ); ?></span>
-							</div>
-
-							<div style="display: flex; flex-direction: column; gap: 16px;">
-								<!-- Hero Badge -->
-								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Top Eyebrow Badge', 'cartvai' ); ?></label>
-									<input type="text" name="homepage_hero_badge" value="<?php echo esc_attr( $homepage_hero_badge ); ?>" style="width: 100%; max-width: 500px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
-								</div>
-
-								<!-- Hero Title -->
-								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Main Title / Headline', 'cartvai' ); ?></label>
-									<input type="text" name="homepage_hero_title" value="<?php echo esc_attr( $homepage_hero_title ); ?>" style="width: 100%; max-width: 600px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 14px; font-weight: 600;" />
-								</div>
-
-								<!-- Hero Subtitle -->
-								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Subtitle / Description', 'cartvai' ); ?></label>
-									<textarea name="homepage_hero_subtitle" rows="3" style="width: 100%; max-width: 650px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 10px 12px; font-size: 13px; line-height: 1.5;"><?php echo esc_textarea( $homepage_hero_subtitle ); ?></textarea>
-								</div>
-
-								<!-- Buttons Grid -->
-								<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-									<div style="border: 1px solid #f1f5f9; border-radius: 8px; padding: 14px; background: #fafafa;">
-										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Primary Button', 'cartvai' ); ?></strong>
-										<div style="display: flex; flex-direction: column; gap: 8px;">
-											<input type="text" name="homepage_hero_btn1_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. Shop Collection)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-											<input type="url" name="homepage_hero_btn1_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-										</div>
-									</div>
-
-									<div style="border: 1px solid #f1f5f9; border-radius: 8px; padding: 14px; background: #fafafa;">
-										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Secondary Outline Button', 'cartvai' ); ?></strong>
-										<div style="display: flex; flex-direction: column; gap: 8px;">
-											<input type="text" name="homepage_hero_btn2_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. View Flash Deals)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-											<input type="url" name="homepage_hero_btn2_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-										</div>
-									</div>
-								</div>
-
-								<!-- Perks String -->
-								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Trust Perks Bullet Points', 'cartvai' ); ?></label>
-									<input type="text" name="homepage_hero_perks" value="<?php echo esc_attr( $homepage_hero_perks ); ?>" style="width: 100%; max-width: 600px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
-								</div>
-
-								<!-- Hero Custom Image -->
-								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Banner Media Image (Optional)', 'cartvai' ); ?></label>
-									<div style="display: flex; gap: 10px; align-items: center; max-width: 650px;">
-										<input type="text" id="homepage_hero_image" name="homepage_hero_image" value="<?php echo esc_attr( $homepage_hero_image ); ?>" placeholder="<?php esc_attr_e( 'Upload an image or paste URL', 'cartvai' ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
-										<button type="button" class="button button-secondary cv-upload-image-btn" data-target="homepage_hero_image" data-preview="homepage_hero_image_preview" style="height: 38px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
-											<span class="dashicons dashicons-upload" style="font-size: 16px; width: 16px; height: 16px; line-height: 16px;"></span>
-											<?php esc_html_e( 'Upload Image', 'cartvai' ); ?>
-										</button>
-										<button type="button" class="button cv-remove-image-btn" data-target="homepage_hero_image" data-preview="homepage_hero_image_preview" style="height: 38px; color: #dc2626; border-color: #fca5a5; <?php echo empty( $homepage_hero_image ) ? 'display: none;' : ''; ?>">
-											<?php esc_html_e( 'Remove', 'cartvai' ); ?>
-										</button>
-									</div>
-									<div id="homepage_hero_image_preview" style="<?php echo empty( $homepage_hero_image ) ? 'display: none;' : 'display: inline-block;'; ?> margin-top: 10px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px; max-width: 320px;">
-										<img src="<?php echo esc_url( $homepage_hero_image ); ?>" alt="<?php esc_attr_e( 'Hero Preview', 'cartvai' ); ?>" style="max-height: 90px; width: auto; object-fit: contain; display: block;" />
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<!-- Secondary Hero Promo Cards (Right Column) -->
-						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Secondary Hero Promo Cards (Right 4 Columns)', 'cartvai' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Two stacked high-converting promotional deal cards placed next to the main banner.', 'cartvai' ); ?></p>
-							</div>
-
-							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
-								
-								<!-- Promo Card 1 -->
-								<div style="border: 1px solid #bbf7d0; background: #f0fdf4; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-									<strong style="font-size: 13px; color: #166534; display: block; border-bottom: 1px solid #dcfce7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 1 (Top)', 'cartvai' ); ?></strong>
-									
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo1_badge" value="<?php echo esc_attr( $homepage_promo1_badge ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo1_title" value="<?php echo esc_attr( $homepage_promo1_title ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-weight: 600;" />
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo1_desc" value="<?php echo esc_attr( $homepage_promo1_desc ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-
-									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai' ); ?></label>
-											<input type="text" name="homepage_promo1_price" value="<?php echo esc_attr( $homepage_promo1_price ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-										</div>
-										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai' ); ?></label>
-											<input type="text" name="homepage_promo1_btn_text" value="<?php echo esc_attr( $homepage_promo1_btn_text ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-										</div>
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai' ); ?></label>
-										<input type="url" name="homepage_promo1_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_promo1_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-								</div>
-
-								<!-- Promo Card 2 -->
-								<div style="border: 1px solid #fde68a; background: #fffbeb; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-									<strong style="font-size: 13px; color: #92400e; display: block; border-bottom: 1px solid #fef3c7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 2 (Bottom)', 'cartvai' ); ?></strong>
-									
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo2_badge" value="<?php echo esc_attr( $homepage_promo2_badge ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo2_title" value="<?php echo esc_attr( $homepage_promo2_title ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-weight: 600;" />
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai' ); ?></label>
-										<input type="text" name="homepage_promo2_desc" value="<?php echo esc_attr( $homepage_promo2_desc ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-
-									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai' ); ?></label>
-											<input type="text" name="homepage_promo2_price" value="<?php echo esc_attr( $homepage_promo2_price ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-										</div>
-										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai' ); ?></label>
-											<input type="text" name="homepage_promo2_btn_text" value="<?php echo esc_attr( $homepage_promo2_btn_text ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-										</div>
-									</div>
-
-									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai' ); ?></label>
-										<input type="url" name="homepage_promo2_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_promo2_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
-									</div>
-								</div>
-
-							</div>
-						</div>
-
-						<!-- Trust & Value Props Strip Toggle -->
-						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-							<div style="display: flex; align-items: center; justify-content: space-between;">
-								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Trust Badges & Value Props Strip', 'cartvai' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Display the 4-card value proposition row (Free Shipping, Secure Checkout, 30-Day Returns, 24/7 Support) under the hero.', 'cartvai' ); ?></p>
-								</div>
-								<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
-									<input type="checkbox" name="homepage_trust_enabled" value="1" <?php checked( $homepage_trust_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
-									<span class="cartvai-toggle-switch__track" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: <?php echo $homepage_trust_enabled ? '#2563eb' : '#cbd5e1'; ?>; transition: .2s; border-radius: 9999px;"></span>
-								</label>
-							</div>
-						</div>
-
 					</div>
 
 				</div>

@@ -53,106 +53,62 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 
 <div class="cv-homepage-wrap cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:py-6 cv:space-y-10">
 
-	<!-- ==================== 1. TOP DUAL PROMOTIONAL HERO ==================== -->
+	<!-- ==================== 1. TOP SINGLE HERO BANNER ==================== -->
 	<section class="cv-home-section cv:mb-8">
-		<div class="cv:grid cv:grid-cols-1 cv:lg:grid-cols-12 cv:gap-5">
-			
-			<!-- Main Hero Banner (8 cols) -->
-			<div class="cv:lg:col-span-8 cv-hero-main-banner cv:relative cv:rounded-3xl cv:p-6 cv:sm:p-8 cv:md:p-10 cv:flex cv:flex-col cv:justify-between cv:border cv:border-white/10 cv:shadow-lg">
-				<div class="cv:relative cv:z-10 cv:max-w-xl">
+		<div class="cv-hero-main-banner cv-hero-banner-single cv:relative cv:rounded-3xl cv:p-6 cv:sm:p-8 cv:md:p-12 cv:border cv:border-white/10 cv:shadow-lg cv:overflow-hidden">
+			<div class="cv-hero-main-banner-inner cv:flex cv:flex-col cv:lg:flex-row cv:items-center cv:justify-between cv:gap-8 cv:w-full cv:relative cv:z-10">
+				
+				<!-- Left Content Column -->
+				<div class="cv-hero-content-col cv:flex-1 cv:max-w-2xl">
 					<?php if ( ! empty( $hero_badge ) ) : ?>
 						<span class="cv-hero-badge">
-							<span class="cv:inline-block cv:w-2 cv:h-2 cv:rounded-full cv:bg-amber-400 cv:animate-ping"></span>
+							<span class="cv-hero-badge-pulse"></span>
 							<?php echo esc_html( $hero_badge ); ?>
 						</span>
 					<?php endif; ?>
 
-					<h2 class="cv:text-2xl cv:sm:text-3xl cv:md:text-4xl cv:font-black cv:text-white cv:tracking-tight cv:leading-tight cv:mb-3">
+					<h1 class="cv-hero-headline cv:text-3xl cv:sm:text-4xl cv:md:text-5xl cv:font-black cv:text-white cv:tracking-tight cv:leading-tight cv:mb-4">
 						<?php echo esc_html( $hero_title ); ?>
-					</h2>
+					</h1>
 
-					<p class="cv:text-sm cv:sm:text-base cv:text-emerald-100/90 cv:mb-6 cv:leading-relaxed">
+					<p class="cv-hero-subtitle cv:text-base cv:sm:text-lg cv:text-emerald-100/90 cv:mb-8 cv:leading-relaxed">
 						<?php echo esc_html( $hero_subtitle ); ?>
 					</p>
 
-					<div class="cv:flex cv:flex-wrap cv:items-center cv:gap-3">
-						<a href="<?php echo esc_url( $btn1_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-6 cv:py-3.5 cv:rounded-xl cv:bg-amber-400 cv:text-gray-950 cv:text-sm cv:font-bold hover:cv:bg-amber-300 cv:transition-all cv:shadow-md">
-							<span><?php echo esc_html( $hero_btn1_text ); ?></span>
-							<svg class="cv:w-4 cv:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+					<div class="cv:flex cv:flex-wrap cv:items-center cv:gap-4">
+						<a href="<?php echo esc_url( $btn1_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-7 cv:py-4 cv:rounded-xl cv:bg-amber-400 cv:text-gray-950 cv:text-base cv:font-bold hover:cv:bg-amber-300 cv:transition-all cv:shadow-md">
+							<span><?php echo esc_html( $hero_btn1_text ); ?> →</span>
 						</a>
 
 						<?php if ( ! empty( $hero_btn2_text ) ) : ?>
-							<a href="<?php echo esc_url( $btn2_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-5 cv:py-3.5 cv:rounded-xl cv:bg-white/10 cv:text-white cv:text-sm cv:font-semibold hover:cv:bg-white/20 cv:border cv:border-white/20 cv:transition-all">
+							<a href="<?php echo esc_url( $btn2_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-6 cv:py-4 cv:rounded-xl cv:bg-white/10 cv:text-white cv:text-base cv:font-semibold hover:cv:bg-white/20 cv:border cv:border-white/20 cv:transition-all">
 								<span><?php echo esc_html( $hero_btn2_text ); ?></span>
 							</a>
 						<?php endif; ?>
 					</div>
 
 					<?php if ( ! empty( $hero_perks ) ) : ?>
-						<p class="cv:text-xs cv:text-emerald-200/80 cv:font-medium cv:mt-6 cv:tracking-wide">
+						<p class="cv-hero-perks cv:text-xs cv:sm:text-sm cv:text-emerald-200/80 cv:font-medium cv:mt-8 cv:tracking-wide">
 							<?php echo esc_html( $hero_perks ); ?>
 						</p>
 					<?php endif; ?>
 				</div>
 
-				<?php if ( ! empty( $hero_image ) ) : ?>
-					<div class="cv:hidden cv:md:flex cv:absolute cv:right-6 cv:bottom-6 cv:max-w-xs cv:opacity-95">
-						<img src="<?php echo esc_url( $hero_image ); ?>" alt="<?php echo esc_attr( $hero_title ); ?>" class="cv:max-h-56 cv:w-auto cv:object-contain cv:drop-shadow-2xl" />
-					</div>
-				<?php else : ?>
-					<!-- Default Sleek Glass Badge -->
-					<div class="cv:hidden cv:md:flex cv:absolute cv:right-8 cv:bottom-8 cv:p-4 cv:rounded-2xl cv:bg-white/10 cv:backdrop-blur-md cv:border cv:border-white/20 cv:text-white cv:shadow-xl cv:flex-col cv:items-center cv:gap-1">
-						<span class="cv:text-amber-300 cv:text-lg cv:font-black">★★★★★</span>
-						<span class="cv:text-xs cv:font-bold">4.9 / 5.0 Rating</span>
-						<span class="cv:text-[11px] cv:text-emerald-200">10,000+ Happy Shoppers</span>
-					</div>
-				<?php endif; ?>
-			</div>
-
-			<!-- Secondary Promo Column (4 cols) -->
-			<div class="cv:lg:col-span-4 cv:flex cv:flex-col cv:gap-4 cv:justify-between">
-				
-				<!-- Promo Card 1 -->
-				<div class="cv-hero-promo-card cv-hero-promo-card--blue cv:flex-1">
-					<div>
-						<span class="cv-promo-badge cv:text-emerald-800">
-							<?php echo esc_html( $promo1_badge ); ?>
-						</span>
-						<h3 class="cv:text-lg cv:sm:text-xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-1.5">
-							<?php echo esc_html( $promo1_title ); ?>
-						</h3>
-						<p class="cv:text-xs cv:text-gray-600 cv:mb-3 cv:leading-relaxed">
-							<?php echo esc_html( $promo1_desc ); ?>
-						</p>
-					</div>
-					<div class="cv:flex cv:items-center cv:justify-between cv:gap-3 cv:pt-3 cv:border-t cv:border-emerald-200/60">
-						<span class="cv:text-xs cv:font-extrabold cv:text-emerald-900"><?php echo esc_html( $promo1_price ); ?></span>
-						<a href="<?php echo esc_url( $promo1_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:px-3.5 cv:py-2 cv:rounded-lg cv:bg-emerald-800 cv:text-white cv:text-xs cv:font-bold hover:cv:bg-emerald-900 cv:transition-colors">
-							<span><?php echo esc_html( $promo1_btn ); ?></span>
-							<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-						</a>
-					</div>
-				</div>
-
-				<!-- Promo Card 2 -->
-				<div class="cv-hero-promo-card cv-hero-promo-card--amber cv:flex-1">
-					<div>
-						<span class="cv-promo-badge cv:text-amber-900">
-							<?php echo esc_html( $promo2_badge ); ?>
-						</span>
-						<h3 class="cv:text-lg cv:sm:text-xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-1.5">
-							<?php echo esc_html( $promo2_title ); ?>
-						</h3>
-						<p class="cv:text-xs cv:text-gray-600 cv:mb-3 cv:leading-relaxed">
-							<?php echo esc_html( $promo2_desc ); ?>
-						</p>
-					</div>
-					<div class="cv:flex cv:items-center cv:justify-between cv:gap-3 cv:pt-3 cv:border-t cv:border-amber-200/70">
-						<span class="cv:text-xs cv:font-extrabold cv:text-amber-900"><?php echo esc_html( $promo2_price ); ?></span>
-						<a href="<?php echo esc_url( $promo2_href ); ?>" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:px-3.5 cv:py-2 cv:rounded-lg cv:bg-amber-600 cv:text-white cv:text-xs cv:font-bold hover:cv:bg-amber-700 cv:transition-colors">
-							<span><?php echo esc_html( $promo2_btn ); ?></span>
-							<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-						</a>
+				<!-- Right Visual Showcase Column -->
+				<div class="cv-hero-visual-col cv:hidden cv:md:flex cv:flex-shrink-0 cv:items-center cv:justify-center">
+					<div class="cv-hero-showcase-box">
+						<span class="cv-hero-floating-badge">⚡ TOP RATED</span>
+						<div class="cv-hero-product-preview">
+							<?php if ( ! empty( $hero_image ) ) : ?>
+								<img src="<?php echo esc_url( $hero_image ); ?>" alt="<?php echo esc_attr( $hero_title ); ?>" class="cv-hero-showcase-img" />
+							<?php else : ?>
+								<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-headphones.svg' ); ?>" alt="Spatial Audio Pro" class="cv-hero-showcase-img" />
+							<?php endif; ?>
+						</div>
+						<div class="cv-hero-glass-pill">
+							<span class="cv:text-amber-400">★★★★★</span>
+							<span>4.9 / 5.0 Rating</span>
+						</div>
 					</div>
 				</div>
 
@@ -210,7 +166,11 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 3. FEATURED CATEGORIES ==================== -->
 	<section class="cv-home-section cv:mb-10">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Featured Categories', 'cartvai' ); ?></h3>
+			<div class="cv-shelf-title-wrap">
+				<span class="cv-shelf-badge"><?php esc_html_e( 'Curated Collections', 'cartvai' ); ?></span>
+				<h2 class="cv-shelf-title"><?php esc_html_e( 'Popular Categories', 'cartvai' ); ?></h2>
+				<p class="cv-shelf-subtitle"><?php esc_html_e( 'Explore our wide selection of top-rated items by category', 'cartvai' ); ?></p>
+			</div>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
 				<span><?php esc_html_e( 'View All Categories', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -222,7 +182,11 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 4. TOP SELLING PRODUCTS ==================== -->
 	<section class="cv-home-section cv:mb-12">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Top Selling Products', 'cartvai' ); ?></h3>
+			<div class="cv-shelf-title-wrap">
+				<span class="cv-shelf-badge"><?php esc_html_e( 'Customer Favorites', 'cartvai' ); ?></span>
+				<h2 class="cv-shelf-title"><?php esc_html_e( 'Top Selling Products', 'cartvai' ); ?></h2>
+				<p class="cv-shelf-subtitle"><?php esc_html_e( 'Handpicked best-sellers with unbeatable quality and top reviews', 'cartvai' ); ?></p>
+			</div>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
 				<span><?php esc_html_e( 'View All Best Sellers', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
@@ -257,9 +221,13 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 6. TRENDING PRODUCT SHELF ==================== -->
 	<section class="cv-home-section cv:mb-12">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Trending Products', 'cartvai' ); ?></h3>
+			<div class="cv-shelf-title-wrap">
+				<span class="cv-shelf-badge"><?php esc_html_e( 'Weekly Highlights', 'cartvai' ); ?></span>
+				<h2 class="cv-shelf-title"><?php esc_html_e( 'Trending Products', 'cartvai' ); ?></h2>
+				<p class="cv-shelf-subtitle"><?php esc_html_e( 'Don’t miss our latest arrivals and seasonal trending discounts', 'cartvai' ); ?></p>
+			</div>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
-				<span><?php esc_html_e( 'View All', 'cartvai' ); ?></span>
+				<span><?php esc_html_e( 'Explore All Products', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
 			</a>
 		</div>
@@ -269,8 +237,15 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 7. CUSTOMER REVIEWS ==================== -->
 	<section class="cv-home-section cv:mb-8">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Customer Reviews', 'cartvai' ); ?></h3>
-			<span class="cv:text-xs cv:text-gray-500 cv:font-semibold"><?php esc_html_e( 'Verified Buyer Experiences', 'cartvai' ); ?></span>
+			<div class="cv-shelf-title-wrap">
+				<span class="cv-shelf-badge"><?php esc_html_e( 'Social Proof', 'cartvai' ); ?></span>
+				<h2 class="cv-shelf-title"><?php esc_html_e( 'What Our Customers Say', 'cartvai' ); ?></h2>
+				<p class="cv-shelf-subtitle"><?php esc_html_e( 'Real experiences and feedback from thousands of verified shoppers', 'cartvai' ); ?></p>
+			</div>
+			<div class="cv-shelf-rating-pill">
+				<span class="cv:text-amber-400">★★★★★</span>
+				<span><?php esc_html_e( '4.9 / 5 Overall Score', 'cartvai' ); ?></span>
+			</div>
 		</div>
 		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-3 cv:gap-6">
 			<div class="cv-testimonial-card">
