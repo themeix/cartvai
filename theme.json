@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif",
+          "name": "Sans Serif",
+          "slug": "sans-serif"
+        },
+        {
+          "fontFamily": "ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", monospace",
+          "name": "Monospace",
+          "slug": "monospace"
+        }
+      ]
+    },
+    "color": {
+      "palette": [
+        {
+          "color": "#2563eb",
+          "name": "Primary",
+          "slug": "primary"
+        },
+        {
+          "color": "#1d4ed8",
+          "name": "Primary Dark",
+          "slug": "primary-dark"
+        },
+        {
+          "color": "#0f172a",
+          "name": "Dark",
+          "slug": "dark"
+        },
+        {
+          "color": "#ffffff",
+          "name": "White",
+          "slug": "white"
+        },
+        {
+          "color": "#f8fafc",
+          "name": "Light",
+          "slug": "light"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1280px",
+      "wideSize": "1440px"
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--sans-serif)"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontWeight": "700"
+        }
+      },
+      "h1": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontWeight": "700"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontWeight": "700"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--sans-serif)",
+          "fontWeight": "600"
+        }
+      }
+    }
+  }
+}

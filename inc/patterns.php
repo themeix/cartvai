@@ -1,0 +1,92 @@
+<?php
+/**
+ * Block Patterns Registration
+ *
+ * @package Cartvai_Theme
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
+/**
+ * Register Cartvai theme block pattern categories and patterns.
+ */
+function cartvai_theme_register_block_patterns() {
+	if ( ! function_exists( 'register_block_pattern_category' ) || ! function_exists( 'register_block_pattern' ) ) {
+		return;
+	}
+
+	register_block_pattern_category(
+		'cartvai',
+		array(
+			'label' => esc_html__( 'Cartvai', 'cartvai-theme' ),
+		)
+	);
+
+	$patterns_dir = get_template_directory() . '/patterns/';
+
+	$pattern_files = array(
+		'hero-megastore'      => array(
+			'title'       => esc_html__( 'Cartvai - Modern Hero Banner & Promo Cards', 'cartvai-theme' ),
+			'description' => esc_html__( 'High-converting ecommerce hero banner with main callout and 2 secondary promo cards.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai', 'featured', 'header' ),
+		),
+		'features-strip'      => array(
+			'title'       => esc_html__( 'Cartvai - Trust Badges & Value Proposition Strip', 'cartvai-theme' ),
+			'description' => esc_html__( '4-column value proposition banner with icons, headings, and descriptions.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai', 'services' ),
+		),
+		'categories-showcase' => array(
+			'title'       => esc_html__( 'Cartvai - Featured Categories Showcase', 'cartvai-theme' ),
+			'description' => esc_html__( 'Clean shelf header with carousel of top ecommerce categories.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai' ),
+		),
+		'top-sellers'         => array(
+			'title'       => esc_html__( 'Cartvai - Top Selling Products (2x2 Wide Cards)', 'cartvai-theme' ),
+			'description' => esc_html__( 'Section header and 2x2 wide featured card grid for top selling products.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai' ),
+		),
+		'promo-banners-duo'   => array(
+			'title'       => esc_html__( 'Cartvai - Dual Promotional Callout Cards', 'cartvai-theme' ),
+			'description' => esc_html__( 'Two side-by-side promotional callout banners for seasonal campaigns and discounts.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai', 'promotions' ),
+		),
+		'testimonials'        => array(
+			'title'       => esc_html__( 'Cartvai - Customer Reviews & Verified Testimonials', 'cartvai-theme' ),
+			'description' => esc_html__( '3-column customer review grid with 5-star ratings, quotes, reviewer avatars, and verified badges.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai', 'testimonials' ),
+		),
+		'homepage-full'       => array(
+			'title'       => esc_html__( 'Cartvai - Complete Modern Ecommerce Homepage', 'cartvai-theme' ),
+			'description' => esc_html__( 'Complete turnkey ecommerce homepage combining modern hero banner, trust strip, category carousel, best sellers, promo callouts, product shelves, and customer reviews.', 'cartvai-theme' ),
+			'categories'  => array( 'cartvai', 'featured' ),
+		),
+	);
+
+	foreach ( $pattern_files as $slug => $meta ) {
+		$file_path = $patterns_dir . $slug . '.php';
+		if ( file_exists( $file_path ) ) {
+			ob_start();
+			include $file_path;
+			$content = ob_get_clean();
+
+			// Strip PHP header docblock if present so only block comments remain
+			$content = preg_replace( '/<\?php[\s\S]*?\?>/i', '', $content );
+			$content = trim( $content );
+
+			if ( ! empty( $content ) ) {
+				register_block_pattern(
+					'cartvai-theme/' . $slug,
+					array(
+						'title'       => $meta['title'],
+						'description' => $meta['description'],
+						'categories'  => $meta['categories'],
+						'content'     => $content,
+					)
+				);
+			}
+		}
+	}
+}
+add_action( 'init', 'cartvai_theme_register_block_patterns' );
