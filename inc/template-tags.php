@@ -95,3 +95,74 @@ function cartvai_get_footer_style() {
 
 	return in_array( $style, $allowed, true ) ? $style : 'ecommerce';
 }
+
+/**
+ * Get preset default colors for a header style.
+ *
+ * @param string|null $header_style Optional header style slug.
+ * @return array
+ */
+function cartvai_get_header_preset_defaults( $header_style = null ) {
+	if ( empty( $header_style ) ) {
+		$header_style = cartvai_get_header_style();
+	}
+
+	switch ( $header_style ) {
+		case 'megastore':
+			return array(
+				'top_bar_bg'      => '#07241b',
+				'top_bar_text'    => '#d1fae5',
+				'main_bar_bg'     => '#0d3b2e',
+				'main_bar_border' => 'rgba(255, 255, 255, 0.08)',
+				'nav_bar_bg'      => '#0a2f24',
+				'nav_bar_border'  => 'rgba(255, 255, 255, 0.1)',
+				'nav_link_color'  => '#ffffff',
+				'nav_link_hover'  => '#fde68a',
+			);
+		case 'megabar':
+			return array(
+				'top_bar_bg'      => '#030712',
+				'top_bar_text'    => '#d1d5db',
+				'main_bar_bg'     => '#ffffff',
+				'main_bar_border' => '#e5e7eb',
+				'nav_bar_bg'      => '#0d3b2e',
+				'nav_bar_border'  => 'rgba(255, 255, 255, 0.1)',
+				'nav_link_color'  => '#ffffff',
+				'nav_link_hover'  => '#fde68a',
+			);
+		case 'ecommerce':
+		default:
+			return array(
+				'top_bar_bg'      => '#030712',
+				'top_bar_text'    => '#d1d5db',
+				'main_bar_bg'     => '#ffffff',
+				'main_bar_border' => '#e5e7eb',
+				'nav_bar_bg'      => '#ffffff',
+				'nav_bar_border'  => '#e5e7eb',
+				'nav_link_color'  => '#1e293b',
+				'nav_link_hover'  => '#2563eb',
+			);
+	}
+}
+
+/**
+ * Determine if a given hex color is dark.
+ *
+ * @param string $hex Hex color string.
+ * @return bool True if dark, false if light.
+ */
+function cartvai_is_dark_hex( $hex ) {
+	$hex = ltrim( trim( (string) $hex ), '#' );
+	if ( strlen( $hex ) === 3 ) {
+		$hex = $hex[0] . $hex[0] . $hex[1] . $hex[1] . $hex[2] . $hex[2];
+	}
+	if ( strlen( $hex ) !== 6 ) {
+		return true;
+	}
+	$r = hexdec( substr( $hex, 0, 2 ) );
+	$g = hexdec( substr( $hex, 2, 2 ) );
+	$b = hexdec( substr( $hex, 4, 2 ) );
+	$luminance = ( 0.299 * $r + 0.587 * $g + 0.114 * $b ) / 255;
+	return $luminance < 0.6;
+}
+

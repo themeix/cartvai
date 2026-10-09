@@ -241,6 +241,26 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Brand Tagline Toggle (Megastore Header)
+	$wp_customize->add_setting(
+		'cartvai_brand_tagline_enabled',
+		array(
+			'default'           => true,
+			'sanitize_callback' => 'rest_sanitize_boolean',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_brand_tagline_enabled',
+		array(
+			'label'       => esc_html__( 'Show Brand Tagline ("Official Megastore")', 'cartvai-theme' ),
+			'description' => esc_html__( 'Display the site description tagline under the site name in the megastore header.', 'cartvai-theme' ),
+			'section'     => 'cartvai_theme_header_footer',
+			'type'        => 'checkbox',
+		)
+	);
+
 	// Contact / Helpline
 	$wp_customize->add_setting(
 		'cartvai_contact_phone',
@@ -588,7 +608,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_top_bar_bg_color',
 		array(
-			'default'           => '#030712',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -608,7 +628,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_top_bar_text_color',
 		array(
-			'default'           => '#d1d5db',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -652,7 +672,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_main_bar_bg_color',
 		array(
-			'default'           => '#ffffff',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -672,7 +692,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_main_bar_border_color',
 		array(
-			'default'           => '#e5e7eb',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -716,7 +736,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_nav_bar_bg_color',
 		array(
-			'default'           => '#fbfcfd',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -736,7 +756,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_nav_bar_border_color',
 		array(
-			'default'           => '#e5e7eb',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -779,7 +799,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_nav_link_color',
 		array(
-			'default'           => '#1e293b',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -799,7 +819,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'cartvai_nav_link_hover_color',
 		array(
-			'default'           => '#2563eb',
+			'default'           => '',
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'refresh',
 			'capability'        => $cap,
@@ -904,6 +924,7 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'header_style'                     => 'cartvai_header_style',
 		'announcement_enabled'             => 'cartvai_announcement_enabled',
 		'announcement_text'                => 'cartvai_announcement_text',
+		'brand_tagline_enabled'            => 'cartvai_brand_tagline_enabled',
 		'contact_phone'                    => 'cartvai_contact_phone',
 		'contact_email'                    => 'cartvai_contact_email',
 		'popular_categories_enabled'       => 'cartvai_popular_categories_enabled',

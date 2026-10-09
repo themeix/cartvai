@@ -88,6 +88,7 @@ function cartvai_theme_render_settings_page() {
 			'header_order_track_label'           => isset( $_POST['header_order_track_label'] ) ? sanitize_text_field( wp_unslash( $_POST['header_order_track_label'] ) ) : 'Order Track',
 			'header_order_track_url'             => isset( $_POST['header_order_track_url'] ) ? esc_url_raw( wp_unslash( $_POST['header_order_track_url'] ) ) : '',
 			'header_more_enabled'                => ! empty( $_POST['header_more_enabled'] ) ? 1 : 0,
+			'brand_tagline_enabled'              => ! empty( $_POST['brand_tagline_enabled'] ) ? 1 : 0,
 
 			// Homepage Options
 			'homepage_hero_badge'                => isset( $_POST['homepage_hero_badge'] ) ? sanitize_text_field( wp_unslash( $_POST['homepage_hero_badge'] ) ) : '⚡ LIMITED TIME MEGA SALE • UP TO 50% OFF',
@@ -116,18 +117,18 @@ function cartvai_theme_render_settings_page() {
 
 			'homepage_trust_enabled'             => ! empty( $_POST['homepage_trust_enabled'] ) ? 1 : 0,
 
-			// Header & Navbar Styling
-			'top_bar_bg_color'                   => cartvai_theme_normalize_hex( $_POST['top_bar_bg_color'] ?? '#030712', '#030712' ),
-			'top_bar_text_color'                 => cartvai_theme_normalize_hex( $_POST['top_bar_text_color'] ?? '#d1d5db', '#d1d5db' ),
+			// Header & Navbar Styling (allows empty to preserve preset defaults)
+			'top_bar_bg_color'                   => isset( $_POST['top_bar_bg_color'] ) ? sanitize_hex_color( $_POST['top_bar_bg_color'] ) : '',
+			'top_bar_text_color'                 => isset( $_POST['top_bar_text_color'] ) ? sanitize_hex_color( $_POST['top_bar_text_color'] ) : '',
 			'top_bar_padding_y'                  => isset( $_POST['top_bar_padding_y'] ) ? max( 0, min( 40, (int) $_POST['top_bar_padding_y'] ) ) : 8,
-			'main_bar_bg_color'                  => cartvai_theme_normalize_hex( $_POST['main_bar_bg_color'] ?? '#ffffff', '#ffffff' ),
-			'main_bar_border_color'              => cartvai_theme_normalize_hex( $_POST['main_bar_border_color'] ?? '#e5e7eb', '#e5e7eb' ),
+			'main_bar_bg_color'                  => isset( $_POST['main_bar_bg_color'] ) ? sanitize_hex_color( $_POST['main_bar_bg_color'] ) : '',
+			'main_bar_border_color'              => isset( $_POST['main_bar_border_color'] ) ? sanitize_hex_color( $_POST['main_bar_border_color'] ) : '',
 			'main_bar_padding_y'                 => isset( $_POST['main_bar_padding_y'] ) ? max( 4, min( 60, (int) $_POST['main_bar_padding_y'] ) ) : 18,
-			'nav_bar_bg_color'                   => cartvai_theme_normalize_hex( $_POST['nav_bar_bg_color'] ?? '#fbfcfd', '#fbfcfd' ),
-			'nav_bar_border_color'               => cartvai_theme_normalize_hex( $_POST['nav_bar_border_color'] ?? '#e5e7eb', '#e5e7eb' ),
+			'nav_bar_bg_color'                   => isset( $_POST['nav_bar_bg_color'] ) ? sanitize_hex_color( $_POST['nav_bar_bg_color'] ) : '',
+			'nav_bar_border_color'               => isset( $_POST['nav_bar_border_color'] ) ? sanitize_hex_color( $_POST['nav_bar_border_color'] ) : '',
 			'nav_bar_padding_y'                  => isset( $_POST['nav_bar_padding_y'] ) ? max( 2, min( 40, (int) $_POST['nav_bar_padding_y'] ) ) : 13,
-			'nav_link_color'                     => cartvai_theme_normalize_hex( $_POST['nav_link_color'] ?? '#1e293b', '#1e293b' ),
-			'nav_link_hover_color'               => cartvai_theme_normalize_hex( $_POST['nav_link_hover_color'] ?? '#2563eb', '#2563eb' ),
+			'nav_link_color'                     => isset( $_POST['nav_link_color'] ) ? sanitize_hex_color( $_POST['nav_link_color'] ) : '',
+			'nav_link_hover_color'               => isset( $_POST['nav_link_hover_color'] ) ? sanitize_hex_color( $_POST['nav_link_hover_color'] ) : '',
 			'nav_link_gap'                       => isset( $_POST['nav_link_gap'] ) ? max( 8, min( 60, (int) $_POST['nav_link_gap'] ) ) : 28,
 			'nav_font_size'                      => isset( $_POST['nav_font_size'] ) ? max( 11, min( 22, (int) $_POST['nav_font_size'] ) ) : 14,
 			'nav_font_weight'                    => isset( $_POST['nav_font_weight'] ) ? sanitize_text_field( wp_unslash( $_POST['nav_font_weight'] ) ) : '600',
@@ -190,6 +191,7 @@ function cartvai_theme_render_settings_page() {
 		set_theme_mod( 'cartvai_header_order_track_label', $settings['header_order_track_label'] );
 		set_theme_mod( 'cartvai_header_order_track_url', $settings['header_order_track_url'] );
 		set_theme_mod( 'cartvai_header_more_enabled', (bool) $settings['header_more_enabled'] );
+		set_theme_mod( 'cartvai_brand_tagline_enabled', (bool) $settings['brand_tagline_enabled'] );
 		set_theme_mod( 'cartvai_footer_trust_enabled', (bool) $settings['footer_trust_enabled'] );
 		set_theme_mod( 'cartvai_footer_newsletter_enabled', (bool) $settings['footer_newsletter_enabled'] );
 		set_theme_mod( 'cartvai_contact_email', $settings['contact_email'] );
@@ -292,6 +294,7 @@ function cartvai_theme_render_settings_page() {
 	$header_order_track_label    = cartvai_theme_option( 'header_order_track_label', 'Order Track' );
 	$header_order_track_url      = cartvai_theme_option( 'header_order_track_url', '' );
 	$header_more_enabled         = (bool) cartvai_theme_option( 'header_more_enabled', true );
+	$brand_tagline_enabled       = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );
 
 	// Homepage Options
 	$homepage_hero_badge      = cartvai_theme_option( 'homepage_hero_badge', '⚡ LIMITED TIME MEGA SALE • UP TO 50% OFF' );
@@ -321,20 +324,36 @@ function cartvai_theme_render_settings_page() {
 	$homepage_trust_enabled   = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 
 	// Header & Navbar Styling
-	$top_bar_bg_color       = cartvai_theme_option( 'top_bar_bg_color', '#030712' );
-	$top_bar_text_color     = cartvai_theme_option( 'top_bar_text_color', '#d1d5db' );
+	$header_style_val       = cartvai_get_header_style();
+	$header_presets         = function_exists( 'cartvai_get_header_preset_defaults' ) ? cartvai_get_header_preset_defaults( $header_style_val ) : array();
+
+	$top_bar_bg_color       = cartvai_theme_option( 'top_bar_bg_color', '' );
+	$top_bar_text_color     = cartvai_theme_option( 'top_bar_text_color', '' );
 	$top_bar_padding_y      = (int) cartvai_theme_option( 'top_bar_padding_y', 8 );
-	$main_bar_bg_color      = cartvai_theme_option( 'main_bar_bg_color', '#ffffff' );
-	$main_bar_border_color  = cartvai_theme_option( 'main_bar_border_color', '#e5e7eb' );
+	$main_bar_bg_color      = cartvai_theme_option( 'main_bar_bg_color', '' );
+	$main_bar_border_color  = cartvai_theme_option( 'main_bar_border_color', '' );
 	$main_bar_padding_y     = (int) cartvai_theme_option( 'main_bar_padding_y', 18 );
-	$nav_bar_bg_color       = cartvai_theme_option( 'nav_bar_bg_color', '#fbfcfd' );
-	$nav_bar_border_color   = cartvai_theme_option( 'nav_bar_border_color', '#e5e7eb' );
+	$nav_bar_bg_color       = cartvai_theme_option( 'nav_bar_bg_color', '' );
+	$nav_bar_border_color   = cartvai_theme_option( 'nav_bar_border_color', '' );
 	$nav_bar_padding_y      = (int) cartvai_theme_option( 'nav_bar_padding_y', 13 );
-	$nav_link_color         = cartvai_theme_option( 'nav_link_color', '#1e293b' );
-	$nav_link_hover_color   = cartvai_theme_option( 'nav_link_hover_color', '#2563eb' );
+	$nav_link_color         = cartvai_theme_option( 'nav_link_color', '' );
+	$nav_link_hover_color   = cartvai_theme_option( 'nav_link_hover_color', '' );
 	$nav_link_gap           = (int) cartvai_theme_option( 'nav_link_gap', 28 );
 	$nav_font_size          = (int) cartvai_theme_option( 'nav_font_size', 14 );
 	$nav_font_weight        = cartvai_theme_option( 'nav_font_weight', '600' );
+
+	// Filter out old accidental white values for megastore
+	if ( 'megastore' === $header_style_val ) {
+		if ( in_array( strtolower( (string) $main_bar_bg_color ), array( '#ffffff', '#fff' ), true ) ) {
+			$main_bar_bg_color = '';
+		}
+		if ( in_array( strtolower( (string) $nav_bar_bg_color ), array( '#fbfcfd', '#ffffff', '#fff' ), true ) ) {
+			$nav_bar_bg_color = '';
+		}
+		if ( in_array( strtolower( (string) $nav_link_color ), array( '#1e293b' ), true ) ) {
+			$nav_link_color = '';
+		}
+	}
 
 	$footer_trust_enabled      = (bool) cartvai_theme_option( 'footer_trust_enabled', true );
 	$footer_trust_1_title      = cartvai_theme_option( 'footer_trust_1_title', 'Free Fast Shipping' );
@@ -767,6 +786,18 @@ function cartvai_theme_render_settings_page() {
 									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Customer Support Phone / Hotline', 'cartvai-theme' ); ?></label>
 									<input type="text" name="contact_phone" value="<?php echo esc_attr( $contact_phone ); ?>" style="width: 100%; max-width: 380px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
+
+								<!-- Brand Tagline Toggle -->
+								<div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid #f1f5f9;">
+									<div>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show Brand Tagline ("Official Megastore")', 'cartvai-theme' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display the site description tagline under the site name in the megastore header.', 'cartvai-theme' ); ?></span>
+									</div>
+									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
+										<input type="checkbox" name="brand_tagline_enabled" value="1" <?php checked( $brand_tagline_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
+										<span class="cartvai-toggle-switch__track" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: <?php echo $brand_tagline_enabled ? '#2563eb' : '#cbd5e1'; ?>; transition: .2s; border-radius: 9999px;"></span>
+									</label>
+								</div>
 							</div>
 						</div>
 
@@ -839,20 +870,20 @@ function cartvai_theme_render_settings_page() {
 								<!-- Top Bar Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Background of the top announcement band.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $top_bar_bg_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="top_bar_bg_color" value="<?php echo esc_attr( $top_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $top_bar_bg_color ?: ( $header_presets['top_bar_bg'] ?? '#030712' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="top_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['top_bar_bg'] ?? '#030712' ); ?>" value="<?php echo esc_attr( $top_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
 								<!-- Top Bar Text Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Text & Links', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color for text, icons, and phone link in top bar.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $top_bar_text_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="top_bar_text_color" value="<?php echo esc_attr( $top_bar_text_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $top_bar_text_color ?: ( $header_presets['top_bar_text'] ?? '#d1d5db' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="top_bar_text_color" placeholder="<?php echo esc_attr( $header_presets['top_bar_text'] ?? '#d1d5db' ); ?>" value="<?php echo esc_attr( $top_bar_text_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -866,10 +897,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Main Header Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color behind logo, search bar, and cart.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $main_bar_bg_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="main_bar_bg_color" value="<?php echo esc_attr( $main_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $main_bar_bg_color ?: ( $header_presets['main_bar_bg'] ?? '#ffffff' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="main_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['main_bar_bg'] ?? '#ffffff' ); ?>" value="<?php echo esc_attr( $main_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -878,8 +909,8 @@ function cartvai_theme_render_settings_page() {
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Border Color', 'cartvai-theme' ); ?></label>
 									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Bottom border divider line color.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $main_bar_border_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="main_bar_border_color" value="<?php echo esc_attr( $main_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $main_bar_border_color ?: ( $header_presets['main_bar_border'] ?? '#e5e7eb' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="main_bar_border_color" placeholder="<?php echo esc_attr( $header_presets['main_bar_border'] ?? '#e5e7eb' ); ?>" value="<?php echo esc_attr( $main_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -903,10 +934,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Navbar Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Background of the secondary navigation bar.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $nav_bar_bg_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="nav_bar_bg_color" value="<?php echo esc_attr( $nav_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $nav_bar_bg_color ?: ( $header_presets['nav_bar_bg'] ?? '#0d3b2e' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="nav_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['nav_bar_bg'] ?? '#0d3b2e' ); ?>" value="<?php echo esc_attr( $nav_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -915,8 +946,8 @@ function cartvai_theme_render_settings_page() {
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Border Color', 'cartvai-theme' ); ?></label>
 									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top border dividing main header and navbar.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $nav_bar_border_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="nav_bar_border_color" value="<?php echo esc_attr( $nav_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $nav_bar_border_color ?: ( $header_presets['nav_bar_border'] ?? 'rgba(255,255,255,0.1)' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="nav_bar_border_color" placeholder="<?php echo esc_attr( $header_presets['nav_bar_border'] ?? 'rgba(255,255,255,0.1)' ); ?>" value="<?php echo esc_attr( $nav_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
@@ -930,20 +961,20 @@ function cartvai_theme_render_settings_page() {
 								<!-- Nav Link Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Default text color of menu links.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $nav_link_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="nav_link_color" value="<?php echo esc_attr( $nav_link_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $nav_link_color ?: ( $header_presets['nav_link_color'] ?? '#ffffff' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="nav_link_color" placeholder="<?php echo esc_attr( $header_presets['nav_link_color'] ?? '#ffffff' ); ?>" value="<?php echo esc_attr( $nav_link_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 
 								<!-- Nav Link Hover Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
 									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Hover Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color when hovering or active menu link.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
-										<input type="color" value="<?php echo esc_attr( $nav_link_hover_color ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
-										<input type="text" name="nav_link_hover_color" value="<?php echo esc_attr( $nav_link_hover_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
+										<input type="color" value="<?php echo esc_attr( $nav_link_hover_color ?: ( $header_presets['nav_link_hover'] ?? '#fde68a' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
+										<input type="text" name="nav_link_hover_color" placeholder="<?php echo esc_attr( $header_presets['nav_link_hover'] ?? '#fde68a' ); ?>" value="<?php echo esc_attr( $nav_link_hover_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 									</div>
 								</div>
 

@@ -40,24 +40,63 @@ function cartvai_theme_scripts() {
 
 		// Header & Navbar Styling Tokens
 		$header_style    = cartvai_get_header_style();
-		$is_dark_navbar  = in_array( $header_style, array( 'megabar', 'megastore' ), true );
-		$default_nav_bg  = $is_dark_navbar ? '#0d3b2e' : '#fbfcfd';
-		$default_nav_lnk = $is_dark_navbar ? '#ffffff' : '#1e293b';
+		$presets         = function_exists( 'cartvai_get_header_preset_defaults' )
+			? cartvai_get_header_preset_defaults( $header_style )
+			: array(
+				'top_bar_bg'      => '#030712',
+				'top_bar_text'    => '#d1d5db',
+				'main_bar_bg'     => '#ffffff',
+				'main_bar_border' => '#e5e7eb',
+				'nav_bar_bg'      => '#ffffff',
+				'nav_bar_border'  => '#e5e7eb',
+				'nav_link_color'  => '#1e293b',
+				'nav_link_hover'  => '#2563eb',
+			);
 
-		$top_bar_bg      = cartvai_theme_option( 'top_bar_bg_color', '#030712' );
-		$top_bar_text    = cartvai_theme_option( 'top_bar_text_color', '#d1d5db' );
+		$custom_top_bg   = cartvai_theme_option( 'top_bar_bg_color', '' );
+		$custom_top_text = cartvai_theme_option( 'top_bar_text_color', '' );
+		$custom_main_bg  = cartvai_theme_option( 'main_bar_bg_color', '' );
+		$custom_main_bdr = cartvai_theme_option( 'main_bar_border_color', '' );
+		$custom_nav_bg   = cartvai_theme_option( 'nav_bar_bg_color', '' );
+		$custom_nav_bdr  = cartvai_theme_option( 'nav_bar_border_color', '' );
+		$custom_nav_lnk  = cartvai_theme_option( 'nav_link_color', '' );
+		$custom_nav_hvr  = cartvai_theme_option( 'nav_link_hover_color', '' );
+
+		// Recovery guard: if previous faulty form submission saved '#ffffff' for megastore, restore preset
+		if ( 'megastore' === $header_style ) {
+			if ( in_array( strtolower( (string) $custom_main_bg ), array( '#ffffff', '#fff' ), true ) ) {
+				$custom_main_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_nav_bg ), array( '#fbfcfd', '#ffffff', '#fff' ), true ) ) {
+				$custom_nav_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_nav_lnk ), array( '#1e293b' ), true ) ) {
+				$custom_nav_lnk = '';
+			}
+		}
+
+		$top_bar_bg      = ! empty( $custom_top_bg ) ? $custom_top_bg : $presets['top_bar_bg'];
+		$top_bar_text    = ! empty( $custom_top_text ) ? $custom_top_text : $presets['top_bar_text'];
 		$top_bar_py      = (int) cartvai_theme_option( 'top_bar_padding_y', 8 );
-		$main_bar_bg     = cartvai_theme_option( 'main_bar_bg_color', '#ffffff' );
-		$main_bar_border = cartvai_theme_option( 'main_bar_border_color', '#e5e7eb' );
+
+		$main_bar_bg     = ! empty( $custom_main_bg ) ? $custom_main_bg : $presets['main_bar_bg'];
+		$main_bar_border = ! empty( $custom_main_bdr ) ? $custom_main_bdr : $presets['main_bar_border'];
 		$main_bar_py     = (int) cartvai_theme_option( 'main_bar_padding_y', 18 );
-		$nav_bar_bg      = cartvai_theme_option( 'nav_bar_bg_color', $default_nav_bg );
-		$nav_bar_border  = cartvai_theme_option( 'nav_bar_border_color', $is_dark_navbar ? 'rgba(255, 255, 255, 0.1)' : '#e5e7eb' );
+
+		$nav_bar_bg      = ! empty( $custom_nav_bg ) ? $custom_nav_bg : $presets['nav_bar_bg'];
+		$nav_bar_border  = ! empty( $custom_nav_bdr ) ? $custom_nav_bdr : $presets['nav_bar_border'];
 		$nav_bar_py      = (int) cartvai_theme_option( 'nav_bar_padding_y', 13 );
-		$nav_link_color  = cartvai_theme_option( 'nav_link_color', $default_nav_lnk );
-		$nav_link_hover  = cartvai_theme_option( 'nav_link_hover_color', $is_dark_navbar ? '#fde68a' : '#2563eb' );
+
+		$nav_link_color  = ! empty( $custom_nav_lnk ) ? $custom_nav_lnk : $presets['nav_link_color'];
+		$nav_link_hover  = ! empty( $custom_nav_hvr ) ? $custom_nav_hvr : $presets['nav_link_hover'];
 		$nav_link_gap    = (int) cartvai_theme_option( 'nav_link_gap', 28 );
 		$nav_font_size   = (int) cartvai_theme_option( 'nav_font_size', 14 );
 		$nav_font_weight = cartvai_theme_option( 'nav_font_weight', '600' );
+
+		// Adaptive main bar text & tagline tokens
+		$is_dark_main_bg  = function_exists( 'cartvai_is_dark_hex' ) ? cartvai_is_dark_hex( $main_bar_bg ) : true;
+		$main_bar_text    = $is_dark_main_bg ? '#ffffff' : '#0f172a';
+		$main_bar_tagline = $is_dark_main_bg ? '#fcd34d' : '#d97706';
 
 		// Footer Styling Tokens
 		$footer_bg_color       = cartvai_theme_option( 'footer_bg_color', '#030712' );
@@ -90,6 +129,8 @@ function cartvai_theme_scripts() {
 			"--cv-top-bar-text: {$top_bar_text}; " .
 			"--cv-top-bar-py: {$top_bar_py}px; " .
 			"--cv-main-bar-bg: {$main_bar_bg}; " .
+			"--cv-main-bar-text: {$main_bar_text}; " .
+			"--cv-main-bar-tagline: {$main_bar_tagline}; " .
 			"--cv-main-bar-border: {$main_bar_border}; " .
 			"--cv-main-bar-py: {$main_bar_py}px; " .
 			"--cv-nav-bar-bg: {$nav_bar_bg}; " .

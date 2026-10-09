@@ -30,6 +30,7 @@ $header_order_track_label   = cartvai_theme_option( 'header_order_track_label', 
 $header_order_track_url     = cartvai_theme_option( 'header_order_track_url', '' );
 $order_track_url            = ! empty( $header_order_track_url ) ? $header_order_track_url : $checkout_url;
 $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled', true );
+$brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );
 ?>
 <header class="cv-header-megastore cv:sticky cv:top-0 cv:z-40 cv:shadow-md">
 	<!-- Top Announcement Bar -->
@@ -69,18 +70,20 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 					<?php if ( has_custom_logo() ) : ?>
 						<div class="cv-site-logo cv-site-logo--light cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
 					<?php else : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-megastore-brand cv:inline-flex cv:flex-col">
-							<span class="cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-white cv:leading-none">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-megastore-brand cv:inline-flex cv:flex-col" style="color: var(--cv-main-bar-text, #ffffff);">
+							<span class="cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:leading-none cv-megastore-title" style="color: var(--cv-main-bar-text, #ffffff);">
 								<?php bloginfo( 'name' ); ?>
 							</span>
-							<span class="cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:text-amber-300/90 cv:mt-1">
-								<?php esc_html_e( 'Official Megastore', 'cartvai-theme' ); ?>
-							</span>
+							<?php if ( $brand_tagline_enabled ) : ?>
+								<span class="cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv-megastore-tagline" style="color: var(--cv-main-bar-tagline, #fcd34d);">
+									<?php esc_html_e( 'Official Megastore', 'cartvai-theme' ); ?>
+								</span>
+							<?php endif; ?>
 						</a>
 					<?php endif; ?>
 				</div>
 
-				<!-- Wide Rounded White Search Bar -->
+				<!-- Wide Rounded Search Bar -->
 				<div class="cv:hidden cv:md:flex cv:flex-1 cv:max-w-2xl cv:mx-auto">
 					<form role="search" method="get" class="cv-megastore-search cv:w-full cv:relative" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 						<input type="hidden" name="post_type" value="cartvai_product" />
@@ -94,7 +97,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 								value="<?php echo get_search_query(); ?>"
 								placeholder="<?php echo esc_attr( sprintf( /* translators: %s: site name */ __( 'Search in %s...', 'cartvai-theme' ), get_bloginfo( 'name' ) ) ); ?>"
 								aria-label="<?php esc_attr_e( 'Search products', 'cartvai-theme' ); ?>"
-								class="cv-megastore-search-input cv:w-full cv:h-11 cv:pl-11 cv:pr-24 cv:rounded-xl cv:bg-white cv:text-gray-900 cv:text-sm cv:font-medium cv:border-0 focus:cv:outline-none focus:cv:ring-2 focus:cv:ring-amber-400 cv:shadow-sm"
+								class="cv-megastore-search-input cv:w-full cv:h-11 cv:pl-11 cv:pr-24 cv:rounded-xl cv:bg-white cv:text-gray-900 cv:text-sm cv:font-medium cv:border cv:border-gray-200 focus:cv:outline-none focus:cv:ring-2 focus:cv:ring-amber-400 cv:shadow-xs"
 							/>
 							<button type="submit" class="cv-megastore-search-btn cv:absolute cv:right-1.5 cv:h-8 cv:px-3.5 cv:rounded-lg cv:text-xs cv:font-bold cv:text-white cv:transition-colors">
 								<?php esc_html_e( 'Search', 'cartvai-theme' ); ?>
@@ -106,7 +109,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 				<!-- Stacked Utility Actions (Account, Cart, Mobile Toggle) -->
 				<div class="cv:flex cv:items-center cv:gap-2 cv:sm:gap-5 cv:shrink-0">
 					<!-- Account / Sign In -->
-					<a href="<?php echo esc_url( $account_url ); ?>" class="cv-megastore-action cv:hidden cv:lg:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl cv:text-white/90 hover:cv:text-white hover:cv:bg-white/10 cv:transition-all">
+					<a href="<?php echo esc_url( $account_url ); ?>" class="cv-megastore-action cv:hidden cv:lg:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl hover:cv:bg-white/10 cv:transition-all" style="color: var(--cv-main-bar-text, #ffffff);">
 						<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
 						</svg>
@@ -117,7 +120,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 
 					<!-- Cart Trigger with Vibrant Badge -->
 					<div class="cartvai-header-cart-slot cv:relative cv:inline-flex cv:items-center">
-						<button type="button" id="cartvaiMiniCartTrigger" class="cv-megastore-action cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl cv:text-white hover:cv:bg-white/10 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai-theme' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>">
+						<button type="button" id="cartvaiMiniCartTrigger" class="cv-megastore-action cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl hover:cv:bg-white/10 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai-theme' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
 							<div class="cv:relative">
 								<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -132,7 +135,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 
 					<!-- More / Mobile Drawer Toggle -->
 					<?php if ( $header_more_enabled ) : ?>
-						<button type="button" class="cv-mobile-menu-toggle cv-megastore-action cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl cv:text-white/90 hover:cv:text-white hover:cv:bg-white/10 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai-theme' ); ?>">
+						<button type="button" class="cv-mobile-menu-toggle cv-megastore-action cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl hover:cv:bg-white/10 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai-theme' ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
 							<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'More', 'cartvai-theme' ); ?></span>
 						</button>

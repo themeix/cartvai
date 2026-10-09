@@ -286,7 +286,16 @@ nav[aria-label="Breadcrumb"] a:hover {
 
 .cv-megastore-main {
   background: var(--cv-main-bar-bg, linear-gradient(135deg, #0d3b2e 0%, #114738 100%));
-  color: #ffffff;
+  color: var(--cv-main-bar-text, #ffffff);
+  border-bottom: 1px solid var(--cv-main-bar-border, rgba(255, 255, 255, 0.08));
+}
+
+.cv-megastore-brand {
+  color: var(--cv-main-bar-text, #ffffff) !important;
+}
+
+.cv-megastore-action {
+  color: var(--cv-main-bar-text, #ffffff) !important;
 }
 
 .cv-megastore-search-btn {
