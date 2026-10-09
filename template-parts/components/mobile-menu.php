@@ -17,12 +17,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $contact_phone               = cartvai_theme_option( 'contact_phone', '+1 (800) 123-4567' );
-$header_order_track_enabled  = (bool) cartvai_theme_option( 'header_order_track_enabled', false );
-$header_order_track_label    = cartvai_theme_option( 'header_order_track_label', 'Order Track' );
-$header_order_track_url      = cartvai_theme_option( 'header_order_track_url', '' );
-if ( empty( $header_order_track_url ) ) {
-	$header_order_track_url = home_url( '/checkout/' );
-}
 
 $cart_url     = home_url( '/cart/' );
 $shop_url     = home_url( '/shop/' );

@@ -5,8 +5,8 @@
 @source "../../../../plugins/cartvai-ecommerce/**/*.php";
 
 @theme {
-  --color-primary: var(--cartvai-primary, #059669);
-  --color-primary-hover: var(--cartvai-primary-hover, #047857);
+  --color-primary: var(--cartvai-primary, #2563eb);
+  --color-primary-hover: var(--cartvai-primary-hover, #1d4ed8);
 }
 
 /* Base Theme Global Typography & Links */
@@ -301,13 +301,13 @@ nav[aria-label="Breadcrumb"] a:hover {
    ========================================================================== */
 
 .cv-megastore-top-bar {
-  background-color: var(--cv-top-bar-bg, #07241b);
-  color: var(--cv-top-bar-text, #d1fae5);
+  background-color: var(--cv-top-bar-bg, #0b192c);
+  color: var(--cv-top-bar-text, #dbeafe);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cv-megastore-main {
-  background: var(--cv-main-bar-bg, linear-gradient(135deg, #0d3b2e 0%, #114738 100%));
+  background: var(--cv-main-bar-bg, linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%));
   color: var(--cv-main-bar-text, #ffffff);
   border-bottom: 1px solid var(--cv-main-bar-border, rgba(255, 255, 255, 0.08));
 }
@@ -321,26 +321,26 @@ nav[aria-label="Breadcrumb"] a:hover {
 }
 
 .cv-megastore-search-btn {
-  background-color: var(--cartvai-primary, #0d3b2e);
+  background-color: var(--cartvai-primary, #2563eb);
 }
 
 .cv-megastore-search-btn:hover {
-  background-color: var(--cartvai-primary-hover, #145945);
+  background-color: var(--cartvai-primary-hover, #1d4ed8);
 }
 
 .cv-megastore-navbar {
-  background-color: var(--cv-nav-bar-bg, #0a2f24);
+  background-color: var(--cv-nav-bar-bg, #172554);
   border-top: none;
-  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.15));
+  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(255, 255, 255, 0.1));
   padding-top: var(--cv-nav-bar-py, 2px);
   padding-bottom: var(--cv-nav-bar-py, 2px);
   position: relative;
 }
 
 .cv-header-megabar .cv-megastore-navbar {
-  background-color: var(--cv-nav-bar-bg, #0d3b2e) !important;
+  background-color: var(--cv-nav-bar-bg, #1e40af) !important;
   border-top: none;
-  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.1));
+  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(255, 255, 255, 0.1));
 }
 
 .cv-mega-nav-item {
@@ -1266,7 +1266,7 @@ nav[aria-label="Breadcrumb"] a:hover {
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-primary, #059669);
+  color: var(--color-primary, #2563eb);
   margin-bottom: 0.125rem;
 }
 
@@ -1287,7 +1287,7 @@ nav[aria-label="Breadcrumb"] a:hover {
   display: inline-block;
   width: 4px;
   height: 1.25rem;
-  background-color: var(--color-primary, #059669);
+  background-color: var(--color-primary, #2563eb);
   border-radius: 9999px;
 }
 
@@ -1316,11 +1316,11 @@ nav[aria-label="Breadcrumb"] a:hover {
 }
 
 .cv-shelf-link:hover {
-  background-color: var(--color-primary, #059669);
-  border-color: var(--color-primary, #059669);
+  background-color: var(--color-primary, #2563eb);
+  border-color: var(--color-primary, #2563eb);
   color: #ffffff !important;
   transform: translateX(2px);
-  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.18);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
 }
 
 .cv-shelf-rating-pill {
@@ -2140,7 +2140,7 @@ table#wp-calendar tbody td:first-child {
 .wp-block-calendar tbody td a,
 table#wp-calendar tbody td a {
   font-weight: 700 !important;
-  color: var(--color-primary, #059669) !important;
+  color: var(--color-primary, #2563eb) !important;
   text-decoration: underline !important;
   text-underline-offset: 2px !important;
 }
@@ -2149,7 +2149,7 @@ table#wp-calendar tbody td a {
 table#wp-calendar td#today {
   background: #eff6ff !important;
   font-weight: 800 !important;
-  color: var(--color-primary, #059669) !important;
+  color: var(--color-primary, #2563eb) !important;
 }
 
 .wp-block-calendar .wp-calendar-nav,
@@ -2164,7 +2164,7 @@ table#wp-calendar td#today {
 
 .wp-block-calendar .wp-calendar-nav a,
 .wp-calendar-nav a {
-  color: var(--color-primary, #059669) !important;
+  color: var(--color-primary, #2563eb) !important;
   text-decoration: none !important;
 }
 

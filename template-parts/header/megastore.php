@@ -25,10 +25,6 @@ $cart_url     = home_url( '/cart/' );
 $checkout_url = home_url( '/checkout/' );
 $account_url  = is_user_logged_in() ? admin_url( 'profile.php' ) : wp_login_url( get_permalink() );
 
-$header_order_track_enabled = (bool) cartvai_theme_option( 'header_order_track_enabled', false );
-$header_order_track_label   = cartvai_theme_option( 'header_order_track_label', 'Order Track' );
-$header_order_track_url     = cartvai_theme_option( 'header_order_track_url', '' );
-$order_track_url            = ! empty( $header_order_track_url ) ? $header_order_track_url : $checkout_url;
 $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled', true );
 $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );
 ?>
@@ -67,16 +63,30 @@ $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enable
 			<div class="cv:flex cv:items-center cv:justify-between cv:gap-4 cv:lg:gap-8">
 				<!-- Brand Logo -->
 				<div class="cv:min-w-0 cv:shrink-0">
+					<?php
+					$site_tagline = get_bloginfo( 'description' );
+					$show_tagline = $brand_tagline_enabled && ( function_exists( 'display_header_text' ) ? display_header_text() : true );
+					if ( empty( $site_tagline ) && $brand_tagline_enabled ) {
+						$site_tagline = __( 'Official Megastore', 'cartvai' );
+					}
+					?>
 					<?php if ( has_custom_logo() ) : ?>
-						<div class="cv-site-logo cv-site-logo--light cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
+						<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
+							<div class="cv-site-logo cv-site-logo--light cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
+							<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv-megastore-tagline cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight hover:cv:opacity-85 cv:transition-opacity" style="color: var(--cv-main-bar-tagline, #fcd34d);">
+									<?php echo esc_html( $site_tagline ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
 					<?php else : ?>
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-megastore-brand cv:inline-flex cv:flex-col" style="color: var(--cv-main-bar-text, #ffffff);">
-							<span class="cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:leading-none cv-megastore-title" style="color: var(--cv-main-bar-text, #ffffff);">
+							<span class="cv-site-title cv-megastore-title cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:leading-none" style="color: var(--cv-main-bar-text, #ffffff);">
 								<?php bloginfo( 'name' ); ?>
 							</span>
-							<?php if ( $brand_tagline_enabled ) : ?>
-								<span class="cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv-megastore-tagline" style="color: var(--cv-main-bar-tagline, #fcd34d);">
-									<?php esc_html_e( 'Official Megastore', 'cartvai' ); ?>
+							<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+								<span class="cv-site-description cv-megastore-tagline cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight" style="color: var(--cv-main-bar-tagline, #fcd34d);">
+									<?php echo esc_html( $site_tagline ); ?>
 								</span>
 							<?php endif; ?>
 						</a>

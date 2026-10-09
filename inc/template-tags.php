@@ -193,14 +193,14 @@ function cartvai_get_header_preset_defaults( $header_style = null ) {
 	switch ( $header_style ) {
 		case 'megastore':
 			return array(
-				'top_bar_bg'      => '#07241b',
-				'top_bar_text'    => '#d1fae5',
-				'main_bar_bg'     => '#0d3b2e',
-				'main_bar_border' => 'rgba(255, 255, 255, 0.08)',
-				'nav_bar_bg'      => '#0a2f24',
-				'nav_bar_border'  => 'rgba(0, 0, 0, 0.15)',
+				'top_bar_bg'      => '#0b192c',
+				'top_bar_text'    => '#dbeafe',
+				'main_bar_bg'     => '#1e40af',
+				'main_bar_border' => 'rgba(255, 255, 255, 0.1)',
+				'nav_bar_bg'      => '#172554',
+				'nav_bar_border'  => 'rgba(255, 255, 255, 0.1)',
 				'nav_link_color'  => '#ffffff',
-				'nav_link_hover'  => '#fde68a',
+				'nav_link_hover'  => '#93c5fd',
 			);
 		case 'megabar':
 			return array(
@@ -208,10 +208,10 @@ function cartvai_get_header_preset_defaults( $header_style = null ) {
 				'top_bar_text'    => '#d1d5db',
 				'main_bar_bg'     => '#ffffff',
 				'main_bar_border' => '#e5e7eb',
-				'nav_bar_bg'      => '#0d3b2e',
+				'nav_bar_bg'      => '#1e40af',
 				'nav_bar_border'  => 'rgba(255, 255, 255, 0.1)',
 				'nav_link_color'  => '#ffffff',
-				'nav_link_hover'  => '#fde68a',
+				'nav_link_hover'  => '#93c5fd',
 			);
 		case 'ecommerce':
 		default:

@@ -62,13 +62,19 @@ function cartvai_theme_scripts() {
 		$custom_nav_lnk  = cartvai_theme_option( 'nav_link_color', '' );
 		$custom_nav_hvr  = cartvai_theme_option( 'nav_link_hover_color', '' );
 
-		// Recovery guard: if previous faulty form submission saved '#ffffff' or light borders for megastore, restore preset
+		// Recovery guard: if previous faulty form submission saved '#ffffff', light borders, or old green tones for megastore, restore preset
 		if ( 'megastore' === $header_style ) {
-			if ( in_array( strtolower( (string) $custom_main_bg ), array( '#ffffff', '#fff' ), true ) ) {
+			if ( in_array( strtolower( (string) $custom_main_bg ), array( '#ffffff', '#fff', '#0d3b2e', '#114738' ), true ) ) {
 				$custom_main_bg = '';
 			}
-			if ( in_array( strtolower( (string) $custom_nav_bg ), array( '#fbfcfd', '#ffffff', '#fff' ), true ) ) {
+			if ( in_array( strtolower( (string) $custom_nav_bg ), array( '#fbfcfd', '#ffffff', '#fff', '#0a2f24', '#0d3b2e' ), true ) ) {
 				$custom_nav_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_top_bg ), array( '#07241b' ), true ) ) {
+				$custom_top_bg = '';
+			}
+			if ( in_array( strtolower( (string) $custom_top_text ), array( '#d1fae5' ), true ) ) {
+				$custom_top_text = '';
 			}
 			if ( in_array( strtolower( (string) $custom_nav_lnk ), array( '#1e293b' ), true ) ) {
 				$custom_nav_lnk = '';
@@ -105,7 +111,7 @@ function cartvai_theme_scripts() {
 		}
 
 		$nav_bar_border  = ! empty( $custom_nav_bdr ) ? $custom_nav_bdr : $presets['nav_bar_border'];
-		$nav_bar_py      = (int) cartvai_theme_option( 'nav_bar_padding_y', 13 );
+		$nav_bar_py      = (int) cartvai_theme_option( 'nav_bar_padding_y', 3 );
 
 		$nav_link_color  = ! empty( $custom_nav_lnk ) ? $custom_nav_lnk : $presets['nav_link_color'];
 		$nav_link_hover  = ! empty( $custom_nav_hvr ) ? $custom_nav_hvr : $presets['nav_link_hover'];

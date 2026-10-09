@@ -24,11 +24,8 @@ $cart_url     = home_url( '/cart/' );
 $checkout_url = home_url( '/checkout/' );
 $account_url  = is_user_logged_in() ? admin_url( 'profile.php' ) : wp_login_url( get_permalink() );
 
-$header_order_track_enabled = (bool) cartvai_theme_option( 'header_order_track_enabled', false );
-$header_order_track_label   = cartvai_theme_option( 'header_order_track_label', 'Track Order' );
-$header_order_track_url     = cartvai_theme_option( 'header_order_track_url', '' );
-$order_track_url            = ! empty( $header_order_track_url ) ? $header_order_track_url : $checkout_url;
 $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled', true );
+$brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );
 ?>
 <header class="cv-header-megabar cv:bg-white cv:sticky cv:top-0 cv:z-40 cv:shadow-sm">
 	<!-- Top Announcement Bar -->
@@ -36,7 +33,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 		<div class="cv-top-bar cv:bg-gray-950 cv:text-gray-300 cv:text-xs cv:py-2 cv:px-4">
 			<div class="cv:max-w-7xl cv:mx-auto cv:flex cv:items-center cv:justify-between cv:gap-4">
 				<div class="cv:flex cv:items-center cv:gap-2">
-					<span class="cv:inline-block cv:w-2 cv:h-2 cv:rounded-full cv:bg-emerald-400 cv:animate-pulse"></span>
+					<span class="cv:inline-block cv:w-2 cv:h-2 cv:rounded-full cv:bg-amber-400 cv:animate-pulse"></span>
 					<span class="cv:font-medium"><?php echo esc_html( $announcement_text ); ?></span>
 				</div>
 				<div class="cv:hidden cv:md:flex cv:items-center cv:gap-6 cv:text-gray-400">
@@ -65,11 +62,32 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 			<div class="cv:flex cv:items-center cv:justify-between cv:gap-4 cv:lg:gap-8">
 				<!-- Logo -->
 				<div class="cv:min-w-0 cv:shrink-0">
+					<?php
+					$site_tagline = get_bloginfo( 'description' );
+					$show_tagline = $brand_tagline_enabled && ( function_exists( 'display_header_text' ) ? display_header_text() : true );
+					if ( empty( $site_tagline ) && $brand_tagline_enabled ) {
+						$site_tagline = __( 'Official Store', 'cartvai' );
+					}
+					?>
 					<?php if ( has_custom_logo() ) : ?>
-						<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
+						<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
+							<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
+							<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 hover:cv:text-gray-900 cv:transition-colors">
+									<?php echo esc_html( $site_tagline ); ?>
+								</a>
+							<?php endif; ?>
+						</div>
 					<?php else : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-block cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 hover:cv:text-primary cv:transition-colors">
-							<?php bloginfo( 'name' ); ?>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-flex cv:flex-col">
+							<span class="cv-site-title cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 hover:cv:text-primary cv:transition-colors">
+								<?php bloginfo( 'name' ); ?>
+							</span>
+							<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+								<span class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500">
+									<?php echo esc_html( $site_tagline ); ?>
+								</span>
+							<?php endif; ?>
 						</a>
 					<?php endif; ?>
 				</div>
@@ -96,7 +114,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 								<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
 								</svg>
-								<span class="cartvai-mini-cart-count-badge cv:absolute cv:-top-2 cv:-right-2.5 cv:inline-flex cv:items-center cv:justify-center cv:min-w-[18px] cv:h-[18px] cv:px-1 cv:rounded-full cv:bg-emerald-600 cv:text-white cv:text-[10px] cv:font-extrabold cv:leading-none" data-cartvai-mini-cart-count data-cartvai-count <?php echo $cart_count > 0 ? '' : 'style="display:none;"'; ?>>
+								<span class="cartvai-mini-cart-count-badge cv:absolute cv:-top-2 cv:-right-2.5 cv:inline-flex cv:items-center cv:justify-center cv:min-w-[18px] cv:h-[18px] cv:px-1 cv:rounded-full cv:bg-blue-600 cv:text-white cv:text-[10px] cv:font-extrabold cv:leading-none" data-cartvai-mini-cart-count data-cartvai-count <?php echo $cart_count > 0 ? '' : 'style="display:none;"'; ?>>
 									<?php echo esc_html( $cart_count ); ?>
 								</span>
 							</div>

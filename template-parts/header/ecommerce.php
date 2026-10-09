@@ -41,7 +41,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 		<div class="cv-top-bar cv:bg-gray-950 cv:text-gray-300 cv:text-xs cv:py-2 cv:px-4">
 			<div class="cv:max-w-7xl cv:mx-auto cv:flex cv:items-center cv:justify-between cv:gap-4">
 				<div class="cv:flex cv:items-center cv:gap-2">
-					<span class="cv:inline-block cv:w-2 cv:h-2 cv:rounded-full cv:bg-emerald-400 cv:animate-pulse"></span>
+					<span class="cv:inline-block cv:w-2 cv:h-2 cv:rounded-full cv:bg-amber-400 cv:animate-pulse"></span>
 					<span class="cv:font-medium"><?php echo esc_html( $announcement_text ); ?></span>
 				</div>
 				<div class="cv:hidden cv:md:flex cv:items-center cv:gap-6 cv:text-gray-400">
@@ -69,11 +69,33 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 		<div class="cv:flex cv:items-center cv:justify-between cv:gap-4 cv:sm:gap-8">
 			<!-- Logo -->
 			<div class="cv:min-w-0 cv:flex-1 cv:md:flex-initial cv:md:shrink-0">
+				<?php
+				$brand_tagline_enabled = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );
+				$site_tagline          = get_bloginfo( 'description' );
+				$show_tagline          = $brand_tagline_enabled && ( function_exists( 'display_header_text' ) ? display_header_text() : true );
+				if ( empty( $site_tagline ) && $brand_tagline_enabled ) {
+					$site_tagline = __( 'Official Store', 'cartvai' );
+				}
+				?>
 				<?php if ( has_custom_logo() ) : ?>
-					<div class="cv-site-logo cv:max-w-[190px] cv:sm:max-w-[250px]"><?php the_custom_logo(); ?></div>
+					<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
+						<div class="cv-site-logo cv:max-w-[190px] cv:sm:max-w-[250px]"><?php the_custom_logo(); ?></div>
+						<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 hover:cv:text-gray-900 cv:transition-colors">
+								<?php echo esc_html( $site_tagline ); ?>
+							</a>
+						<?php endif; ?>
+					</div>
 				<?php else : ?>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-block cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 hover:cv:text-primary cv:transition-colors cv:break-words cv:line-clamp-2 cv:leading-tight">
-						<?php bloginfo( 'name' ); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-flex cv:flex-col">
+						<span class="cv-site-title cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 hover:cv:text-primary cv:transition-colors cv:break-words cv:line-clamp-2 cv:leading-tight">
+							<?php bloginfo( 'name' ); ?>
+						</span>
+						<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
+							<span class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500">
+								<?php echo esc_html( $site_tagline ); ?>
+							</span>
+						<?php endif; ?>
 					</a>
 				<?php endif; ?>
 			</div>
