@@ -260,6 +260,28 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Contact / Support Email
+	$wp_customize->add_setting(
+		'cartvai_contact_email',
+		array(
+			'default'           => 'support@cartvai.com',
+			'sanitize_callback' => 'sanitize_email',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_contact_email',
+		array(
+			'label'       => esc_html__( 'Support Email Address', 'cartvai-theme' ),
+			'section'     => 'cartvai_theme_header_footer',
+			'type'        => 'email',
+			'input_attrs' => array(
+				'placeholder' => 'support@cartvai.com',
+			),
+		)
+	);
+
 	// Order Track Button Visibility
 	$wp_customize->add_setting(
 		'cartvai_header_order_track_enabled',
@@ -883,6 +905,7 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'announcement_enabled'             => 'cartvai_announcement_enabled',
 		'announcement_text'                => 'cartvai_announcement_text',
 		'contact_phone'                    => 'cartvai_contact_phone',
+		'contact_email'                    => 'cartvai_contact_email',
 		'popular_categories_enabled'       => 'cartvai_popular_categories_enabled',
 		'footer_style'                     => 'cartvai_footer_style',
 		'footer_trust_enabled'             => 'cartvai_footer_trust_enabled',

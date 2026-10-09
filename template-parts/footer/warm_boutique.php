@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $about_text    = cartvai_theme_option( 'footer_about_text', __( 'Timeless elegance, crafted for you.', 'cartvai-theme' ) );
 $contact_phone = cartvai_theme_option( 'contact_phone', '+880 1885-132466' );
-$contact_email = cartvai_theme_option( 'contact_email', get_bloginfo( 'admin_email' ) );
+$contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $store_address = cartvai_theme_option( 'footer_store_address', 'Dhaka, Bangladesh' );
 
 // Copyright template tags replacement

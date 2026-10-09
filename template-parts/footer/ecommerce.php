@@ -22,7 +22,7 @@ $newsletter_title   = cartvai_theme_option( 'footer_newsletter_title', __( 'Get 
 $newsletter_desc    = cartvai_theme_option( 'footer_newsletter_desc', __( 'Subscribe for insider deals, new drop alerts, and VIP discounts.', 'cartvai-theme' ) );
 $about_text         = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
 $contact_phone      = cartvai_theme_option( 'contact_phone', '+1 (800) 123-4567' );
-$contact_email      = cartvai_theme_option( 'contact_email', get_bloginfo( 'admin_email' ) );
+$contact_email      = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $security_note      = cartvai_theme_option( 'footer_security_note', __( 'Guaranteed Safe Checkout', 'cartvai-theme' ) );
 
 // Trust badges
@@ -211,7 +211,7 @@ $copyright_text = str_replace(
 						<?php echo esc_html( $newsletter_desc ); ?>
 					</p>
 					<form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');" class="cv:space-y-2">
-						<input type="email" placeholder="<?php esc_attr_e( 'Your email address', 'cartvai-theme' ); ?>" class="cv:w-full cv:h-10 cv:px-3.5 cv:rounded-lg cv:bg-gray-900 cv:border cv:border-gray-800 cv:text-xs cv:text-white focus:cv:border-primary focus:cv:outline-none" required />
+						<input type="email" placeholder="<?php echo esc_attr( ! empty( $contact_email ) ? $contact_email : 'support@cartvai.com' ); ?>" class="cv:w-full cv:h-10 cv:px-3.5 cv:rounded-lg cv:bg-gray-900 cv:border cv:border-gray-800 cv:text-xs cv:text-white focus:cv:border-primary focus:cv:outline-none" required />
 						<button type="submit" class="cv:w-full cv:h-10 cv:rounded-lg cv:bg-primary cv:text-white cv:text-xs cv:font-semibold hover:cv:bg-primary-hover cv:transition-colors">
 							<?php esc_html_e( 'Subscribe', 'cartvai-theme' ); ?>
 						</button>

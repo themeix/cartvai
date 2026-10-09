@@ -352,7 +352,7 @@ function cartvai_theme_render_settings_page() {
 
 	$footer_about_text         = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
 	$footer_store_address      = cartvai_theme_option( 'footer_store_address', 'Level-5, Noor Tower, 110 Bir Uttam CR Dutta Rd, Dhaka 1205' );
-	$contact_email             = cartvai_theme_option( 'contact_email', get_bloginfo( 'admin_email' ) );
+	$contact_email             = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 	$footer_security_note      = cartvai_theme_option( 'footer_security_note', 'Guaranteed Safe Checkout' );
 	$footer_copyright_text     = cartvai_theme_option( 'footer_copyright_text', '© {year} {site_name}. All rights reserved.' );
 	$footer_bg_color           = cartvai_theme_option( 'footer_bg_color', '' );
@@ -1086,7 +1086,7 @@ function cartvai_theme_render_settings_page() {
 								<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 									<div>
 										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Support Email Address', 'cartvai-theme' ); ?></label>
-										<input type="email" name="contact_email" value="<?php echo esc_attr( $contact_email ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
+										<input type="email" name="contact_email" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="support@cartvai.com" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 									</div>
 									<div>
 										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Safe Checkout Note', 'cartvai-theme' ); ?></label>

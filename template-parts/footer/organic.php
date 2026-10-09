@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $about_text    = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
 $contact_phone = cartvai_theme_option( 'contact_phone', '09678812525' );
-$contact_email = cartvai_theme_option( 'contact_email', get_bloginfo( 'admin_email' ) );
+$contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $store_address = cartvai_theme_option( 'footer_store_address', 'Level-5, Noor Tower, 110 Bir Uttam CR Dutta Rd, Dhaka 1205' );
 
 // Copyright template tags replacement
