@@ -33,6 +33,20 @@ a {
   transition: color 0.15s ease;
 }
 
+/* ==========================================================================
+   Footer Dynamic Styling from Theme Settings / Customizer
+   ========================================================================== */
+footer.cv-footer-ecommerce,
+footer.cv-footer-organic,
+footer.cv-footer-warm-boutique,
+footer.cv-footer-minimal,
+footer.cv-footer-centered,
+footer.cv-site-footer {
+  background-color: var(--cv-footer-bg, #030712) !important;
+  color: var(--cv-footer-text, #94a3b8) !important;
+  border-color: var(--cv-footer-border, #1f2937) !important;
+}
+
 .cv-footer-ecommerce h2,
 .cv-footer-ecommerce h3,
 .cv-footer-ecommerce h4,
@@ -44,7 +58,10 @@ a {
 .cv-footer-minimal h4,
 .cv-footer-organic h2,
 .cv-footer-organic h3,
-.cv-footer-organic h4 {
+.cv-footer-organic h4,
+.cv-site-footer h2,
+.cv-site-footer h3,
+.cv-site-footer h4 {
   color: var(--cv-footer-heading, #ffffff) !important;
 }
 
@@ -68,6 +85,24 @@ a {
   line-height: 1rem !important;
 }
 
+.cv-footer-ecommerce a,
+.cv-footer-organic a,
+.cv-footer-warm-boutique a,
+.cv-footer-minimal a,
+.cv-footer-centered a,
+.cv-site-footer a {
+  color: var(--cv-footer-link, #d1d5db);
+}
+
+.cv-footer-ecommerce a:hover,
+.cv-footer-organic a:hover,
+.cv-footer-warm-boutique a:hover,
+.cv-footer-minimal a:hover,
+.cv-footer-centered a:hover,
+.cv-site-footer a:hover {
+  color: var(--cartvai-primary, #ffffff);
+}
+
 .cv-footer-ecommerce .cv-sub-footer,
 .cv-footer-ecommerce .cv-sub-footer p,
 .cv-footer-ecommerce .cv-sub-footer div,
@@ -76,8 +111,18 @@ a {
 .cv-footer-centered .cv-sub-footer div,
 .cv-footer-minimal .cv-sub-footer,
 .cv-footer-minimal .cv-sub-footer p,
-.cv-footer-minimal .cv-sub-footer div {
-  color: #94a3b8 !important;
+.cv-footer-minimal .cv-sub-footer div,
+.cv-footer-organic .cv-sub-footer,
+.cv-footer-organic .cv-sub-footer p,
+.cv-footer-organic .cv-sub-footer div,
+.cv-footer-warm-boutique .cv-sub-footer,
+.cv-footer-warm-boutique .cv-sub-footer p,
+.cv-footer-warm-boutique .cv-sub-footer div,
+.cv-site-footer .cv-sub-footer,
+.cv-site-footer .cv-sub-footer p,
+.cv-site-footer .cv-sub-footer div {
+  background-color: var(--cv-footer-sub-bg, #020617) !important;
+  color: var(--cv-footer-text, #94a3b8) !important;
 }
 
 /* ==========================================================================
@@ -234,34 +279,37 @@ nav[aria-label="Breadcrumb"] a:hover {
    ========================================================================== */
 
 .cv-megastore-top-bar {
-  background-color: #07241b;
-  color: #d1fae5;
+  background-color: var(--cv-top-bar-bg, #07241b);
+  color: var(--cv-top-bar-text, #d1fae5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .cv-megastore-main {
-  background: linear-gradient(135deg, #0d3b2e 0%, #114738 100%);
+  background: var(--cv-main-bar-bg, linear-gradient(135deg, #0d3b2e 0%, #114738 100%));
   color: #ffffff;
 }
 
 .cv-megastore-search-btn {
-  background-color: #0d3b2e;
+  background-color: var(--cartvai-primary, #0d3b2e);
 }
 
 .cv-megastore-search-btn:hover {
-  background-color: #145945;
+  background-color: var(--cartvai-primary-hover, #145945);
 }
 
 .cv-megastore-navbar {
-  background-color: #0a2f24;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  background-color: var(--cv-nav-bar-bg, #0a2f24);
+  border-top: 1px solid var(--cv-nav-bar-border, rgba(255, 255, 255, 0.1));
+  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.18));
+  padding-top: var(--cv-nav-bar-py, 13px);
+  padding-bottom: var(--cv-nav-bar-py, 13px);
   position: relative;
 }
 
 .cv-header-megabar .cv-megastore-navbar {
-  background-color: #0d3b2e;
+  background-color: var(--cv-nav-bar-bg, #0d3b2e) !important;
   border-top: none;
+  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.1));
 }
 
 .cv-mega-nav-item {
@@ -269,7 +317,9 @@ nav[aria-label="Breadcrumb"] a:hover {
 }
 
 .cv-mega-nav-link {
-  color: rgba(255, 255, 255, 0.92) !important;
+  color: var(--cv-nav-link-color, rgba(255, 255, 255, 0.92)) !important;
+  font-size: var(--cv-nav-font-size, 14px);
+  font-weight: var(--cv-nav-font-weight, 600);
   position: relative;
   white-space: nowrap;
   outline: none;
@@ -284,7 +334,7 @@ nav[aria-label="Breadcrumb"] a:hover {
 .cv-mega-nav-item:hover > .cv-mega-nav-link,
 .cv-mega-nav-item:focus-within > .cv-mega-nav-link,
 .cv-mega-nav-item.is-active > .cv-mega-nav-link {
-  color: #ffffff !important;
+  color: var(--cv-nav-link-hover, #ffffff) !important;
   background-color: rgba(255, 255, 255, 0.1);
 }
 

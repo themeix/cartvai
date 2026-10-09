@@ -39,48 +39,40 @@ function cartvai_theme_scripts() {
 		$bg_color      = cartvai_theme_option( 'bg_color', '#f8fafc' );
 
 		// Header & Navbar Styling Tokens
+		$header_style    = cartvai_get_header_style();
+		$is_dark_navbar  = in_array( $header_style, array( 'megabar', 'megastore' ), true );
+		$default_nav_bg  = $is_dark_navbar ? '#0d3b2e' : '#fbfcfd';
+		$default_nav_lnk = $is_dark_navbar ? '#ffffff' : '#1e293b';
+
 		$top_bar_bg      = cartvai_theme_option( 'top_bar_bg_color', '#030712' );
 		$top_bar_text    = cartvai_theme_option( 'top_bar_text_color', '#d1d5db' );
 		$top_bar_py      = (int) cartvai_theme_option( 'top_bar_padding_y', 8 );
 		$main_bar_bg     = cartvai_theme_option( 'main_bar_bg_color', '#ffffff' );
 		$main_bar_border = cartvai_theme_option( 'main_bar_border_color', '#e5e7eb' );
 		$main_bar_py     = (int) cartvai_theme_option( 'main_bar_padding_y', 18 );
-		$nav_bar_bg      = cartvai_theme_option( 'nav_bar_bg_color', '#fbfcfd' );
-		$nav_bar_border  = cartvai_theme_option( 'nav_bar_border_color', '#e5e7eb' );
+		$nav_bar_bg      = cartvai_theme_option( 'nav_bar_bg_color', $default_nav_bg );
+		$nav_bar_border  = cartvai_theme_option( 'nav_bar_border_color', $is_dark_navbar ? 'rgba(255, 255, 255, 0.1)' : '#e5e7eb' );
 		$nav_bar_py      = (int) cartvai_theme_option( 'nav_bar_padding_y', 13 );
-		$nav_link_color  = cartvai_theme_option( 'nav_link_color', '#1e293b' );
-		$nav_link_hover  = cartvai_theme_option( 'nav_link_hover_color', '#2563eb' );
+		$nav_link_color  = cartvai_theme_option( 'nav_link_color', $default_nav_lnk );
+		$nav_link_hover  = cartvai_theme_option( 'nav_link_hover_color', $is_dark_navbar ? '#fde68a' : '#2563eb' );
 		$nav_link_gap    = (int) cartvai_theme_option( 'nav_link_gap', 28 );
 		$nav_font_size   = (int) cartvai_theme_option( 'nav_font_size', 14 );
 		$nav_font_weight = cartvai_theme_option( 'nav_font_weight', '600' );
 
 		// Footer Styling Tokens
-		$footer_bg_color       = cartvai_theme_option( 'footer_bg_color', '' );
-		$footer_text_color     = cartvai_theme_option( 'footer_text_color', '' );
-		$footer_heading_color  = cartvai_theme_option( 'footer_heading_color', '' );
-		$footer_link_color     = cartvai_theme_option( 'footer_link_color', '' );
-		$footer_border_color   = cartvai_theme_option( 'footer_border_color', '' );
-		$footer_sub_bg_color   = cartvai_theme_option( 'footer_sub_bg_color', '' );
+		$footer_bg_color       = cartvai_theme_option( 'footer_bg_color', '#030712' );
+		$footer_text_color     = cartvai_theme_option( 'footer_text_color', '#94a3b8' );
+		$footer_heading_color  = cartvai_theme_option( 'footer_heading_color', '#ffffff' );
+		$footer_link_color     = cartvai_theme_option( 'footer_link_color', '#d1d5db' );
+		$footer_border_color   = cartvai_theme_option( 'footer_border_color', '#1f2937' );
+		$footer_sub_bg_color   = cartvai_theme_option( 'footer_sub_bg_color', '#020617' );
 
-		$footer_tokens = '';
-		if ( ! empty( $footer_bg_color ) ) {
-			$footer_tokens .= "--cv-footer-bg: {$footer_bg_color}; ";
-		}
-		if ( ! empty( $footer_text_color ) ) {
-			$footer_tokens .= "--cv-footer-text: {$footer_text_color}; ";
-		}
-		if ( ! empty( $footer_heading_color ) ) {
-			$footer_tokens .= "--cv-footer-heading: {$footer_heading_color}; ";
-		}
-		if ( ! empty( $footer_link_color ) ) {
-			$footer_tokens .= "--cv-footer-link: {$footer_link_color}; ";
-		}
-		if ( ! empty( $footer_border_color ) ) {
-			$footer_tokens .= "--cv-footer-border: {$footer_border_color}; ";
-		}
-		if ( ! empty( $footer_sub_bg_color ) ) {
-			$footer_tokens .= "--cv-footer-sub-bg: {$footer_sub_bg_color}; ";
-		}
+		$footer_tokens  = "--cv-footer-bg: {$footer_bg_color}; ";
+		$footer_tokens .= "--cv-footer-text: {$footer_text_color}; ";
+		$footer_tokens .= "--cv-footer-heading: {$footer_heading_color}; ";
+		$footer_tokens .= "--cv-footer-link: {$footer_link_color}; ";
+		$footer_tokens .= "--cv-footer-border: {$footer_border_color}; ";
+		$footer_tokens .= "--cv-footer-sub-bg: {$footer_sub_bg_color}; ";
 
 		$theme_tokens  = ":root { " .
 			"--cartvai-primary: {$primary_color}; " .
