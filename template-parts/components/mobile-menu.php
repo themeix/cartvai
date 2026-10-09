@@ -38,7 +38,7 @@ $has_primary   = has_nav_menu( 'primary' );
 <div id="cv-mobile-overlay" class="cv:fixed cv:inset-0 cv:bg-gray-950/60 cv:backdrop-blur-sm cv:z-[99998] cv:opacity-0 cv:pointer-events-none cv:transition-opacity cv:duration-300" aria-hidden="true"></div>
 
 <!-- Mobile & More Navigation Drawer -->
-<div id="cv-mobile-drawer" class="cv-more-drawer cv:fixed cv:inset-y-0 cv:left-0 cv:w-full cv:max-w-sm cv:bg-white cv:z-[99999] cv:shadow-2xl cv:transform cv:-translate-x-full cv:transition-transform cv:duration-300 cv:ease-out cv:flex cv:flex-col cv:overflow-hidden" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Menu Drawer', 'cartvai-theme' ); ?>">
+<div id="cv-mobile-drawer" class="cv-more-drawer cv:fixed cv:inset-y-0 cv:left-0 cv:w-full cv:max-w-sm cv:bg-white cv:z-[99999] cv:shadow-2xl cv:transform cv:-translate-x-full cv:transition-transform cv:duration-300 cv:ease-out cv:flex cv:flex-col cv:overflow-hidden" aria-hidden="true" inert role="dialog" aria-modal="true" aria-label="<?php esc_attr_e( 'Menu Drawer', 'cartvai' ); ?>">
 
 	<!-- Drawer Header Bar -->
 	<div class="cv-drawer-header cv:flex cv:items-center cv:justify-between cv:px-5 cv:py-4 cv:bg-slate-900 cv:text-white cv:border-b cv:border-slate-800">
@@ -48,10 +48,10 @@ $has_primary   = has_nav_menu( 'primary' );
 			</div>
 			<div>
 				<span class="cv:font-bold cv:text-base cv:block cv:leading-tight"><?php bloginfo( 'name' ); ?></span>
-				<span class="cv:text-[11px] cv:text-slate-400 cv:block"><?php esc_html_e( 'Store Navigation', 'cartvai-theme' ); ?></span>
+				<span class="cv:text-[11px] cv:text-slate-400 cv:block"><?php esc_html_e( 'Store Navigation', 'cartvai' ); ?></span>
 			</div>
 		</div>
-		<button type="button" id="cv-mobile-close" class="cv:w-8 cv:h-8 cv:rounded-lg cv:bg-white/10 hover:cv:bg-white/20 cv:text-slate-300 hover:cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="<?php esc_attr_e( 'Close menu', 'cartvai-theme' ); ?>">
+		<button type="button" id="cv-mobile-close" class="cv:w-8 cv:h-8 cv:rounded-lg cv:bg-white/10 hover:cv:bg-white/20 cv:text-slate-300 hover:cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="<?php esc_attr_e( 'Close menu', 'cartvai' ); ?>">
 			<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
 		</button>
 	</div>
@@ -68,7 +68,7 @@ $has_primary   = has_nav_menu( 'primary' );
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
 			</svg>
 			<span class="cv:text-[11px] cv:font-semibold cv:leading-none">
-				<?php echo is_user_logged_in() ? esc_html__( 'Account', 'cartvai-theme' ) : esc_html__( 'Sign In', 'cartvai-theme' ); ?>
+				<?php echo is_user_logged_in() ? esc_html__( 'Account', 'cartvai' ) : esc_html__( 'Sign In', 'cartvai' ); ?>
 			</span>
 		</a>
 
@@ -81,7 +81,7 @@ $has_primary   = has_nav_menu( 'primary' );
 					<?php echo esc_html( $cart_count ); ?>
 				</span>
 			</div>
-			<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'My Cart', 'cartvai-theme' ); ?></span>
+			<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'My Cart', 'cartvai' ); ?></span>
 		</a>
 	</div>
 
@@ -92,9 +92,9 @@ $has_primary   = has_nav_menu( 'primary' );
 		<?php if ( $has_more_menu ) : ?>
 			<div class="cv-drawer-section">
 				<div class="cv:text-[11px] cv:font-bold cv:uppercase cv:tracking-wider cv:text-slate-400 cv:px-2 cv:mb-1.5">
-					<?php esc_html_e( 'Explore & More', 'cartvai-theme' ); ?>
+					<?php esc_html_e( 'Explore & More', 'cartvai' ); ?>
 				</div>
-				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'More Menu', 'cartvai-theme' ); ?>">
+				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'More Menu', 'cartvai' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
@@ -113,9 +113,9 @@ $has_primary   = has_nav_menu( 'primary' );
 		<?php if ( $has_megamenu ) : ?>
 			<div class="cv-drawer-section">
 				<div class="cv:text-[11px] cv:font-bold cv:uppercase cv:tracking-wider cv:text-slate-400 cv:px-2 cv:mb-1.5">
-					<?php esc_html_e( 'Product Categories', 'cartvai-theme' ); ?>
+					<?php esc_html_e( 'Product Categories', 'cartvai' ); ?>
 				</div>
-				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'Categories Menu', 'cartvai-theme' ); ?>">
+				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'Categories Menu', 'cartvai' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
@@ -134,9 +134,9 @@ $has_primary   = has_nav_menu( 'primary' );
 		<?php if ( $has_primary && ( ! $has_more_menu || ! $has_megamenu ) ) : ?>
 			<div class="cv-drawer-section">
 				<div class="cv:text-[11px] cv:font-bold cv:uppercase cv:tracking-wider cv:text-slate-400 cv:px-2 cv:mb-1.5">
-					<?php esc_html_e( 'Main Menu', 'cartvai-theme' ); ?>
+					<?php esc_html_e( 'Main Menu', 'cartvai' ); ?>
 				</div>
-				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'cartvai-theme' ); ?>">
+				<nav class="cv-mobile-nav" aria-label="<?php esc_attr_e( 'Primary Menu', 'cartvai' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
@@ -164,7 +164,7 @@ $has_primary   = has_nav_menu( 'primary' );
 			</a>
 		<?php endif; ?>
 		<span class="cv:text-[10px] cv:font-semibold cv:text-slate-400 cv:uppercase cv:tracking-wider">
-			<?php esc_html_e( 'Official Store', 'cartvai-theme' ); ?>
+			<?php esc_html_e( 'Official Store', 'cartvai' ); ?>
 		</span>
 	</div>
 

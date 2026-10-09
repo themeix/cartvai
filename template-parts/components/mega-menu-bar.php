@@ -71,11 +71,11 @@ $has_settings_fn = class_exists( 'CARTVAI_Settings' );
 			<span class="cv-mega-nav-link cv:inline-flex cv:items-center cv:gap-2 cv:px-3.5 cv:py-1.5 cv:rounded-lg cv:text-sm cv:font-semibold cv:text-amber-300 cv:bg-amber-900/40 cv:border cv:border-amber-600/40">
 				<svg class="cv:w-4 cv:h-4 cv:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
 				<span>
-					<?php esc_html_e( 'Admin tip: Go to', 'cartvai-theme' ); ?>
+					<?php esc_html_e( 'Admin tip: Go to', 'cartvai' ); ?>
 					<a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>" class="cv:underline hover:cv:text-white" style="color:inherit;">
-						<?php esc_html_e( 'Appearance → Menus', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Appearance → Menus', 'cartvai' ); ?>
 					</a>
-					<?php esc_html_e( '→ assign a menu to "Mega Menu Bar" to control these nav items.', 'cartvai-theme' ); ?>
+					<?php esc_html_e( '→ assign a menu to "Mega Menu Bar" to control these nav items.', 'cartvai' ); ?>
 				</span>
 			</span>
 		</li>
@@ -194,7 +194,7 @@ $has_settings_fn = class_exists( 'CARTVAI_Settings' );
 							<?php endif; ?>
 						</div>
 						<a href="<?php echo esc_url( $item_url ); ?>" class="cv-mega-view-all">
-							<span><?php esc_html_e( 'View All', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'View All', 'cartvai' ); ?></span>
 							<svg class="cv:w-4 cv:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
 						</a>
 					</div>

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$about_text    = cartvai_theme_option( 'footer_about_text', __( 'Timeless elegance, crafted for you.', 'cartvai-theme' ) );
+$about_text    = cartvai_theme_option( 'footer_about_text', __( 'Timeless elegance, crafted for you.', 'cartvai' ) );
 $contact_phone = cartvai_theme_option( 'contact_phone', '+880 1885-132466' );
 $contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $store_address = cartvai_theme_option( 'footer_store_address', 'Dhaka, Bangladesh' );
@@ -75,7 +75,7 @@ $copyright_text = str_replace(
 					<?php dynamic_sidebar( 'footer-2' ); ?>
 				<?php elseif ( has_nav_menu( 'footer_col_1' ) ) : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'Shop', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Shop', 'cartvai' ); ?>
 					</h3>
 					<?php
 					wp_nav_menu(
@@ -89,14 +89,14 @@ $copyright_text = str_replace(
 					?>
 				<?php else : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'Shop', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Shop', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2 cv:text-xs cv:list-none cv:p-0 cv:m-0">
-						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Necklaces', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Earrings', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Rings', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Bracelets', 'cartvai-theme' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Necklaces', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Earrings', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Rings', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Bracelets', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -107,7 +107,7 @@ $copyright_text = str_replace(
 					<?php dynamic_sidebar( 'footer-3' ); ?>
 				<?php elseif ( has_nav_menu( 'footer_col_2' ) ) : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'Customer Care', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Customer Care', 'cartvai' ); ?>
 					</h3>
 					<?php
 					wp_nav_menu(
@@ -121,14 +121,14 @@ $copyright_text = str_replace(
 					?>
 				<?php else : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'Customer Care', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Customer Care', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2 cv:text-xs cv:list-none cv:p-0 cv:m-0">
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'FAQs', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Shipping Policy', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Return & Refund', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai-theme' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'FAQs', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Shipping Policy', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Return & Refund', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -139,7 +139,7 @@ $copyright_text = str_replace(
 					<?php dynamic_sidebar( 'footer-4' ); ?>
 				<?php elseif ( has_nav_menu( 'footer_col_3' ) ) : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'About Us', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'About Us', 'cartvai' ); ?>
 					</h3>
 					<?php
 					wp_nav_menu(
@@ -153,14 +153,14 @@ $copyright_text = str_replace(
 					?>
 				<?php else : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'About Us', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'About Us', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2 cv:text-xs cv:list-none cv:p-0 cv:m-0">
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Our Story', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Why Choose Us', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Care Guide', 'cartvai-theme' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Size Guide', 'cartvai-theme' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Track Order', 'cartvai-theme' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Our Story', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Why Choose Us', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Care Guide', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Size Guide', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="hover:cv:text-stone-950 cv:transition-colors"><?php esc_html_e( 'Track Order', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -171,7 +171,7 @@ $copyright_text = str_replace(
 					<?php dynamic_sidebar( 'footer-5' ); ?>
 				<?php else : ?>
 					<h3 class="cv:text-xs cv:font-bold cv:uppercase cv:tracking-widest cv:text-stone-900 cv:mb-4" style="color: var(--cv-footer-heading, #1c1917);">
-						<?php esc_html_e( 'Contact Us', 'cartvai-theme' ); ?>
+						<?php esc_html_e( 'Contact Us', 'cartvai' ); ?>
 					</h3>
 
 					<?php if ( ! empty( $contact_phone ) ) : ?>

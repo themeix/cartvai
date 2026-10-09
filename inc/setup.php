@@ -10,6 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 function cartvai_theme_setup() {
+	// Make theme available for translation.
+	load_theme_textdomain( 'cartvai', get_template_directory() . '/languages' );
+
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -27,13 +30,13 @@ function cartvai_theme_setup() {
 	// Register Navigation Menus.
 	register_nav_menus(
 		array(
-			'primary'            => esc_html__( 'Primary Menu', 'cartvai-theme' ),
-			'megamenu'           => esc_html__( 'Mega Menu Bar (Colorful Category Nav)', 'cartvai-theme' ),
-			'more_menu'          => esc_html__( 'More Menu (Header "More" Drawer & Links)', 'cartvai-theme' ),
-			'footer'             => esc_html__( 'Footer Menu (Sub-footer Row)', 'cartvai-theme' ),
-			'footer_col_1'       => esc_html__( 'Footer Column 1 (e.g. Quick Links / Shop)', 'cartvai-theme' ),
-			'footer_col_2'       => esc_html__( 'Footer Column 2 (e.g. Useful Links / Care)', 'cartvai-theme' ),
-			'footer_col_3'       => esc_html__( 'Footer Column 3 (e.g. Help Center / Support)', 'cartvai-theme' ),
+			'primary'            => esc_html__( 'Primary Menu', 'cartvai' ),
+			'megamenu'           => esc_html__( 'Mega Menu Bar (Colorful Category Nav)', 'cartvai' ),
+			'more_menu'          => esc_html__( 'More Menu (Header "More" Drawer & Links)', 'cartvai' ),
+			'footer'             => esc_html__( 'Footer Menu (Sub-footer Row)', 'cartvai' ),
+			'footer_col_1'       => esc_html__( 'Footer Column 1 (e.g. Quick Links / Shop)', 'cartvai' ),
+			'footer_col_2'       => esc_html__( 'Footer Column 2 (e.g. Useful Links / Care)', 'cartvai' ),
+			'footer_col_3'       => esc_html__( 'Footer Column 3 (e.g. Help Center / Support)', 'cartvai' ),
 		)
 	);
 
@@ -108,7 +111,7 @@ function cartvai_theme_register_block_styles() {
 			'core/button',
 			array(
 				'name'  => 'cartvai-pill',
-				'label' => esc_html__( 'Cartvai Pill', 'cartvai-theme' ),
+				'label' => esc_html__( 'Cartvai Pill', 'cartvai' ),
 			)
 		);
 
@@ -116,7 +119,7 @@ function cartvai_theme_register_block_styles() {
 			'core/group',
 			array(
 				'name'  => 'cartvai-card',
-				'label' => esc_html__( 'Cartvai Card', 'cartvai-theme' ),
+				'label' => esc_html__( 'Cartvai Card', 'cartvai' ),
 			)
 		);
 	}

@@ -17,7 +17,7 @@ require_once get_template_directory() . '/inc/tgm/class-tgm-plugin-activation.ph
 function cartvai_theme_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'             => esc_html__( 'Cartvai – Ecommerce Checkout, Funnel Builder & Shop Manager', 'cartvai-theme' ),
+			'name'             => esc_html__( 'Cartvai – Ecommerce Checkout, Funnel Builder & Shop Manager', 'cartvai' ),
 			'slug'             => 'cartvai-ecommerce',
 			'required'         => true,
 			'force_activation' => false,
@@ -25,7 +25,7 @@ function cartvai_theme_register_required_plugins() {
 	);
 
 	$config = array(
-		'id'           => 'cartvai-theme',
+		'id'           => 'cartvai',
 		'default_path' => '',
 		'menu'         => 'tgmpa-install-plugins',
 		'parent_slug'  => 'themes.php',

@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	if ( empty( $meta_description ) ) {
 		$meta_description = sprintf(
 			/* translators: %s: site name */
-			esc_html__( 'Discover top quality products and fast shipping at %s.', 'cartvai-theme' ),
+			esc_html__( 'Discover top quality products and fast shipping at %s.', 'cartvai' ),
 			get_bloginfo( 'name' )
 		);
 	}
@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div id="page" class="cv-site cv:min-h-screen cv:flex cv:flex-col">
 	<a class="skip-link screen-reader-text cv:sr-only focus:cv:not-sr-only focus:cv:fixed focus:cv:top-4 focus:cv:left-4 focus:cv:z-[999999] focus:cv:p-4 focus:cv:bg-white focus:cv:text-gray-900 focus:cv:rounded-xl focus:cv:shadow-2xl focus:cv:font-bold focus:cv:outline-2 focus:cv:outline-primary" href="#primary">
-		<?php esc_html_e( 'Skip to content', 'cartvai-theme' ); ?>
+		<?php esc_html_e( 'Skip to content', 'cartvai' ); ?>
 	</a>
 
 	<?php

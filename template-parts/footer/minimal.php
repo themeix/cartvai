@@ -18,11 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8">
 		<div class="cv:flex cv:flex-col cv:sm:flex-row cv:items-center cv:justify-between cv:gap-4">
 			<div class="cv:text-xs cv:text-gray-500">
-				&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'cartvai-theme' ); ?>
+				&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All rights reserved.', 'cartvai' ); ?>
 			</div>
 
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="cv-footer-nav" aria-label="<?php esc_attr_e( 'Footer Navigation', 'cartvai-theme' ); ?>">
+				<nav class="cv-footer-nav" aria-label="<?php esc_attr_e( 'Footer Navigation', 'cartvai' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(

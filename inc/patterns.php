@@ -20,7 +20,7 @@ function cartvai_theme_register_block_patterns() {
 	register_block_pattern_category(
 		'cartvai',
 		array(
-			'label' => esc_html__( 'Cartvai', 'cartvai-theme' ),
+			'label' => esc_html__( 'Cartvai', 'cartvai' ),
 		)
 	);
 
@@ -28,38 +28,38 @@ function cartvai_theme_register_block_patterns() {
 
 	$pattern_files = array(
 		'hero-megastore'      => array(
-			'title'       => esc_html__( 'Cartvai - Modern Hero Banner & Promo Cards', 'cartvai-theme' ),
-			'description' => esc_html__( 'High-converting ecommerce hero banner with main callout and 2 secondary promo cards.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Modern Hero Banner & Promo Cards', 'cartvai' ),
+			'description' => esc_html__( 'High-converting ecommerce hero banner with main callout and 2 secondary promo cards.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'featured', 'header' ),
 		),
 		'features-strip'      => array(
-			'title'       => esc_html__( 'Cartvai - Trust Badges & Value Proposition Strip', 'cartvai-theme' ),
-			'description' => esc_html__( '4-column value proposition banner with icons, headings, and descriptions.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Trust Badges & Value Proposition Strip', 'cartvai' ),
+			'description' => esc_html__( '4-column value proposition banner with icons, headings, and descriptions.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'services' ),
 		),
 		'categories-showcase' => array(
-			'title'       => esc_html__( 'Cartvai - Featured Categories Showcase', 'cartvai-theme' ),
-			'description' => esc_html__( 'Clean shelf header with carousel of top ecommerce categories.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Featured Categories Showcase', 'cartvai' ),
+			'description' => esc_html__( 'Clean shelf header with carousel of top ecommerce categories.', 'cartvai' ),
 			'categories'  => array( 'cartvai' ),
 		),
 		'top-sellers'         => array(
-			'title'       => esc_html__( 'Cartvai - Top Selling Products (2x2 Wide Cards)', 'cartvai-theme' ),
-			'description' => esc_html__( 'Section header and 2x2 wide featured card grid for top selling products.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Top Selling Products (2x2 Wide Cards)', 'cartvai' ),
+			'description' => esc_html__( 'Section header and 2x2 wide featured card grid for top selling products.', 'cartvai' ),
 			'categories'  => array( 'cartvai' ),
 		),
 		'promo-banners-duo'   => array(
-			'title'       => esc_html__( 'Cartvai - Dual Promotional Callout Cards', 'cartvai-theme' ),
-			'description' => esc_html__( 'Two side-by-side promotional callout banners for seasonal campaigns and discounts.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Dual Promotional Callout Cards', 'cartvai' ),
+			'description' => esc_html__( 'Two side-by-side promotional callout banners for seasonal campaigns and discounts.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'promotions' ),
 		),
 		'testimonials'        => array(
-			'title'       => esc_html__( 'Cartvai - Customer Reviews & Verified Testimonials', 'cartvai-theme' ),
-			'description' => esc_html__( '3-column customer review grid with 5-star ratings, quotes, reviewer avatars, and verified badges.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Customer Reviews & Verified Testimonials', 'cartvai' ),
+			'description' => esc_html__( '3-column customer review grid with 5-star ratings, quotes, reviewer avatars, and verified badges.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'testimonials' ),
 		),
 		'homepage-full'       => array(
-			'title'       => esc_html__( 'Cartvai - Complete Modern Ecommerce Homepage', 'cartvai-theme' ),
-			'description' => esc_html__( 'Complete turnkey ecommerce homepage combining modern hero banner, trust strip, category carousel, best sellers, promo callouts, product shelves, and customer reviews.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai - Complete Modern Ecommerce Homepage', 'cartvai' ),
+			'description' => esc_html__( 'Complete turnkey ecommerce homepage combining modern hero banner, trust strip, category carousel, best sellers, promo callouts, product shelves, and customer reviews.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'featured' ),
 		),
 	);

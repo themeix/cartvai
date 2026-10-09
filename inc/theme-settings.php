@@ -24,8 +24,8 @@ function cartvai_theme_add_admin_menu() {
 	$cap = defined( 'CARTVAI_THEME_CAPABILITY' ) ? CARTVAI_THEME_CAPABILITY : 'manage_options';
 
 	add_theme_page(
-		esc_html__( 'Cartvai Theme Settings', 'cartvai-theme' ),
-		esc_html__( 'Theme Settings', 'cartvai-theme' ),
+		esc_html__( 'Cartvai Theme Settings', 'cartvai' ),
+		esc_html__( 'Theme Settings', 'cartvai' ),
 		$cap,
 		'cartvai-theme-settings',
 		'cartvai_theme_render_settings_page'
@@ -70,7 +70,7 @@ function cartvai_theme_render_settings_page() {
 	$cap = defined( 'CARTVAI_THEME_CAPABILITY' ) ? CARTVAI_THEME_CAPABILITY : 'manage_options';
 
 	if ( ! current_user_can( $cap ) ) {
-		wp_die( esc_html__( 'You do not have sufficient permissions to access these theme settings.', 'cartvai-theme' ) );
+		wp_die( esc_html__( 'You do not have sufficient permissions to access these theme settings.', 'cartvai' ) );
 	}
 
 	$message = '';
@@ -280,7 +280,7 @@ function cartvai_theme_render_settings_page() {
 			CARTVAI_Settings::set( 'shop_page_hide_save_badge', (bool) $settings['shop_page_hide_save_badge'] );
 		}
 
-		$message = esc_html__( 'Settings saved and synchronized successfully!', 'cartvai-theme' );
+		$message = esc_html__( 'Settings saved and synchronized successfully!', 'cartvai' );
 	}
 
 	// Current Saved Values
@@ -399,62 +399,62 @@ function cartvai_theme_render_settings_page() {
 
 	$headers = array(
 		'megastore' => array(
-			'title' => esc_html__( 'Colorful Megastore', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Rich brand-colored header + wide search + Mega Menu product showcase.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'New • Mega Menu', 'cartvai-theme' ),
+			'title' => esc_html__( 'Colorful Megastore', 'cartvai' ),
+			'desc'  => esc_html__( 'Rich brand-colored header + wide search + Mega Menu product showcase.', 'cartvai' ),
+			'badge' => esc_html__( 'New • Mega Menu', 'cartvai' ),
 		),
 		'megabar'   => array(
-			'title' => esc_html__( 'Contrast MegaBar', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Clean white top row + colorful brand category bar with Mega Menu.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Mega Menu', 'cartvai-theme' ),
+			'title' => esc_html__( 'Contrast MegaBar', 'cartvai' ),
+			'desc'  => esc_html__( 'Clean white top row + colorful brand category bar with Mega Menu.', 'cartvai' ),
+			'badge' => esc_html__( 'Mega Menu', 'cartvai' ),
 		),
 		'ecommerce' => array(
-			'title' => esc_html__( 'Ecommerce Store', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Top Bar + product search + category navigation + cart count badge.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Recommended', 'cartvai-theme' ),
+			'title' => esc_html__( 'Ecommerce Store', 'cartvai' ),
+			'desc'  => esc_html__( 'Top Bar + product search + category navigation + cart count badge.', 'cartvai' ),
+			'badge' => esc_html__( 'Recommended', 'cartvai' ),
 		),
 		'default'   => array(
-			'title' => esc_html__( 'Standard Navigation', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Classic clean header with brand logo, main menu, and cart button.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Classic', 'cartvai-theme' ),
+			'title' => esc_html__( 'Standard Navigation', 'cartvai' ),
+			'desc'  => esc_html__( 'Classic clean header with brand logo, main menu, and cart button.', 'cartvai' ),
+			'badge' => esc_html__( 'Classic', 'cartvai' ),
 		),
 		'centered'  => array(
-			'title' => esc_html__( 'Centered Logo', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Boutique & luxury look with centered brand mark and split menu.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Modern', 'cartvai-theme' ),
+			'title' => esc_html__( 'Centered Logo', 'cartvai' ),
+			'desc'  => esc_html__( 'Boutique & luxury look with centered brand mark and split menu.', 'cartvai' ),
+			'badge' => esc_html__( 'Modern', 'cartvai' ),
 		),
 		'minimal'   => array(
-			'title' => esc_html__( 'Minimalist', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Streamlined compact layout designed for maximum conversion speed.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Clean', 'cartvai-theme' ),
+			'title' => esc_html__( 'Minimalist', 'cartvai' ),
+			'desc'  => esc_html__( 'Streamlined compact layout designed for maximum conversion speed.', 'cartvai' ),
+			'badge' => esc_html__( 'Clean', 'cartvai' ),
 		),
 	);
 
 	$footers = array(
 		'ecommerce'     => array(
-			'title' => esc_html__( 'Ecommerce Multi-Column', 'cartvai-theme' ),
-			'desc'  => esc_html__( '4 Columns + Reassurance Band + Newsletter + Safe payment badges.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Recommended', 'cartvai-theme' ),
+			'title' => esc_html__( 'Ecommerce Multi-Column', 'cartvai' ),
+			'desc'  => esc_html__( '4 Columns + Reassurance Band + Newsletter + Safe payment badges.', 'cartvai' ),
+			'badge' => esc_html__( 'Recommended', 'cartvai' ),
 		),
 		'organic'       => array(
-			'title' => esc_html__( 'Organic D2C / Emerald Store', 'cartvai-theme' ),
-			'desc'  => esc_html__( '5 Columns + Social circles + Direct contact details + Full payment strip.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'New • High Converting', 'cartvai-theme' ),
+			'title' => esc_html__( 'Organic D2C / Emerald Store', 'cartvai' ),
+			'desc'  => esc_html__( '5 Columns + Social circles + Direct contact details + Full payment strip.', 'cartvai' ),
+			'badge' => esc_html__( 'New • High Converting', 'cartvai' ),
 		),
 		'warm_boutique' => array(
-			'title' => esc_html__( 'Warm Boutique Luxury', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Elegant typography + Social media icons + Clean menu columns + Payment pills.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Luxury Look', 'cartvai-theme' ),
+			'title' => esc_html__( 'Warm Boutique Luxury', 'cartvai' ),
+			'desc'  => esc_html__( 'Elegant typography + Social media icons + Clean menu columns + Payment pills.', 'cartvai' ),
+			'badge' => esc_html__( 'Luxury Look', 'cartvai' ),
 		),
 		'default'       => array(
-			'title' => esc_html__( 'Standard 3-Column', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Classic store layout with copyright, menu links, and brand details.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Classic', 'cartvai-theme' ),
+			'title' => esc_html__( 'Standard 3-Column', 'cartvai' ),
+			'desc'  => esc_html__( 'Classic store layout with copyright, menu links, and brand details.', 'cartvai' ),
+			'badge' => esc_html__( 'Classic', 'cartvai' ),
 		),
 		'minimal'       => array(
-			'title' => esc_html__( 'Minimalist Row', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Clean single-row footer with brand logo, copyright, and links.', 'cartvai-theme' ),
-			'badge' => esc_html__( 'Clean', 'cartvai-theme' ),
+			'title' => esc_html__( 'Minimalist Row', 'cartvai' ),
+			'desc'  => esc_html__( 'Clean single-row footer with brand logo, copyright, and links.', 'cartvai' ),
+			'badge' => esc_html__( 'Clean', 'cartvai' ),
 		),
 	);
 	?>
@@ -468,20 +468,20 @@ function cartvai_theme_render_settings_page() {
 				</div>
 				<div>
 					<div style="display: flex; align-items: center; gap: 8px;">
-						<h1 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.2;"><?php esc_html_e( 'Cartvai Theme & Store Settings', 'cartvai-theme' ); ?></h1>
+						<h1 style="font-size: 20px; font-weight: 700; color: #0f172a; margin: 0; line-height: 1.2;"><?php esc_html_e( 'Cartvai Theme & Store Settings', 'cartvai' ); ?></h1>
 						<span style="font-size: 11px; font-weight: 700; background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 9999px;">v1.1.0</span>
 					</div>
-					<p style="font-size: 13px; color: #64748b; margin: 3px 0 0 0;"><?php esc_html_e( 'Manage site colors, product cards, headers, and footers from one unified location.', 'cartvai-theme' ); ?></p>
+					<p style="font-size: 13px; color: #64748b; margin: 3px 0 0 0;"><?php esc_html_e( 'Manage site colors, product cards, headers, and footers from one unified location.', 'cartvai' ); ?></p>
 				</div>
 			</div>
 			<div style="display: flex; align-items: center; gap: 10px;">
 				<a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" class="button button-secondary" style="height: 38px; line-height: 36px; padding: 0 16px; border-radius: 8px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
 					<span class="dashicons dashicons-admin-customizer" style="font-size: 16px; width: 16px; height: 16px;"></span>
-					<span><?php esc_html_e( 'Live Customizer', 'cartvai-theme' ); ?></span>
+					<span><?php esc_html_e( 'Live Customizer', 'cartvai' ); ?></span>
 				</a>
 				<button type="submit" form="cartvai-theme-settings-form" class="button button-primary" style="height: 38px; line-height: 36px; padding: 0 20px; border-radius: 8px; font-weight: 600; background: #2563eb; border-color: #2563eb; display: inline-flex; align-items: center; gap: 6px;">
 					<span class="dashicons dashicons-saved" style="font-size: 16px; width: 16px; height: 16px;"></span>
-					<span><?php esc_html_e( 'Save Changes', 'cartvai-theme' ); ?></span>
+					<span><?php esc_html_e( 'Save Changes', 'cartvai' ); ?></span>
 				</button>
 			</div>
 		</div>
@@ -503,23 +503,23 @@ function cartvai_theme_render_settings_page() {
 					<nav id="cv-settings-tabs" style="display: flex; flex-direction: column; gap: 4px;">
 						<button type="button" class="cv-tab-btn is-active" data-tab="tab-colors" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: #eff6ff; color: #2563eb; transition: all 0.15s;">
 							<span class="dashicons dashicons-art"></span>
-							<span><?php esc_html_e( 'Design & Colors', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'Design & Colors', 'cartvai' ); ?></span>
 						</button>
 						<button type="button" class="cv-tab-btn" data-tab="tab-products" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: transparent; color: #64748b; transition: all 0.15s;">
 							<span class="dashicons dashicons-products"></span>
-							<span><?php esc_html_e( 'Product Card Options', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'Product Card Options', 'cartvai' ); ?></span>
 						</button>
 						<button type="button" class="cv-tab-btn" data-tab="tab-header" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: transparent; color: #64748b; transition: all 0.15s;">
 							<span class="dashicons dashicons-arrow-up-alt2"></span>
-							<span><?php esc_html_e( 'Header Settings', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'Header Settings', 'cartvai' ); ?></span>
 						</button>
 						<button type="button" class="cv-tab-btn" data-tab="tab-footer" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: transparent; color: #64748b; transition: all 0.15s;">
 							<span class="dashicons dashicons-arrow-down-alt2"></span>
-							<span><?php esc_html_e( 'Footer Settings', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'Footer Settings', 'cartvai' ); ?></span>
 						</button>
 						<button type="button" class="cv-tab-btn" data-tab="tab-homepage" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; border: none; cursor: pointer; background: transparent; color: #64748b; transition: all 0.15s;">
 							<span class="dashicons dashicons-admin-home"></span>
-							<span><?php esc_html_e( 'Homepage Settings', 'cartvai-theme' ); ?></span>
+							<span><?php esc_html_e( 'Homepage Settings', 'cartvai' ); ?></span>
 						</button>
 					</nav>
 				</div>
@@ -533,8 +533,8 @@ function cartvai_theme_render_settings_page() {
 					<div id="tab-colors" class="cv-tab-panel" style="display: flex; flex-direction: column; gap: 20px;">
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Global Site Colors & Brand Palette', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Manage site colors from 1 central place. These colors apply across all headers, cards, buttons, badges, links, and checkout.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Global Site Colors & Brand Palette', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Manage site colors from 1 central place. These colors apply across all headers, cards, buttons, badges, links, and checkout.', 'cartvai' ); ?></p>
 							</div>
 
 							<!-- Grid of Color Pickers -->
@@ -543,10 +543,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Primary Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Brand Color', 'cartvai-theme' ); ?></label>
-										<span style="font-size: 11px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Buttons & Accents', 'cartvai-theme' ); ?></span>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Brand Color', 'cartvai' ); ?></label>
+										<span style="font-size: 11px; font-weight: 600; color: #2563eb; background: #eff6ff; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Buttons & Accents', 'cartvai' ); ?></span>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for Buy Now, add-to-cart active hover, badges, links & key highlights.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for Buy Now, add-to-cart active hover, badges, links & key highlights.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="primary_color" value="<?php echo esc_attr( $primary_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="primary_color" name="primary_color" value="<?php echo esc_attr( $primary_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -556,10 +556,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Primary Hover / Deep -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Hover / Dark Tone', 'cartvai-theme' ); ?></label>
-										<span style="font-size: 11px; font-weight: 600; color: #1e40af; background: #dbeafe; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Hover State', 'cartvai-theme' ); ?></span>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Hover / Dark Tone', 'cartvai' ); ?></label>
+										<span style="font-size: 11px; font-weight: 600; color: #1e40af; background: #dbeafe; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Hover State', 'cartvai' ); ?></span>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used when hovering over primary buttons, links, and focused active inputs.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used when hovering over primary buttons, links, and focused active inputs.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="primary_hover_color" value="<?php echo esc_attr( $primary_hover_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="primary_hover_color" name="primary_hover_color" value="<?php echo esc_attr( $primary_hover_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -569,10 +569,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Primary Light Tint -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Light Tint', 'cartvai-theme' ); ?></label>
-										<span style="font-size: 11px; font-weight: 600; color: #0369a1; background: #e0f2fe; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Soft Tints', 'cartvai-theme' ); ?></span>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Primary Light Tint', 'cartvai' ); ?></label>
+										<span style="font-size: 11px; font-weight: 600; color: #0369a1; background: #e0f2fe; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Soft Tints', 'cartvai' ); ?></span>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Soft background for active tabs, icon circles, and subtle chip pills.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Soft background for active tabs, icon circles, and subtle chip pills.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="primary_light_color" value="<?php echo esc_attr( $primary_light_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="primary_light_color" name="primary_light_color" value="<?php echo esc_attr( $primary_light_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -582,10 +582,10 @@ function cartvai_theme_render_settings_page() {
 								<!-- Accent Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Accent / Secondary Color', 'cartvai-theme' ); ?></label>
-										<span style="font-size: 11px; font-weight: 600; color: #334155; background: #f1f5f9; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Dark Contrast', 'cartvai-theme' ); ?></span>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Accent / Secondary Color', 'cartvai' ); ?></label>
+										<span style="font-size: 11px; font-weight: 600; color: #334155; background: #f1f5f9; padding: 2px 8px; border-radius: 9999px;"><?php esc_html_e( 'Dark Contrast', 'cartvai' ); ?></span>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for dark action buttons, contrast badges, and solid indicators.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for dark action buttons, contrast badges, and solid indicators.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="accent_color" value="<?php echo esc_attr( $accent_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="accent_color" name="accent_color" value="<?php echo esc_attr( $accent_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -595,9 +595,9 @@ function cartvai_theme_render_settings_page() {
 								<!-- Heading Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Heading & Title Color', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Heading & Title Color', 'cartvai' ); ?></label>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Applied to product titles, section headers (H1-H6), and post titles.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Applied to product titles, section headers (H1-H6), and post titles.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="heading_color" value="<?php echo esc_attr( $heading_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="heading_color" name="heading_color" value="<?php echo esc_attr( $heading_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -607,9 +607,9 @@ function cartvai_theme_render_settings_page() {
 								<!-- Body Text Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Body Text Color', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Body Text Color', 'cartvai' ); ?></label>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Applied to body paragraphs, product descriptions, and footer text.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Applied to body paragraphs, product descriptions, and footer text.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="text_color" value="<?php echo esc_attr( $text_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="text_color" name="text_color" value="<?php echo esc_attr( $text_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -619,9 +619,9 @@ function cartvai_theme_render_settings_page() {
 								<!-- Border Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Border & Divider Color', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Border & Divider Color', 'cartvai' ); ?></label>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for card borders, form input outlines, table lines, and separators.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Used for card borders, form input outlines, table lines, and separators.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="border_color" value="<?php echo esc_attr( $border_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="border_color" name="border_color" value="<?php echo esc_attr( $border_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -631,9 +631,9 @@ function cartvai_theme_render_settings_page() {
 								<!-- Site Background Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; background: #fafafa;">
 									<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Site Background Color', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 13px; font-weight: 700; color: #0f172a; margin: 0;"><?php esc_html_e( 'Site Background Color', 'cartvai' ); ?></label>
 									</div>
-									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Storefront canvas and page backdrop color behind cards.', 'cartvai-theme' ); ?></p>
+									<p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;"><?php esc_html_e( 'Storefront canvas and page backdrop color behind cards.', 'cartvai' ); ?></p>
 									<div style="display: flex; align-items: center; gap: 10px;">
 										<input type="color" class="cv-color-picker-input" data-target="bg_color" value="<?php echo esc_attr( $bg_color ); ?>" style="width: 44px; height: 38px; border: 1px solid #cbd5e1; border-radius: 8px; cursor: pointer; padding: 2px; background: #fff;" />
 										<input type="text" id="bg_color" name="bg_color" value="<?php echo esc_attr( $bg_color ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px; font-family: monospace;" />
@@ -650,8 +650,8 @@ function cartvai_theme_render_settings_page() {
 					<div id="tab-products" class="cv-tab-panel" style="display: none; flex-direction: column; gap: 20px;">
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Product Card Display Options', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control card elements across Shop, Category archives, Tag archives, and Related Products carousels.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Product Card Display Options', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control card elements across Shop, Category archives, Tag archives, and Related Products carousels.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: flex; flex-direction: column; gap: 16px;">
@@ -659,8 +659,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Short Description -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Short Description', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the text description under the product title on product cards.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Short Description', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the text description under the product title on product cards.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_short_description" value="1" <?php checked( $hide_short_desc ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -671,8 +671,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Quantity -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Quantity Selector', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the quantity -/+ selector row from product cards.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Quantity Selector', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the quantity -/+ selector row from product cards.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_quantity" value="1" <?php checked( $hide_quantity ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -683,8 +683,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Buy Now Button -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Buy Now" Button', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the direct checkout Buy Now button from cards.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Buy Now" Button', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the direct checkout Buy Now button from cards.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_buy_now" value="1" <?php checked( $hide_buy_now ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -695,8 +695,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Add to Cart Button -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Add to Cart" Button', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the Add to Cart button from product cards.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Add to Cart" Button', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the Add to Cart button from product cards.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_add_to_cart" value="1" <?php checked( $hide_atc ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -707,8 +707,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Discount (% OFF) Badge -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Discount (% OFF) Badge', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the pill discount badge (e.g. -20% OFF) on sale products.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide Discount (% OFF) Badge', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the pill discount badge (e.g. -20% OFF) on sale products.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_off_badge" value="1" <?php checked( $hide_off_badge ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -719,8 +719,8 @@ function cartvai_theme_render_settings_page() {
 								<!-- Hide Save Amount Badge -->
 								<div style="display: flex; align-items: center; justify-content: space-between;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Save Amount" Badge', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the green "Save $XX" badge next to discounted prices.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Hide "Save Amount" Badge', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Remove the green "Save $XX" badge next to discounted prices.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="shop_page_hide_save_badge" value="1" <?php checked( $hide_save_badge ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -740,8 +740,8 @@ function cartvai_theme_render_settings_page() {
 						<!-- Header Layout Selection Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Header Style', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Select the navigation layout style for your storefront.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Header Style', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Select the navigation layout style for your storefront.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
@@ -763,13 +763,13 @@ function cartvai_theme_render_settings_page() {
 
 						<!-- Announcement Bar & Support Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-							<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 16px 0;"><?php esc_html_e( 'Top Announcement Bar & Hotline', 'cartvai-theme' ); ?></h2>
+							<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 16px 0;"><?php esc_html_e( 'Top Announcement Bar & Hotline', 'cartvai' ); ?></h2>
 
 							<div style="display: flex; flex-direction: column; gap: 16px;">
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Enable Top Announcement Bar', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display promotional flash text at the very top of the ecommerce header.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Enable Top Announcement Bar', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display promotional flash text at the very top of the ecommerce header.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="announcement_enabled" value="1" <?php checked( $announcement_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -778,20 +778,20 @@ function cartvai_theme_render_settings_page() {
 								</div>
 
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Announcement Message', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Announcement Message', 'cartvai' ); ?></label>
 									<input type="text" name="announcement_text" value="<?php echo esc_attr( $announcement_text ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Customer Support Phone / Hotline', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Customer Support Phone / Hotline', 'cartvai' ); ?></label>
 									<input type="text" name="contact_phone" value="<?php echo esc_attr( $contact_phone ); ?>" style="width: 100%; max-width: 380px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<!-- Brand Tagline Toggle -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show Brand Tagline ("Official Megastore")', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display the site description tagline under the site name in the megastore header.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show Brand Tagline ("Official Megastore")', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display the site description tagline under the site name in the megastore header.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="brand_tagline_enabled" value="1" <?php checked( $brand_tagline_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -804,16 +804,16 @@ function cartvai_theme_render_settings_page() {
 						<!-- Header Utility Actions (Order Track & More Menu) Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Header Utility Actions (Order Track & More Menu)', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Manage the action buttons on the right side of the header and the dedicated More Menu items.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Header Utility Actions (Order Track & More Menu)', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Manage the action buttons on the right side of the header and the dedicated More Menu items.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: flex; flex-direction: column; gap: 16px;">
 								<!-- Enable Order Track -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-bottom: 14px; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show "Order Track" Button', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display the Order Track utility button with truck icon in the header.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show "Order Track" Button', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Display the Order Track utility button with truck icon in the header.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="header_order_track_enabled" value="1" <?php checked( $header_order_track_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -823,22 +823,22 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Order Track Custom Label -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Order Track Label', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Order Track Label', 'cartvai' ); ?></label>
 									<input type="text" name="header_order_track_label" value="<?php echo esc_attr( $header_order_track_label ); ?>" style="width: 100%; max-width: 320px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<!-- Order Track Custom URL -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Order Track Destination URL', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Order Track Destination URL', 'cartvai' ); ?></label>
 									<input type="url" name="header_order_track_url" placeholder="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" value="<?php echo esc_attr( $header_order_track_url ); ?>" style="width: 100%; max-width: 480px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
-									<span style="font-size: 11px; color: #64748b; margin-top: 4px; display: block;"><?php esc_html_e( 'Leave blank to link directly to Checkout or default track page.', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; color: #64748b; margin-top: 4px; display: block;"><?php esc_html_e( 'Leave blank to link directly to Checkout or default track page.', 'cartvai' ); ?></span>
 								</div>
 
 								<!-- Enable More Menu Button -->
 								<div style="display: flex; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 14px; border-top: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9;">
 									<div>
-										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show "More" Button', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Displays the hamburger button that opens the professional slide drawer.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; font-weight: 600; color: #0f172a; display: block;"><?php esc_html_e( 'Show "More" Button', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Displays the hamburger button that opens the professional slide drawer.', 'cartvai' ); ?></span>
 									</div>
 									<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 										<input type="checkbox" name="header_more_enabled" value="1" <?php checked( $header_more_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -849,11 +849,11 @@ function cartvai_theme_render_settings_page() {
 								<!-- Link to Menus for More Menu -->
 								<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 14px; display: flex; align-items: center; justify-content: space-between;">
 									<div>
-										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage More Menu Items', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 11px; color: #64748b;"><?php esc_html_e( 'Assign custom links, pages, or categories to the "More Menu" location in WordPress native menus.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage More Menu Items', 'cartvai' ); ?></strong>
+										<span style="font-size: 11px; color: #64748b;"><?php esc_html_e( 'Assign custom links, pages, or categories to the "More Menu" location in WordPress native menus.', 'cartvai' ); ?></span>
 									</div>
 									<a href="<?php echo esc_url( admin_url( 'nav-menus.php?action=locations' ) ); ?>" class="button button-secondary" style="font-weight: 600;">
-										<?php esc_html_e( 'Edit Menus →', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Edit Menus →', 'cartvai' ); ?>
 									</a>
 								</div>
 							</div>
@@ -862,15 +862,15 @@ function cartvai_theme_render_settings_page() {
 						<!-- Top Bar & Main Header Styling Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Top Bar & Main Header Styling', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Customize background colors, borders, and vertical spacing for the announcement bar and main header.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Top Bar & Main Header Styling', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Customize background colors, borders, and vertical spacing for the announcement bar and main header.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
 								<!-- Top Bar Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Background', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $top_bar_bg_color ?: ( $header_presets['top_bar_bg'] ?? '#030712' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="top_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['top_bar_bg'] ?? '#030712' ); ?>" value="<?php echo esc_attr( $top_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -879,8 +879,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Top Bar Text Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Text & Links', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Text & Links', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $top_bar_text_color ?: ( $header_presets['top_bar_text'] ?? '#d1d5db' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="top_bar_text_color" placeholder="<?php echo esc_attr( $header_presets['top_bar_text'] ?? '#d1d5db' ); ?>" value="<?php echo esc_attr( $top_bar_text_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -889,15 +889,15 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Top Bar Vertical Padding -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Vertical Padding (px)', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner spacing in pixels.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Top Bar Vertical Padding (px)', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner spacing in pixels.', 'cartvai' ); ?></span>
 									<input type="number" name="top_bar_padding_y" value="<?php echo esc_attr( $top_bar_padding_y ); ?>" min="0" max="40" step="1" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 								</div>
 
 								<!-- Main Header Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Background', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $main_bar_bg_color ?: ( $header_presets['main_bar_bg'] ?? '#ffffff' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="main_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['main_bar_bg'] ?? '#ffffff' ); ?>" value="<?php echo esc_attr( $main_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -906,8 +906,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Main Header Border Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Border Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Bottom border divider line color.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Border Color', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Bottom border divider line color.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $main_bar_border_color ?: ( $header_presets['main_bar_border'] ?? '#e5e7eb' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="main_bar_border_color" placeholder="<?php echo esc_attr( $header_presets['main_bar_border'] ?? '#e5e7eb' ); ?>" value="<?php echo esc_attr( $main_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -916,8 +916,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Main Header Vertical Padding -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Vertical Padding (px)', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner spacing in pixels.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Main Header Vertical Padding (px)', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner spacing in pixels.', 'cartvai' ); ?></span>
 									<input type="number" name="main_bar_padding_y" value="<?php echo esc_attr( $main_bar_padding_y ); ?>" min="4" max="60" step="1" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 								</div>
 							</div>
@@ -926,15 +926,15 @@ function cartvai_theme_render_settings_page() {
 						<!-- Navigation Bar & Menu Typography Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Navigation Bar (Navbar) & Links Styling', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control the navbar strip background, borders, link colors, spacing, and font weight.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Navigation Bar (Navbar) & Links Styling', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control the navbar strip background, borders, link colors, spacing, and font weight.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
 								<!-- Navbar Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Background', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $nav_bar_bg_color ?: ( $header_presets['nav_bar_bg'] ?? '#0d3b2e' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="nav_bar_bg_color" placeholder="<?php echo esc_attr( $header_presets['nav_bar_bg'] ?? '#0d3b2e' ); ?>" value="<?php echo esc_attr( $nav_bar_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -943,8 +943,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Navbar Border Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Border Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top border dividing main header and navbar.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Border Color', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top border dividing main header and navbar.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $nav_bar_border_color ?: ( $header_presets['nav_bar_border'] ?? 'rgba(255,255,255,0.1)' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="nav_bar_border_color" placeholder="<?php echo esc_attr( $header_presets['nav_bar_border'] ?? 'rgba(255,255,255,0.1)' ); ?>" value="<?php echo esc_attr( $nav_bar_border_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -953,15 +953,15 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Navbar Vertical Padding -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Vertical Padding (px)', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner padding in pixels.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navbar Vertical Padding (px)', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Top and bottom inner padding in pixels.', 'cartvai' ); ?></span>
 									<input type="number" name="nav_bar_padding_y" value="<?php echo esc_attr( $nav_bar_padding_y ); ?>" min="2" max="40" step="1" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 								</div>
 
 								<!-- Nav Link Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Color', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $nav_link_color ?: ( $header_presets['nav_link_color'] ?? '#ffffff' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="nav_link_color" placeholder="<?php echo esc_attr( $header_presets['nav_link_color'] ?? '#ffffff' ); ?>" value="<?php echo esc_attr( $nav_link_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -970,8 +970,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Nav Link Hover Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Hover Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Link Hover Color', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $nav_link_hover_color ?: ( $header_presets['nav_link_hover'] ?? '#fde68a' ) ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="nav_link_hover_color" placeholder="<?php echo esc_attr( $header_presets['nav_link_hover'] ?? '#fde68a' ); ?>" value="<?php echo esc_attr( $nav_link_hover_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -980,27 +980,27 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Nav Link Gap (Spacing) -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Link Spacing / Gap (px)', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Space between adjacent menu items.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Link Spacing / Gap (px)', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Space between adjacent menu items.', 'cartvai' ); ?></span>
 									<input type="number" name="nav_link_gap" value="<?php echo esc_attr( $nav_link_gap ); ?>" min="8" max="60" step="1" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 								</div>
 
 								<!-- Nav Font Size -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Font Size (px)', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Font size of menu links (default: 14px).', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Font Size (px)', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Font size of menu links (default: 14px).', 'cartvai' ); ?></span>
 									<input type="number" name="nav_font_size" value="<?php echo esc_attr( $nav_font_size ); ?>" min="11" max="22" step="1" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 								</div>
 
 								<!-- Nav Font Weight -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Font Weight', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Thickness of menu links text.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Navigation Font Weight', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Thickness of menu links text.', 'cartvai' ); ?></span>
 									<select name="nav_font_weight" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; background: #fff;">
-										<option value="400" <?php selected( $nav_font_weight, '400' ); ?>><?php esc_html_e( '400 - Normal', 'cartvai-theme' ); ?></option>
-										<option value="500" <?php selected( $nav_font_weight, '500' ); ?>><?php esc_html_e( '500 - Medium', 'cartvai-theme' ); ?></option>
-										<option value="600" <?php selected( $nav_font_weight, '600' ); ?>><?php esc_html_e( '600 - Semi-Bold', 'cartvai-theme' ); ?></option>
-										<option value="700" <?php selected( $nav_font_weight, '700' ); ?>><?php esc_html_e( '700 - Bold', 'cartvai-theme' ); ?></option>
+										<option value="400" <?php selected( $nav_font_weight, '400' ); ?>><?php esc_html_e( '400 - Normal', 'cartvai' ); ?></option>
+										<option value="500" <?php selected( $nav_font_weight, '500' ); ?>><?php esc_html_e( '500 - Medium', 'cartvai' ); ?></option>
+										<option value="600" <?php selected( $nav_font_weight, '600' ); ?>><?php esc_html_e( '600 - Semi-Bold', 'cartvai' ); ?></option>
+										<option value="700" <?php selected( $nav_font_weight, '700' ); ?>><?php esc_html_e( '700 - Bold', 'cartvai' ); ?></option>
 									</select>
 								</div>
 							</div>
@@ -1016,8 +1016,8 @@ function cartvai_theme_render_settings_page() {
 						<!-- Footer Layout Selection Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Footer Style', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Select the global footer layout.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Footer Style', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Select the global footer layout.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px;">
@@ -1041,8 +1041,8 @@ function cartvai_theme_render_settings_page() {
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;">
 								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Trust & Reassurance Strip', 'cartvai-theme' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Display 4 trust guarantee highlights above the footer columns.', 'cartvai-theme' ); ?></p>
+									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Trust & Reassurance Strip', 'cartvai' ); ?></h2>
+									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Display 4 trust guarantee highlights above the footer columns.', 'cartvai' ); ?></p>
 								</div>
 								<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 									<input type="checkbox" name="footer_trust_enabled" value="1" <?php checked( $footer_trust_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -1052,22 +1052,22 @@ function cartvai_theme_render_settings_page() {
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
 								<div style="border: 1px solid #f1f5f9; padding: 14px; border-radius: 8px;">
-									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 1 (Shipping)', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 1 (Shipping)', 'cartvai' ); ?></span>
 									<input type="text" name="footer_trust_1_title" value="<?php echo esc_attr( $footer_trust_1_title ); ?>" placeholder="Title" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px; margin-bottom: 6px;" />
 									<input type="text" name="footer_trust_1_desc" value="<?php echo esc_attr( $footer_trust_1_desc ); ?>" placeholder="Subtitle" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 								</div>
 								<div style="border: 1px solid #f1f5f9; padding: 14px; border-radius: 8px;">
-									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 2 (Payment)', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 2 (Payment)', 'cartvai' ); ?></span>
 									<input type="text" name="footer_trust_2_title" value="<?php echo esc_attr( $footer_trust_2_title ); ?>" placeholder="Title" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px; margin-bottom: 6px;" />
 									<input type="text" name="footer_trust_2_desc" value="<?php echo esc_attr( $footer_trust_2_desc ); ?>" placeholder="Subtitle" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 								</div>
 								<div style="border: 1px solid #f1f5f9; padding: 14px; border-radius: 8px;">
-									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 3 (Returns)', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 3 (Returns)', 'cartvai' ); ?></span>
 									<input type="text" name="footer_trust_3_title" value="<?php echo esc_attr( $footer_trust_3_title ); ?>" placeholder="Title" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px; margin-bottom: 6px;" />
 									<input type="text" name="footer_trust_3_desc" value="<?php echo esc_attr( $footer_trust_3_desc ); ?>" placeholder="Subtitle" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 								</div>
 								<div style="border: 1px solid #f1f5f9; padding: 14px; border-radius: 8px;">
-									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 4 (Support)', 'cartvai-theme' ); ?></span>
+									<span style="font-size: 11px; font-weight: 700; color: #2563eb; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Badge 4 (Support)', 'cartvai' ); ?></span>
 									<input type="text" name="footer_trust_4_title" value="<?php echo esc_attr( $footer_trust_4_title ); ?>" placeholder="Title" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px; margin-bottom: 6px;" />
 									<input type="text" name="footer_trust_4_desc" value="<?php echo esc_attr( $footer_trust_4_desc ); ?>" placeholder="Subtitle" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 								</div>
@@ -1078,8 +1078,8 @@ function cartvai_theme_render_settings_page() {
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid #f1f5f9;">
 								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Newsletter Subscribe Section', 'cartvai-theme' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Show email capture block in ecommerce footer.', 'cartvai-theme' ); ?></p>
+									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Newsletter Subscribe Section', 'cartvai' ); ?></h2>
+									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Show email capture block in ecommerce footer.', 'cartvai' ); ?></p>
 								</div>
 								<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 									<input type="checkbox" name="footer_newsletter_enabled" value="1" <?php checked( $footer_newsletter_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -1089,11 +1089,11 @@ function cartvai_theme_render_settings_page() {
 
 							<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Heading', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Heading', 'cartvai' ); ?></label>
 									<input type="text" name="footer_newsletter_title" value="<?php echo esc_attr( $footer_newsletter_title ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Subtitle', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Subtitle', 'cartvai' ); ?></label>
 									<input type="text" name="footer_newsletter_desc" value="<?php echo esc_attr( $footer_newsletter_desc ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 							</div>
@@ -1101,33 +1101,33 @@ function cartvai_theme_render_settings_page() {
 
 						<!-- Store Details & Copyright Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-							<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 16px 0;"><?php esc_html_e( 'Store Details & Copyright', 'cartvai-theme' ); ?></h2>
+							<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 16px 0;"><?php esc_html_e( 'Store Details & Copyright', 'cartvai' ); ?></h2>
 
 							<div style="display: flex; flex-direction: column; gap: 16px;">
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'About Store Text (Column 1)', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'About Store Text (Column 1)', 'cartvai' ); ?></label>
 									<textarea name="footer_about_text" rows="3" style="width: 100%; border-radius: 8px; border: 1px solid #cbd5e1; padding: 8px 12px; font-size: 13px;"><?php echo esc_textarea( $footer_about_text ); ?></textarea>
 								</div>
 
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Physical Store / Office Address (Column 5)', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Physical Store / Office Address (Column 5)', 'cartvai' ); ?></label>
 									<input type="text" name="footer_store_address" value="<?php echo esc_attr( $footer_store_address ); ?>" placeholder="e.g. Level-5, Noor Tower, 110 Bir Uttam CR Dutta Rd, Dhaka 1205" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 									<div>
-										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Support Email Address', 'cartvai-theme' ); ?></label>
+										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Support Email Address', 'cartvai' ); ?></label>
 										<input type="email" name="contact_email" value="<?php echo esc_attr( $contact_email ); ?>" placeholder="support@cartvai.com" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 									</div>
 									<div>
-										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Safe Checkout Note', 'cartvai-theme' ); ?></label>
+										<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Safe Checkout Note', 'cartvai' ); ?></label>
 										<input type="text" name="footer_security_note" value="<?php echo esc_attr( $footer_security_note ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 									</div>
 								</div>
 
 								<div>
 									<label style="display: block; font-size: 12px; font-weight: 600; color: #334155; margin-bottom: 6px;">
-										<?php esc_html_e( 'Copyright Notice Text', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Copyright Notice Text', 'cartvai' ); ?>
 										<span style="font-weight: normal; color: #64748b;">(Use {year} and {site_name})</span>
 									</label>
 									<input type="text" name="footer_copyright_text" value="<?php echo esc_attr( $footer_copyright_text ); ?>" style="width: 100%; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
@@ -1138,8 +1138,8 @@ function cartvai_theme_render_settings_page() {
 						<!-- Custom Footer Colors & Menu Freedom Card -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Footer Colors & Menu Management', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Customize footer colors and assign menus to individual footer columns from 1 place.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Footer Colors & Menu Management', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Customize footer colors and assign menus to individual footer columns from 1 place.', 'cartvai' ); ?></p>
 							</div>
 
 							<?php
@@ -1154,8 +1154,8 @@ function cartvai_theme_render_settings_page() {
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 18px;">
 								<!-- Footer Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Custom Footer Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Custom Footer Background', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Leave empty to use layout preset defaults.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $footer_bg_color ?: $footer_preset_defs['footer_bg'] ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="footer_bg_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_bg'] ); ?>" value="<?php echo esc_attr( $footer_bg_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -1164,8 +1164,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Footer Heading Color -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Footer Heading Color', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color for column titles and subtitles.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Footer Heading Color', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Color for column titles and subtitles.', 'cartvai' ); ?></span>
 									<div style="display: flex; align-items: center; gap: 8px;">
 										<input type="color" value="<?php echo esc_attr( $footer_heading_color ?: $footer_preset_defs['footer_heading'] ); ?>" oninput="this.nextElementSibling.value = this.value" style="width: 38px; height: 38px; padding: 2px; border-radius: 6px; border: 1px solid #cbd5e1; cursor: pointer; background: #fff;" />
 										<input type="text" name="footer_heading_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_heading'] ); ?>" value="<?php echo esc_attr( $footer_heading_color ); ?>" oninput="this.previousElementSibling.value = this.value" style="flex: 1; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
@@ -1174,8 +1174,8 @@ function cartvai_theme_render_settings_page() {
 
 								<!-- Sub-Footer / Copyright Row Background -->
 								<div style="border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; background: #fafafa;">
-									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Sub-Footer / Copyright Row Background', 'cartvai-theme' ); ?></label>
-									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'e.g. #07241b, #020617, or transparent.', 'cartvai-theme' ); ?></span>
+									<label style="font-size: 12px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Sub-Footer / Copyright Row Background', 'cartvai' ); ?></label>
+									<span style="font-size: 11px; color: #64748b; display: block; margin-bottom: 8px;"><?php esc_html_e( 'e.g. #07241b, #020617, or transparent.', 'cartvai' ); ?></span>
 									<input type="text" name="footer_sub_bg_color" placeholder="<?php echo esc_attr( $footer_preset_defs['footer_sub_bg'] ); ?>" value="<?php echo esc_attr( $footer_sub_bg_color ); ?>" style="width: 100%; height: 38px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-family: monospace;" />
 								</div>
 							</div>
@@ -1184,22 +1184,22 @@ function cartvai_theme_render_settings_page() {
 								<!-- Link to Appearance -> Widgets for Columns 1 to 5 -->
 								<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
 									<div>
-										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage Footer Widgets (Columns 1 to 5)', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Place any block or classic widget in Footer Column 1 through 5 to dynamically customize column contents.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage Footer Widgets (Columns 1 to 5)', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Place any block or classic widget in Footer Column 1 through 5 to dynamically customize column contents.', 'cartvai' ); ?></span>
 									</div>
 									<a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="button button-primary" style="font-weight: 600; white-space: nowrap;">
-										<?php esc_html_e( 'Manage Widgets →', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Manage Widgets →', 'cartvai' ); ?>
 									</a>
 								</div>
 
 								<!-- Link to Appearance -> Menus for Columns 1, 2, 3 -->
 								<div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px; display: flex; align-items: center; justify-content: space-between; gap: 14px;">
 									<div>
-										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage Footer Column Menus (Columns 1, 2, and 3)', 'cartvai-theme' ); ?></strong>
-										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Assign custom menus to "Footer Column 1", "Footer Column 2", and "Footer Column 3" in WordPress Menus for total control.', 'cartvai-theme' ); ?></span>
+										<strong style="font-size: 13px; color: #0f172a; display: block;"><?php esc_html_e( 'Manage Footer Column Menus (Columns 1, 2, and 3)', 'cartvai' ); ?></strong>
+										<span style="font-size: 12px; color: #64748b;"><?php esc_html_e( 'Assign custom menus to "Footer Column 1", "Footer Column 2", and "Footer Column 3" in WordPress Menus for total control.', 'cartvai' ); ?></span>
 									</div>
 									<a href="<?php echo esc_url( admin_url( 'nav-menus.php?action=locations' ) ); ?>" class="button button-secondary" style="font-weight: 600; white-space: nowrap;">
-										<?php esc_html_e( 'Manage Menus →', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Manage Menus →', 'cartvai' ); ?>
 									</a>
 								</div>
 							</div>
@@ -1209,28 +1209,28 @@ function cartvai_theme_render_settings_page() {
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 16px; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
 								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Payment Gateway Banner Image', 'cartvai-theme' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Upload or enter an image URL for your payment partner strip banner (e.g. SSLCommerz, Shurjopay, bKash/Nagad/Visa strip). Replaces individual badges when set.', 'cartvai-theme' ); ?></p>
+									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Payment Gateway Banner Image', 'cartvai' ); ?></h2>
+									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Upload or enter an image URL for your payment partner strip banner (e.g. SSLCommerz, Shurjopay, bKash/Nagad/Visa strip). Replaces individual badges when set.', 'cartvai' ); ?></p>
 								</div>
-								<span style="font-size: 11px; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 9999px;"><?php esc_html_e( 'Image Uploader', 'cartvai-theme' ); ?></span>
+								<span style="font-size: 11px; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 9999px;"><?php esc_html_e( 'Image Uploader', 'cartvai' ); ?></span>
 							</div>
 
 							<div style="display: flex; flex-direction: column; gap: 12px;">
 								<div style="display: flex; gap: 10px; align-items: center;">
-									<input type="text" id="footer_payment_image" name="footer_payment_image" value="<?php echo esc_attr( $footer_payment_image ); ?>" placeholder="<?php esc_attr_e( 'https://example.com/payment-banner.png or click Upload', 'cartvai-theme' ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
+									<input type="text" id="footer_payment_image" name="footer_payment_image" value="<?php echo esc_attr( $footer_payment_image ); ?>" placeholder="<?php esc_attr_e( 'https://example.com/payment-banner.png or click Upload', 'cartvai' ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 									<button type="button" class="button button-secondary cv-upload-image-btn" data-target="footer_payment_image" data-preview="footer_payment_image_preview" style="height: 38px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
 										<span class="dashicons dashicons-upload" style="font-size: 16px; width: 16px; height: 16px; line-height: 16px;"></span>
-										<?php esc_html_e( 'Upload / Select Image', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Upload / Select Image', 'cartvai' ); ?>
 									</button>
 									<button type="button" class="button cv-remove-image-btn" data-target="footer_payment_image" data-preview="footer_payment_image_preview" style="height: 38px; color: #dc2626; border-color: #fca5a5; <?php echo empty( $footer_payment_image ) ? 'display: none;' : ''; ?>">
-										<?php esc_html_e( 'Remove', 'cartvai-theme' ); ?>
+										<?php esc_html_e( 'Remove', 'cartvai' ); ?>
 									</button>
 								</div>
 
 								<div id="footer_payment_image_preview" style="<?php echo empty( $footer_payment_image ) ? 'display: none;' : 'display: inline-block;'; ?> background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px; max-width: 520px;">
-									<img src="<?php echo esc_url( $footer_payment_image ); ?>" alt="<?php esc_attr_e( 'Payment Banner Preview', 'cartvai-theme' ); ?>" style="max-height: 48px; width: auto; object-fit: contain; display: block;" />
+									<img src="<?php echo esc_url( $footer_payment_image ); ?>" alt="<?php esc_attr_e( 'Payment Banner Preview', 'cartvai' ); ?>" style="max-height: 48px; width: auto; object-fit: contain; display: block;" />
 								</div>
-								<span style="font-size: 11px; color: #94a3b8;"><?php esc_html_e( 'Recommended image: transparent PNG or SVG banner strip (height: 28px - 48px). Leave empty to show clean default vector badges.', 'cartvai-theme' ); ?></span>
+								<span style="font-size: 11px; color: #94a3b8;"><?php esc_html_e( 'Recommended image: transparent PNG or SVG banner strip (height: 28px - 48px). Leave empty to show clean default vector badges.', 'cartvai' ); ?></span>
 							</div>
 						</div>
 					</div>
@@ -1245,12 +1245,12 @@ function cartvai_theme_render_settings_page() {
 							<div style="display: flex; align-items: center; gap: 12px;">
 								<span class="dashicons dashicons-layout" style="font-size: 24px; width: 24px; height: 24px; color: #2563eb;"></span>
 								<div>
-									<strong style="font-size: 13px; color: #1e3a8a; display: block;"><?php esc_html_e( 'WordPress Native Block Patterns Available', 'cartvai-theme' ); ?></strong>
-									<span style="font-size: 12px; color: #3b82f6;"><?php esc_html_e( 'You can also visually build or edit your homepage in the Gutenberg block editor using the "Cartvai" block patterns (+ -> Patterns -> Cartvai).', 'cartvai-theme' ); ?></span>
+									<strong style="font-size: 13px; color: #1e3a8a; display: block;"><?php esc_html_e( 'WordPress Native Block Patterns Available', 'cartvai' ); ?></strong>
+									<span style="font-size: 12px; color: #3b82f6;"><?php esc_html_e( 'You can also visually build or edit your homepage in the Gutenberg block editor using the "Cartvai" block patterns (+ -> Patterns -> Cartvai).', 'cartvai' ); ?></span>
 								</div>
 							</div>
 							<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=page' ) ); ?>" class="button button-secondary" style="font-weight: 600; white-space: nowrap;">
-								<?php esc_html_e( 'View Pages →', 'cartvai-theme' ); ?>
+								<?php esc_html_e( 'View Pages →', 'cartvai' ); ?>
 							</a>
 						</div>
 
@@ -1258,71 +1258,71 @@ function cartvai_theme_render_settings_page() {
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px; display: flex; align-items: center; justify-content: space-between;">
 								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Main Hero Banner (Left 8 Columns)', 'cartvai-theme' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control the main headline, callout badge, CTA buttons, and banner media image.', 'cartvai-theme' ); ?></p>
+									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Main Hero Banner (Left 8 Columns)', 'cartvai' ); ?></h2>
+									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Control the main headline, callout badge, CTA buttons, and banner media image.', 'cartvai' ); ?></p>
 								</div>
-								<span style="font-size: 11px; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 9999px;"><?php esc_html_e( 'Hero Showcase', 'cartvai-theme' ); ?></span>
+								<span style="font-size: 11px; font-weight: 600; color: #059669; background: #d1fae5; padding: 3px 10px; border-radius: 9999px;"><?php esc_html_e( 'Hero Showcase', 'cartvai' ); ?></span>
 							</div>
 
 							<div style="display: flex; flex-direction: column; gap: 16px;">
 								<!-- Hero Badge -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Top Eyebrow Badge', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Top Eyebrow Badge', 'cartvai' ); ?></label>
 									<input type="text" name="homepage_hero_badge" value="<?php echo esc_attr( $homepage_hero_badge ); ?>" style="width: 100%; max-width: 500px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<!-- Hero Title -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Main Title / Headline', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Main Title / Headline', 'cartvai' ); ?></label>
 									<input type="text" name="homepage_hero_title" value="<?php echo esc_attr( $homepage_hero_title ); ?>" style="width: 100%; max-width: 600px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 14px; font-weight: 600;" />
 								</div>
 
 								<!-- Hero Subtitle -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Subtitle / Description', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Subtitle / Description', 'cartvai' ); ?></label>
 									<textarea name="homepage_hero_subtitle" rows="3" style="width: 100%; max-width: 650px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 10px 12px; font-size: 13px; line-height: 1.5;"><?php echo esc_textarea( $homepage_hero_subtitle ); ?></textarea>
 								</div>
 
 								<!-- Buttons Grid -->
 								<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
 									<div style="border: 1px solid #f1f5f9; border-radius: 8px; padding: 14px; background: #fafafa;">
-										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Primary Button', 'cartvai-theme' ); ?></strong>
+										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Primary Button', 'cartvai' ); ?></strong>
 										<div style="display: flex; flex-direction: column; gap: 8px;">
-											<input type="text" name="homepage_hero_btn1_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. Shop Collection)', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-											<input type="url" name="homepage_hero_btn1_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
+											<input type="text" name="homepage_hero_btn1_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. Shop Collection)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
+											<input type="url" name="homepage_hero_btn1_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn1_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 										</div>
 									</div>
 
 									<div style="border: 1px solid #f1f5f9; border-radius: 8px; padding: 14px; background: #fafafa;">
-										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Secondary Outline Button', 'cartvai-theme' ); ?></strong>
+										<strong style="font-size: 12px; color: #0f172a; display: block; margin-bottom: 8px;"><?php esc_html_e( 'Secondary Outline Button', 'cartvai' ); ?></strong>
 										<div style="display: flex; flex-direction: column; gap: 8px;">
-											<input type="text" name="homepage_hero_btn2_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. View Flash Deals)', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
-											<input type="url" name="homepage_hero_btn2_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
+											<input type="text" name="homepage_hero_btn2_text" placeholder="<?php esc_attr_e( 'Button Text (e.g. View Flash Deals)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_text ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
+											<input type="url" name="homepage_hero_btn2_url" placeholder="<?php esc_attr_e( 'URL (Leave blank for shop page)', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_hero_btn2_url ); ?>" style="width: 100%; height: 36px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px;" />
 										</div>
 									</div>
 								</div>
 
 								<!-- Perks String -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Trust Perks Bullet Points', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Trust Perks Bullet Points', 'cartvai' ); ?></label>
 									<input type="text" name="homepage_hero_perks" value="<?php echo esc_attr( $homepage_hero_perks ); ?>" style="width: 100%; max-width: 600px; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 								</div>
 
 								<!-- Hero Custom Image -->
 								<div>
-									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Banner Media Image (Optional)', 'cartvai-theme' ); ?></label>
+									<label style="display: block; font-size: 12px; font-weight: 700; color: #334155; margin-bottom: 6px;"><?php esc_html_e( 'Hero Banner Media Image (Optional)', 'cartvai' ); ?></label>
 									<div style="display: flex; gap: 10px; align-items: center; max-width: 650px;">
-										<input type="text" id="homepage_hero_image" name="homepage_hero_image" value="<?php echo esc_attr( $homepage_hero_image ); ?>" placeholder="<?php esc_attr_e( 'Upload an image or paste URL', 'cartvai-theme' ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
+										<input type="text" id="homepage_hero_image" name="homepage_hero_image" value="<?php echo esc_attr( $homepage_hero_image ); ?>" placeholder="<?php esc_attr_e( 'Upload an image or paste URL', 'cartvai' ); ?>" style="flex: 1; height: 38px; border-radius: 8px; border: 1px solid #cbd5e1; padding: 0 12px; font-size: 13px;" />
 										<button type="button" class="button button-secondary cv-upload-image-btn" data-target="homepage_hero_image" data-preview="homepage_hero_image_preview" style="height: 38px; font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
 											<span class="dashicons dashicons-upload" style="font-size: 16px; width: 16px; height: 16px; line-height: 16px;"></span>
-											<?php esc_html_e( 'Upload Image', 'cartvai-theme' ); ?>
+											<?php esc_html_e( 'Upload Image', 'cartvai' ); ?>
 										</button>
 										<button type="button" class="button cv-remove-image-btn" data-target="homepage_hero_image" data-preview="homepage_hero_image_preview" style="height: 38px; color: #dc2626; border-color: #fca5a5; <?php echo empty( $homepage_hero_image ) ? 'display: none;' : ''; ?>">
-											<?php esc_html_e( 'Remove', 'cartvai-theme' ); ?>
+											<?php esc_html_e( 'Remove', 'cartvai' ); ?>
 										</button>
 									</div>
 									<div id="homepage_hero_image_preview" style="<?php echo empty( $homepage_hero_image ) ? 'display: none;' : 'display: inline-block;'; ?> margin-top: 10px; background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 12px; max-width: 320px;">
-										<img src="<?php echo esc_url( $homepage_hero_image ); ?>" alt="<?php esc_attr_e( 'Hero Preview', 'cartvai-theme' ); ?>" style="max-height: 90px; width: auto; object-fit: contain; display: block;" />
+										<img src="<?php echo esc_url( $homepage_hero_image ); ?>" alt="<?php esc_attr_e( 'Hero Preview', 'cartvai' ); ?>" style="max-height: 90px; width: auto; object-fit: contain; display: block;" />
 									</div>
 								</div>
 							</div>
@@ -1331,81 +1331,81 @@ function cartvai_theme_render_settings_page() {
 						<!-- Secondary Hero Promo Cards (Right Column) -->
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 14px;">
-								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Secondary Hero Promo Cards (Right 4 Columns)', 'cartvai-theme' ); ?></h2>
-								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Two stacked high-converting promotional deal cards placed next to the main banner.', 'cartvai-theme' ); ?></p>
+								<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Secondary Hero Promo Cards (Right 4 Columns)', 'cartvai' ); ?></h2>
+								<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Two stacked high-converting promotional deal cards placed next to the main banner.', 'cartvai' ); ?></p>
 							</div>
 
 							<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 18px;">
 								
 								<!-- Promo Card 1 -->
 								<div style="border: 1px solid #bbf7d0; background: #f0fdf4; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-									<strong style="font-size: 13px; color: #166534; display: block; border-bottom: 1px solid #dcfce7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 1 (Top)', 'cartvai-theme' ); ?></strong>
+									<strong style="font-size: 13px; color: #166534; display: block; border-bottom: 1px solid #dcfce7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 1 (Top)', 'cartvai' ); ?></strong>
 									
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo1_badge" value="<?php echo esc_attr( $homepage_promo1_badge ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo1_title" value="<?php echo esc_attr( $homepage_promo1_title ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-weight: 600;" />
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo1_desc" value="<?php echo esc_attr( $homepage_promo1_desc ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 
 									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
 										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai-theme' ); ?></label>
+											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai' ); ?></label>
 											<input type="text" name="homepage_promo1_price" value="<?php echo esc_attr( $homepage_promo1_price ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 										</div>
 										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai-theme' ); ?></label>
+											<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai' ); ?></label>
 											<input type="text" name="homepage_promo1_btn_text" value="<?php echo esc_attr( $homepage_promo1_btn_text ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 										</div>
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai-theme' ); ?></label>
-										<input type="url" name="homepage_promo1_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_promo1_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
+										<label style="font-size: 11px; font-weight: 700; color: #166534; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai' ); ?></label>
+										<input type="url" name="homepage_promo1_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_promo1_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 								</div>
 
 								<!-- Promo Card 2 -->
 								<div style="border: 1px solid #fde68a; background: #fffbeb; border-radius: 10px; padding: 16px; display: flex; flex-direction: column; gap: 10px;">
-									<strong style="font-size: 13px; color: #92400e; display: block; border-bottom: 1px solid #fef3c7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 2 (Bottom)', 'cartvai-theme' ); ?></strong>
+									<strong style="font-size: 13px; color: #92400e; display: block; border-bottom: 1px solid #fef3c7; padding-bottom: 6px;"><?php esc_html_e( 'Promo Card 2 (Bottom)', 'cartvai' ); ?></strong>
 									
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Badge Text', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo2_badge" value="<?php echo esc_attr( $homepage_promo2_badge ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Title', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo2_title" value="<?php echo esc_attr( $homepage_promo2_title ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 13px; font-weight: 600;" />
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai-theme' ); ?></label>
+										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Card Description', 'cartvai' ); ?></label>
 										<input type="text" name="homepage_promo2_desc" value="<?php echo esc_attr( $homepage_promo2_desc ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 
 									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
 										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai-theme' ); ?></label>
+											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Price Pill Text', 'cartvai' ); ?></label>
 											<input type="text" name="homepage_promo2_price" value="<?php echo esc_attr( $homepage_promo2_price ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 										</div>
 										<div>
-											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai-theme' ); ?></label>
+											<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Button Text', 'cartvai' ); ?></label>
 											<input type="text" name="homepage_promo2_btn_text" value="<?php echo esc_attr( $homepage_promo2_btn_text ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 										</div>
 									</div>
 
 									<div>
-										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai-theme' ); ?></label>
-										<input type="url" name="homepage_promo2_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai-theme' ); ?>" value="<?php echo esc_attr( $homepage_promo2_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
+										<label style="font-size: 11px; font-weight: 700; color: #92400e; display: block; margin-bottom: 4px;"><?php esc_html_e( 'Destination URL', 'cartvai' ); ?></label>
+										<input type="url" name="homepage_promo2_url" placeholder="<?php esc_attr_e( 'Leave blank for shop page', 'cartvai' ); ?>" value="<?php echo esc_attr( $homepage_promo2_url ); ?>" style="width: 100%; height: 34px; border-radius: 6px; border: 1px solid #cbd5e1; padding: 0 10px; font-size: 12px;" />
 									</div>
 								</div>
 
@@ -1416,8 +1416,8 @@ function cartvai_theme_render_settings_page() {
 						<div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 22px; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
 							<div style="display: flex; align-items: center; justify-content: space-between;">
 								<div>
-									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Trust Badges & Value Props Strip', 'cartvai-theme' ); ?></h2>
-									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Display the 4-card value proposition row (Free Shipping, Secure Checkout, 30-Day Returns, 24/7 Support) under the hero.', 'cartvai-theme' ); ?></p>
+									<h2 style="font-size: 16px; font-weight: 700; color: #0f172a; margin: 0 0 4px 0;"><?php esc_html_e( 'Trust Badges & Value Props Strip', 'cartvai' ); ?></h2>
+									<p style="font-size: 12px; color: #64748b; margin: 0;"><?php esc_html_e( 'Display the 4-card value proposition row (Free Shipping, Secure Checkout, 30-Day Returns, 24/7 Support) under the hero.', 'cartvai' ); ?></p>
 								</div>
 								<label class="cartvai-toggle-switch" style="position: relative; display: inline-block; width: 44px; height: 24px;">
 									<input type="checkbox" name="homepage_trust_enabled" value="1" <?php checked( $homepage_trust_enabled ); ?> style="opacity: 0; width: 0; height: 0;">
@@ -1538,9 +1538,9 @@ function cartvai_theme_render_settings_page() {
 
 				if (typeof wp !== 'undefined' && wp.media) {
 					const mediaFrame = wp.media({
-						title: '<?php echo esc_js( __( 'Select or Upload Payment Banner Image', 'cartvai-theme' ) ); ?>',
+						title: '<?php echo esc_js( __( 'Select or Upload Payment Banner Image', 'cartvai' ) ); ?>',
 						button: {
-							text: '<?php echo esc_js( __( 'Use this image', 'cartvai-theme' ) ); ?>'
+							text: '<?php echo esc_js( __( 'Use this image', 'cartvai' ) ); ?>'
 						},
 						multiple: false
 					});

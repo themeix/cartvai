@@ -58,7 +58,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 						</a>
 					<?php endif; ?>
 					<span class="cv:text-gray-600">|</span>
-					<span class="cv:text-gray-400"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai-theme' ); ?></span>
+					<span class="cv:text-gray-400"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai' ); ?></span>
 				</div>
 			</div>
 		</div>
@@ -88,7 +88,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 				<?php get_template_part( 'template-parts/components/header-cart' ); ?>
 
 				<!-- Mobile Hamburger Button -->
-				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai-theme' ); ?>">
+				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai' ); ?>">
 					<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 				</button>
 			</div>
@@ -99,7 +99,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 	<div class="cv-nav-bar cv:border-t cv:border-b cv:border-gray-200/80 cv:bg-slate-50/70">
 		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:flex cv:items-center cv:justify-between">
 			<!-- Primary Menu -->
-			<nav class="cv-primary-nav cv:hidden cv:md:flex cv:items-center cv:gap-8 cv:py-3.5" aria-label="<?php esc_attr_e( 'Main Menu', 'cartvai-theme' ); ?>">
+			<nav class="cv-primary-nav cv:hidden cv:md:flex cv:items-center cv:gap-8 cv:py-3.5" aria-label="<?php esc_attr_e( 'Main Menu', 'cartvai' ); ?>">
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(
@@ -117,7 +117,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 			<!-- Quick Category Badges -->
 			<?php if ( $popular_categories_enabled && ! empty( $categories ) ) : ?>
 				<div class="cv:hidden cv:lg:flex cv:items-center cv:gap-2 cv:py-3">
-					<span class="cv:text-xs cv:font-bold cv:text-gray-400 cv:uppercase cv:tracking-wider"><?php esc_html_e( 'Popular:', 'cartvai-theme' ); ?></span>
+					<span class="cv:text-xs cv:font-bold cv:text-gray-400 cv:uppercase cv:tracking-wider"><?php esc_html_e( 'Popular:', 'cartvai' ); ?></span>
 					<?php foreach ( $categories as $cat ) : ?>
 						<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="cv:text-xs cv:font-semibold cv:px-3 cv:py-1.5 cv:rounded-lg cv:bg-white cv:border cv:border-gray-200/90 cv:text-slate-700 hover:cv:border-primary hover:cv:text-primary cv:shadow-2xs cv:transition-all">
 							<?php echo esc_html( $cat->name ); ?>

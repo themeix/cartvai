@@ -31,14 +31,14 @@ if ( empty( $payment_image ) ) {
 	<?php if ( ! empty( $payment_image ) ) : ?>
 		<?php if ( $show_pay_with ) : ?>
 			<span class="cv:text-[11px] cv:font-bold cv:uppercase cv:tracking-wider cv:text-slate-400 cv:mr-1">
-				<?php esc_html_e( 'Pay With', 'cartvai-theme' ); ?>
+				<?php esc_html_e( 'Pay With', 'cartvai' ); ?>
 			</span>
 		<?php endif; ?>
-		<img src="<?php echo esc_url( $payment_image ); ?>" alt="<?php esc_attr_e( 'Supported Payment Methods', 'cartvai-theme' ); ?>" class="cv-payment-banner cv:max-h-10 cv:sm:max-h-12 cv:w-auto cv:object-contain" style="max-height: 42px; width: auto; object-fit: contain;" loading="lazy" />
+		<img src="<?php echo esc_url( $payment_image ); ?>" alt="<?php esc_attr_e( 'Supported Payment Methods', 'cartvai' ); ?>" class="cv-payment-banner cv:max-h-10 cv:sm:max-h-12 cv:w-auto cv:object-contain" style="max-height: 42px; width: auto; object-fit: contain;" loading="lazy" />
 	<?php else : ?>
 		<?php if ( $show_pay_with ) : ?>
 			<span class="cv:text-[11px] cv:font-bold cv:uppercase cv:tracking-wider cv:text-slate-400 cv:mr-1">
-				<?php esc_html_e( 'Pay With', 'cartvai-theme' ); ?>
+				<?php esc_html_e( 'Pay With', 'cartvai' ); ?>
 			</span>
 		<?php endif; ?>
 

@@ -51,7 +51,7 @@ get_header();
 			<?php the_posts_pagination(); ?>
 		</div>
 	<?php else : ?>
-		<p class="cv:text-gray-500"><?php esc_html_e( 'No posts found.', 'cartvai-theme' ); ?></p>
+		<p class="cv:text-gray-500"><?php esc_html_e( 'No posts found.', 'cartvai' ); ?></p>
 	<?php endif; ?>
 </div>
 

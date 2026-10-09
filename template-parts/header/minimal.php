@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<!-- Nav -->
-			<nav class="cv-primary-nav cv:hidden cv:md:flex cv:items-center cv:gap-6" aria-label="<?php esc_attr_e( 'Minimal Navigation', 'cartvai-theme' ); ?>">
+			<nav class="cv-primary-nav cv:hidden cv:md:flex cv:items-center cv:gap-6" aria-label="<?php esc_attr_e( 'Minimal Navigation', 'cartvai' ); ?>">
 				<?php
 				if ( has_nav_menu( 'primary' ) ) {
 					wp_nav_menu(
@@ -49,7 +49,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php get_template_part( 'template-parts/components/header-cart' ); ?>
 
 				<!-- Mobile Hamburger Button -->
-				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai-theme' ); ?>">
+				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai' ); ?>">
 					<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 				</button>
 			</div>

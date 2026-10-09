@@ -53,7 +53,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 						</a>
 					<?php endif; ?>
 					<span class="cv:text-gray-600">|</span>
-					<span class="cv:text-gray-400"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai-theme' ); ?></span>
+					<span class="cv:text-gray-400"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai' ); ?></span>
 				</div>
 			</div>
 		</div>
@@ -86,12 +86,12 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
 						</svg>
 						<span class="cv:text-[11px] cv:font-semibold cv:leading-none">
-							<?php echo is_user_logged_in() ? esc_html__( 'Account', 'cartvai-theme' ) : esc_html__( 'Sign In', 'cartvai-theme' ); ?>
+							<?php echo is_user_logged_in() ? esc_html__( 'Account', 'cartvai' ) : esc_html__( 'Sign In', 'cartvai' ); ?>
 						</span>
 					</a>
 
 					<div class="cartvai-header-cart-slot cv:relative cv:inline-flex cv:items-center">
-						<button type="button" id="cartvaiMiniCartTrigger" class="cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl cv:text-gray-800 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai-theme' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>">
+						<button type="button" id="cartvaiMiniCartTrigger" class="cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl cv:text-gray-800 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>">
 							<div class="cv:relative">
 								<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -100,14 +100,14 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 									<?php echo esc_html( $cart_count ); ?>
 								</span>
 							</div>
-							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'Cart', 'cartvai-theme' ); ?></span>
+							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'Cart', 'cartvai' ); ?></span>
 						</button>
 					</div>
 
 					<?php if ( $header_more_enabled ) : ?>
-						<button type="button" class="cv-mobile-menu-toggle cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl cv:text-gray-700 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai-theme' ); ?>">
+						<button type="button" class="cv-mobile-menu-toggle cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl cv:text-gray-700 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai' ); ?>">
 							<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'More', 'cartvai-theme' ); ?></span>
+							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'More', 'cartvai' ); ?></span>
 						</button>
 					<?php endif; ?>
 				</div>
@@ -118,7 +118,7 @@ $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled'
 	<!-- Colorful Mega Menu Navigation Bar -->
 	<div class="cv-megastore-navbar cv:hidden cv:md:block">
 		<div class="cv-mega-nav-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:relative">
-			<nav class="cv:flex cv:items-center cv:justify-center" aria-label="<?php esc_attr_e( 'Category Mega Menu', 'cartvai-theme' ); ?>">
+			<nav class="cv:flex cv:items-center cv:justify-center" aria-label="<?php esc_attr_e( 'Category Mega Menu', 'cartvai' ); ?>">
 				<?php get_template_part( 'template-parts/components/mega-menu-bar' ); ?>
 			</nav>
 		</div>

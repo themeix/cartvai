@@ -17,34 +17,34 @@ $shop_url     = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_sho
 $checkout_url = function_exists( 'cartvai_get_checkout_url' ) ? cartvai_get_checkout_url() : home_url( '/checkout/' );
 
 // Hero Options
-$hero_badge      = cartvai_theme_option( 'homepage_hero_badge', esc_html__( '⚡ LIMITED TIME MEGA SALE • UP TO 50% OFF', 'cartvai-theme' ) );
-$hero_title      = cartvai_theme_option( 'homepage_hero_title', esc_html__( 'Next-Gen Tech & Premium Lifestyle Gear', 'cartvai-theme' ) );
-$hero_subtitle   = cartvai_theme_option( 'homepage_hero_subtitle', esc_html__( 'Upgrade your daily routine with top-rated smart devices, audio accessories, and modern essentials at unbeatable prices.', 'cartvai-theme' ) );
-$hero_btn1_text  = cartvai_theme_option( 'homepage_hero_btn1_text', esc_html__( 'Shop Collection', 'cartvai-theme' ) );
+$hero_badge      = cartvai_theme_option( 'homepage_hero_badge', esc_html__( '⚡ LIMITED TIME MEGA SALE • UP TO 50% OFF', 'cartvai' ) );
+$hero_title      = cartvai_theme_option( 'homepage_hero_title', esc_html__( 'Next-Gen Tech & Premium Lifestyle Gear', 'cartvai' ) );
+$hero_subtitle   = cartvai_theme_option( 'homepage_hero_subtitle', esc_html__( 'Upgrade your daily routine with top-rated smart devices, audio accessories, and modern essentials at unbeatable prices.', 'cartvai' ) );
+$hero_btn1_text  = cartvai_theme_option( 'homepage_hero_btn1_text', esc_html__( 'Shop Collection', 'cartvai' ) );
 $hero_btn1_url   = cartvai_theme_option( 'homepage_hero_btn1_url', '' );
-$hero_btn2_text  = cartvai_theme_option( 'homepage_hero_btn2_text', esc_html__( 'View Flash Deals', 'cartvai-theme' ) );
+$hero_btn2_text  = cartvai_theme_option( 'homepage_hero_btn2_text', esc_html__( 'View Flash Deals', 'cartvai' ) );
 $hero_btn2_url   = cartvai_theme_option( 'homepage_hero_btn2_url', '' );
-$hero_perks      = cartvai_theme_option( 'homepage_hero_perks', esc_html__( '✓ Free Express Delivery • ✓ 30-Day Money-Back • ✓ Official Warranty', 'cartvai-theme' ) );
+$hero_perks      = cartvai_theme_option( 'homepage_hero_perks', esc_html__( '✓ Free Express Delivery • ✓ 30-Day Money-Back • ✓ Official Warranty', 'cartvai' ) );
 $hero_image      = cartvai_theme_option( 'homepage_hero_image', '' );
 
 $btn1_href = ! empty( $hero_btn1_url ) ? $hero_btn1_url : $shop_url;
 $btn2_href = ! empty( $hero_btn2_url ) ? $hero_btn2_url : $shop_url;
 
 // Promo Card 1 Options
-$promo1_badge = cartvai_theme_option( 'homepage_promo1_badge', esc_html__( '🔥 TRENDING DEAL', 'cartvai-theme' ) );
-$promo1_title = cartvai_theme_option( 'homepage_promo1_title', esc_html__( 'Wireless Spatial Audio', 'cartvai-theme' ) );
-$promo1_desc  = cartvai_theme_option( 'homepage_promo1_desc', esc_html__( 'Immersive acoustic clarity with 40-hour ultra battery life.', 'cartvai-theme' ) );
-$promo1_price = cartvai_theme_option( 'homepage_promo1_price', esc_html__( 'Starting at $29.99', 'cartvai-theme' ) );
-$promo1_btn   = cartvai_theme_option( 'homepage_promo1_btn_text', esc_html__( 'Shop Now', 'cartvai-theme' ) );
+$promo1_badge = cartvai_theme_option( 'homepage_promo1_badge', esc_html__( '🔥 TRENDING DEAL', 'cartvai' ) );
+$promo1_title = cartvai_theme_option( 'homepage_promo1_title', esc_html__( 'Wireless Spatial Audio', 'cartvai' ) );
+$promo1_desc  = cartvai_theme_option( 'homepage_promo1_desc', esc_html__( 'Immersive acoustic clarity with 40-hour ultra battery life.', 'cartvai' ) );
+$promo1_price = cartvai_theme_option( 'homepage_promo1_price', esc_html__( 'Starting at $29.99', 'cartvai' ) );
+$promo1_btn   = cartvai_theme_option( 'homepage_promo1_btn_text', esc_html__( 'Shop Now', 'cartvai' ) );
 $promo1_url   = cartvai_theme_option( 'homepage_promo1_url', '' );
 $promo1_href  = ! empty( $promo1_url ) ? $promo1_url : $shop_url;
 
 // Promo Card 2 Options
-$promo2_badge = cartvai_theme_option( 'homepage_promo2_badge', esc_html__( '⚡ FLASH OFFER', 'cartvai-theme' ) );
-$promo2_title = cartvai_theme_option( 'homepage_promo2_title', esc_html__( 'Smart Wearables & Fit Tech', 'cartvai-theme' ) );
-$promo2_desc  = cartvai_theme_option( 'homepage_promo2_desc', esc_html__( 'Real-time health telemetry with crisp AMOLED display.', 'cartvai-theme' ) );
-$promo2_price = cartvai_theme_option( 'homepage_promo2_price', esc_html__( 'Save Up To 40% OFF', 'cartvai-theme' ) );
-$promo2_btn   = cartvai_theme_option( 'homepage_promo2_btn_text', esc_html__( 'Explore Deals', 'cartvai-theme' ) );
+$promo2_badge = cartvai_theme_option( 'homepage_promo2_badge', esc_html__( '⚡ FLASH OFFER', 'cartvai' ) );
+$promo2_title = cartvai_theme_option( 'homepage_promo2_title', esc_html__( 'Smart Wearables & Fit Tech', 'cartvai' ) );
+$promo2_desc  = cartvai_theme_option( 'homepage_promo2_desc', esc_html__( 'Real-time health telemetry with crisp AMOLED display.', 'cartvai' ) );
+$promo2_price = cartvai_theme_option( 'homepage_promo2_price', esc_html__( 'Save Up To 40% OFF', 'cartvai' ) );
+$promo2_btn   = cartvai_theme_option( 'homepage_promo2_btn_text', esc_html__( 'Explore Deals', 'cartvai' ) );
 $promo2_url   = cartvai_theme_option( 'homepage_promo2_url', '' );
 $promo2_href  = ! empty( $promo2_url ) ? $promo2_url : $shop_url;
 
@@ -169,8 +169,8 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 						<svg class="cv:w-6 cv:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
 					</div>
 					<div>
-						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( 'Free Express Shipping', 'cartvai-theme' ); ?></h4>
-						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'On eligible orders over $50', 'cartvai-theme' ); ?></p>
+						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( 'Free Express Shipping', 'cartvai' ); ?></h4>
+						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'On eligible orders over $50', 'cartvai' ); ?></p>
 					</div>
 				</div>
 
@@ -179,8 +179,8 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 						<svg class="cv:w-6 cv:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
 					</div>
 					<div>
-						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '100% Secure Checkout', 'cartvai-theme' ); ?></h4>
-						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Encrypted SSL payments', 'cartvai-theme' ); ?></p>
+						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '100% Secure Checkout', 'cartvai' ); ?></h4>
+						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Encrypted SSL payments', 'cartvai' ); ?></p>
 					</div>
 				</div>
 
@@ -189,8 +189,8 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 						<svg class="cv:w-6 cv:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
 					</div>
 					<div>
-						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '30-Day Easy Returns', 'cartvai-theme' ); ?></h4>
-						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Hassle-free refund policy', 'cartvai-theme' ); ?></p>
+						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '30-Day Easy Returns', 'cartvai' ); ?></h4>
+						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Hassle-free refund policy', 'cartvai' ); ?></p>
 					</div>
 				</div>
 
@@ -199,8 +199,8 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 						<svg class="cv:w-6 cv:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
 					</div>
 					<div>
-						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai-theme' ); ?></h4>
-						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Live agent assistance', 'cartvai-theme' ); ?></p>
+						<h4 class="cv:text-sm cv:font-extrabold cv:text-gray-900 cv:m-0"><?php esc_html_e( '24/7 Dedicated Support', 'cartvai' ); ?></h4>
+						<p class="cv:text-xs cv:text-gray-500 cv:m-0"><?php esc_html_e( 'Live agent assistance', 'cartvai' ); ?></p>
 					</div>
 				</div>
 			</div>
@@ -210,9 +210,9 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 3. FEATURED CATEGORIES ==================== -->
 	<section class="cv-home-section cv:mb-10">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Featured Categories', 'cartvai-theme' ); ?></h3>
+			<h3 class="cv-shelf-title"><?php esc_html_e( 'Featured Categories', 'cartvai' ); ?></h3>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
-				<span><?php esc_html_e( 'View All Categories', 'cartvai-theme' ); ?></span>
+				<span><?php esc_html_e( 'View All Categories', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
 			</a>
 		</div>
@@ -222,9 +222,9 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 4. TOP SELLING PRODUCTS ==================== -->
 	<section class="cv-home-section cv:mb-12">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Top Selling Products', 'cartvai-theme' ); ?></h3>
+			<h3 class="cv-shelf-title"><?php esc_html_e( 'Top Selling Products', 'cartvai' ); ?></h3>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
-				<span><?php esc_html_e( 'View All Best Sellers', 'cartvai-theme' ); ?></span>
+				<span><?php esc_html_e( 'View All Best Sellers', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
 			</a>
 		</div>
@@ -235,20 +235,20 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<section class="cv-home-section cv:mb-12">
 		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 cv:gap-6">
 			<div class="cv-promo-duo-card" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)">
-				<p class="cv:text-xs cv:font-extrabold cv:text-blue-600 cv:uppercase cv:tracking-wider cv:mb-2"><?php esc_html_e( 'Limited Time Offer', 'cartvai-theme' ); ?></p>
-				<h3 class="cv:text-xl cv:sm:text-2xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-2"><?php esc_html_e( 'Save Big on Smart Tech & Audio', 'cartvai-theme' ); ?></h3>
-				<p class="cv:text-sm cv:text-gray-600 cv:mb-6"><?php esc_html_e( 'Get up to 40% discount on noise-cancelling headphones and lifestyle wearables.', 'cartvai-theme' ); ?></p>
+				<p class="cv:text-xs cv:font-extrabold cv:text-blue-600 cv:uppercase cv:tracking-wider cv:mb-2"><?php esc_html_e( 'Limited Time Offer', 'cartvai' ); ?></p>
+				<h3 class="cv:text-xl cv:sm:text-2xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-2"><?php esc_html_e( 'Save Big on Smart Tech & Audio', 'cartvai' ); ?></h3>
+				<p class="cv:text-sm cv:text-gray-600 cv:mb-6"><?php esc_html_e( 'Get up to 40% discount on noise-cancelling headphones and lifestyle wearables.', 'cartvai' ); ?></p>
 				<a href="<?php echo esc_url( $shop_url ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-5 cv:py-2.5 cv:rounded-xl cv:bg-blue-600 cv:text-white cv:text-xs cv:font-bold hover:cv:bg-blue-700 cv:transition-colors">
-					<span><?php esc_html_e( 'Shop Electronics →', 'cartvai-theme' ); ?></span>
+					<span><?php esc_html_e( 'Shop Electronics →', 'cartvai' ); ?></span>
 				</a>
 			</div>
 
 			<div class="cv-promo-duo-card" style="background:linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%)">
-				<p class="cv:text-xs cv:font-extrabold cv:text-red-600 cv:uppercase cv:tracking-wider cv:mb-2"><?php esc_html_e( 'Weekend Special', 'cartvai-theme' ); ?></p>
-				<h3 class="cv:text-xl cv:sm:text-2xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-2"><?php esc_html_e( 'New Arrivals & Best Picks', 'cartvai-theme' ); ?></h3>
-				<p class="cv:text-sm cv:text-gray-600 cv:mb-6"><?php esc_html_e( 'Curated premium essentials direct to your doorstep with guaranteed fast express dispatch.', 'cartvai-theme' ); ?></p>
+				<p class="cv:text-xs cv:font-extrabold cv:text-red-600 cv:uppercase cv:tracking-wider cv:mb-2"><?php esc_html_e( 'Weekend Special', 'cartvai' ); ?></p>
+				<h3 class="cv:text-xl cv:sm:text-2xl cv:font-black cv:text-gray-950 cv:leading-snug cv:mb-2"><?php esc_html_e( 'New Arrivals & Best Picks', 'cartvai' ); ?></h3>
+				<p class="cv:text-sm cv:text-gray-600 cv:mb-6"><?php esc_html_e( 'Curated premium essentials direct to your doorstep with guaranteed fast express dispatch.', 'cartvai' ); ?></p>
 				<a href="<?php echo esc_url( $shop_url ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-5 cv:py-2.5 cv:rounded-xl cv:bg-gray-950 cv:text-white cv:text-xs cv:font-bold hover:cv:bg-gray-800 cv:transition-colors">
-					<span><?php esc_html_e( 'Explore Arrivals →', 'cartvai-theme' ); ?></span>
+					<span><?php esc_html_e( 'Explore Arrivals →', 'cartvai' ); ?></span>
 				</a>
 			</div>
 		</div>
@@ -257,9 +257,9 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 6. TRENDING PRODUCT SHELF ==================== -->
 	<section class="cv-home-section cv:mb-12">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Trending Products', 'cartvai-theme' ); ?></h3>
+			<h3 class="cv-shelf-title"><?php esc_html_e( 'Trending Products', 'cartvai' ); ?></h3>
 			<a href="<?php echo esc_url( $shop_url ); ?>" class="cv-shelf-link">
-				<span><?php esc_html_e( 'View All', 'cartvai-theme' ); ?></span>
+				<span><?php esc_html_e( 'View All', 'cartvai' ); ?></span>
 				<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
 			</a>
 		</div>
@@ -269,20 +269,20 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 	<!-- ==================== 7. CUSTOMER REVIEWS ==================== -->
 	<section class="cv-home-section cv:mb-8">
 		<div class="cv-shelf-header">
-			<h3 class="cv-shelf-title"><?php esc_html_e( 'Customer Reviews', 'cartvai-theme' ); ?></h3>
-			<span class="cv:text-xs cv:text-gray-500 cv:font-semibold"><?php esc_html_e( 'Verified Buyer Experiences', 'cartvai-theme' ); ?></span>
+			<h3 class="cv-shelf-title"><?php esc_html_e( 'Customer Reviews', 'cartvai' ); ?></h3>
+			<span class="cv:text-xs cv:text-gray-500 cv:font-semibold"><?php esc_html_e( 'Verified Buyer Experiences', 'cartvai' ); ?></span>
 		</div>
 		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-3 cv:gap-6">
 			<div class="cv-testimonial-card">
 				<div class="cv:text-amber-400 cv:text-sm cv:mb-3">★★★★★</div>
 				<p class="cv:text-sm cv:text-gray-700 cv:leading-relaxed cv:mb-5 cv:flex-1">
-					&ldquo;<?php esc_html_e( 'The product quality blew away my expectations. Super clean packaging, lightning fast next-day delivery, and customer service answered my question in minutes!', 'cartvai-theme' ); ?>&rdquo;
+					&ldquo;<?php esc_html_e( 'The product quality blew away my expectations. Super clean packaging, lightning fast next-day delivery, and customer service answered my question in minutes!', 'cartvai' ); ?>&rdquo;
 				</p>
 				<div class="cv:flex cv:items-center cv:gap-3 cv:pt-4 cv:border-t cv:border-gray-100">
 					<div class="cv:w-10 cv:h-10 cv:rounded-full cv:bg-blue-100 cv:text-blue-800 cv:font-bold cv:flex cv:items-center cv:justify-center cv:text-sm">AK</div>
 					<div>
 						<div class="cv:text-xs cv:font-bold cv:text-gray-900">Alex Kingston</div>
-						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai-theme' ); ?></div>
+						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai' ); ?></div>
 					</div>
 				</div>
 			</div>
@@ -290,13 +290,13 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 			<div class="cv-testimonial-card">
 				<div class="cv:text-amber-400 cv:text-sm cv:mb-3">★★★★★</div>
 				<p class="cv:text-sm cv:text-gray-700 cv:leading-relaxed cv:mb-5 cv:flex-1">
-					&ldquo;<?php esc_html_e( 'Absolutely love shopping here. The cart checkout flow was seamless on mobile and the discounts were authentic. This is now my default online go-to store.', 'cartvai-theme' ); ?>&rdquo;
+					&ldquo;<?php esc_html_e( 'Absolutely love shopping here. The cart checkout flow was seamless on mobile and the discounts were authentic. This is now my default online go-to store.', 'cartvai' ); ?>&rdquo;
 				</p>
 				<div class="cv:flex cv:items-center cv:gap-3 cv:pt-4 cv:border-t cv:border-gray-100">
 					<div class="cv:w-10 cv:h-10 cv:rounded-full cv:bg-emerald-100 cv:text-emerald-800 cv:font-bold cv:flex cv:items-center cv:justify-center cv:text-sm">SR</div>
 					<div>
 						<div class="cv:text-xs cv:font-bold cv:text-gray-900">Sophia Rodriguez</div>
-						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai-theme' ); ?></div>
+						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai' ); ?></div>
 					</div>
 				</div>
 			</div>
@@ -304,13 +304,13 @@ $trust_enabled = (bool) cartvai_theme_option( 'homepage_trust_enabled', true );
 			<div class="cv-testimonial-card">
 				<div class="cv:text-amber-400 cv:text-sm cv:mb-3">★★★★★</div>
 				<p class="cv:text-sm cv:text-gray-700 cv:leading-relaxed cv:mb-5 cv:flex-1">
-					&ldquo;<?php esc_html_e( 'High standard build quality and crystal clear sound. Hassle-free warranty registration and 100% genuine item as advertised. 10/10 recommendation!', 'cartvai-theme' ); ?>&rdquo;
+					&ldquo;<?php esc_html_e( 'High standard build quality and crystal clear sound. Hassle-free warranty registration and 100% genuine item as advertised. 10/10 recommendation!', 'cartvai' ); ?>&rdquo;
 				</p>
 				<div class="cv:flex cv:items-center cv:gap-3 cv:pt-4 cv:border-t cv:border-gray-100">
 					<div class="cv:w-10 cv:h-10 cv:rounded-full cv:bg-amber-100 cv:text-amber-800 cv:font-bold cv:flex cv:items-center cv:justify-center cv:text-sm">MT</div>
 					<div>
 						<div class="cv:text-xs cv:font-bold cv:text-gray-900">Marcus Thorne</div>
-						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai-theme' ); ?></div>
+						<div class="cv:text-[11px] cv:text-emerald-600 cv:font-medium">✓ <?php esc_html_e( 'Verified Buyer', 'cartvai' ); ?></div>
 					</div>
 				</div>
 			</div>

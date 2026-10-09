@@ -26,8 +26,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'cartvai_theme_colors',
 		array(
-			'title'       => esc_html__( 'Cartvai Colors & Styling', 'cartvai-theme' ),
-			'description' => esc_html__( 'Manage site-wide colors from 1 place. Applies to buttons, headers, cards, badges, and checkout.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai Colors & Styling', 'cartvai' ),
+			'description' => esc_html__( 'Manage site-wide colors from 1 place. Applies to buttons, headers, cards, badges, and checkout.', 'cartvai' ),
 			'priority'    => 25,
 			'capability'  => $cap,
 		)
@@ -36,43 +36,43 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$colors = array(
 		'cartvai_primary_color'       => array(
 			'default' => '#2563eb',
-			'label'   => esc_html__( 'Primary Brand Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Main buttons (Buy Now), active links, and brand highlights.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Primary Brand Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Main buttons (Buy Now), active links, and brand highlights.', 'cartvai' ),
 		),
 		'cartvai_primary_hover_color' => array(
 			'default' => '#1d4ed8',
-			'label'   => esc_html__( 'Primary Hover Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Hover state for primary buttons and links.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Primary Hover Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Hover state for primary buttons and links.', 'cartvai' ),
 		),
 		'cartvai_primary_light_color' => array(
 			'default' => '#eff6ff',
-			'label'   => esc_html__( 'Primary Light Tint', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Soft background tint for active tabs and badge containers.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Primary Light Tint', 'cartvai' ),
+			'desc'    => esc_html__( 'Soft background tint for active tabs and badge containers.', 'cartvai' ),
 		),
 		'cartvai_accent_color'        => array(
 			'default' => '#0f172a',
-			'label'   => esc_html__( 'Accent / Secondary Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Dark contrast buttons, labels, and badges.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Accent / Secondary Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Dark contrast buttons, labels, and badges.', 'cartvai' ),
 		),
 		'cartvai_heading_color'       => array(
 			'default' => '#0f172a',
-			'label'   => esc_html__( 'Headings Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Applied to page titles, headings (H1-H6), and product names.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Headings Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Applied to page titles, headings (H1-H6), and product names.', 'cartvai' ),
 		),
 		'cartvai_text_color'          => array(
 			'default' => '#334155',
-			'label'   => esc_html__( 'Body Text Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Applied to body paragraphs, product descriptions, and metadata.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Body Text Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Applied to body paragraphs, product descriptions, and metadata.', 'cartvai' ),
 		),
 		'cartvai_border_color'        => array(
 			'default' => '#e2e8f0',
-			'label'   => esc_html__( 'Border & Divider Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Card borders, table dividers, and input borders.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Border & Divider Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Card borders, table dividers, and input borders.', 'cartvai' ),
 		),
 		'cartvai_bg_color'            => array(
 			'default' => '#f8fafc',
-			'label'   => esc_html__( 'Site Background Color', 'cartvai-theme' ),
-			'desc'    => esc_html__( 'Storefront canvas background behind cards.', 'cartvai-theme' ),
+			'label'   => esc_html__( 'Site Background Color', 'cartvai' ),
+			'desc'    => esc_html__( 'Storefront canvas background behind cards.', 'cartvai' ),
 		),
 	);
 
@@ -106,8 +106,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'cartvai_theme_product_cards',
 		array(
-			'title'       => esc_html__( 'Cartvai Product Cards', 'cartvai-theme' ),
-			'description' => esc_html__( 'Customize product card visibility across Shop, Category archives, Tags, and Related Products.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai Product Cards', 'cartvai' ),
+			'description' => esc_html__( 'Customize product card visibility across Shop, Category archives, Tags, and Related Products.', 'cartvai' ),
 			'priority'    => 28,
 			'capability'  => $cap,
 		)
@@ -115,28 +115,28 @@ function cartvai_theme_customize_register( $wp_customize ) {
 
 	$card_toggles = array(
 		'cartvai_shop_page_hide_short_description' => array(
-			'label' => esc_html__( 'Hide Short Description', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove excerpt text below product title on cards.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide Short Description', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove excerpt text below product title on cards.', 'cartvai' ),
 		),
 		'cartvai_shop_page_hide_quantity'          => array(
-			'label' => esc_html__( 'Hide Quantity Selector', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove the -/+ quantity selector from product cards.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide Quantity Selector', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove the -/+ quantity selector from product cards.', 'cartvai' ),
 		),
 		'cartvai_shop_page_hide_buy_now'           => array(
-			'label' => esc_html__( 'Hide "Buy Now" Button', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove the direct checkout Buy Now button.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide "Buy Now" Button', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove the direct checkout Buy Now button.', 'cartvai' ),
 		),
 		'cartvai_shop_page_hide_add_to_cart'       => array(
-			'label' => esc_html__( 'Hide "Add to Cart" Button', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove the Add to Cart button from cards.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide "Add to Cart" Button', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove the Add to Cart button from cards.', 'cartvai' ),
 		),
 		'cartvai_shop_page_hide_off_badge'         => array(
-			'label' => esc_html__( 'Hide Discount (% OFF) Badge', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove percentage discount badge on sale cards.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide Discount (% OFF) Badge', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove percentage discount badge on sale cards.', 'cartvai' ),
 		),
 		'cartvai_shop_page_hide_save_badge'        => array(
-			'label' => esc_html__( 'Hide "Save Amount" Badge', 'cartvai-theme' ),
-			'desc'  => esc_html__( 'Remove green Save $XX pill next to sale price.', 'cartvai-theme' ),
+			'label' => esc_html__( 'Hide "Save Amount" Badge', 'cartvai' ),
+			'desc'  => esc_html__( 'Remove green Save $XX pill next to sale price.', 'cartvai' ),
 		),
 	);
 
@@ -168,8 +168,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'cartvai_theme_header_footer',
 		array(
-			'title'       => esc_html__( 'Cartvai Header & Footer', 'cartvai-theme' ),
-			'description' => esc_html__( 'Select and customize your ecommerce header and footer styles.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai Header & Footer', 'cartvai' ),
+			'description' => esc_html__( 'Select and customize your ecommerce header and footer styles.', 'cartvai' ),
 			'priority'    => 30,
 			'capability'  => $cap,
 		)
@@ -189,17 +189,17 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_header_style',
 		array(
-			'label'       => esc_html__( 'Header Layout Style', 'cartvai-theme' ),
-			'description' => esc_html__( 'Choose from several tailored ecommerce header designs.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Header Layout Style', 'cartvai' ),
+			'description' => esc_html__( 'Choose from several tailored ecommerce header designs.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'select',
 			'choices'     => array(
-				'megastore' => esc_html__( 'Colorful Megastore + Mega Menu (Rich Brand Header)', 'cartvai-theme' ),
-				'megabar'   => esc_html__( 'Contrast MegaBar + Mega Menu (White Top + Brand Navbar)', 'cartvai-theme' ),
-				'ecommerce' => esc_html__( 'Ecommerce Store (Top Bar + Search + Categories)', 'cartvai-theme' ),
-				'default'   => esc_html__( 'Default Standard (Logo + Nav + Cart)', 'cartvai-theme' ),
-				'centered'  => esc_html__( 'Centered Logo (Luxury / Boutique Style)', 'cartvai-theme' ),
-				'minimal'   => esc_html__( 'Minimalist (Clean & Ultra-compact)', 'cartvai-theme' ),
+				'megastore' => esc_html__( 'Colorful Megastore + Mega Menu (Rich Brand Header)', 'cartvai' ),
+				'megabar'   => esc_html__( 'Contrast MegaBar + Mega Menu (White Top + Brand Navbar)', 'cartvai' ),
+				'ecommerce' => esc_html__( 'Ecommerce Store (Top Bar + Search + Categories)', 'cartvai' ),
+				'default'   => esc_html__( 'Default Standard (Logo + Nav + Cart)', 'cartvai' ),
+				'centered'  => esc_html__( 'Centered Logo (Luxury / Boutique Style)', 'cartvai' ),
+				'minimal'   => esc_html__( 'Minimalist (Clean & Ultra-compact)', 'cartvai' ),
 			),
 		)
 	);
@@ -217,7 +217,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_announcement_enabled',
 		array(
-			'label'       => esc_html__( 'Show Top Announcement Bar', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show Top Announcement Bar', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -235,7 +235,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_announcement_text',
 		array(
-			'label'       => esc_html__( 'Announcement Bar Text', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Announcement Bar Text', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -254,8 +254,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_brand_tagline_enabled',
 		array(
-			'label'       => esc_html__( 'Show Brand Tagline ("Official Megastore")', 'cartvai-theme' ),
-			'description' => esc_html__( 'Display the site description tagline under the site name in the megastore header.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show Brand Tagline ("Official Megastore")', 'cartvai' ),
+			'description' => esc_html__( 'Display the site description tagline under the site name in the megastore header.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -274,7 +274,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_contact_phone',
 		array(
-			'label'       => esc_html__( 'Support Phone / Hotline', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Support Phone / Hotline', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -293,7 +293,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_contact_email',
 		array(
-			'label'       => esc_html__( 'Support Email Address', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Support Email Address', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'email',
 			'input_attrs' => array(
@@ -315,7 +315,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_header_order_track_enabled',
 		array(
-			'label'       => esc_html__( 'Show "Order Track" Button', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show "Order Track" Button', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -334,7 +334,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_header_order_track_label',
 		array(
-			'label'       => esc_html__( 'Order Track Button Label', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Order Track Button Label', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -353,8 +353,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_header_order_track_url',
 		array(
-			'label'       => esc_html__( 'Order Track Custom URL', 'cartvai-theme' ),
-			'description' => esc_html__( 'Leave empty to link automatically to Checkout or Track Order page.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Order Track Custom URL', 'cartvai' ),
+			'description' => esc_html__( 'Leave empty to link automatically to Checkout or Track Order page.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'url',
 		)
@@ -373,8 +373,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_header_more_enabled',
 		array(
-			'label'       => esc_html__( 'Show "More" Menu Button', 'cartvai-theme' ),
-			'description' => esc_html__( 'Displays the "More" hamburger trigger opening the professional side menu drawer.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show "More" Menu Button', 'cartvai' ),
+			'description' => esc_html__( 'Displays the "More" hamburger trigger opening the professional side menu drawer.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -394,8 +394,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_popular_categories_enabled',
 		array(
-			'label'       => esc_html__( 'Show Popular Categories', 'cartvai-theme' ),
-			'description' => esc_html__( 'Toggle quick category pills in the ecommerce header.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show Popular Categories', 'cartvai' ),
+			'description' => esc_html__( 'Toggle quick category pills in the ecommerce header.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -415,16 +415,16 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_style',
 		array(
-			'label'       => esc_html__( 'Footer Layout Style', 'cartvai-theme' ),
-			'description' => esc_html__( 'Choose from several ecommerce footer structures.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Footer Layout Style', 'cartvai' ),
+			'description' => esc_html__( 'Choose from several ecommerce footer structures.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'select',
 			'choices'     => array(
-				'ecommerce'     => esc_html__( 'Ecommerce Multi-Column (Reassurance + Newsletter + 4 Columns)', 'cartvai-theme' ),
-				'organic'       => esc_html__( 'Organic D2C / Emerald Store (5 Columns + Contact + Payment Strip)', 'cartvai-theme' ),
-				'warm_boutique' => esc_html__( 'Warm Boutique Luxury (Serif Elegance + Socials + Payment Pills)', 'cartvai-theme' ),
-				'default'       => esc_html__( 'Default Standard 3-Column', 'cartvai-theme' ),
-				'minimal'       => esc_html__( 'Minimalist Row', 'cartvai-theme' ),
+				'ecommerce'     => esc_html__( 'Ecommerce Multi-Column (Reassurance + Newsletter + 4 Columns)', 'cartvai' ),
+				'organic'       => esc_html__( 'Organic D2C / Emerald Store (5 Columns + Contact + Payment Strip)', 'cartvai' ),
+				'warm_boutique' => esc_html__( 'Warm Boutique Luxury (Serif Elegance + Socials + Payment Pills)', 'cartvai' ),
+				'default'       => esc_html__( 'Default Standard 3-Column', 'cartvai' ),
+				'minimal'       => esc_html__( 'Minimalist Row', 'cartvai' ),
 			),
 		)
 	);
@@ -442,8 +442,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_store_address',
 		array(
-			'label'       => esc_html__( 'Physical Store / Office Address', 'cartvai-theme' ),
-			'description' => esc_html__( 'Displayed in Organic and Boutique footers.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Physical Store / Office Address', 'cartvai' ),
+			'description' => esc_html__( 'Displayed in Organic and Boutique footers.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -462,7 +462,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_trust_enabled',
 		array(
-			'label'       => esc_html__( 'Show Footer Trust Strip (Ecommerce footer)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show Footer Trust Strip (Ecommerce footer)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -481,7 +481,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_newsletter_enabled',
 		array(
-			'label'       => esc_html__( 'Show Footer Newsletter Section', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Show Footer Newsletter Section', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'checkbox',
 		)
@@ -500,8 +500,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_copyright_text',
 		array(
-			'label'       => esc_html__( 'Copyright Notice Text', 'cartvai-theme' ),
-			'description' => esc_html__( 'Use {year} for current year and {site_name} for site title.', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Copyright Notice Text', 'cartvai' ),
+			'description' => esc_html__( 'Use {year} for current year and {site_name} for site title.', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -522,8 +522,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_footer_bg_color',
 			array(
-				'label'       => esc_html__( 'Custom Footer Background Color', 'cartvai-theme' ),
-				'description' => esc_html__( 'Leave empty to use each layout preset default color.', 'cartvai-theme' ),
+				'label'       => esc_html__( 'Custom Footer Background Color', 'cartvai' ),
+				'description' => esc_html__( 'Leave empty to use each layout preset default color.', 'cartvai' ),
 				'section'     => 'cartvai_theme_header_footer',
 			)
 		)
@@ -544,7 +544,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_footer_heading_color',
 			array(
-				'label'   => esc_html__( 'Footer Heading Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Footer Heading Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_footer',
 			)
 		)
@@ -563,8 +563,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_footer_sub_bg_color',
 		array(
-			'label'       => esc_html__( 'Sub-Footer / Copyright Row Background', 'cartvai-theme' ),
-			'description' => esc_html__( 'Hex color or transparent (e.g. #06241c, #f5ede6, transparent)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Sub-Footer / Copyright Row Background', 'cartvai' ),
+			'description' => esc_html__( 'Hex color or transparent (e.g. #06241c, #f5ede6, transparent)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_footer',
 			'type'        => 'text',
 		)
@@ -585,8 +585,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_footer_payment_image',
 			array(
-				'label'       => esc_html__( 'Payment Gateway Banner Image', 'cartvai-theme' ),
-				'description' => esc_html__( 'Upload a payment gateway/partner banner (e.g. SSLCommerz logos). Replaces individual badges.', 'cartvai-theme' ),
+				'label'       => esc_html__( 'Payment Gateway Banner Image', 'cartvai' ),
+				'description' => esc_html__( 'Upload a payment gateway/partner banner (e.g. SSLCommerz logos). Replaces individual badges.', 'cartvai' ),
 				'section'     => 'cartvai_theme_header_footer',
 			)
 		)
@@ -597,8 +597,8 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'cartvai_theme_header_navbar',
 		array(
-			'title'       => esc_html__( 'Cartvai Header & Navbar Styling', 'cartvai-theme' ),
-			'description' => esc_html__( 'Control background colors, borders, vertical padding, link colors, and typography for the top bar, main header, and navbar.', 'cartvai-theme' ),
+			'title'       => esc_html__( 'Cartvai Header & Navbar Styling', 'cartvai' ),
+			'description' => esc_html__( 'Control background colors, borders, vertical padding, link colors, and typography for the top bar, main header, and navbar.', 'cartvai' ),
 			'priority'    => 31,
 			'capability'  => $cap,
 		)
@@ -619,7 +619,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_top_bar_bg_color',
 			array(
-				'label'   => esc_html__( 'Top Bar Background Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Top Bar Background Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -639,7 +639,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_top_bar_text_color',
 			array(
-				'label'   => esc_html__( 'Top Bar Text & Link Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Top Bar Text & Link Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -657,7 +657,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_top_bar_padding_y',
 		array(
-			'label'       => esc_html__( 'Top Bar Vertical Padding (px)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Top Bar Vertical Padding (px)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -683,7 +683,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_main_bar_bg_color',
 			array(
-				'label'   => esc_html__( 'Main Header Background Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Main Header Background Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -703,7 +703,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_main_bar_border_color',
 			array(
-				'label'   => esc_html__( 'Main Header Border Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Main Header Border Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -721,7 +721,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_main_bar_padding_y',
 		array(
-			'label'       => esc_html__( 'Main Header Vertical Padding (px)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Main Header Vertical Padding (px)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -747,7 +747,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_nav_bar_bg_color',
 			array(
-				'label'   => esc_html__( 'Navigation Bar Background Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Navigation Bar Background Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -767,7 +767,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_nav_bar_border_color',
 			array(
-				'label'   => esc_html__( 'Navigation Bar Border Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Navigation Bar Border Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -785,7 +785,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_nav_bar_padding_y',
 		array(
-			'label'       => esc_html__( 'Navigation Bar Vertical Padding (px)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Navigation Bar Vertical Padding (px)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -810,7 +810,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_nav_link_color',
 			array(
-				'label'   => esc_html__( 'Nav Link Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Nav Link Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -830,7 +830,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			$wp_customize,
 			'cartvai_nav_link_hover_color',
 			array(
-				'label'   => esc_html__( 'Nav Link Hover Color', 'cartvai-theme' ),
+				'label'   => esc_html__( 'Nav Link Hover Color', 'cartvai' ),
 				'section' => 'cartvai_theme_header_navbar',
 			)
 		)
@@ -848,7 +848,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_nav_link_gap',
 		array(
-			'label'       => esc_html__( 'Nav Link Spacing / Gap (px)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Nav Link Spacing / Gap (px)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -871,7 +871,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_nav_font_size',
 		array(
-			'label'       => esc_html__( 'Nav Font Size (px)', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Nav Font Size (px)', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'number',
 			'input_attrs' => array(
@@ -894,14 +894,14 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'cartvai_nav_font_weight',
 		array(
-			'label'       => esc_html__( 'Nav Font Weight', 'cartvai-theme' ),
+			'label'       => esc_html__( 'Nav Font Weight', 'cartvai' ),
 			'section'     => 'cartvai_theme_header_navbar',
 			'type'        => 'select',
 			'choices'     => array(
-				'400' => esc_html__( '400 - Normal', 'cartvai-theme' ),
-				'500' => esc_html__( '500 - Medium', 'cartvai-theme' ),
-				'600' => esc_html__( '600 - Semi-Bold', 'cartvai-theme' ),
-				'700' => esc_html__( '700 - Bold', 'cartvai-theme' ),
+				'400' => esc_html__( '400 - Normal', 'cartvai' ),
+				'500' => esc_html__( '500 - Medium', 'cartvai' ),
+				'600' => esc_html__( '600 - Semi-Bold', 'cartvai' ),
+				'700' => esc_html__( '700 - Bold', 'cartvai' ),
 			),
 		)
 	);

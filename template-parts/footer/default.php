@@ -40,7 +40,7 @@ $has_widgets = is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' 
 			</div>
 
 			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-				<nav class="cv-footer-nav" aria-label="<?php esc_attr_e( 'Footer Navigation', 'cartvai-theme' ); ?>">
+				<nav class="cv-footer-nav" aria-label="<?php esc_attr_e( 'Footer Navigation', 'cartvai' ); ?>">
 					<?php
 					wp_nav_menu(
 						array(
