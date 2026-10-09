@@ -330,8 +330,8 @@ nav[aria-label="Breadcrumb"] a:hover {
 
 .cv-megastore-navbar {
   background-color: var(--cv-nav-bar-bg, #0a2f24);
-  border-top: 1px solid var(--cv-nav-bar-border, rgba(255, 255, 255, 0.1));
-  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.18));
+  border-top: none;
+  border-bottom: 1px solid var(--cv-nav-bar-border, rgba(0, 0, 0, 0.15));
   padding-top: var(--cv-nav-bar-py, 13px);
   padding-bottom: var(--cv-nav-bar-py, 13px);
   position: relative;

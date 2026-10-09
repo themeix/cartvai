@@ -198,7 +198,7 @@ function cartvai_get_header_preset_defaults( $header_style = null ) {
 				'main_bar_bg'     => '#0d3b2e',
 				'main_bar_border' => 'rgba(255, 255, 255, 0.08)',
 				'nav_bar_bg'      => '#0a2f24',
-				'nav_bar_border'  => 'rgba(255, 255, 255, 0.1)',
+				'nav_bar_border'  => 'rgba(0, 0, 0, 0.15)',
 				'nav_link_color'  => '#ffffff',
 				'nav_link_hover'  => '#fde68a',
 			);

@@ -62,7 +62,7 @@ function cartvai_theme_scripts() {
 		$custom_nav_lnk  = cartvai_theme_option( 'nav_link_color', '' );
 		$custom_nav_hvr  = cartvai_theme_option( 'nav_link_hover_color', '' );
 
-		// Recovery guard: if previous faulty form submission saved '#ffffff' for megastore, restore preset
+		// Recovery guard: if previous faulty form submission saved '#ffffff' or light borders for megastore, restore preset
 		if ( 'megastore' === $header_style ) {
 			if ( in_array( strtolower( (string) $custom_main_bg ), array( '#ffffff', '#fff' ), true ) ) {
 				$custom_main_bg = '';
@@ -73,6 +73,12 @@ function cartvai_theme_scripts() {
 			if ( in_array( strtolower( (string) $custom_nav_lnk ), array( '#1e293b' ), true ) ) {
 				$custom_nav_lnk = '';
 			}
+			if ( in_array( strtolower( (string) $custom_main_bdr ), array( '#e5e7eb', '#e2e8f0', '#cbd5e1', '#ffffff', '#fff', '#f1f5f9' ), true ) ) {
+				$custom_main_bdr = '';
+			}
+			if ( in_array( strtolower( (string) $custom_nav_bdr ), array( '#e5e7eb', '#e2e8f0', '#cbd5e1', '#ffffff', '#fff', '#f1f5f9' ), true ) ) {
+				$custom_nav_bdr = '';
+			}
 		}
 
 		$top_bar_bg      = ! empty( $custom_top_bg ) ? $custom_top_bg : $presets['top_bar_bg'];
@@ -80,10 +86,24 @@ function cartvai_theme_scripts() {
 		$top_bar_py      = (int) cartvai_theme_option( 'top_bar_padding_y', 8 );
 
 		$main_bar_bg     = ! empty( $custom_main_bg ) ? $custom_main_bg : $presets['main_bar_bg'];
+		$is_dark_main_bg = function_exists( 'cartvai_is_dark_hex' ) ? cartvai_is_dark_hex( $main_bar_bg ) : true;
+
+		// Clear light border on dark main header
+		if ( $is_dark_main_bg && in_array( strtolower( (string) $custom_main_bdr ), array( '#e5e7eb', '#e2e8f0', '#cbd5e1', '#ffffff', '#fff', '#f1f5f9' ), true ) ) {
+			$custom_main_bdr = '';
+		}
+
 		$main_bar_border = ! empty( $custom_main_bdr ) ? $custom_main_bdr : $presets['main_bar_border'];
 		$main_bar_py     = (int) cartvai_theme_option( 'main_bar_padding_y', 18 );
 
 		$nav_bar_bg      = ! empty( $custom_nav_bg ) ? $custom_nav_bg : $presets['nav_bar_bg'];
+		$is_dark_nav_bg  = function_exists( 'cartvai_is_dark_hex' ) ? cartvai_is_dark_hex( $nav_bar_bg ) : true;
+
+		// Clear light border on dark navbar
+		if ( $is_dark_nav_bg && in_array( strtolower( (string) $custom_nav_bdr ), array( '#e5e7eb', '#e2e8f0', '#cbd5e1', '#ffffff', '#fff', '#f1f5f9' ), true ) ) {
+			$custom_nav_bdr = '';
+		}
+
 		$nav_bar_border  = ! empty( $custom_nav_bdr ) ? $custom_nav_bdr : $presets['nav_bar_border'];
 		$nav_bar_py      = (int) cartvai_theme_option( 'nav_bar_padding_y', 13 );
 
