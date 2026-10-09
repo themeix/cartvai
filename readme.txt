@@ -1,4 +1,4 @@
-=== Cartvai Theme ===
+=== Cartvai ===
 Contributors: cartvai
 Tags: e-commerce, custom-colors, custom-menu, featured-images, full-width-template, grid-layout, block-styles, custom-header, custom-background
 Requires at least: 6.2
@@ -12,7 +12,7 @@ A modern, high-performance base ecommerce theme built specifically for Cartvai w
 
 == Description ==
 
-Cartvai Theme is a fast, clean, and extensible WordPress theme tailored for Cartvai Ecommerce stores. It features a lightweight hybrid classic architecture, accessible navigation dropdowns, responsive mobile navigation drawers, and customizable header and footer layouts.
+Cartvai is a fast, clean, and extensible WordPress theme tailored for Cartvai Ecommerce stores. It features a lightweight hybrid classic architecture, accessible navigation dropdowns, responsive mobile navigation drawers, and customizable header and footer layouts.
 
 == Installation ==
 
@@ -23,15 +23,15 @@ Cartvai Theme is a fast, clean, and extensible WordPress theme tailored for Cart
 
 == Frequently Asked Questions ==
 
-= Does Cartvai Theme require WooCommerce? =
-No. Cartvai Theme is designed natively for the Cartvai Ecommerce platform.
+= Does Cartvai require WooCommerce? =
+No. Cartvai is designed natively for the Cartvai Ecommerce platform.
 
 = Does it support Gutenberg blocks and block patterns? =
-Yes. Cartvai Theme provides block styles, block patterns, and editor styles matching frontend typography.
+Yes. Cartvai provides block styles, block patterns, and editor styles matching frontend typography.
 
 == Privacy Policy ==
 
-Cartvai Theme does not track users, collect personal data, make unsolicited external requests, or set third-party tracking cookies by default. All settings and options are stored locally within the WordPress database.
+Cartvai does not track users, collect personal data, make unsolicited external requests, or set third-party tracking cookies by default. All settings and options are stored locally within the WordPress database.
 
 == Changelog ==
 
@@ -40,8 +40,8 @@ Cartvai Theme does not track users, collect personal data, make unsolicited exte
 
 == Copyright ==
 
-Cartvai Theme WordPress Theme, (C) 2026 Cartvai
-Cartvai Theme is distributed under the terms of the GNU GPL.
+Cartvai, (C) 2026 Cartvai
+Cartvai is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
