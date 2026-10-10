@@ -1,0 +1,38 @@
+{
+  "theme_settings": {
+    "header_style": "megastore",
+    "footer_style": "ecommerce",
+    "primary_color": "#2563eb",
+    "primary_hover": "#1d4ed8",
+    "primary_light": "#eff6ff",
+    "accent_color": "#0f172a",
+    "heading_color": "#0f172a",
+    "text_color": "#334155",
+    "border_color": "#e2e8f0",
+    "surface_color": "#ffffff",
+    "header_announcement_text": "⚡ FLASH SALE: Free Delivery on orders over $50 + 30-Day Money Back Guarantee",
+    "header_helpline_phone": "+1 (800) 123-4567",
+    "header_helpline_email": "support@cartvai.com",
+    "footer_copyright": "© %year% Cartvai. All rights reserved. Powered by Cartvai.",
+    "footer_trust_badge_1_title": "Free Fast Shipping",
+    "footer_trust_badge_1_desc": "On all orders above $50",
+    "footer_trust_badge_2_title": "100% Safe Payments",
+    "footer_trust_badge_2_desc": "Encrypted SSL checkout",
+    "footer_trust_badge_3_title": "Hassle-Free Returns",
+    "footer_trust_badge_3_desc": "7 days replacement warranty",
+    "footer_trust_badge_4_title": "24/7 Priority Support",
+    "footer_trust_badge_4_desc": "Dedicated support team"
+  },
+  "theme_mods": {
+    "cartvai_primary_color": "#2563eb",
+    "cartvai_primary_hover_color": "#1d4ed8",
+    "cartvai_primary_light_color": "#eff6ff",
+    "cartvai_accent_color": "#0f172a",
+    "cartvai_heading_color": "#0f172a",
+    "cartvai_text_color": "#334155",
+    "cartvai_border_color": "#e2e8f0",
+    "cartvai_surface_color": "#ffffff",
+    "cartvai_header_style": "megastore",
+    "cartvai_footer_style": "ecommerce"
+  }
+}

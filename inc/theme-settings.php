@@ -28,8 +28,25 @@ function cartvai_theme_add_admin_menu() {
 		'cartvai-theme',
 		'cartvai_theme_render_welcome_page'
 	);
+
+	add_theme_page(
+		esc_html__( 'Demo Import', 'cartvai' ),
+		esc_html__( 'Demo Import', 'cartvai' ),
+		$cap,
+		'cartvai-demo-importer',
+		'cartvai_theme_render_demo_importer_page'
+	);
 }
 add_action( 'admin_menu', 'cartvai_theme_add_admin_menu' );
+
+/**
+ * Render Demo Importer page directly from submenu
+ */
+function cartvai_theme_render_demo_importer_page() {
+	if ( class_exists( 'CARTVAI_Theme_Demo_Importer' ) ) {
+		CARTVAI_Theme_Demo_Importer::render();
+	}
+}
 
 /**
  * Redirect legacy theme settings URL to the new hub
@@ -52,6 +69,14 @@ function cartvai_theme_render_welcome_page() {
 		wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'cartvai' ) );
 	}
 
+	$current_tab = isset( $_GET['tab'] ) ? sanitize_key( $_GET['tab'] ) : 'dashboard';
+	if ( 'demo-import' === $current_tab ) {
+		if ( class_exists( 'CARTVAI_Theme_Demo_Importer' ) ) {
+			CARTVAI_Theme_Demo_Importer::render();
+			return;
+		}
+	}
+
 	$theme_version = defined( 'CARTVAI_THEME_VERSION' ) ? CARTVAI_THEME_VERSION : '1.0.0';
 	$active_header = function_exists( 'cartvai_get_header_style' ) ? cartvai_get_header_style() : 'megastore';
 	$active_footer = function_exists( 'cartvai_get_footer_style' ) ? cartvai_get_footer_style() : 'ecommerce';
@@ -69,13 +94,23 @@ function cartvai_theme_render_welcome_page() {
 	$pages_url        = admin_url( 'edit.php?post_type=page' );
 	?>
 	<div class="wrap cv-welcome-wrap" style="max-width: 1200px; margin: 25px auto 40px 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;">
+
+		<!-- Navigation Tabs -->
+		<div style="display: flex; gap: 8px; margin-bottom: 24px; border-bottom: 1px solid #e2e8f0; padding-bottom: 12px;">
+			<a href="<?php echo esc_url( admin_url( 'themes.php?page=cartvai-theme' ) ); ?>" style="text-decoration: none; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 700; color: #1e3a8a; background: #eff6ff; border: 1px solid #bfdbfe;">
+				<?php esc_html_e( 'Getting Started', 'cartvai' ); ?>
+			</a>
+			<a href="<?php echo esc_url( admin_url( 'themes.php?page=cartvai-theme&tab=demo-import' ) ); ?>" style="text-decoration: none; padding: 8px 18px; border-radius: 8px; font-size: 14px; font-weight: 600; color: #64748b; background: transparent; transition: all 0.15s;">
+				<?php esc_html_e( 'Starter Sites / Demo Import', 'cartvai' ); ?>
+			</a>
+		</div>
 		
 		<!-- Hero Welcome Banner -->
 		<div style="background: linear-gradient(135deg, #0b192c 0%, #1e3a8a 60%, #1e40af 100%); border-radius: 16px; padding: 36px 40px; color: #ffffff; box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25); margin-bottom: 28px; position: relative; overflow: hidden;">
 			<div style="position: absolute; top: -50px; right: -50px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, rgba(96, 165, 250, 0.18) 0%, rgba(30, 58, 138, 0) 70%); pointer-events: none;"></div>
 			
 			<div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; position: relative; z-index: 1;">
-				<div style="max-width: 720px;">
+				<div style="max-width: 680px;">
 					<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
 						<span style="background: #2563eb; color: #ffffff; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 9999px; letter-spacing: 0.05em; text-transform: uppercase;">
 							<?php esc_html_e( 'Official Ecommerce Theme', 'cartvai' ); ?>
@@ -91,9 +126,12 @@ function cartvai_theme_render_welcome_page() {
 						<?php esc_html_e( 'Your store design, colors, headers, and product cards are managed directly in the WordPress Customizer with real-time visual preview. Explore the quick links below to customize your store.', 'cartvai' ); ?>
 					</p>
 				</div>
-				<div>
-					<a href="<?php echo esc_url( $customizer_url ); ?>" class="button button-primary" style="background: #ffffff; color: #1e3a8a; border: none; font-size: 14px; font-weight: 800; height: 46px; line-height: 46px; padding: 0 24px; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); display: inline-flex; align-items: center; gap: 8px;">
-						<span class="dashicons dashicons-admin-customizer" style="font-size: 18px; width: 18px; height: 18px; line-height: 46px;"></span>
+				<div style="display: flex; flex-direction: column; sm:flex-direction: row; gap: 10px;">
+					<a href="<?php echo esc_url( admin_url( 'themes.php?page=cartvai-theme&tab=demo-import' ) ); ?>" class="button" style="background: #2563eb; color: #ffffff; border: 1px solid rgba(255,255,255,0.3); font-size: 13.5px; font-weight: 800; height: 44px; line-height: 42px; padding: 0 20px; border-radius: 10px; display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+						⚡ <?php esc_html_e( 'Starter Sites / Demo Import', 'cartvai' ); ?>
+					</a>
+					<a href="<?php echo esc_url( $customizer_url ); ?>" class="button button-primary" style="background: #ffffff; color: #1e3a8a; border: none; font-size: 13.5px; font-weight: 800; height: 44px; line-height: 44px; padding: 0 20px; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.18); display: inline-flex; align-items: center; justify-content: center; gap: 8px;">
+						<span class="dashicons dashicons-admin-customizer" style="font-size: 18px; width: 18px; height: 18px; line-height: 44px;"></span>
 						<?php esc_html_e( 'Launch Customizer Live', 'cartvai' ); ?>
 					</a>
 				</div>

@@ -18,6 +18,11 @@ if ( ! is_admin() && function_exists( 'ini_set' ) && ! ini_get( 'zlib.output_com
 	@ini_set( 'zlib.output_compression', '1' );
 }
 
+// Prevent 'Notice: ob_end_flush(): Failed to send buffer of zlib output compression' (WordPress Trac #22430)
+if ( (bool) ini_get( 'zlib.output_compression' ) ) {
+	remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+}
+
 // Theme Core Includes
 require_once CARTVAI_THEME_DIR . '/inc/capabilities.php';
 require_once CARTVAI_THEME_DIR . '/inc/template-tags.php';
@@ -29,3 +34,4 @@ require_once CARTVAI_THEME_DIR . '/inc/navigation.php';
 require_once CARTVAI_THEME_DIR . '/inc/widgets.php';
 require_once CARTVAI_THEME_DIR . '/inc/patterns.php';
 require_once CARTVAI_THEME_DIR . '/inc/tgm/tgm.php';
+require_once CARTVAI_THEME_DIR . '/inc/demo-importer.php';
