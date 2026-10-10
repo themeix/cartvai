@@ -16,6 +16,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<?php if ( is_front_page() || is_page( 'home-cv' ) ) : ?>
+	<link rel="preload" as="image" href="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-headphones.svg' ); ?>" type="image/svg+xml" fetchpriority="high">
+	<?php elseif ( is_singular( 'cartvai_product' ) && has_post_thumbnail() ) : ?>
+	<link rel="preload" as="image" href="<?php echo esc_url( get_the_post_thumbnail_url( get_the_ID(), 'full' ) ); ?>" fetchpriority="high">
+	<?php endif; ?>
 	<?php
 	$meta_description = '';
 	if ( is_singular() ) {

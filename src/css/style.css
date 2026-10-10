@@ -2808,10 +2808,10 @@ hr.wp-block-separator,
   overflow: hidden;
   border-radius: 1.5rem !important;
   padding: 3rem 2.5rem !important;
-  background: linear-gradient(135deg, #06241c 0%, #064e3b 50%, #022c22 100%) !important;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1d4ed8 75%, #172554 100%) !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.12) !important;
-  box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.25), 0 8px 10px -6px rgba(6, 78, 59, 0.2) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 10px 30px -5px rgba(29, 78, 216, 0.35), 0 8px 12px -6px rgba(15, 23, 42, 0.25) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -2823,10 +2823,10 @@ hr.wp-block-separator,
   position: absolute;
   top: -60px;
   right: -40px;
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(52, 211, 153, 0.25) 0%, rgba(6, 78, 59, 0) 70%);
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.32) 0%, rgba(29, 78, 216, 0) 70%);
   pointer-events: none;
 }
 
@@ -2835,10 +2835,10 @@ hr.wp-block-separator,
   position: absolute;
   bottom: -40px;
   right: 15%;
-  width: 240px;
-  height: 240px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(251, 191, 36, 0.18) 0%, rgba(6, 78, 59, 0) 70%);
+  background: radial-gradient(circle, rgba(251, 191, 36, 0.2) 0%, rgba(30, 58, 138, 0) 70%);
   pointer-events: none;
 }
 
@@ -3367,6 +3367,114 @@ hr.wp-block-separator,
   .cv-hero-promo-card {
     padding: 1.25rem !important;
     border-radius: 1rem !important;
+  }
+}
+
+/* ==========================================================================
+   Funnel Page Centered 1-Column Hero (Clean Light Style - No Gradients)
+   ========================================================================== */
+.cv-funnel-hero-centered {
+  position: relative;
+  border-radius: 1.75rem !important;
+  padding: 3.5rem 1.75rem !important;
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 24px -2px rgba(0, 0, 0, 0.06) !important;
+  text-align: center !important;
+}
+
+.cv-funnel-hero-centered::before,
+.cv-funnel-hero-centered::after {
+  display: none !important;
+}
+
+.cv-funnel-spotlight-card {
+  position: relative;
+  max-width: 380px;
+  margin: 2rem auto !important;
+  padding: 1.5rem !important;
+  border-radius: 1.25rem !important;
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.cv-funnel-hero-centered h1,
+.cv-funnel-hero-centered h2,
+.cv-funnel-hero-centered h3,
+.cv-funnel-hero-centered .wp-block-heading {
+  color: #0f172a !important;
+}
+
+.cv-funnel-hero-centered p {
+  color: #475569 !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-badge {
+  color: #1d4ed8 !important;
+  background: #eff6ff !important;
+  border: 1px solid #bfdbfe !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-badge p,
+.cv-funnel-hero-centered .cv-hero-badge span {
+  color: #1d4ed8 !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-badge-pulse {
+  background: #2563eb !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-floating-badge {
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1px solid #fde68a !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-floating-rating {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
+}
+
+.cv-funnel-hero-centered .cv-trust-checklist,
+.cv-funnel-hero-centered .cv-trust-checklist p {
+  color: #334155 !important;
+}
+
+.cv-funnel-hero-centered .cv-funnel-spotlight-card p {
+  color: #1e293b !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-btn-primary .wp-block-button__link {
+  background: #f59e0b !important;
+  color: #0f172a !important;
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  padding: 0.875rem 2rem !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.cv-funnel-hero-centered .cv-hero-btn-primary .wp-block-button__link:hover {
+  background: #d97706 !important;
+  color: #000000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -5px rgba(217, 119, 6, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+  .cv-funnel-hero-centered {
+    padding: 2.25rem 1.25rem !important;
+    border-radius: 1.25rem !important;
   }
 }
 

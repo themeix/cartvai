@@ -25,7 +25,7 @@ function cartvai_theme_scripts() {
 		wp_enqueue_style(
 			'cartvai-theme-styles',
 			get_template_directory_uri() . '/assets/css/style.css',
-			array( 'cartvai-theme-font' ),
+			array(),
 			$theme_version
 		);
 
@@ -286,6 +286,7 @@ function cartvai_defer_frontend_scripts( $tag, $handle, $src ) {
 		'cartvai-smart-discount-frontend',
 		'cartvai-products-load-more',
 		'cartvai-product-gallery-frontend',
+		'cartvai-product-variations',
 	);
 
 	if ( in_array( $handle, $defer_handles, true ) && false === strpos( $tag, 'defer' ) ) {

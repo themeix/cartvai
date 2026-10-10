@@ -223,7 +223,7 @@ $copyright_text = str_replace(
 
 	<!-- Sub-footer -->
 	<div class="cv-sub-footer cv:border-t cv:border-gray-900 cv:py-6" style="background-color: var(--cv-footer-sub-bg, transparent);">
-		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:flex cv:flex-col cv:sm:flex-row cv:items-center cv:justify-between cv:gap-4 cv:text-xs cv:text-gray-500">
+		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:flex cv:flex-col cv:sm:flex-row cv:items-center cv:justify-between cv:gap-4 cv:text-xs cv:text-gray-400">
 			<div>
 				<?php echo esc_html( $copyright_text ); ?>
 			</div>
