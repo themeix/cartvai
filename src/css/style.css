@@ -2806,16 +2806,16 @@ hr.wp-block-separator,
 .cv-hero-main-banner {
   position: relative;
   overflow: hidden;
-  border-radius: 1.5rem !important;
-  padding: 3rem 2.5rem !important;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1d4ed8 75%, #172554 100%) !important;
-  color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 10px 30px -5px rgba(29, 78, 216, 0.35), 0 8px 12px -6px rgba(15, 23, 42, 0.25) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  min-height: 400px !important;
+  border-radius: 1.5rem;
+  padding: 3rem 2.5rem;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 40%, #1d4ed8 75%, #172554 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px -5px rgba(29, 78, 216, 0.35), 0 8px 12px -6px rgba(15, 23, 42, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 400px;
 }
 
 .cv-hero-main-banner::before {
@@ -2845,42 +2845,42 @@ hr.wp-block-separator,
 .cv-hero-main-banner-inner,
 .cv-hero-columns,
 .cv-hero-main-banner > .cv-hero-row {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  width: 100% !important;
-  gap: 2rem !important;
-  position: relative !important;
-  z-index: 2 !important;
-  margin: 0 !important;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+  margin: 0;
 }
 
 @media (max-width: 900px) {
   .cv-hero-main-banner-inner,
   .cv-hero-columns,
   .cv-hero-main-banner > .cv-hero-row {
-    flex-direction: column !important;
-    align-items: flex-start !important;
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
 .cv-hero-badge {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.5rem !important;
-  padding: 0.35rem 0.85rem !important;
-  border-radius: 9999px !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  color: #fbbf24 !important;
-  font-size: 0.75rem !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
-  text-transform: uppercase !important;
-  margin-bottom: 1rem !important;
-  backdrop-filter: blur(8px) !important;
-  -webkit-backdrop-filter: blur(8px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fbbf24;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .cv-hero-badge-pulse {
@@ -3270,72 +3270,72 @@ hr.wp-block-separator,
 }
 
 .cv-hero-headline {
-  font-size: 2.25rem !important;
-  font-weight: 800 !important;
-  line-height: 1.2 !important;
-  color: #ffffff !important;
-  margin-bottom: 1rem !important;
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
 .cv-hero-subtitle {
-  font-size: 1.05rem !important;
-  line-height: 1.6 !important;
-  color: #e2e8f0 !important;
-  max-width: 32rem !important;
-  margin-bottom: 1.75rem !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+  max-width: 32rem;
+  margin-bottom: 1.75rem;
 }
 
 .cv-hero-main-banner .cv-hero-btn-primary .wp-block-button__link,
 .cv-homepage .cv-hero-btn-primary .wp-block-button__link,
 .wp-block-button.cv-hero-btn-primary:not(.is-style-outline) .wp-block-button__link,
 .cv-hero-btn-primary a {
-  background-color: #fbbf24 !important;
-  color: #030712 !important;
-  font-weight: 700 !important;
-  border-radius: 0.75rem !important;
-  padding: 0.75rem 1.5rem !important;
-  transition: all 0.2s ease !important;
-  display: inline-block !important;
-  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4) !important;
-  border: none !important;
+  background-color: #fbbf24;
+  color: #030712;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  display: inline-block;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.4);
+  border: none;
 }
 
 .cv-hero-main-banner .cv-hero-btn-primary .wp-block-button__link:hover,
 .cv-homepage .cv-hero-btn-primary .wp-block-button__link:hover,
 .wp-block-button.cv-hero-btn-primary:not(.is-style-outline) .wp-block-button__link:hover,
 .cv-hero-btn-primary a:hover {
-  background-color: #f59e0b !important;
-  color: #000000 !important;
+  background-color: #f59e0b;
+  color: #000000;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5) !important;
+  box-shadow: 0 6px 18px rgba(245, 158, 11, 0.5);
 }
 
 .cv-hero-main-banner .cv-hero-btn-secondary .wp-block-button__link,
 .cv-homepage .cv-hero-btn-secondary .wp-block-button__link,
 .wp-block-button.cv-hero-btn-secondary .wp-block-button__link,
 .cv-hero-btn-secondary a {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
-  border-radius: 0.75rem !important;
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
-  padding: 0.75rem 1.5rem !important;
-  transition: all 0.2s ease !important;
-  display: inline-block !important;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
 .cv-hero-main-banner .cv-hero-btn-secondary .wp-block-button__link:hover,
 .cv-homepage .cv-hero-btn-secondary .wp-block-button__link:hover,
 .wp-block-button.cv-hero-btn-secondary .wp-block-button__link:hover,
 .cv-hero-btn-secondary a:hover {
-  background-color: rgba(255, 255, 255, 0.28) !important;
-  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
 }
 
 .cv-hero-perks {
-  font-size: 0.8125rem !important;
-  color: rgba(255, 255, 255, 0.85) !important;
-  margin-top: 1.75rem !important;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 1.75rem;
 }
 
 .cv-hero-promo-card h3 {
