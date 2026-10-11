@@ -3364,3 +3364,61 @@ hr.wp-block-separator,
   }
 }
 
+/* ==========================================================================
+   Shop Page Filter Bar Layout & Inline Controls
+   ========================================================================== */
+.cartvai-shop-filter-bar {
+  margin-bottom: 1.5rem;
+}
+.cartvai-shop-filter-form {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.75rem 1rem !important;
+  width: 100% !important;
+}
+.cartvai-shop-filter-controls {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 0.625rem 0.75rem !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+}
+.cartvai-shop-filter-group {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  margin: 0 !important;
+}
+.cartvai-shop-filter-actions {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+  margin-left: auto !important;
+  width: auto !important;
+}
+@media (max-width: 640px) {
+  .cartvai-shop-filter-form {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .cartvai-shop-filter-controls,
+  .cartvai-shop-filter-actions {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  .cartvai-shop-filter-group {
+    width: 100% !important;
+  }
+  .cartvai-shop-filter-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+}
+
+
