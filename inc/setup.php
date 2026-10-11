@@ -99,6 +99,9 @@ function cartvai_theme_setup() {
 
 	// Declare Cartvai support.
 	add_theme_support( 'cartvai' );
+
+	// Enable theme-specific related products carousel on single product pages.
+	add_filter( 'cartvai_show_related_products', '__return_true' );
 }
 add_action( 'after_setup_theme', 'cartvai_theme_setup' );
 

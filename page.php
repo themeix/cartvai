@@ -69,10 +69,24 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 	<div class="cv-shop-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:pb-16">
 		<h2 class="cv:sr-only"><?php esc_html_e( 'Products List', 'cartvai' ); ?></h2>
 		<?php
+		$rendered_shop = false;
 		while ( have_posts() ) :
 			the_post();
+			ob_start();
 			the_content();
+			$shop_content = ob_get_clean();
+
+			if ( ! empty( trim( $shop_content ) ) ) {
+				echo $shop_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				if ( false !== strpos( $shop_content, 'cartvai-shop-wrapper' ) || false !== strpos( $shop_content, 'cartvai-products-grid' ) ) {
+					$rendered_shop = true;
+				}
+			}
 		endwhile;
+
+		if ( ! $rendered_shop && shortcode_exists( 'cartvai_shop' ) ) {
+			echo do_shortcode( '[cartvai_shop]' );
+		}
 		?>
 	</div>
 
@@ -111,10 +125,24 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 
 	<div class="cv-cart-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:pb-16">
 		<?php
+		$rendered_cart = false;
 		while ( have_posts() ) :
 			the_post();
+			ob_start();
 			the_content();
+			$cart_content = ob_get_clean();
+
+			if ( ! empty( trim( $cart_content ) ) ) {
+				echo $cart_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				if ( false !== strpos( $cart_content, 'cartvai-cart' ) ) {
+					$rendered_cart = true;
+				}
+			}
 		endwhile;
+
+		if ( ! $rendered_cart && shortcode_exists( 'cartvai_cart' ) ) {
+			echo do_shortcode( '[cartvai_cart]' );
+		}
 		?>
 	</div>
 
@@ -158,10 +186,24 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 
 	<div class="cv-checkout-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:pb-16">
 		<?php
+		$rendered_checkout = false;
 		while ( have_posts() ) :
 			the_post();
+			ob_start();
 			the_content();
+			$checkout_content = ob_get_clean();
+
+			if ( ! empty( trim( $checkout_content ) ) ) {
+				echo $checkout_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				if ( false !== strpos( $checkout_content, 'cartvai-checkout' ) ) {
+					$rendered_checkout = true;
+				}
+			}
 		endwhile;
+
+		if ( ! $rendered_checkout && shortcode_exists( 'cartvai_checkout' ) ) {
+			echo do_shortcode( '[cartvai_checkout]' );
+		}
 		?>
 	</div>
 
