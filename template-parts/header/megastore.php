@@ -112,7 +112,7 @@ $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enable
 
 					<!-- Cart Trigger with Vibrant Badge -->
 					<div class="cartvai-header-cart-slot cv:relative cv:inline-flex cv:items-center">
-						<button type="button" id="cartvaiMiniCartTrigger" class="cv-megastore-action cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl hover:cv:bg-white/10 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
+						<button type="button" id="cartvaiMiniCartTrigger" class="cv-megastore-action cv:relative cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-3 cv:py-1.5 cv:rounded-xl cv:bg-transparent cv:border-0 hover:cv:bg-white/10 cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
 							<div class="cv:relative">
 								<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -127,7 +127,7 @@ $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enable
 
 					<!-- More / Mobile Drawer Toggle -->
 					<?php if ( $header_more_enabled ) : ?>
-						<button type="button" class="cv-mobile-menu-toggle cv-megastore-action cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl hover:cv:bg-white/10 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'More Navigation Menu', 'cartvai' ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
+						<button type="button" class="cv-mobile-menu-toggle cv-megastore-action cv:flex cv:flex-col cv:items-center cv:justify-center cv:gap-1 cv:px-2.5 cv:py-1.5 cv:rounded-xl cv:bg-transparent cv:border-0 hover:cv:bg-white/10 cv:transition-all" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'More Navigation Menu', 'cartvai' ); ?>" style="color: var(--cv-main-bar-text, #ffffff);">
 							<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 							<span class="cv:text-[11px] cv:font-semibold cv:leading-none"><?php esc_html_e( 'More', 'cartvai' ); ?></span>
 						</button>

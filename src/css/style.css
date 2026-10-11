@@ -50,6 +50,22 @@ body, button, input, select, textarea {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  box-shadow: none;
+  border: 0;
+  outline: none;
+}
+
 body {
   color: var(--cartvai-text, #1e293b);
   background-color: var(--cartvai-bg, #f8fafc);
@@ -353,15 +369,39 @@ nav[aria-label="Breadcrumb"] a:hover {
 }
 
 .cv-megastore-action {
+  background: transparent !important;
+  border: 0 !important;
   color: var(--cv-main-bar-text, #ffffff) !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.cv-megastore-action:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
 }
 
 .cv-megastore-search-btn {
-  background-color: var(--cartvai-primary, #2563eb);
+  background-color: var(--cartvai-primary, #2563eb) !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .cv-megastore-search-btn:hover {
-  background-color: var(--cartvai-primary-hover, #1d4ed8);
+  background-color: var(--cartvai-primary-hover, #1d4ed8) !important;
+}
+
+.cv-footer-subscribe-btn {
+  background-color: var(--cartvai-primary, #2563eb) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.cv-footer-subscribe-btn:hover {
+  background-color: var(--cartvai-primary-hover, #1d4ed8) !important;
 }
 
 .cv-megastore-navbar {

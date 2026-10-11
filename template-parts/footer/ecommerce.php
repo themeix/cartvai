@@ -212,7 +212,7 @@ $copyright_text = str_replace(
 					</p>
 					<form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');" class="cv:space-y-2">
 						<input type="email" placeholder="<?php echo esc_attr( ! empty( $contact_email ) ? $contact_email : 'support@cartvai.com' ); ?>" class="cv:w-full cv:h-10 cv:px-3.5 cv:rounded-lg cv:bg-gray-900 cv:border cv:border-gray-800 cv:text-xs cv:text-white focus:cv:border-primary focus:cv:outline-none" required />
-						<button type="submit" class="cv:w-full cv:h-10 cv:rounded-lg cv:bg-primary cv:text-white cv:text-xs cv:font-semibold hover:cv:bg-primary-hover cv:transition-colors">
+						<button type="submit" class="cv-footer-subscribe-btn cv:w-full cv:h-10 cv:rounded-lg cv:bg-primary cv:text-white cv:text-xs cv:font-semibold hover:cv:bg-primary-hover cv:border-0 cv:transition-colors">
 							<?php esc_html_e( 'Subscribe', 'cartvai' ); ?>
 						</button>
 					</form>
