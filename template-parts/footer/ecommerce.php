@@ -150,7 +150,7 @@ $copyright_text = str_replace(
 						array(
 							'theme_location' => 'footer_col_1',
 							'container'      => false,
-							'menu_class'     => 'cv:space-y-2.5 cv:text-sm cv:list-none cv:p-0 cv:m-0',
+							'menu_class'     => 'cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0',
 							'fallback_cb'    => false,
 						)
 					);
@@ -159,7 +159,7 @@ $copyright_text = str_replace(
 					<h3 class="cv:text-xs cv:font-bold cv:text-white cv:uppercase cv:tracking-wider cv:mb-4">
 						<?php esc_html_e( 'Quick Links', 'cartvai' ); ?>
 					</h3>
-					<ul class="cv:space-y-2.5 cv:text-sm">
+					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0">
 						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a></li>
 						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
 						<li><a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Cart', 'cartvai' ); ?></a></li>
@@ -181,7 +181,7 @@ $copyright_text = str_replace(
 						array(
 							'theme_location' => 'footer_col_2',
 							'container'      => false,
-							'menu_class'     => 'cv:space-y-2.5 cv:text-sm cv:list-none cv:p-0 cv:m-0',
+							'menu_class'     => 'cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0',
 							'fallback_cb'    => false,
 						)
 					);
@@ -190,7 +190,7 @@ $copyright_text = str_replace(
 					<h3 class="cv:text-xs cv:font-bold cv:text-white cv:uppercase cv:tracking-wider cv:mb-4">
 						<?php esc_html_e( 'Customer Care', 'cartvai' ); ?>
 					</h3>
-					<ul class="cv:space-y-2.5 cv:text-sm">
+					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0">
 						<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Order Tracking', 'cartvai' ); ?></a></li>
 						<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Shipping Policy', 'cartvai' ); ?></a></li>
 						<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Returns & Refund', 'cartvai' ); ?></a></li>

@@ -173,6 +173,17 @@ footer.cv-site-footer {
   color: var(--cartvai-primary, #ffffff);
 }
 
+.cv-footer-ecommerce ul,
+.cv-footer-organic ul,
+.cv-footer-warm-boutique ul,
+.cv-footer-minimal ul,
+.cv-footer-centered ul,
+.cv-site-footer ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
 .cv-footer-organic .cv-sub-footer {
   background-color: var(--cv-footer-sub-bg, #07241b) !important;
   color: var(--cv-footer-text, #cbd5e1);
