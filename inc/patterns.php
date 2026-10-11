@@ -62,6 +62,11 @@ function cartvai_theme_register_block_patterns() {
 			'description' => esc_html__( 'Complete turnkey ecommerce homepage combining modern hero banner, trust strip, category carousel, best sellers, promo callouts, product shelves, and customer reviews.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'featured' ),
 		),
+		'food-landing-1'      => array(
+			'title'       => esc_html__( 'Cartvai - Food Landing Page (Artisan Feast)', 'cartvai' ),
+			'description' => esc_html__( 'Complete 10-section high-converting food delivery and combo feast landing page with 1-page checkout.', 'cartvai' ),
+			'categories'  => array( 'cartvai', 'featured' ),
+		),
 	);
 
 	foreach ( $pattern_files as $slug => $meta ) {

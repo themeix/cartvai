@@ -163,6 +163,9 @@ class CARTVAI_Theme_Demo_Importer {
 										<span style="color: #10b981; font-weight: 900;">✓</span> <?php esc_html_e( 'Demo Funnel Page (#1 Funnel)', 'cartvai' ); ?>
 									</div>
 									<div style="display: flex; align-items: center; gap: 8px;">
+										<span style="color: #10b981; font-weight: 900;">✓</span> <?php esc_html_e( 'Food Landing Page 1 (Artisan Feast)', 'cartvai' ); ?>
+									</div>
+									<div style="display: flex; align-items: center; gap: 8px;">
 										<span style="color: #10b981; font-weight: 900;">✓</span> <?php esc_html_e( 'Customizer Colors & Styles', 'cartvai' ); ?>
 									</div>
 									<div style="display: flex; align-items: center; gap: 8px;">
@@ -498,11 +501,13 @@ class CARTVAI_Theme_Demo_Importer {
 	 * Step 4: Core Gutenberg Pages
 	 */
 	private static function step_import_pages() {
-		$home_html_file   = get_template_directory() . '/inc/demo-data/home.html';
-		$funnel_html_file = get_template_directory() . '/inc/demo-data/funnel.html';
+		$home_html_file         = get_template_directory() . '/inc/demo-data/home.html';
+		$funnel_html_file       = get_template_directory() . '/inc/demo-data/funnel.html';
+		$food_landing_html_file = get_template_directory() . '/inc/demo-data/food-landing-1.html';
 
-		$home_content   = file_exists( $home_html_file ) ? file_get_contents( $home_html_file ) : '';
-		$funnel_content = file_exists( $funnel_html_file ) ? file_get_contents( $funnel_html_file ) : '[cartvai id="1"]';
+		$home_content         = file_exists( $home_html_file ) ? file_get_contents( $home_html_file ) : '';
+		$funnel_content       = file_exists( $funnel_html_file ) ? file_get_contents( $funnel_html_file ) : '[cartvai id="1"]';
+		$food_landing_content = file_exists( $food_landing_html_file ) ? file_get_contents( $food_landing_html_file ) : '';
 
 		// 1. Home Page
 		$home_id = self::get_or_create_page(
@@ -552,16 +557,25 @@ class CARTVAI_Theme_Demo_Importer {
 			'templates/template-full-width.php'
 		);
 
+		// 7. Food Landing 1 Page
+		$food_landing_id = self::get_or_create_page(
+			'Food Landing 1',
+			'food-landing-1',
+			$food_landing_content,
+			'templates/template-canvas.php'
+		);
+
 		// Store IDs in transient for step 6
 		set_transient(
 			'cartvai_demo_imported_pages',
 			array(
-				'home_id'      => $home_id,
-				'shop_id'      => $shop_id,
-				'cart_id'      => $cart_id,
-				'checkout_id'  => $checkout_id,
-				'thank_you_id' => $thank_you_id,
-				'funnel_id'    => $funnel_id,
+				'home_id'         => $home_id,
+				'shop_id'         => $shop_id,
+				'cart_id'         => $cart_id,
+				'checkout_id'     => $checkout_id,
+				'thank_you_id'    => $thank_you_id,
+				'funnel_id'       => $funnel_id,
+				'food_landing_id' => $food_landing_id,
 			),
 			HOUR_IN_SECONDS
 		);
@@ -641,6 +655,18 @@ class CARTVAI_Theme_Demo_Importer {
 					array(
 						'menu-item-title'  => esc_html__( 'Special Deals ⚡', 'cartvai' ),
 						'menu-item-url'    => home_url( '/demo-funnel/' ),
+						'menu-item-status' => 'publish',
+						'menu-item-type'   => 'custom',
+					)
+				);
+
+				// Food Landing Link
+				wp_update_nav_menu_item(
+					$menu_id,
+					0,
+					array(
+						'menu-item-title'  => esc_html__( 'Food Landing 🍕', 'cartvai' ),
+						'menu-item-url'    => home_url( '/food-landing-1/' ),
 						'menu-item-status' => 'publish',
 						'menu-item-type'   => 'custom',
 					)
