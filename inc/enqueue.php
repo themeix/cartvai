@@ -26,7 +26,7 @@ function cartvai_theme_scripts() {
 			'cartvai-theme-styles',
 			get_template_directory_uri() . '/assets/css/style.css',
 			array(),
-			$theme_version
+			filemtime( get_template_directory() . '/assets/css/style.css' )
 		);
 
 		$primary_color = cartvai_theme_option( 'primary_color', '#2563eb' );
