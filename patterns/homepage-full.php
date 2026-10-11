@@ -14,8 +14,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $shop_url = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_shop_page_url() : home_url( '/shop/' );
 ?>
-<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"24px","bottom":"48px","left":"16px","right":"16px"},"blockGap":"40px"}},"layout":{"type":"constrained","contentSize":"1280px","wideSize":"1440px"}} -->
-<div class="wp-block-group alignfull" style="padding-top:24px;padding-right:16px;padding-bottom:48px;padding-left:16px"><!-- wp:group {"align":"wide","style":{"color":{"text":"#ffffff","gradient":"linear-gradient(135deg,rgb(15,23,42) 0%,rgb(30,58,138) 40%,rgb(29,78,216) 75%,rgb(23,37,84) 100%)"},"border":{"radius":"24px","width":"1px","style":"solid","color":"rgba(255,255,255,0.15)"},"spacing":{"padding":{"top":"48px","bottom":"48px","left":"40px","right":"40px"}}},"textColor":"white","layout":{"type":"constrained"}} -->
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"24px","bottom":"48px"},"blockGap":"40px"}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:24px;padding-bottom:48px"><!-- wp:group {"align":"wide","style":{"color":{"text":"#ffffff","gradient":"linear-gradient(135deg,rgb(15,23,42) 0%,rgb(30,58,138) 40%,rgb(29,78,216) 75%,rgb(23,37,84) 100%)"},"border":{"radius":"24px","width":"1px","style":"solid","color":"rgba(255,255,255,0.15)"},"spacing":{"padding":{"top":"48px","bottom":"48px","left":"40px","right":"40px"}}},"textColor":"white","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignwide has-white-color has-text-color has-background" style="border-color:rgba(255,255,255,0.15);border-style:solid;border-width:1px;border-radius:24px;background:linear-gradient(135deg,rgb(15,23,42) 0%,rgb(30,58,138) 40%,rgb(29,78,216) 75%,rgb(23,37,84) 100%);color:#ffffff;padding-top:48px;padding-right:40px;padding-bottom:48px;padding-left:40px"><!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"32px","top":"32px"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%"><!-- wp:paragraph {"style":{"color":{"background":"rgba(255,255,255,0.12)","text":"#fbbf24"},"spacing":{"padding":{"top":"6px","bottom":"6px","left":"14px","right":"14px"},"margin":{"bottom":"16px"}},"border":{"radius":"9999px","width":"1px","style":"solid","color":"rgba(255,255,255,0.2)"},"typography":{"fontSize":"12px","fontWeight":"700","letterSpacing":"0.05em","textTransform":"uppercase"}}} -->
@@ -139,8 +139,8 @@ $shop_url = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_shop_pa
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"8px","bottom":"8px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-top:8px;margin-bottom:8px"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:20px"><!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"color":{"text":"#2563eb"},"typography":{"fontSize":"12px","fontWeight":"800","letterSpacing":"0.05em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"4px"}}}} -->
 <p class="has-text-color" style="color:#2563eb;font-size:12px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">CURATED COLLECTIONS</p>
@@ -165,8 +165,8 @@ $shop_url = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_shop_pa
 <!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"8px","bottom":"8px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-top:8px;margin-bottom:8px"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:20px"><!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"color":{"text":"#2563eb"},"typography":{"fontSize":"12px","fontWeight":"800","letterSpacing":"0.05em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"4px"}}}} -->
 <p class="has-text-color" style="color:#2563eb;font-size:12px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">CUSTOMER FAVORITES</p>
@@ -191,8 +191,8 @@ $shop_url = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_shop_pa
 <!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"8px","bottom":"8px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-top:8px;margin-bottom:8px"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"20px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:20px"><!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"color":{"text":"#2563eb"},"typography":{"fontSize":"12px","fontWeight":"800","letterSpacing":"0.05em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"4px"}}}} -->
 <p class="has-text-color" style="color:#2563eb;font-size:12px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">WEEKLY HIGHLIGHTS</p>
@@ -217,8 +217,8 @@ $shop_url = function_exists( 'cartvai_get_shop_page_url' ) ? cartvai_get_shop_pa
 <!-- /wp:shortcode --></div>
 <!-- /wp:group -->
 
-<!-- wp:group {"align":"wide","style":{"spacing":{"margin":{"top":"8px","bottom":"16px"}}},"layout":{"type":"constrained"}} -->
-<div class="wp-block-group alignwide" style="margin-top:8px;margin-bottom:16px"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"24px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<!-- wp:group {"align":"wide","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"margin":{"bottom":"24px"}}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group" style="margin-bottom:24px"><!-- wp:group {"style":{"spacing":{"blockGap":"4px"}},"layout":{"type":"default"}} -->
 <div class="wp-block-group"><!-- wp:paragraph {"style":{"color":{"text":"#2563eb"},"typography":{"fontSize":"12px","fontWeight":"800","letterSpacing":"0.05em","textTransform":"uppercase"},"spacing":{"margin":{"bottom":"4px"}}}} -->
 <p class="has-text-color" style="color:#2563eb;font-size:12px;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:4px">SOCIAL PROOF</p>

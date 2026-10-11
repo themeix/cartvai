@@ -9,6 +9,39 @@
   --color-primary-hover: var(--cartvai-primary-hover, #1d4ed8);
 }
 
+
+/* ==========================================================================
+   Global Container Design Tokens & Utilities
+   Harmonizes Header, Footer, and Content under 1280px max-width & responsive padding
+   ========================================================================== */
+:root {
+  --cv-container-max-width: 80rem; /* 1280px (max-w-7xl) */
+  --cv-container-px: 1rem;         /* 16px on mobile (px-4) */
+}
+
+@media (min-width: 640px) {
+  :root {
+    --cv-container-px: 1.5rem;     /* 24px on sm (sm:px-6) */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --cv-container-px: 2rem;       /* 32px on lg (lg:px-8) */
+  }
+}
+
+.cartvai-container,
+.cv-container {
+  width: 100%;
+  max-width: var(--cv-container-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--cv-container-px);
+  padding-right: var(--cv-container-px);
+  box-sizing: border-box;
+}
+
 /* Base Theme Global Typography & Links */
 body, button, input, select, textarea {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -2785,7 +2818,23 @@ hr.wp-block-separator,
 /* ==========================================================================
    Modern Homepage Hero & Gutenberg Block Styles
    ========================================================================== */
-/* Container & Grid full-width alignment inside Gutenberg blocks */
+/* Container & Grid alignment matching theme container (max-w-7xl & responsive px) */
+.cv-page-full-width > .wp-block-group.alignfull,
+.cv-page-full-width > .alignfull.is-layout-constrained,
+.cv-page-full-width > [class*="wp-container-core-group-is-layout"] {
+  width: 100%;
+  max-width: var(--cv-container-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: var(--cv-container-px) !important;
+  padding-right: var(--cv-container-px) !important;
+  box-sizing: border-box !important;
+}
+
+.cv-page-full-width > .wp-block-group.alignfull > .alignwide,
+.cv-page-full-width > .alignfull.is-layout-constrained > .alignwide,
+.cv-page-full-width > [class*="wp-container-core-group-is-layout"] > .alignwide,
+.cv-page-full-width > [class*="wp-container-core-group-is-layout"] > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
 .cv-homepage-wrap.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
 .cv-home-section.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)),
 .cv-home-section > *,
@@ -2797,6 +2846,37 @@ hr.wp-block-separator,
 .cv-home-section .cartvai-products-grid-wide {
   max-width: 100% !important;
   width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Inter-Section Vertical Spacing for Gutenberg Block Sections */
+.cv-page-full-width > .wp-block-group.alignfull > * + *,
+.cv-page-full-width > .alignfull.is-layout-constrained > * + *,
+.cv-page-full-width > [class*="wp-container-core-group-is-layout"] > * + *,
+.cv-homepage-wrap > * + *,
+.cv-home-section + .cv-home-section {
+  margin-top: 3.5rem !important; /* 56px airy separation */
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .cv-page-full-width > .wp-block-group.alignfull > * + *,
+  .cv-page-full-width > .alignfull.is-layout-constrained > * + *,
+  .cv-page-full-width > [class*="wp-container-core-group-is-layout"] > * + *,
+  .cv-homepage-wrap > * + *,
+  .cv-home-section + .cv-home-section {
+    margin-top: 2.25rem !important; /* 36px on tablet/mobile */
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Allow intentional breakout edge-to-edge full width sections */
+.cv-page-full-width > .alignfull.cv-break-out,
+.cv-page-full-width > .alignfull.is-edge-to-edge {
+  max-width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .cv-hero-section {

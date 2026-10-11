@@ -16,14 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header();
 ?>
 
-<main id="primary" class="cv-page-full-width cv:w-full">
+<div class="cv-page-full-width cv:w-full">
 	<?php
 	while ( have_posts() ) :
 		the_post();
 		the_content();
 	endwhile;
 	?>
-</main>
+</div>
 
 <?php
 get_footer();
