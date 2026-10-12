@@ -402,19 +402,6 @@ nav[aria-label="Breadcrumb"] a:hover {
   background-color: var(--cartvai-primary-hover, #1d4ed8) !important;
 }
 
-.cv-footer-subscribe-btn {
-  background-color: var(--cartvai-primary, #2563eb) !important;
-  color: #ffffff !important;
-  border: 0 !important;
-  outline: none !important;
-  box-shadow: none !important;
-  cursor: pointer;
-}
-
-.cv-footer-subscribe-btn:hover {
-  background-color: var(--cartvai-primary-hover, #1d4ed8) !important;
-}
-
 .cv-megastore-navbar {
   background-color: var(--cv-nav-bar-bg, #172554);
   border-top: none;

@@ -38,7 +38,7 @@ function cartvai_theme_widgets_init() {
 		),
 		'footer-4' => array(
 			'name'        => esc_html__( 'Footer Column 4', 'cartvai' ),
-			'description' => esc_html__( 'Widgets in this area appear in the fourth footer column (e.g. newsletter, help center, or social links).', 'cartvai' ),
+			'description' => esc_html__( 'Widgets in this area appear in the fourth footer column (e.g. help center, badges, or social links).', 'cartvai' ),
 		),
 		'footer-5' => array(
 			'name'        => esc_html__( 'Footer Column 5', 'cartvai' ),

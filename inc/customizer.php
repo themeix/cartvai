@@ -351,7 +351,7 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		'cartvai_theme_footer',
 		array(
 			'title'       => esc_html__( 'Cartvai Footer Settings', 'cartvai' ),
-			'description' => esc_html__( 'Select your footer layout, reassurance badges, newsletter, store address, payment banners, and colors.', 'cartvai' ),
+			'description' => esc_html__( 'Select your footer layout, reassurance badges, store address, payment banners, and colors.', 'cartvai' ),
 			'priority'    => 32,
 			'capability'  => $cap,
 		)
@@ -419,25 +419,6 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		'cartvai_footer_trust_enabled',
 		array(
 			'label'       => esc_html__( 'Show Footer Trust Strip (Ecommerce footer)', 'cartvai' ),
-			'section'     => 'cartvai_theme_footer',
-			'type'        => 'checkbox',
-		)
-	);
-
-	// Footer Newsletter Toggle
-	$wp_customize->add_setting(
-		'cartvai_footer_newsletter_enabled',
-		array(
-			'default'           => true,
-			'sanitize_callback' => 'rest_sanitize_boolean',
-			'capability'        => $cap,
-		)
-	);
-
-	$wp_customize->add_control(
-		'cartvai_footer_newsletter_enabled',
-		array(
-			'label'       => esc_html__( 'Show Footer Newsletter Section', 'cartvai' ),
 			'section'     => 'cartvai_theme_footer',
 			'type'        => 'checkbox',
 		)
@@ -902,7 +883,6 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'popular_categories_enabled'       => 'cartvai_popular_categories_enabled',
 		'footer_style'                     => 'cartvai_footer_style',
 		'footer_trust_enabled'             => 'cartvai_footer_trust_enabled',
-		'footer_newsletter_enabled'        => 'cartvai_footer_newsletter_enabled',
 		'footer_copyright_text'            => 'cartvai_footer_copyright_text',
 
 		// Header & Navbar Styling

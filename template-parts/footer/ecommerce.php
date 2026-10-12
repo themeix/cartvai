@@ -16,11 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$trust_enabled      = (bool) cartvai_theme_option( 'footer_trust_enabled', true );
-$newsletter_enabled = (bool) cartvai_theme_option( 'footer_newsletter_enabled', true );
-$newsletter_title   = cartvai_theme_option( 'footer_newsletter_title', __( 'Get 10% Off', 'cartvai' ) );
-$newsletter_desc    = cartvai_theme_option( 'footer_newsletter_desc', __( 'Subscribe for insider deals, new drop alerts, and VIP discounts.', 'cartvai' ) );
-$about_text         = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
+$trust_enabled = (bool) cartvai_theme_option( 'footer_trust_enabled', true );
+$about_text    = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
 $contact_phone      = cartvai_theme_option( 'contact_phone', '+1 (800) 123-4567' );
 $contact_email      = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $security_note      = cartvai_theme_option( 'footer_security_note', __( 'Guaranteed Safe Checkout', 'cartvai' ) );
@@ -95,8 +92,9 @@ $copyright_text = str_replace(
 	<?php endif; ?>
 
 	<!-- Main Multi-Column Section -->
+	<?php $has_col_4 = is_active_sidebar( 'footer-4' ); ?>
 	<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:py-16">
-		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 cv:lg:grid-cols-5 cv:gap-10">
+		<div class="cv:grid cv:grid-cols-1 cv:md:grid-cols-2 <?php echo $has_col_4 ? 'cv:lg:grid-cols-5' : 'cv:lg:grid-cols-4'; ?> cv:gap-10">
 			<!-- Col 1: Store Brand Info or Footer Column 1 Widget (2 spans) -->
 			<div class="cv:lg:col-span-2">
 				<?php if ( is_active_sidebar( 'footer-1' ) ) : ?>
@@ -199,25 +197,12 @@ $copyright_text = str_replace(
 				<?php endif; ?>
 			</div>
 
-			<!-- Col 4: Newsletter or Footer Column 4 Widget -->
-			<div>
-				<?php if ( is_active_sidebar( 'footer-4' ) ) : ?>
+			<?php if ( $has_col_4 ) : ?>
+				<!-- Col 4: Footer Column 4 Widget -->
+				<div>
 					<?php dynamic_sidebar( 'footer-4' ); ?>
-				<?php elseif ( $newsletter_enabled ) : ?>
-					<h3 class="cv:text-xs cv:font-bold cv:text-white cv:uppercase cv:tracking-wider cv:mb-4">
-						<?php echo esc_html( $newsletter_title ); ?>
-					</h3>
-					<p class="cv:text-xs cv:text-gray-400 cv:mb-3">
-						<?php echo esc_html( $newsletter_desc ); ?>
-					</p>
-					<form onsubmit="event.preventDefault(); alert('Thank you for subscribing!');" class="cv:space-y-2">
-						<input type="email" placeholder="<?php echo esc_attr( ! empty( $contact_email ) ? $contact_email : 'support@cartvai.com' ); ?>" class="cv:w-full cv:h-10 cv:px-3.5 cv:rounded-lg cv:bg-gray-900 cv:border cv:border-gray-800 cv:text-xs cv:text-white focus:cv:border-primary focus:cv:outline-none" required />
-						<button type="submit" class="cv-footer-subscribe-btn cv:w-full cv:h-10 cv:rounded-lg cv:bg-primary cv:text-white cv:text-xs cv:font-semibold hover:cv:bg-primary-hover cv:border-0 cv:transition-colors">
-							<?php esc_html_e( 'Subscribe', 'cartvai' ); ?>
-						</button>
-					</form>
-				<?php endif; ?>
-			</div>
+				</div>
+			<?php endif; ?>
 		</div>
 	</div>
 
