@@ -12,13 +12,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 function cartvai_theme_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Enqueue Google Font Inter
-	wp_enqueue_style(
-		'cartvai-theme-font',
-		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-		array(),
-		null
-	);
+	// Enqueue Dynamic Google Fonts (Body & Headings)
+	$google_font_url = function_exists( 'cartvai_get_active_fonts_google_url' )
+		? cartvai_get_active_fonts_google_url()
+		: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+
+	if ( ! empty( $google_font_url ) ) {
+		wp_enqueue_style(
+			'cartvai-theme-font',
+			$google_font_url,
+			array(),
+			null
+		);
+	}
 
 	// Enqueue Compiled Tailwind CSS
 	if ( file_exists( get_template_directory() . '/assets/css/style.css' ) ) {
@@ -223,6 +229,11 @@ function cartvai_theme_scripts() {
 			"--cv-nav-font-weight: {$nav_font_weight}; " .
 			$footer_tokens .
 		"} @media (max-width: 639px) { :root { --cv-container-px: 16px; } } @media (min-width: 640px) and (max-width: 1023px) { :root { --cv-container-px: 24px; } }";
+
+		if ( function_exists( 'cartvai_get_typography_css' ) ) {
+			$theme_tokens .= ' ' . cartvai_get_typography_css();
+		}
+
 		wp_add_inline_style( 'cartvai-theme-styles', $theme_tokens );
 		if ( wp_style_is( 'cartvai-variables', 'registered' ) ) {
 			wp_add_inline_style( 'cartvai-variables', $theme_tokens );
@@ -264,12 +275,18 @@ add_action( 'wp_enqueue_scripts', 'cartvai_theme_scripts' );
  * Enqueue styles specifically for Gutenberg Block Editor
  */
 function cartvai_theme_block_editor_assets() {
-	wp_enqueue_style(
-		'cartvai-editor-font',
-		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-		array(),
-		null
-	);
+	$google_font_url = function_exists( 'cartvai_get_active_fonts_google_url' )
+		? cartvai_get_active_fonts_google_url()
+		: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap';
+
+	if ( ! empty( $google_font_url ) ) {
+		wp_enqueue_style(
+			'cartvai-editor-font',
+			$google_font_url,
+			array(),
+			null
+		);
+	}
 
 	if ( file_exists( get_template_directory() . '/assets/css/editor-style.css' ) ) {
 		wp_enqueue_style(
@@ -278,6 +295,48 @@ function cartvai_theme_block_editor_assets() {
 			array( 'cartvai-editor-font' ),
 			wp_get_theme()->get( 'Version' )
 		);
+	}
+
+	if ( file_exists( get_template_directory() . '/assets/css/style.css' ) ) {
+		wp_enqueue_style(
+			'cartvai-theme-editor-tailwind',
+			get_template_directory_uri() . '/assets/css/style.css',
+			array(),
+			filemtime( get_template_directory() . '/assets/css/style.css' )
+		);
+
+		$primary_color = cartvai_theme_option( 'primary_color', '#2563eb' );
+		$primary_hover = cartvai_theme_option( 'primary_hover_color', '#1d4ed8' );
+		$primary_light = cartvai_theme_option( 'primary_light_color', '#eff6ff' );
+		$border_color  = cartvai_theme_option( 'border_color', '#e2e8f0' );
+		$heading_color = cartvai_theme_option( 'heading_color', '#0f172a' );
+		$text_color    = cartvai_theme_option( 'text_color', '#334155' );
+		$bg_color      = cartvai_theme_option( 'bg_color', '#f8fafc' );
+
+		$custom_css    = ":root, .editor-styles-wrapper {
+			--cartvai-primary: {$primary_color};
+			--cartvai-primary-hover: {$primary_hover};
+			--cartvai-primary-light: {$primary_light};
+			--cartvai-border: {$border_color};
+			--cartvai-heading: {$heading_color};
+			--cartvai-text: {$text_color};
+			--cartvai-bg: {$bg_color};
+		}
+		.block-editor-block-types-list__item[aria-label*='Cartvai'] .block-editor-block-types-list__item-icon svg,
+		.editor-block-list-item-button[aria-label*='Cartvai'] svg {
+			filter: drop-shadow(0 1px 2px rgba(37, 99, 235, 0.15));
+			transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+		}
+		.block-editor-block-types-list__item[aria-label*='Cartvai']:hover .block-editor-block-types-list__item-icon svg,
+		.editor-block-list-item-button[aria-label*='Cartvai']:hover svg {
+			transform: scale(1.12);
+		}";
+
+		if ( function_exists( 'cartvai_get_typography_css' ) ) {
+			$custom_css .= ' ' . cartvai_get_typography_css();
+		}
+
+		wp_add_inline_style( 'cartvai-theme-editor-tailwind', $custom_css );
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'cartvai_theme_block_editor_assets' );

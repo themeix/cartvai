@@ -11,6 +11,8 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+$placeholder_img = esc_url( get_template_directory_uri() . '/assets/images/placeholder.svg' );
 ?>
 <!-- wp:group {"align":"full","style":{"color":{"text":"#f0b44d"},"spacing":{"padding":{"top":"10px","bottom":"10px","left":"16px","right":"16px"},"margin":{"top":"0px","bottom":"0px"}}},"backgroundColor":"black","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-black-background-color has-text-color has-background" style="color:#f0b44d;margin-top:0px;margin-bottom:0px;padding-top:10px;padding-right:16px;padding-bottom:10px;padding-left:16px"><!-- wp:paragraph {"style":{"typography":{"fontSize":"13.5px","fontWeight":"700","letterSpacing":"0.5px","textAlign":"center"},"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
@@ -67,7 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"44%"} -->
 <div class="wp-block-column" style="flex-basis:44%"><!-- wp:group {"style":{"border":{"radius":"20px","color":"rgba(255, 255, 255, 0.15)","width":"2px"},"shadow":"0 20px 45px rgba(0, 0, 0, 0.35)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color" style="border-color:rgba(255, 255, 255, 0.15);border-width:2px;border-radius:20px;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 20px 45px rgba(0, 0, 0, 0.35)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"18px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=900&amp;auto=format&amp;fit=crop&amp;q=80" alt="Artisan Burger &amp; Wood-Fired Pizza Feast" style="border-radius:18px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="Artisan Burger &amp; Wood-Fired Pizza Feast" style="border-radius:18px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image --></div>
 <!-- /wp:group --></div>
 <!-- /wp:column --></div>
@@ -149,7 +151,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns" style="margin-bottom:24px"><!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="1. Double Angus Smash" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="1. Double Angus Smash" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -167,7 +169,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="2. Truffle Pepperoni Pizza" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="2. Truffle Pepperoni Pizza" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -185,7 +187,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="3. Smoked BBQ Bacon" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="3. Smoked BBQ Bacon" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -203,7 +205,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="4. Quattro Formaggi Pizza" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="4. Quattro Formaggi Pizza" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -223,7 +225,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="wp-block-columns" style="margin-bottom:40px"><!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="5. Crispy Truffle Fries" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="5. Crispy Truffle Fries" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -241,7 +243,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="6. Sticky BBQ Glazed Wings" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="6. Sticky BBQ Glazed Wings" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -259,7 +261,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="7. Charcoal Brioche Slider" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="7. Charcoal Brioche Slider" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->
@@ -277,7 +279,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <!-- wp:column {"width":"25%"} -->
 <div class="wp-block-column" style="flex-basis:25%"><!-- wp:group {"style":{"color":{"background":"#ffffff"},"border":{"color":"#e2e8f0","width":"1px","radius":"16px"},"shadow":"0 4px 12px rgba(0, 0, 0, 0.05)","spacing":{"padding":{"top":"0px","bottom":"0px","left":"0px","right":"0px"}}}} -->
 <div class="wp-block-group has-border-color has-background" style="border-color:#e2e8f0;border-width:1px;border-radius:16px;background-color:#ffffff;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;box-shadow:0 4px 12px rgba(0, 0, 0, 0.05)"><!-- wp:image {"aspectRatio":"1","scale":"cover","style":{"border":{"radius":"15px 15px 0px 0px"}}} -->
-<figure class="wp-block-image has-custom-border"><img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&amp;auto=format&amp;fit=crop&amp;q=80" alt="8. Sweet Cannoli Dessert" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
+<figure class="wp-block-image has-custom-border"><img src="<?php echo $placeholder_img; ?>" alt="8. Sweet Cannoli Dessert" style="border-radius:15px 15px 0px 0px;aspect-ratio:1;object-fit:cover"/></figure>
 <!-- /wp:image -->
 
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"16px","bottom":"20px","left":"16px","right":"16px"}}}} -->

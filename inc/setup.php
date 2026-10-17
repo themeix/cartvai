@@ -96,6 +96,7 @@ function cartvai_theme_setup() {
 	// Editor styles support.
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/css/editor-style.css' );
+	add_editor_style( 'assets/css/style.css' );
 
 	// Declare Cartvai support.
 	add_theme_support( 'cartvai' );

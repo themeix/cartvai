@@ -1,0 +1,112 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/countdown",
+  "version": "1.0.0",
+  "title": "Cartvai Countdown Timer",
+  "category": "cartvai",
+  "icon": "clock",
+  "description": "High-converting urgency countdown timer with live days, hours, minutes, and seconds flip cards.",
+  "keywords": [
+    "countdown",
+    "timer",
+    "flash sale",
+    "urgency",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "timerType": {
+      "type": "string",
+      "default": "evergreen"
+    },
+    "evergreenHours": {
+      "type": "number",
+      "default": 4
+    },
+    "fixedDate": {
+      "type": "string",
+      "default": ""
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "LIMITED TIME FLASH DEAL"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Hurry Up! Special 40% Discount Ends In"
+    },
+    "description": {
+      "type": "string",
+      "default": "Claim your discount today before stocks run out. Free express shipping included."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Claim Discount Now"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "colorScheme": {
+      "type": "string",
+      "default": "amber"
+    },
+    "customBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customCardBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customCardTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": false
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded-3xl"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "editorScript": "cartvai-countdown-block-editor"
+}

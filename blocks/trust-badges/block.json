@@ -1,0 +1,140 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/trust-badges",
+  "version": "1.0.0",
+  "title": "Cartvai Trust Badges",
+  "category": "cartvai",
+  "icon": "shield",
+  "description": "Conversion-boosting trust badges strip highlighting Free Shipping, Money-Back Guarantee, COD, and Support.",
+  "keywords": [
+    "trust",
+    "guarantee",
+    "badges",
+    "shipping",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "cards"
+    },
+    "colorScheme": {
+      "type": "string",
+      "default": "light"
+    },
+    "b1Title": {
+      "type": "string",
+      "default": "Free Express Delivery"
+    },
+    "b1Desc": {
+      "type": "string",
+      "default": "Fast 2-3 days nationwide doorstep delivery"
+    },
+    "b2Title": {
+      "type": "string",
+      "default": "100% Money-Back"
+    },
+    "b2Desc": {
+      "type": "string",
+      "default": "30-day hassle-free replacement warranty"
+    },
+    "b3Title": {
+      "type": "string",
+      "default": "Cash On Delivery"
+    },
+    "b3Desc": {
+      "type": "string",
+      "default": "Inspect product before making payment"
+    },
+    "b4Title": {
+      "type": "string",
+      "default": "24/7 Dedicated Care"
+    },
+    "b4Desc": {
+      "type": "string",
+      "default": "Friendly instant support via phone or WhatsApp"
+    },
+    "customBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTitleColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customDescColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customIconColor": {
+      "type": "string",
+      "default": ""
+    },
+    "b1IconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "b1IconId": {
+      "type": "number",
+      "default": 0
+    },
+    "b2IconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "b2IconId": {
+      "type": "number",
+      "default": 0
+    },
+    "b3IconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "b3IconId": {
+      "type": "number",
+      "default": 0
+    },
+    "b4IconUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "b4IconId": {
+      "type": "number",
+      "default": 0
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded-2xl"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "editorScript": "cartvai-trust-badges-block-editor"
+}

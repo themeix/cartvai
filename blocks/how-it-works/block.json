@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/how-it-works",
+  "version": "1.0.0",
+  "title": "Cartvai How It Works",
+  "category": "cartvai",
+  "icon": "editor-ol",
+  "description": "Engaging 3-step visual process flow explaining order, delivery, and payment to reassure first-time buyers.",
+  "keywords": [
+    "steps",
+    "process",
+    "how it works",
+    "timeline",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Simple 3-Step Ordering Process"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Place your order in under 60 seconds with zero risk."
+    },
+    "s1Title": { "type": "string", "default": "Select Your Package" },
+    "s1Desc": { "type": "string", "default": "Choose single or combo deal and fill out your name, address, and mobile number." },
+
+    "s2Title": { "type": "string", "default": "Fast Express Dispatch" },
+    "s2Desc": { "type": "string", "default": "We safely pack your order and courier delivers directly to your door in 24-48 hours." },
+
+    "s3Title": { "type": "string", "default": "Inspect & Pay on Delivery" },
+    "s3Desc": { "type": "string", "default": "Open the parcel, verify your items, and pay cash with 100% peace of mind." },
+    "customHeadingColor": { "type": "string", "default": "" },
+    "customSubheadingColor": { "type": "string", "default": "" },
+    "customBgColor": { "type": "string", "default": "" },
+    "customStepTitleColor": { "type": "string", "default": "" },
+    "customStepDescColor": { "type": "string", "default": "" },
+    "customAccentColor": { "type": "string", "default": "" },
+    "showBorder": { "type": "boolean", "default": true },
+    "customBorderColor": { "type": "string", "default": "" },
+    "borderWidth": { "type": "string", "default": "1px" },
+    "borderRadius": { "type": "string", "default": "rounded-3xl" },
+    "boxShadow": { "type": "string", "default": "none" }
+  },
+  "editorScript": "cartvai-how-it-works-block-editor"
+}

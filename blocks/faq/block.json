@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/faq",
+  "version": "1.0.0",
+  "title": "Cartvai FAQ Accordion",
+  "category": "cartvai",
+  "icon": "editor-help",
+  "description": "Smooth, accessible FAQ accordion block with Google FAQPage Schema support to resolve objections and boost conversion.",
+  "keywords": [
+    "faq",
+    "accordion",
+    "questions",
+    "help",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Frequently Asked Questions"
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Everything you need to know about our product, shipping, and guarantee."
+    },
+    "q1": { "type": "string", "default": "How long does delivery take?" },
+    "a1": { "type": "string", "default": "Nationwide delivery typically takes 2 to 3 business days. You will receive a live tracking code via SMS as soon as your parcel is dispatched." },
+
+    "q2": { "type": "string", "default": "Can I pay Cash on Delivery (COD)?" },
+    "a2": { "type": "string", "default": "Yes, absolutely! You can inspect the package upon arrival and pay cash directly to the delivery courier." },
+
+    "q3": { "type": "string", "default": "What if I receive a damaged or wrong product?" },
+    "a3": { "type": "string", "default": "We offer a 100% free instant replacement guarantee. Just contact our support team on WhatsApp and we will replace it immediately without any hassle." },
+
+    "q4": { "type": "string", "default": "How do I claim the 30-day money-back guarantee?" },
+    "a4": { "type": "string", "default": "If you are not completely satisfied with your purchase within 30 days, simply reach out to our dedicated care team for a prompt refund." },
+
+    "q5": { "type": "string", "default": "Is this product genuine and original?" },
+    "a5": { "type": "string", "default": "Yes, 100% original authentic product sourced directly from the authorized manufacturer with official warranty coverage." },
+    "customHeadingColor": { "type": "string", "default": "" },
+    "customSubheadingColor": { "type": "string", "default": "" },
+    "customBgColor": { "type": "string", "default": "" },
+    "customQuestionColor": { "type": "string", "default": "" },
+    "customAnswerColor": { "type": "string", "default": "" },
+    "customTextColor": { "type": "string", "default": "" },
+    "customAccentColor": { "type": "string", "default": "" },
+    "showBorder": { "type": "boolean", "default": true },
+    "customBorderColor": { "type": "string", "default": "" },
+    "borderWidth": { "type": "string", "default": "1px" },
+    "borderRadius": { "type": "string", "default": "rounded-2xl" },
+    "boxShadow": { "type": "string", "default": "none" }
+  },
+  "editorScript": "cartvai-faq-block-editor"
+}

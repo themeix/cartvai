@@ -67,6 +67,16 @@ function cartvai_theme_register_block_patterns() {
 			'description' => esc_html__( 'Complete 10-section high-converting food delivery and combo feast landing page with 1-page checkout.', 'cartvai' ),
 			'categories'  => array( 'cartvai', 'featured' ),
 		),
+		'cta-section'         => array(
+			'title'       => esc_html__( 'Cartvai - High-Converting Call to Action Banner', 'cartvai' ),
+			'description' => esc_html__( 'Conversion-focused CTA banner with badges, dual buttons, trust indicators, and dark luxury preset.', 'cartvai' ),
+			'categories'  => array( 'cartvai', 'call-to-action' ),
+		),
+		'landing-page-turnkey' => array(
+			'title'       => esc_html__( 'Cartvai - Complete 1-Click Turnkey Landing Page', 'cartvai' ),
+			'description' => esc_html__( 'High-converting product sales landing page with countdown timer, hero CTA, trust strip, video showcase, 3-step order guide, bundle tiers, and FAQ accordion.', 'cartvai' ),
+			'categories'  => array( 'cartvai', 'featured' ),
+		),
 	);
 
 	foreach ( $pattern_files as $slug => $meta ) {

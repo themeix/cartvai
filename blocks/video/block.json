@@ -1,0 +1,129 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/video",
+  "version": "1.0.0",
+  "title": "Cartvai Video Showcase",
+  "category": "cartvai",
+  "icon": "video-alt3",
+  "description": "Engaging video showcase block supporting YouTube, Vimeo, or MP4 with poster image, alignment settings, and CTA button.",
+  "keywords": [
+    "video",
+    "player",
+    "youtube",
+    "vimeo",
+    "demo",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "videoType": {
+      "type": "string",
+      "default": "youtube"
+    },
+    "videoUrl": {
+      "type": "string",
+      "default": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    },
+    "posterUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "posterAlt": {
+      "type": "string",
+      "default": "Video preview"
+    },
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "WATCH PRODUCT DEMO"
+    },
+    "showBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "heading": {
+      "type": "string",
+      "default": "See the Product in Action"
+    },
+    "description": {
+      "type": "string",
+      "default": "Discover how our product delivers superior results in seconds. Watch the official demonstration video below."
+    },
+    "aspectRatio": {
+      "type": "string",
+      "default": "16/9"
+    },
+    "containerWidth": {
+      "type": "string",
+      "default": "standard"
+    },
+    "showCta": {
+      "type": "boolean",
+      "default": true
+    },
+    "ctaText": {
+      "type": "string",
+      "default": "Order Now - Limited Stock"
+    },
+    "ctaUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "colorScheme": {
+      "type": "string",
+      "default": "dark"
+    },
+    "customBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded-3xl"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "editorScript": "cartvai-video-block-editor"
+}

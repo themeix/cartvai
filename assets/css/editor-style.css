@@ -1,14 +1,16 @@
 /**
  * Cartvai Theme Gutenberg & Classic Editor Styles
  */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 body,
 .editor-styles-wrapper,
 .editor-styles-wrapper p,
 .editor-styles-wrapper input,
 .editor-styles-wrapper textarea,
 .editor-styles-wrapper select,
+.editor-styles-wrapper button {
+	font-family: var(--cv-font-body, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+}
+
 .editor-styles-wrapper h1,
 .editor-styles-wrapper h2,
 .editor-styles-wrapper h3,
@@ -16,13 +18,24 @@ body,
 .editor-styles-wrapper h5,
 .editor-styles-wrapper h6,
 .editor-post-title__input,
-.wp-block-post-title {
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
-}
-
-.editor-post-title__input,
-.wp-block-post-title {
-	font-weight: 700 !important;
+.wp-block-post-title,
+.wp-block-heading {
+	font-family: var(--cv-font-heading, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif) !important;
+	font-weight: var(--cv-heading-weight, 700) !important;
 	letter-spacing: -0.025em !important;
 	color: #0f172a !important;
 }
+
+/* Cartvai Gutenberg Block Inserter Icons */
+.block-editor-block-types-list__item[aria-label*="Cartvai"] .block-editor-block-types-list__item-icon svg,
+.editor-block-list-item-button[aria-label*="Cartvai"] svg {
+	color: #2563eb !important;
+	filter: drop-shadow(0 1px 2px rgba(37, 99, 235, 0.15));
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.block-editor-block-types-list__item[aria-label*="Cartvai"]:hover .block-editor-block-types-list__item-icon svg,
+.editor-block-list-item-button[aria-label*="Cartvai"]:hover svg {
+	transform: scale(1.12);
+}
+

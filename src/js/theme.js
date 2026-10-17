@@ -20,6 +20,7 @@
 		initRelatedProductsCarousel();
 		initShareCopyLink();
 		initAjaxSearch();
+		initCountdownTimers();
 	});
 
 	/**
@@ -655,6 +656,55 @@
 					closeDropdown();
 				}
 			});
+		});
+	}
+
+	/**
+	 * 7. Live Countdown Timers (Evergreen & Fixed Date)
+	 */
+	function initCountdownTimers() {
+		const timers = document.querySelectorAll('[data-cv-countdown]');
+		if (!timers.length) return;
+
+		timers.forEach(function (timerEl) {
+			const type = timerEl.getAttribute('data-timer-type') || 'evergreen';
+			const hours = parseFloat(timerEl.getAttribute('data-evergreen-hours')) || 4;
+			const fixedDateStr = timerEl.getAttribute('data-fixed-date');
+
+			let targetTime;
+			if (type === 'fixed' && fixedDateStr) {
+				targetTime = new Date(fixedDateStr).getTime();
+			} else {
+				const storageKey = 'cv_evergreen_timer_' + hours;
+				let saved = localStorage.getItem(storageKey);
+				const now = Date.now();
+				if (!saved || isNaN(saved) || parseInt(saved, 10) <= now) {
+					saved = now + hours * 3600 * 1000;
+					localStorage.setItem(storageKey, saved);
+				}
+				targetTime = parseInt(saved, 10);
+			}
+
+			const daysEl = timerEl.querySelector('.cv\\:countdown-days, [class*="countdown-days"]');
+			const hoursEl = timerEl.querySelector('.cv\\:countdown-hours, [class*="countdown-hours"]');
+			const minsEl = timerEl.querySelector('.cv\\:countdown-minutes, [class*="countdown-minutes"]');
+			const secsEl = timerEl.querySelector('.cv\\:countdown-seconds, [class*="countdown-seconds"]');
+
+			function update() {
+				const diff = Math.max(0, targetTime - Date.now());
+				const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+				const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+				const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+				const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+				if (daysEl) daysEl.textContent = String(d).padStart(2, '0');
+				if (hoursEl) hoursEl.textContent = String(h).padStart(2, '0');
+				if (minsEl) minsEl.textContent = String(m).padStart(2, '0');
+				if (secsEl) secsEl.textContent = String(s).padStart(2, '0');
+			}
+
+			update();
+			setInterval(update, 1000);
 		});
 	}
 })();

@@ -190,6 +190,93 @@ function cartvai_theme_customize_register( $wp_customize ) {
 			),
 		)
 	);
+
+	// ==========================================
+	// 3. SECTION: Typography & Google Fonts
+	// ==========================================
+	$wp_customize->add_section(
+		'cartvai_theme_typography',
+		array(
+			'title'       => esc_html__( 'Cartvai Typography & Fonts', 'cartvai' ),
+			'description' => esc_html__( 'Choose custom Google Fonts or native system fonts for Body text and Headings/Titles across your entire storefront.', 'cartvai' ),
+			'priority'    => 27,
+			'capability'  => $cap,
+		)
+	);
+
+	$font_choices = function_exists( 'cartvai_get_font_choices' ) ? cartvai_get_font_choices() : array( 'inter' => 'Inter' );
+
+	// Body Font Family
+	$wp_customize->add_setting(
+		'cartvai_body_font',
+		array(
+			'default'           => 'inter',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_body_font',
+		array(
+			'label'       => esc_html__( 'Body Font Family', 'cartvai' ),
+			'description' => esc_html__( 'Applied to paragraphs, product descriptions, buttons, forms, and general text.', 'cartvai' ),
+			'section'     => 'cartvai_theme_typography',
+			'type'        => 'select',
+			'choices'     => $font_choices,
+		)
+	);
+
+	// Heading / Title Font Family
+	$wp_customize->add_setting(
+		'cartvai_heading_font',
+		array(
+			'default'           => 'inter',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_heading_font',
+		array(
+			'label'       => esc_html__( 'Headings & Titles Font Family', 'cartvai' ),
+			'description' => esc_html__( 'Applied to page titles, product titles, section headers (H1-H6), and banner headings.', 'cartvai' ),
+			'section'     => 'cartvai_theme_typography',
+			'type'        => 'select',
+			'choices'     => $font_choices,
+		)
+	);
+
+	// Headings Font Weight
+	$wp_customize->add_setting(
+		'cartvai_heading_font_weight',
+		array(
+			'default'           => '700',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_heading_font_weight',
+		array(
+			'label'       => esc_html__( 'Headings Font Weight', 'cartvai' ),
+			'description' => esc_html__( 'Default font weight for section headings and titles.', 'cartvai' ),
+			'section'     => 'cartvai_theme_typography',
+			'type'        => 'select',
+			'choices'     => array(
+				'600' => esc_html__( 'Semi-Bold (600)', 'cartvai' ),
+				'700' => esc_html__( 'Bold (700 - Recommended)', 'cartvai' ),
+				'800' => esc_html__( 'Extra-Bold (800)', 'cartvai' ),
+				'900' => esc_html__( 'Black (900)', 'cartvai' ),
+			),
+		)
+	);
+
 	$wp_customize->add_section(
 		'cartvai_theme_product_cards',
 		array(
@@ -1109,6 +1196,11 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'text_color'                       => 'cartvai_text_color',
 		'border_color'                     => 'cartvai_border_color',
 		'bg_color'                         => 'cartvai_bg_color',
+
+		// Typography & Fonts
+		'body_font'                        => 'cartvai_body_font',
+		'heading_font'                     => 'cartvai_heading_font',
+		'heading_font_weight'              => 'cartvai_heading_font_weight',
 
 		// Card options
 		'shop_page_hide_short_description' => 'cartvai_shop_page_hide_short_description',

@@ -1,0 +1,95 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/sticky-bar",
+  "version": "1.0.0",
+  "title": "Cartvai Sticky Buy Bar",
+  "category": "cartvai",
+  "icon": "button",
+  "description": "Mobile-optimized fixed bottom order bar displaying product price, instant delivery badge, and high-contrast CTA button.",
+  "keywords": [
+    "sticky",
+    "buy button",
+    "floating",
+    "mobile",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "productTitle": {
+      "type": "string",
+      "default": "Special Flash Deal"
+    },
+    "price": {
+      "type": "string",
+      "default": "$49.00"
+    },
+    "regularPrice": {
+      "type": "string",
+      "default": "$79.00"
+    },
+    "badge": {
+      "type": "string",
+      "default": "In Stock • Ships Today"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Order Now (Cash on Delivery)"
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": "#order"
+    },
+    "visibility": {
+      "type": "string",
+      "default": "mobile-only"
+    },
+    "customBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBadgeColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customPriceColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "editorScript": "cartvai-sticky-bar-block-editor"
+}

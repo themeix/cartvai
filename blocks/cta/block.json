@@ -1,0 +1,132 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "cartvai/cta",
+  "version": "1.0.0",
+  "title": "Cartvai CTA",
+  "category": "cartvai",
+  "icon": "megaphone",
+  "description": "High-converting Call to Action (CTA) banner with multiple modern layout presets, color styles, badges, and responsive action buttons.",
+  "keywords": [
+    "cta",
+    "banner",
+    "call to action",
+    "promotion",
+    "cartvai"
+  ],
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "customClassName": true
+  },
+  "attributes": {
+    "layoutStyle": {
+      "type": "string",
+      "default": "centered"
+    },
+    "colorScheme": {
+      "type": "string",
+      "default": "brand-dark"
+    },
+    "containerWidth": {
+      "type": "string",
+      "default": "standard"
+    },
+    "showBadge": {
+      "type": "boolean",
+      "default": true
+    },
+    "badgeText": {
+      "type": "string",
+      "default": "LIMITED TIME OFFER"
+    },
+    "heading": {
+      "type": "string",
+      "default": "Boost Your Sales with Exclusive Deals"
+    },
+    "description": {
+      "type": "string",
+      "default": "Join thousands of happy customers today. Enjoy instant discounts, express shipping, and our hassle-free 30-day money-back guarantee."
+    },
+    "primaryButtonText": {
+      "type": "string",
+      "default": "Shop Now"
+    },
+    "primaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "showSecondaryButton": {
+      "type": "boolean",
+      "default": true
+    },
+    "secondaryButtonText": {
+      "type": "string",
+      "default": "Learn More"
+    },
+    "secondaryButtonUrl": {
+      "type": "string",
+      "default": "#"
+    },
+    "microcopy": {
+      "type": "string",
+      "default": "✓ Free 3-Day Delivery • ✓ 30-Day Money-Back Guarantee • ✓ 24/7 Support"
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "imageAlt": {
+      "type": "string",
+      "default": "Promotion Banner"
+    },
+    "customBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customHeadingColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBadgeColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnBgColor": {
+      "type": "string",
+      "default": ""
+    },
+    "customBtnTextColor": {
+      "type": "string",
+      "default": ""
+    },
+    "showBorder": {
+      "type": "boolean",
+      "default": true
+    },
+    "customBorderColor": {
+      "type": "string",
+      "default": ""
+    },
+    "borderWidth": {
+      "type": "string",
+      "default": "1px"
+    },
+    "borderRadius": {
+      "type": "string",
+      "default": "rounded-3xl"
+    },
+    "boxShadow": {
+      "type": "string",
+      "default": "none"
+    }
+  },
+  "editorScript": "cartvai-cta-block-editor"
+}

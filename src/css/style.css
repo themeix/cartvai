@@ -5,6 +5,7 @@
 
 @source "../../*.php";
 @source "../../**/*.php";
+@source "../../blocks/**/*.{php,js}";
 @source "../js/**/*.js";
 @source "../../../../plugins/cartvai-ecommerce/**/*.php";
 
@@ -50,11 +51,11 @@
     overflow-x: hidden;
     max-width: 100%;
     position: relative;
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--cv-font-body, 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   }
 
   button, input, select, textarea {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--cv-font-body, 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   }
 
   button {
@@ -64,7 +65,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--cv-font-heading, 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+    font-weight: var(--cv-heading-weight, 700);
     color: var(--cartvai-heading, #0f172a);
     margin-top: 0;
   }
@@ -1278,5 +1280,28 @@
     background-color: var(--cartvai-primary-hover, #1d4ed8);
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     transform: translateY(-1px);
+  }
+
+  /* ==========================================================================
+     Related Products Carousel & No-Scrollbar Utilities
+     ========================================================================== */
+  .cv-related-products__track,
+  .cv-related-products__track-container,
+  [class*="cv-related-products__track"],
+  .cv\:no-scrollbar,
+  .no-scrollbar {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+
+  .cv-related-products__track::-webkit-scrollbar,
+  .cv-related-products__track-container::-webkit-scrollbar,
+  [class*="cv-related-products__track"]::-webkit-scrollbar,
+  .cv\:no-scrollbar::-webkit-scrollbar,
+  .no-scrollbar::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
   }
 }
