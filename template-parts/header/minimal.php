@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- Logo -->
 			<div class="cv:flex cv:items-center cv:min-w-0 cv:flex-1 cv:md:flex-initial cv:md:shrink-0">
 				<?php if ( has_custom_logo() ) : ?>
-					<div class="cv-site-logo cv:max-w-[160px] cv:sm:max-w-[200px]"><?php the_custom_logo(); ?></div>
+					<div class="cv-site-logo cv:max-w-[160px] cv:sm:max-w-[200px] cv:flex cv:items-center [&_img]:cv:max-h-10 [&_img]:cv:w-auto [&_img]:cv:object-contain [&_img]:cv:block"><?php the_custom_logo(); ?></div>
 				<?php else : ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-block cv:text-base cv:sm:text-lg cv:font-bold cv:tracking-tight cv:text-gray-900 hover:cv:text-primary cv:break-words cv:line-clamp-2 cv:leading-tight">
 						<?php bloginfo( 'name' ); ?>
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						array(
 							'theme_location' => 'primary',
 							'container'      => false,
-							'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:gap-6 cv:text-xs cv:font-semibold cv:text-gray-600 hover:cv:text-gray-900',
+							'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:flex-wrap cv:list-none cv:p-0 cv:m-0 [&_ul]:cv:list-none [&_ul]:cv:p-0 [&_ul]:cv:m-0 [&_li]:cv:list-none [&_li]:cv:p-0 [&_li]:cv:m-0 [&_a]:cv:transition-colors',
 							'fallback_cb'    => false,
 						)
 					);

@@ -294,4 +294,70 @@ function cartvai_get_account_url( $tab = '', $args = array() ) {
 	return apply_filters( 'cartvai_theme_account_url', $url, $tab, $args );
 }
 
+/**
+ * Custom Comment Callback for Modern Tailwind UI Design
+ *
+ * @param WP_Comment $comment Comment object.
+ * @param array      $args    Arguments array.
+ * @param int        $depth   Depth level.
+ */
+function cartvai_comment_callback( $comment, $args, $depth ) {
+	$tag       = ( 'div' === $args['style'] ) ? 'div' : 'li';
+	$is_reply  = (int) $comment->comment_parent > 0;
+	$reply_btn = get_comment_reply_link(
+		array_merge(
+			$args,
+			array(
+				'add_below'  => 'div-comment',
+				'depth'      => $depth,
+				'max_depth'  => $args['max_depth'],
+				'reply_text' => '<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg> <span>' . esc_html__( 'Reply', 'cartvai' ) . '</span>',
+				'before'     => '',
+				'after'      => '',
+			)
+		)
+	);
+	?>
+	<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( 'cv-comment-item ' . ( $is_reply ? 'cv-comment-reply' : '' ), $comment ); ?>>
+		<article id="div-comment-<?php comment_ID(); ?>" class="cv-comment-body cv:group cv:p-5 cv:sm:p-6 cv:rounded-2xl cv:bg-gray-50/70 cv:border cv:border-gray-100/80 hover:cv:border-gray-200 cv:transition-all">
+			<header class="cv-comment-meta cv:flex cv:items-center cv:justify-between cv:gap-4 cv:mb-3">
+				<div class="cv:flex cv:items-center cv:gap-3.5">
+					<?php if ( 0 !== (int) $args['avatar_size'] ) : ?>
+						<div class="cv:shrink-0">
+							<?php echo get_avatar( $comment, $args['avatar_size'], '', '', array( 'class' => 'cv:w-11 cv:h-11 cv:rounded-full cv:ring-2 cv:ring-white cv:shadow-xs cv:object-cover' ) ); ?>
+						</div>
+					<?php endif; ?>
+					<div>
+						<div class="cv:font-bold cv:text-gray-900 cv:text-sm cv:leading-snug">
+							<?php echo get_comment_author_link( $comment ); ?>
+						</div>
+						<div class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:text-gray-400 cv:mt-0.5">
+							<time datetime="<?php comment_time( 'c' ); ?>">
+								<?php printf( esc_html__( '%1$s at %2$s', 'cartvai' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
+							</time>
+						</div>
+					</div>
+				</div>
+
+				<?php if ( ! empty( $reply_btn ) ) : ?>
+					<div class="cv-comment-reply-wrap">
+						<?php echo $reply_btn; ?>
+					</div>
+				<?php endif; ?>
+			</header>
+
+			<?php if ( '0' === (string) $comment->comment_approved ) : ?>
+				<p class="cv-comment-awaiting-moderation cv:text-xs cv:text-amber-700 cv:font-medium cv:bg-amber-50 cv:border cv:border-amber-200 cv:px-3 cv:py-1.5 cv:rounded-lg cv:mb-3">
+					<?php esc_html_e( 'Your comment is awaiting moderation.', 'cartvai' ); ?>
+				</p>
+			<?php endif; ?>
+
+			<div class="cv-comment-content cv:text-sm cv:text-gray-700 cv:leading-relaxed [&>p]:cv:mb-2 [&>p:last-child]:cv:mb-0">
+				<?php comment_text(); ?>
+			</div>
+		</article>
+	<?php
+}
+
+
 

@@ -175,7 +175,25 @@ function cartvai_theme_scripts() {
 		$footer_tokens .= "--cv-footer-border: {$footer_border_color}; ";
 		$footer_tokens .= "--cv-footer-sub-bg: {$footer_sub_bg_color}; ";
 
+		// Container & Layout Styling Tokens
+		$container_width_setting = cartvai_theme_option( 'container_width', '1280px' );
+		$container_custom_width  = cartvai_theme_option( 'container_custom_width', '' );
+		$container_padding       = (int) cartvai_theme_option( 'container_padding', 32 );
+
+		if ( 'custom' === $container_width_setting && ! empty( $container_custom_width ) ) {
+			$container_max_width = sanitize_text_field( $container_custom_width );
+		} else {
+			$container_max_width = sanitize_text_field( $container_width_setting );
+		}
+
+		if ( is_numeric( $container_max_width ) ) {
+			$container_max_width .= 'px';
+		}
+
 		$theme_tokens  = ":root { " .
+			"--cv-container-max-width: {$container_max_width}; " .
+			"--cv-container-7xl: {$container_max_width}; " .
+			"--cv-container-px: {$container_padding}px; " .
 			"--cartvai-primary: {$primary_color}; " .
 			"--cartvai-primary-hover: {$primary_hover}; " .
 			"--cartvai-primary-light: {$primary_light}; " .
@@ -204,7 +222,7 @@ function cartvai_theme_scripts() {
 			"--cv-nav-font-size: {$nav_font_size}px; " .
 			"--cv-nav-font-weight: {$nav_font_weight}; " .
 			$footer_tokens .
-		"}";
+		"} @media (max-width: 639px) { :root { --cv-container-px: 16px; } } @media (min-width: 640px) and (max-width: 1023px) { :root { --cv-container-px: 24px; } }";
 		wp_add_inline_style( 'cartvai-theme-styles', $theme_tokens );
 		if ( wp_style_is( 'cartvai-variables', 'registered' ) ) {
 			wp_add_inline_style( 'cartvai-variables', $theme_tokens );

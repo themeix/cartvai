@@ -269,7 +269,7 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 <?php else : ?>
 
 	<div class="cv-page-wrapper cv:bg-white cv:min-h-screen">
-		<div class="cv-page-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:py-10 cv:sm:py-14">
+		<div class="cv-page-container cv:py-10 cv:sm:py-14">
 			<?php
 			while ( have_posts() ) :
 				the_post();

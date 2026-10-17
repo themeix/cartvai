@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<!-- Center: Brand Logo -->
 		<div class="cv:min-w-0 cv:flex-1 cv:md:w-2/4 cv:md:flex-initial cv:flex cv:justify-start cv:md:justify-center cv:text-left cv:md:text-center">
 			<?php if ( has_custom_logo() ) : ?>
-				<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[240px]"><?php the_custom_logo(); ?></div>
+				<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[240px] cv:flex cv:items-center cv:justify-start cv:md:justify-center [&_img]:cv:max-h-11 [&_img]:cv:w-auto [&_img]:cv:object-contain [&_img]:cv:block"><?php the_custom_logo(); ?></div>
 			<?php else : ?>
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-block cv:text-lg cv:sm:text-2xl cv:md:text-3xl cv:font-black cv:tracking-wider cv:text-gray-950 hover:cv:text-primary cv:transition-colors cv:uppercase cv:break-words cv:line-clamp-2 cv:leading-tight">
 					<?php bloginfo( 'name' ); ?>
@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				array(
 					'theme_location' => 'primary',
 					'container'      => false,
-					'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:gap-8 cv:text-xs cv:font-bold cv:uppercase cv:tracking-wider cv:text-gray-700',
+					'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:flex-wrap cv:justify-center cv:list-none cv:p-0 cv:m-0 [&_ul]:cv:list-none [&_ul]:cv:p-0 [&_ul]:cv:m-0 [&_li]:cv:list-none [&_li]:cv:p-0 [&_li]:cv:m-0 [&_a]:cv:transition-colors',
 					'fallback_cb'    => false,
 				)
 			);

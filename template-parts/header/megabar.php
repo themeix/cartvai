@@ -71,7 +71,7 @@ $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enable
 					?>
 					<?php if ( has_custom_logo() ) : ?>
 						<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
-							<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[230px]"><?php the_custom_logo(); ?></div>
+							<div class="cv-site-logo cv:max-w-[180px] cv:sm:max-w-[230px] cv:flex cv:items-center [&_img]:cv:max-h-11 [&_img]:cv:w-auto [&_img]:cv:object-contain [&_img]:cv:block"><?php the_custom_logo(); ?></div>
 							<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 hover:cv:text-gray-900 cv:transition-colors">
 									<?php echo esc_html( $site_tagline ); ?>

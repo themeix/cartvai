@@ -83,6 +83,33 @@
 			}
 		});
 
+		// Mobile tab switcher (Categories vs Menu)
+		const tabBtns = drawer.querySelectorAll('.cv-mobile-tab-btn');
+		const tabPanels = drawer.querySelectorAll('.cv-mobile-tab-panel');
+		if (tabBtns.length && tabPanels.length) {
+			tabBtns.forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					const target = btn.getAttribute('data-cv-tab');
+					tabBtns.forEach(function (b) {
+						b.classList.remove('cv:bg-white', 'cv:text-slate-900', 'cv:shadow-2xs');
+						b.classList.add('cv:text-slate-600', 'cv:bg-transparent');
+						b.setAttribute('aria-selected', 'false');
+					});
+					btn.classList.add('cv:bg-white', 'cv:text-slate-900', 'cv:shadow-2xs');
+					btn.classList.remove('cv:text-slate-600', 'cv:bg-transparent');
+					btn.setAttribute('aria-selected', 'true');
+
+					tabPanels.forEach(function (panel) {
+						if (panel.getAttribute('data-cv-panel') === target) {
+							panel.classList.remove('cv:hidden');
+						} else {
+							panel.classList.add('cv:hidden');
+						}
+					});
+				});
+			});
+		}
+
 		// Mobile accordion for menu items with children
 		const parentItems = drawer.querySelectorAll('.menu-item-has-children > a');
 		parentItems.forEach(function (link) {
@@ -90,9 +117,18 @@
 				const subMenu = link.nextElementSibling;
 				if (subMenu && subMenu.classList.contains('sub-menu')) {
 					e.preventDefault();
-					const isOpen = subMenu.style.display === 'block';
-					subMenu.style.display = isOpen ? 'none' : 'block';
-					link.classList.toggle('is-expanded', !isOpen);
+					const isHidden = subMenu.classList.contains('cv:hidden') || subMenu.style.display === 'none' || getComputedStyle(subMenu).display === 'none';
+					if (isHidden) {
+						subMenu.classList.remove('cv:hidden');
+						subMenu.style.display = 'block';
+						link.classList.add('is-expanded');
+						link.setAttribute('aria-expanded', 'true');
+					} else {
+						subMenu.classList.add('cv:hidden');
+						subMenu.style.display = 'none';
+						link.classList.remove('is-expanded');
+						link.setAttribute('aria-expanded', 'false');
+					}
 				}
 			});
 		});

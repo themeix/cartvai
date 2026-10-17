@@ -101,8 +101,95 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	}
 
 	// ==========================================
-	// 2. SECTION: Product Card Options
+	// 1.1 SECTION: Container & Layout Settings
 	// ==========================================
+	$wp_customize->add_section(
+		'cartvai_theme_layout',
+		array(
+			'title'       => esc_html__( 'Cartvai Layout & Container', 'cartvai' ),
+			'description' => esc_html__( 'Configure the global container width and responsive padding. Applies site-wide to Header, Footer, Pages, Products, and Shop.', 'cartvai' ),
+			'priority'    => 26,
+			'capability'  => $cap,
+		)
+	);
+
+	// Site Container Max Width Setting
+	$wp_customize->add_setting(
+		'cartvai_container_width',
+		array(
+			'default'           => '1280px',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_container_width',
+		array(
+			'label'       => esc_html__( 'Site Container Max Width', 'cartvai' ),
+			'description' => esc_html__( 'Controls the maximum width across all page layouts, product single pages, headers, and footers.', 'cartvai' ),
+			'section'     => 'cartvai_theme_layout',
+			'type'        => 'select',
+			'choices'     => array(
+				'1140px' => esc_html__( '1140px (Compact)', 'cartvai' ),
+				'1200px' => esc_html__( '1200px (Medium / Standard)', 'cartvai' ),
+				'1280px' => esc_html__( '1280px (Tailwind 7XL - Default)', 'cartvai' ),
+				'1320px' => esc_html__( '1320px (Bootstrap 5 XL)', 'cartvai' ),
+				'1360px' => esc_html__( '1360px (Modern eCommerce)', 'cartvai' ),
+				'1400px' => esc_html__( '1400px (Wide Storefront)', 'cartvai' ),
+				'1440px' => esc_html__( '1440px (Ultra-Wide)', 'cartvai' ),
+				'custom' => esc_html__( 'Custom Width (Enter below)', 'cartvai' ),
+			),
+		)
+	);
+
+	// Custom Container Width (if 'custom' chosen)
+	$wp_customize->add_setting(
+		'cartvai_container_custom_width',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_container_custom_width',
+		array(
+			'label'       => esc_html__( 'Custom Container Width', 'cartvai' ),
+			'description' => esc_html__( 'Specify custom width with unit if "Custom Width" is selected above (e.g. 1380px, 86rem, or 92%).', 'cartvai' ),
+			'section'     => 'cartvai_theme_layout',
+			'type'        => 'text',
+		)
+	);
+
+	// Desktop Container Side Padding
+	$wp_customize->add_setting(
+		'cartvai_container_padding',
+		array(
+			'default'           => 32,
+			'sanitize_callback' => 'absint',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_container_padding',
+		array(
+			'label'       => esc_html__( 'Desktop Container Padding (px)', 'cartvai' ),
+			'description' => esc_html__( 'Horizontal side padding on screens >=1024px. Default is 32px (2rem). Mobile and tablet scale down responsively.', 'cartvai' ),
+			'section'     => 'cartvai_theme_layout',
+			'type'        => 'number',
+			'input_attrs' => array(
+				'min'  => 12,
+				'max'  => 64,
+				'step' => 2,
+			),
+		)
+	);
 	$wp_customize->add_section(
 		'cartvai_theme_product_cards',
 		array(
@@ -509,22 +596,30 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Footer Trust Strip Toggle
+	// Footer Widget Columns Layout
 	$wp_customize->add_setting(
-		'cartvai_footer_trust_enabled',
+		'cartvai_footer_columns',
 		array(
-			'default'           => true,
-			'sanitize_callback' => 'rest_sanitize_boolean',
+			'default'           => '4',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'refresh',
 			'capability'        => $cap,
 		)
 	);
 
 	$wp_customize->add_control(
-		'cartvai_footer_trust_enabled',
+		'cartvai_footer_columns',
 		array(
-			'label'       => esc_html__( 'Show Footer Trust Strip (Ecommerce footer)', 'cartvai' ),
+			'label'       => esc_html__( 'Footer Widget Columns', 'cartvai' ),
+			'description' => esc_html__( 'Choose how many columns to display in the footer. Customize contents via Widgets → Footer Column 1 to 5.', 'cartvai' ),
 			'section'     => 'cartvai_theme_footer',
-			'type'        => 'checkbox',
+			'type'        => 'select',
+			'choices'     => array(
+				'4' => esc_html__( '4 Columns (Default)', 'cartvai' ),
+				'3' => esc_html__( '3 Columns', 'cartvai' ),
+				'2' => esc_html__( '2 Columns', 'cartvai' ),
+				'5' => esc_html__( '5 Columns', 'cartvai' ),
+			),
 		)
 	);
 
@@ -986,7 +1081,7 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'contact_email'                    => 'cartvai_contact_email',
 		'popular_categories_enabled'       => 'cartvai_popular_categories_enabled',
 		'footer_style'                     => 'cartvai_footer_style',
-		'footer_trust_enabled'             => 'cartvai_footer_trust_enabled',
+		'footer_columns'                   => 'cartvai_footer_columns',
 		'footer_copyright_text'            => 'cartvai_footer_copyright_text',
 
 		// Header & Navbar Styling

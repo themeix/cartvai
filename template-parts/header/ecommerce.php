@@ -80,7 +80,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 				?>
 				<?php if ( has_custom_logo() ) : ?>
 					<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
-						<div class="cv-site-logo cv:max-w-[190px] cv:sm:max-w-[250px]"><?php the_custom_logo(); ?></div>
+						<div class="cv-site-logo cv:max-w-[190px] cv:sm:max-w-[250px] cv:flex cv:items-center [&_img]:cv:max-h-11 [&_img]:cv:w-auto [&_img]:cv:object-contain [&_img]:cv:block"><?php the_custom_logo(); ?></div>
 						<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 hover:cv:text-gray-900 cv:transition-colors">
 								<?php echo esc_html( $site_tagline ); ?>
@@ -136,7 +136,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 						array(
 							'theme_location' => 'primary',
 							'container'      => false,
-							'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:gap-8 cv:text-sm cv:font-semibold cv:text-slate-800',
+							'menu_class'     => 'cv-primary-menu cv:flex cv:items-center cv:flex-wrap cv:list-none cv:p-0 cv:m-0 [&_ul]:cv:list-none [&_ul]:cv:p-0 [&_ul]:cv:m-0 [&_li]:cv:list-none [&_li]:cv:p-0 [&_li]:cv:m-0 [&_a]:cv:transition-colors',
 							'fallback_cb'    => false,
 						)
 					);
