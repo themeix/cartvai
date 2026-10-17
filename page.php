@@ -16,10 +16,12 @@ get_header();
 $is_shop_page     = false;
 $is_cart_page     = false;
 $is_checkout_page = false;
+$is_account_page  = false;
 
 $shop_page_id     = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'shop_page_id', 0 ) : 0;
 $cart_page_id     = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'cart_page_id', 0 ) : 0;
 $checkout_page_id = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'checkout_page_id', 0 ) : 0;
+$account_page_id  = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'account_page_id', 0 ) : 0;
 
 $post_content = get_post() ? (string) get_post()->post_content : '';
 $post_name    = get_post() ? (string) get_post()->post_name : '';
@@ -30,6 +32,8 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 	$is_cart_page = true;
 } elseif ( ( $checkout_page_id && is_page( $checkout_page_id ) ) || has_shortcode( $post_content, 'cartvai_checkout' ) || is_page( 'checkout' ) || 'checkout' === $post_name ) {
 	$is_checkout_page = true;
+} elseif ( ( $account_page_id && is_page( $account_page_id ) ) || has_shortcode( $post_content, 'cartvai_account' ) || is_page( 'cartvai-account' ) || is_page( 'my-account' ) || 'cartvai-account' === $post_name || 'my-account' === $post_name ) {
+	$is_account_page = true;
 }
 ?>
 
@@ -207,6 +211,60 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 		?>
 	</div>
 
+<?php elseif ( $is_account_page ) : ?>
+
+	<!-- Modern Account Page Hero Header -->
+	<div class="cv-account-hero cv:bg-white cv:border-b cv:border-gray-200/80 cv:py-8 cv:sm:py-10 cv:mb-8">
+		<div class="cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8">
+			<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
+				<div>
+					<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<span class="cv:text-slate-400">/</span>
+						<span class="cv:text-slate-900 cv:font-semibold"><?php the_title(); ?></span>
+					</nav>
+					<h1 class="cv:text-2xl cv:sm:text-3xl cv:font-black cv:text-gray-950 cv:tracking-tight cv:leading-tight">
+						<?php the_title(); ?>
+					</h1>
+					<p class="cv:text-xs cv:sm:text-sm cv:text-gray-500 cv:mt-1.5 cv:flex cv:items-center cv:gap-2">
+						<svg class="cv:w-4 cv:h-4 cv:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+						<span><?php esc_html_e( 'Customer Portal & Order History', 'cartvai' ); ?></span>
+						<span class="cv:inline-block cv:w-1 cv:h-1 cv:rounded-full cv:bg-gray-300"></span>
+						<span class="cv:text-slate-600 cv:font-medium"><?php esc_html_e( 'Secure Personal Dashboard', 'cartvai' ); ?></span>
+					</p>
+				</div>
+				<div class="cv:flex cv:items-center cv:gap-3">
+					<div class="cv:inline-flex cv:items-center cv:gap-2 cv:px-3.5 cv:py-2 cv:rounded-xl cv:bg-gray-50 cv:border cv:border-gray-200 cv:text-xs cv:font-semibold cv:text-gray-700">
+						<svg class="cv:w-4 cv:h-4 cv:text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+						<span><?php esc_html_e( 'Verified Customer Portal', 'cartvai' ); ?></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="cv-account-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:pb-16">
+		<?php
+		$rendered_account = false;
+		while ( have_posts() ) :
+			the_post();
+			ob_start();
+			the_content();
+			$account_content = ob_get_clean();
+
+			if ( ! empty( trim( $account_content ) ) ) {
+				echo $account_content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				if ( false !== strpos( $account_content, 'cartvai-account' ) ) {
+					$rendered_account = true;
+				}
+			}
+		endwhile;
+
+		if ( ! $rendered_account && shortcode_exists( 'cartvai_account' ) ) {
+			echo do_shortcode( '[cartvai_account]' );
+		}
+		?>
+	</div>
 
 <?php else : ?>
 
