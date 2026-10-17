@@ -565,6 +565,14 @@ class CARTVAI_Theme_Demo_Importer {
 			'templates/template-canvas.php'
 		);
 
+		// 8. My Account Page
+		$account_id = self::get_or_create_page(
+			'My Account',
+			'my-account',
+			'[cartvai_account]',
+			'default'
+		);
+
 		// Store IDs in transient for step 6
 		set_transient(
 			'cartvai_demo_imported_pages',
@@ -576,6 +584,7 @@ class CARTVAI_Theme_Demo_Importer {
 				'thank_you_id'    => $thank_you_id,
 				'funnel_id'       => $funnel_id,
 				'food_landing_id' => $food_landing_id,
+				'account_id'      => $account_id,
 			),
 			HOUR_IN_SECONDS
 		);
@@ -711,6 +720,10 @@ class CARTVAI_Theme_Demo_Importer {
 			$cart_page     = get_page_by_path( 'cart' );
 			$checkout_page = get_page_by_path( 'checkout' );
 			$thank_page    = get_page_by_path( 'thank-you' );
+			$account_page  = get_page_by_path( 'my-account' );
+			if ( ! $account_page ) {
+				$account_page = get_page_by_path( 'cartvai-account' );
+			}
 
 			if ( $shop_page ) {
 				CARTVAI_Settings::set( 'shop_page_id', $shop_page->ID );
@@ -723,6 +736,9 @@ class CARTVAI_Theme_Demo_Importer {
 			}
 			if ( $thank_page ) {
 				CARTVAI_Settings::set( 'thank_you_page_id', $thank_page->ID );
+			}
+			if ( $account_page ) {
+				CARTVAI_Settings::set( 'account_page_id', $account_page->ID );
 			}
 		}
 

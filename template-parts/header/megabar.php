@@ -22,7 +22,7 @@ $contact_email        = cartvai_theme_option( 'contact_email', 'support@cartvai.
 $cart_count   = class_exists( 'CARTVAI_Cart' ) ? (int) CARTVAI_Cart::get_count() : 0;
 $cart_url     = home_url( '/cart/' );
 $checkout_url = home_url( '/checkout/' );
-$account_url  = is_user_logged_in() ? admin_url( 'profile.php' ) : wp_login_url( get_permalink() );
+$account_url  = function_exists( 'cartvai_get_account_url' ) ? cartvai_get_account_url() : home_url( '/my-account/' );
 
 $header_more_enabled        = (bool) cartvai_theme_option( 'header_more_enabled', true );
 $brand_tagline_enabled      = (bool) cartvai_theme_option( 'brand_tagline_enabled', true );

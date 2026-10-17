@@ -35,3 +35,4 @@ require_once CARTVAI_THEME_DIR . '/inc/widgets.php';
 require_once CARTVAI_THEME_DIR . '/inc/patterns.php';
 require_once CARTVAI_THEME_DIR . '/inc/tgm/tgm.php';
 require_once CARTVAI_THEME_DIR . '/inc/demo-importer.php';
+require_once CARTVAI_THEME_DIR . '/inc/search.php';

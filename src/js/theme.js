@@ -19,6 +19,7 @@
 		initAddToCart();
 		initRelatedProductsCarousel();
 		initShareCopyLink();
+		initAjaxSearch();
 	});
 
 	/**
@@ -331,4 +332,294 @@
 			}
 		});
 	}
+
+	/**
+	 * 6. Real-Time Live AJAX Product Search
+	 */
+	function initAjaxSearch() {
+		const forms = document.querySelectorAll('[data-cartvai-search-form]');
+		if (!forms.length) return;
+
+		function escapeHtml(str) {
+			const div = document.createElement('div');
+			div.textContent = str || '';
+			return div.innerHTML;
+		}
+
+		function highlightMatch(text, query) {
+			if (!query) return escapeHtml(text);
+			const escapedQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+			const regex = new RegExp('(' + escapedQuery + ')', 'gi');
+			return escapeHtml(text).replace(regex, '<mark class="cv:bg-amber-100 cv:text-amber-950 cv:font-semibold cv:px-0.5 cv:rounded">$1</mark>');
+		}
+
+		forms.forEach(function (form) {
+			const input = form.querySelector('[data-cartvai-search-input]');
+			const dropdown = form.querySelector('[data-cartvai-search-dropdown]');
+			const staticIcon = form.querySelector('.cv-search-icon');
+			const spinnerIcon = form.querySelector('.cv-search-spinner');
+			const isAjaxEnabled = form.getAttribute('data-ajax-enabled') !== '0';
+			const postType = form.getAttribute('data-post-type') || '';
+
+			// Category dropdown elements (Categorized search)
+			const catToggleBtn = form.querySelector('[data-cartvai-cat-toggle]');
+			const catList = form.querySelector('[data-cartvai-cat-list]');
+			const catInput = form.querySelector('[data-cartvai-cat-input]');
+			const catLabel = form.querySelector('[data-cartvai-cat-label]');
+
+			if (catToggleBtn && catList) {
+				catToggleBtn.addEventListener('click', function (e) {
+					e.preventDefault();
+					e.stopPropagation();
+					const isHidden = catList.classList.contains('cv:hidden');
+					// Close any other open category dropdowns
+					document.querySelectorAll('[data-cartvai-cat-list]').forEach(function (el) {
+						el.classList.add('cv:hidden');
+					});
+					if (isHidden) {
+						catList.classList.remove('cv:hidden');
+						catToggleBtn.setAttribute('aria-expanded', 'true');
+					} else {
+						catList.classList.add('cv:hidden');
+						catToggleBtn.setAttribute('aria-expanded', 'false');
+					}
+				});
+
+				catList.querySelectorAll('.cv-search-cat-item').forEach(function (item) {
+					item.addEventListener('click', function (e) {
+						e.preventDefault();
+						e.stopPropagation();
+						const val = item.getAttribute('data-value') || '';
+						const label = item.getAttribute('data-label') || 'SELECT CATEGORY';
+
+						if (catInput) catInput.value = val;
+						if (catLabel) catLabel.textContent = label;
+
+						catList.querySelectorAll('.cv-search-cat-item').forEach(function (el) {
+							el.classList.remove('cv:bg-primary/5', 'cv:text-primary', 'cv:font-bold');
+						});
+						item.classList.add('cv:bg-primary/5', 'cv:text-primary', 'cv:font-bold');
+
+						catList.classList.add('cv:hidden');
+						catToggleBtn.setAttribute('aria-expanded', 'false');
+
+						// If input has text, trigger instant live search with new category
+						if (input && input.value.trim().length >= 2 && isAjaxEnabled) {
+							doSearch();
+						}
+					});
+				});
+
+				document.addEventListener('click', function (e) {
+					if (!form.contains(e.target)) {
+						catList.classList.add('cv:hidden');
+						catToggleBtn.setAttribute('aria-expanded', 'false');
+					}
+				});
+			}
+
+			if (!input || !dropdown || !isAjaxEnabled) return;
+
+			let debounceTimer = null;
+			let activeController = null;
+			let selectedIndex = -1;
+
+			function showSpinner() {
+				if (spinnerIcon && staticIcon) {
+					spinnerIcon.classList.remove('cv:hidden');
+					staticIcon.classList.add('cv:hidden');
+				}
+			}
+
+			function hideSpinner() {
+				if (spinnerIcon && staticIcon) {
+					spinnerIcon.classList.add('cv:hidden');
+					staticIcon.classList.remove('cv:hidden');
+				}
+			}
+
+			function closeDropdown() {
+				dropdown.classList.add('cv:hidden');
+				selectedIndex = -1;
+			}
+
+			function renderResults(data, query) {
+				const products = data.products || [];
+				const total = data.total || 0;
+				const viewAllUrl = data.view_all_url || '#';
+
+				if (products.length === 0) {
+					dropdown.innerHTML = `
+						<div class="cv:p-6 cv:text-center cv:text-gray-500">
+							<svg class="cv:w-8 cv:h-8 cv:mx-auto cv:text-gray-300 cv:mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+							</svg>
+							<p class="cv:text-sm cv:font-semibold cv:text-gray-800 cv:mb-0.5">No results found</p>
+							<p class="cv:text-xs cv:text-gray-400">Try searching with a different keyword or category</p>
+						</div>
+					`;
+					dropdown.classList.remove('cv:hidden');
+					return;
+				}
+
+				let html = '<div class="cv:py-2 cv:max-h-[380px] cv:overflow-y-auto cv:divide-y cv:divide-gray-100">';
+
+				products.forEach(function (p) {
+					const isProduct = (p.type === 'cartvai_product');
+					const thumbHtml = p.image
+						? `<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.title)}" class="cv:w-11 cv:h-11 cv:object-cover cv:rounded-lg cv:border cv:border-gray-100 cv:shrink-0" loading="lazy" />`
+						: `<div class="cv:w-11 cv:h-11 cv:rounded-lg cv:bg-gray-100 cv:flex cv:items-center cv:justify-center cv:text-gray-400 cv:shrink-0"><svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>`;
+
+					let metaHtml = '';
+					if (isProduct) {
+						metaHtml = p.category
+							? `<span class="cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-wider cv:text-gray-400 cv:block cv:mb-1 cv:leading-none">${escapeHtml(p.category)}</span>`
+							: '';
+					} else {
+						metaHtml = (p.category || p.date)
+							? `<div class="cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-wider cv:text-gray-400 cv:flex cv:items-center cv:gap-1.5 cv:mb-1 cv:leading-none">
+								${p.category ? `<span>${escapeHtml(p.category)}</span>` : ''}
+								${p.category && p.date ? '<span class="cv:text-gray-300">•</span>' : ''}
+								${p.date ? `<span>${escapeHtml(p.date)}</span>` : ''}
+							</div>`
+							: '';
+					}
+
+					const priceBlock = (p.price_html && p.price_html.trim() !== '')
+						? `<div class="cv:text-xs cv:mt-1 cv:flex cv:items-center cv:gap-1.5 cv:leading-none">${p.price_html}</div>`
+						: '';
+
+					html += `
+						<a href="${escapeHtml(p.url)}" class="cv-search-result-item cv:flex cv:items-center cv:gap-3 cv:px-4 cv:py-2.5 hover:cv:bg-slate-50 cv:transition-colors cv:text-left cv:group cv:no-underline">
+							${thumbHtml}
+							<div class="cv:flex-1 cv:min-w-0">
+								${metaHtml}
+								<h4 class="cv:text-sm cv:font-semibold cv:text-gray-900 group-hover:cv:text-primary cv:transition-colors cv:truncate cv:leading-snug cv:m-0 cv:p-0" style="margin: 0 !important; padding: 0 !important;">
+									${highlightMatch(p.title, query)}
+								</h4>
+								${priceBlock}
+							</div>
+							<svg class="cv:w-4 cv:h-4 cv:text-gray-300 group-hover:cv:text-primary group-hover:cv:translate-x-0.5 cv:transition-all cv:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+							</svg>
+						</a>
+					`;
+				});
+
+				html += '</div>';
+
+				if (total > products.length) {
+					html += `
+						<div class="cv:px-4 cv:py-3 cv:bg-gray-50 cv:border-t cv:border-gray-100 cv:text-center">
+							<a href="${escapeHtml(viewAllUrl)}" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:text-xs cv:font-bold cv:text-primary hover:cv:underline">
+								<span>View all ${total} results for "${escapeHtml(query)}"</span>
+								<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+								</svg>
+							</a>
+						</div>
+					`;
+				}
+
+				dropdown.innerHTML = html;
+				dropdown.classList.remove('cv:hidden');
+			}
+
+			function doSearch() {
+				const query = input.value.trim();
+				if (query.length < 2) {
+					closeDropdown();
+					hideSpinner();
+					return;
+				}
+
+				showSpinner();
+
+				if (activeController) {
+					activeController.abort();
+				}
+				activeController = new AbortController();
+
+				const ajaxUrl = (window.cartvaiThemeConfig && window.cartvaiThemeConfig.ajaxUrl) || '/wp-admin/admin-ajax.php';
+				const nonce = (window.cartvaiThemeConfig && window.cartvaiThemeConfig.searchNonce) || '';
+				const currentCat = catInput ? catInput.value : '';
+
+				let endpoint = ajaxUrl + '?action=cartvai_ajax_search&term=' + encodeURIComponent(query) + '&nonce=' + encodeURIComponent(nonce);
+				if (currentCat) {
+					endpoint += '&category=' + encodeURIComponent(currentCat);
+				}
+				if (postType) {
+					endpoint += '&post_type=' + encodeURIComponent(postType);
+				}
+
+				fetch(endpoint, { signal: activeController.signal })
+					.then(function (res) { return res.json(); })
+					.then(function (res) {
+						hideSpinner();
+						if (res && res.success && res.data) {
+							renderResults(res.data, query);
+						}
+					})
+					.catch(function (err) {
+						if (err.name !== 'AbortError') {
+							hideSpinner();
+						}
+					});
+			}
+
+			input.addEventListener('input', function () {
+				clearTimeout(debounceTimer);
+				debounceTimer = setTimeout(doSearch, 250);
+			});
+
+			input.addEventListener('focus', function () {
+				if (input.value.trim().length >= 2 && dropdown.children.length > 0) {
+					dropdown.classList.remove('cv:hidden');
+				}
+			});
+
+			input.addEventListener('keydown', function (e) {
+				if (dropdown.classList.contains('cv:hidden')) return;
+
+				const items = dropdown.querySelectorAll('.cv-search-result-item');
+				if (!items.length) return;
+
+				if (e.key === 'ArrowDown') {
+					e.preventDefault();
+					selectedIndex = (selectedIndex + 1) % items.length;
+					updateSelectedItem(items);
+				} else if (e.key === 'ArrowUp') {
+					e.preventDefault();
+					selectedIndex = (selectedIndex - 1 + items.length) % items.length;
+					updateSelectedItem(items);
+				} else if (e.key === 'Enter') {
+					if (selectedIndex >= 0 && items[selectedIndex]) {
+						e.preventDefault();
+						window.location.href = items[selectedIndex].href;
+					}
+				} else if (e.key === 'Escape') {
+					e.preventDefault();
+					closeDropdown();
+				}
+			});
+
+			function updateSelectedItem(items) {
+				items.forEach(function (item, index) {
+					if (index === selectedIndex) {
+						item.classList.add('cv:bg-slate-100');
+						item.scrollIntoView({ block: 'nearest' });
+					} else {
+						item.classList.remove('cv:bg-slate-100');
+					}
+				});
+			}
+
+			document.addEventListener('click', function (e) {
+				if (!form.contains(e.target)) {
+					closeDropdown();
+				}
+			});
+		});
+	}
 })();
+

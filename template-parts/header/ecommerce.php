@@ -19,6 +19,7 @@ $announcement_text           = cartvai_theme_option( 'announcement_text', '⚡ F
 $contact_phone               = cartvai_theme_option( 'contact_phone', '+1 (800) 123-4567' );
 $contact_email               = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
 $popular_categories_enabled  = (bool) cartvai_theme_option( 'popular_categories_enabled', true );
+$account_url                 = function_exists( 'cartvai_get_account_url' ) ? cartvai_get_account_url() : home_url( '/my-account/' );
 
 // Get product categories for quick category navigation
 $categories = array();
@@ -107,6 +108,13 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 
 			<!-- User & Cart Utilities + Mobile Toggle -->
 			<div class="cv:flex cv:items-center cv:gap-3 cv:shrink-0">
+				<!-- Customer Account Link -->
+				<a href="<?php echo esc_url( $account_url ); ?>" class="cv:hidden cv:sm:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:text-gray-700 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" title="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>" aria-label="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>">
+					<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+					</svg>
+				</a>
+
 				<?php get_template_part( 'template-parts/components/header-cart' ); ?>
 
 				<!-- Mobile Hamburger Button -->

@@ -20,7 +20,7 @@ $contact_phone               = cartvai_theme_option( 'contact_phone', '+1 (800) 
 
 $cart_url     = home_url( '/cart/' );
 $shop_url     = home_url( '/shop/' );
-$account_url  = is_user_logged_in() ? admin_url( 'profile.php' ) : wp_login_url( get_permalink() );
+$account_url  = function_exists( 'cartvai_get_account_url' ) ? cartvai_get_account_url() : home_url( '/my-account/' );
 $cart_count   = class_exists( 'CARTVAI_Cart' ) ? (int) CARTVAI_Cart::get_count() : 0;
 
 // Determine which menus are registered

@@ -345,14 +345,118 @@ function cartvai_theme_customize_register( $wp_customize ) {
 	);
 
 	// ==========================================
-	// 4. SECTION: Footer Settings
+	// 4. SECTION: Search Settings
+	// ==========================================
+	$wp_customize->add_section(
+		'cartvai_theme_search',
+		array(
+			'title'       => esc_html__( 'Cartvai Search Settings', 'cartvai' ),
+			'description' => esc_html__( 'Configure your store search bar design, categories dropdown, and target search content.', 'cartvai' ),
+			'priority'    => 31,
+			'capability'  => $cap,
+		)
+	);
+
+	// Search Style (Standard vs Categorized)
+	$wp_customize->add_setting(
+		'cartvai_search_style',
+		array(
+			'default'           => 'categorized',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_search_style',
+		array(
+			'label'       => esc_html__( 'Search Bar Style', 'cartvai' ),
+			'description' => esc_html__( 'Choose between standard clean search or categorized search with category dropdown.', 'cartvai' ),
+			'section'     => 'cartvai_theme_search',
+			'type'        => 'select',
+			'choices'     => array(
+				'categorized' => esc_html__( 'Categorized Search (With Category Dropdown)', 'cartvai' ),
+				'standard'    => esc_html__( 'Standard Search (Classic Clean Input + Button)', 'cartvai' ),
+			),
+		)
+	);
+
+	// Search Target Content (Post Type)
+	$wp_customize->add_setting(
+		'cartvai_search_post_type',
+		array(
+			'default'           => 'cartvai_product',
+			'sanitize_callback' => 'sanitize_key',
+			'transport'         => 'refresh',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_search_post_type',
+		array(
+			'label'       => esc_html__( 'Search Content Target', 'cartvai' ),
+			'description' => esc_html__( 'Select what content users can search through.', 'cartvai' ),
+			'section'     => 'cartvai_theme_search',
+			'type'        => 'select',
+			'choices'     => array(
+				'cartvai_product' => esc_html__( 'Products Only (eCommerce Store)', 'cartvai' ),
+				'any'             => esc_html__( 'Products & Blog Posts (Multi-content / Anyone can use)', 'cartvai' ),
+				'post'            => esc_html__( 'Blog Posts Only (Editorial / Blog)', 'cartvai' ),
+			),
+		)
+	);
+
+	// Real-Time Live AJAX Search Toggle
+	$wp_customize->add_setting(
+		'cartvai_search_ajax_enabled',
+		array(
+			'default'           => true,
+			'sanitize_callback' => 'rest_sanitize_boolean',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_search_ajax_enabled',
+		array(
+			'label'       => esc_html__( 'Enable Real-Time AJAX Live Search', 'cartvai' ),
+			'description' => esc_html__( 'Display instant live search results dropdown as the user types.', 'cartvai' ),
+			'section'     => 'cartvai_theme_search',
+			'type'        => 'checkbox',
+		)
+	);
+
+	// Search Input Custom Placeholder
+	$wp_customize->add_setting(
+		'cartvai_search_placeholder',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_text_field',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_search_placeholder',
+		array(
+			'label'       => esc_html__( 'Custom Search Placeholder Text', 'cartvai' ),
+			'description' => esc_html__( 'Optional custom text for the search input (e.g. "Search for products..."). Leave empty for smart default.', 'cartvai' ),
+			'section'     => 'cartvai_theme_search',
+			'type'        => 'text',
+		)
+	);
+
+	// ==========================================
+	// 5. SECTION: Footer Settings
 	// ==========================================
 	$wp_customize->add_section(
 		'cartvai_theme_footer',
 		array(
 			'title'       => esc_html__( 'Cartvai Footer Settings', 'cartvai' ),
 			'description' => esc_html__( 'Select your footer layout, reassurance badges, store address, payment banners, and colors.', 'cartvai' ),
-			'priority'    => 32,
+			'priority'    => 35,
 			'capability'  => $cap,
 		)
 	);

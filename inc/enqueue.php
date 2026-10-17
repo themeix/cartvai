@@ -229,6 +229,7 @@ function cartvai_theme_scripts() {
 				'restUrl'      => esc_url_raw( rest_url() ),
 				'nonce'        => wp_create_nonce( 'wp_rest' ),
 				'cartvaiNonce' => wp_create_nonce( 'cartvai_frontend_nonce' ),
+				'searchNonce'  => wp_create_nonce( 'cartvai_ajax_search_nonce' ),
 				'ajaxUrl'      => admin_url( 'admin-ajax.php' ),
 			)
 		);

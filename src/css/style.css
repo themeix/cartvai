@@ -5,6 +5,7 @@
 
 @source "../../*.php";
 @source "../../**/*.php";
+@source "../js/**/*.js";
 @source "../../../../plugins/cartvai-ecommerce/**/*.php";
 
 @theme {
@@ -396,6 +397,7 @@ nav[aria-label="Breadcrumb"] a:hover {
   border: 0 !important;
   outline: none !important;
   box-shadow: none !important;
+  padding: 0 !important;
 }
 
 .cv-megastore-search-btn:hover {
@@ -3387,76 +3389,4 @@ hr.wp-block-separator,
   }
 }
 
-/* ==========================================================================
-   Funnel Page Centered 1-Column Hero (Fallback layout only - styles handled by native block settings)
-   ========================================================================== */
-.cv-funnel-hero-centered {
-  position: relative;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .cv-funnel-hero-centered {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-}
-
-/* ==========================================================================
-   Shop Page Filter Bar Layout & Inline Controls
-   ========================================================================== */
-.cartvai-shop-filter-bar {
-  margin-bottom: 1.5rem;
-}
-.cartvai-shop-filter-form {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 0.75rem 1rem !important;
-  width: 100% !important;
-}
-.cartvai-shop-filter-controls {
-  display: flex !important;
-  flex-direction: row !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  gap: 0.625rem 0.75rem !important;
-  flex: 1 1 auto !important;
-  min-width: 0 !important;
-}
-.cartvai-shop-filter-group {
-  display: inline-flex !important;
-  align-items: center !important;
-  width: auto !important;
-  margin: 0 !important;
-}
-.cartvai-shop-filter-actions {
-  display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  gap: 0.75rem !important;
-  margin-left: auto !important;
-  width: auto !important;
-}
-@media (max-width: 640px) {
-  .cartvai-shop-filter-form {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-  .cartvai-shop-filter-controls,
-  .cartvai-shop-filter-actions {
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
-  .cartvai-shop-filter-group {
-    width: 100% !important;
-  }
-  .cartvai-shop-filter-actions {
-    flex-direction: column !important;
-    align-items: stretch !important;
-  }
-}
-
-
+ 

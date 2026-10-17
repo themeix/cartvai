@@ -249,3 +249,49 @@ function cartvai_is_dark_hex( $hex ) {
 	return $luminance < 0.6;
 }
 
+/**
+ * Retrieve the customer account page URL.
+ *
+ * Checks CARTVAI_Account first, with smart fallback to 'my-account' page or home_url('/my-account/').
+ *
+ * @param string $tab  Optional active tab.
+ * @param array  $args Optional additional query parameters.
+ * @return string Full account page URL.
+ */
+function cartvai_get_account_url( $tab = '', $args = array() ) {
+	$url = '';
+
+	if ( class_exists( 'CARTVAI_Account' ) && method_exists( 'CARTVAI_Account', 'get_account_page_url' ) ) {
+		$url = CARTVAI_Account::get_account_page_url( $tab, $args );
+	}
+
+	// If plugin returns default fallback '/cartvai-account/' or empty, prefer 'my-account'
+	if ( empty( $url ) || false !== strpos( $url, '/cartvai-account/' ) ) {
+		$account_page = get_page_by_path( 'my-account' );
+		if ( ! $account_page ) {
+			$account_page = get_page_by_path( 'cartvai-account' );
+		}
+
+		if ( $account_page && 'publish' === $account_page->post_status ) {
+			$url = get_permalink( $account_page->ID );
+			if ( ! empty( $tab ) && 'dashboard' !== $tab ) {
+				$args['tab'] = sanitize_key( $tab );
+			}
+			if ( ! empty( $args ) ) {
+				$url = add_query_arg( $args, $url );
+			}
+		} else {
+			$url = home_url( '/my-account/' );
+			if ( ! empty( $tab ) && 'dashboard' !== $tab ) {
+				$args['tab'] = sanitize_key( $tab );
+			}
+			if ( ! empty( $args ) ) {
+				$url = add_query_arg( $args, $url );
+			}
+		}
+	}
+
+	return apply_filters( 'cartvai_theme_account_url', $url, $tab, $args );
+}
+
+
