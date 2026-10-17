@@ -1304,4 +1304,36 @@
     height: 0 !important;
     background: transparent !important;
   }
+
+  /* ==========================================================================
+     WordPress Core Recommended Classes (.sticky, .gallery-caption, .bypostauthor)
+     ========================================================================== */
+  .sticky {
+    display: block;
+  }
+
+  article.sticky {
+    background-color: var(--cv-bg-color, #f8fafc);
+    border: 1px solid var(--cartvai-border, #e2e8f0);
+    border-radius: 1rem;
+    padding: 1.5rem;
+  }
+
+  .gallery-caption {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: #64748b;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .bypostauthor {
+    display: block;
+  }
+
+  .comment.bypostauthor > .comment-body {
+    border-left: 3px solid var(--cartvai-primary, #2563eb);
+    padding-left: 1rem;
+  }
 }

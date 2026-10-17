@@ -137,47 +137,8 @@ function cartvai_get_block_border_shadow( $attributes, $defaults = array() ) {
 }
 
 /**
- * Register all Cartvai theme Gutenberg blocks.
+ * Note: Gutenberg blocks (CTA, Video, Countdown, Trust Badges, Pricing Tiers, FAQ,
+ * How it Works, Sticky Bar) are registered via the companion plugin (Cartvai Ecommerce)
+ * in compliance with WordPress.org theme review guidelines (blocks are plugin territory).
+ * Theme provides block templates, category taxonomy filters, and Tailwind styling.
  */
-function cartvai_theme_register_blocks() {
-	if ( ! function_exists( 'register_block_type' ) ) {
-		return;
-	}
-
-	$blocks = array(
-		'cta'           => 'cartvai-cta-block-editor',
-		'video'         => 'cartvai-video-block-editor',
-		'countdown'     => 'cartvai-countdown-block-editor',
-		'trust-badges'  => 'cartvai-trust-badges-block-editor',
-		'pricing-tiers' => 'cartvai-pricing-tiers-block-editor',
-		'faq'           => 'cartvai-faq-block-editor',
-		'how-it-works'  => 'cartvai-how-it-works-block-editor',
-		'sticky-bar'    => 'cartvai-sticky-bar-block-editor',
-	);
-
-	foreach ( $blocks as $slug => $handle ) {
-		$block_dir    = get_template_directory() . '/blocks/' . $slug;
-		$editor_js    = $block_dir . '/editor.js';
-
-		if ( file_exists( $editor_js ) ) {
-			wp_register_script(
-				$handle,
-				get_template_directory_uri() . '/blocks/' . $slug . '/editor.js',
-				array( 'wp-blocks', 'wp-element', 'wp-block-editor', 'wp-components', 'wp-i18n' ),
-				filemtime( $editor_js ),
-				true
-			);
-		}
-
-		if ( file_exists( $block_dir . '/block.json' ) ) {
-			register_block_type(
-				$block_dir,
-				array(
-					'editor_script'   => $handle,
-					'render_callback' => 'cartvai_render_theme_block',
-				)
-			);
-		}
-	}
-}
-add_action( 'init', 'cartvai_theme_register_blocks' );
