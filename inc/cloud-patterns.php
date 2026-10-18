@@ -123,6 +123,7 @@ class Cartvai_Cloud_Patterns {
 
 		// Pre-register Core Cartvai Categories so they always appear cleanly in the sidebar
 		$core_categories = array(
+			'cartvai'               => esc_html__( 'Cartvai', 'cartvai' ),
 			'cartvai-cloud'         => esc_html__( 'Cartvai Cloud Hub', 'cartvai' ),
 			'cartvai-landing-pages' => esc_html__( 'Cartvai: Landing Pages', 'cartvai' ),
 			'cartvai-hero-sections' => esc_html__( 'Cartvai: Hero Sections', 'cartvai' ),
