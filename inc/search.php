@@ -61,6 +61,18 @@ function cartvai_get_search_categories() {
  */
 function cartvai_theme_filter_search_query( $query ) {
 	if ( ! is_admin() && $query->is_main_query() && $query->is_search() ) {
+		$post_type = $query->get( 'post_type' );
+
+		/*
+		 * Flag product searches (cartvai_product, any, or unscoped) so the
+		 * Cartvai plugin's SKU search filters (sku_search_join /
+		 * sku_search_where) include SKU matches. Inert when the plugin is
+		 * inactive and skipped for blog-only searches.
+		 */
+		if ( 'post' !== $post_type ) {
+			$query->set( 'cartvai_sku_search', true );
+		}
+
 		$cat_slug = '';
 		if ( isset( $_GET['product_cat'] ) && ! empty( $_GET['product_cat'] ) ) {
 			$cat_slug = sanitize_text_field( wp_unslash( $_GET['product_cat'] ) );
@@ -121,6 +133,13 @@ function cartvai_theme_ajax_search() {
 		'posts_per_page' => 8,
 		'orderby'        => 'relevance',
 	);
+
+	// Product searches also match the SKU via the Cartvai plugin's
+	// sku_search filters; the flag is inert when the plugin is inactive
+	// and skipped for blog-only searches.
+	if ( 'post' !== $theme_post_type ) {
+		$query_args['cartvai_sku_search'] = true;
+	}
 
 	// Apply category filtering if selected
 	if ( ! empty( $category ) ) {
