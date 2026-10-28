@@ -60,10 +60,10 @@ $copyright_text = str_replace(
 
 					<!-- Social Media Circle Buttons -->
 					<div class="cv:flex cv:items-center cv:gap-2.5 cv:pt-2">
-						<a href="#" class="cv:w-9 cv:h-9 cv:rounded-full cv:bg-white/10 hover:cv:bg-white/25 cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="Facebook">
+						<a href="#" class="cv:w-9 cv:h-9 cv:rounded-full cv:bg-white/10 cv:hover:bg-white/25 cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="Facebook">
 							<svg class="cv:w-4 cv:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
 						</a>
-						<a href="#" class="cv:w-9 cv:h-9 cv:rounded-full cv:bg-white/10 hover:cv:bg-white/25 cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="WhatsApp">
+						<a href="#" class="cv:w-9 cv:h-9 cv:rounded-full cv:bg-white/10 cv:hover:bg-white/25 cv:text-white cv:flex cv:items-center cv:justify-center cv:transition-colors" aria-label="WhatsApp">
 							<svg class="cv:w-4 cv:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
 						</a>
 					</div>
@@ -93,11 +93,11 @@ $copyright_text = str_replace(
 						<?php esc_html_e( 'Quick Links', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:p-0 cv:m-0">
-						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Special Offers', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'FAQ', 'cartvai' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Cart', 'cartvai' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Blog & Health Tips', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Special Offers', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'FAQ', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Cart', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Blog & Health Tips', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -125,11 +125,11 @@ $copyright_text = str_replace(
 						<?php esc_html_e( 'Useful Links', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:p-0 cv:m-0">
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'About Us', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Cookie Policy', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Terms & Conditions', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Return and Refund', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'About Us', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Cookie Policy', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Terms & Conditions', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Return and Refund', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -157,11 +157,11 @@ $copyright_text = str_replace(
 						<?php esc_html_e( 'Help Center', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:p-0 cv:m-0">
-						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Order Tracking', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'How to Order', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Complaint & Feedback', 'cartvai' ); ?></a></li>
-						<li><a href="#" class="hover:cv:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Product Returns', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Order Tracking', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'How to Order', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Complaint & Feedback', 'cartvai' ); ?></a></li>
+						<li><a href="#" class="cv:hover:text-emerald-300 cv:transition-colors"><?php esc_html_e( 'Product Returns', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -178,7 +178,7 @@ $copyright_text = str_replace(
 				<?php if ( ! empty( $contact_phone ) ) : ?>
 					<div class="cv:flex cv:items-start cv:gap-2.5 cv:text-sm">
 						<svg class="cv:w-4 cv:h-4 cv:text-amber-400 cv:shrink-0 cv:mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-						<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="cv:font-bold cv:text-white hover:cv:text-amber-300 cv:transition-colors">
+						<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="cv:font-bold cv:text-white cv:hover:text-amber-300 cv:transition-colors">
 							<?php echo esc_html( $contact_phone ); ?>
 						</a>
 					</div>
@@ -194,7 +194,7 @@ $copyright_text = str_replace(
 				<?php if ( ! empty( $contact_email ) ) : ?>
 					<div class="cv:flex cv:items-start cv:gap-2.5 cv:text-xs">
 						<svg class="cv:w-4 cv:h-4 cv:text-amber-400 cv:shrink-0 cv:mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-						<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="hover:cv:text-amber-300 cv:text-emerald-100/90 cv:transition-colors">
+						<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="cv:hover:text-amber-300 cv:text-emerald-100/90 cv:transition-colors">
 							<?php echo esc_html( $contact_email ); ?>
 						</a>
 					</div>

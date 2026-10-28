@@ -47,7 +47,7 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 			<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
 				<div>
 					<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
 						<span class="cv:text-slate-900 cv:font-semibold"><?php the_title(); ?></span>
 					</nav>
@@ -102,9 +102,9 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 			<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
 				<div>
 					<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
-						<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
 						<span class="cv:text-slate-900 cv:font-semibold"><?php the_title(); ?></span>
 					</nav>
@@ -158,9 +158,9 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 			<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
 				<div>
 					<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
-						<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
 						<span class="cv:text-slate-900 cv:font-semibold"><?php the_title(); ?></span>
 					</nav>
@@ -203,7 +203,7 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 			<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
 				<div>
 					<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<span class="cv:text-slate-400">/</span>
 						<span class="cv:text-slate-900 cv:font-semibold"><?php the_title(); ?></span>
 					</nav>
@@ -265,13 +265,13 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cv-entry' ); ?>>
 					<!-- Breadcrumb Navigation -->
 					<nav class="cv-entry__breadcrumb cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-500 cv:mb-3 cv:flex-wrap" aria-label="<?php esc_attr_e( 'Breadcrumb', 'cartvai' ); ?>">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<?php
 						if ( ! empty( $ancestors ) ) {
 							$ancestors = array_reverse( $ancestors );
 							foreach ( $ancestors as $ancestor_id ) {
 								echo '<span class="cv:text-slate-400">/</span>';
-								echo '<a href="' . esc_url( get_permalink( $ancestor_id ) ) . '" class="hover:cv:text-primary cv:transition-colors">' . esc_html( get_the_title( $ancestor_id ) ) . '</a>';
+								echo '<a href="' . esc_url( get_permalink( $ancestor_id ) ) . '" class="cv:hover:text-primary cv:transition-colors">' . esc_html( get_the_title( $ancestor_id ) ) . '</a>';
 							}
 						}
 						?>
@@ -307,7 +307,7 @@ if ( ( $shop_page_id && is_page( $shop_page_id ) ) || has_shortcode( $post_conte
 							array(
 								'before'      => '<div class="page-links cv:mt-10 cv:pt-6 cv:border-t cv:border-gray-100 cv:flex cv:items-center cv:gap-2"><span class="cv:text-xs cv:font-bold cv:text-gray-500 cv:uppercase cv:tracking-wider">' . esc_html__( 'Pages:', 'cartvai' ) . '</span>',
 								'after'       => '</div>',
-								'link_before' => '<span class="cv:px-3 cv:py-1 cv:rounded-lg cv:bg-gray-100 cv:text-xs cv:font-semibold cv:text-gray-700 hover:cv:bg-primary hover:cv:text-white cv:transition-colors">',
+								'link_before' => '<span class="cv:px-3 cv:py-1 cv:rounded-lg cv:bg-gray-100 cv:text-xs cv:font-semibold cv:text-gray-700 cv:hover:bg-primary cv:hover:text-white cv:transition-colors">',
 								'link_after'  => '</span>',
 							)
 						);

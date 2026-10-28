@@ -61,18 +61,18 @@ $comment_count = (int) get_comments_number();
 		'author'  => '<div class="cv:grid cv:grid-cols-1 cv:sm:grid-cols-3 cv:gap-4 cv:mb-4">' .
 			'<div class="cv-form-group cv:space-y-1.5">' .
 			'<label for="author" class="cv:block cv:text-xs cv:font-bold cv:text-gray-700 cv:uppercase cv:tracking-wider">' . esc_html__( 'Name', 'cartvai' ) . ' <span class="cv:text-red-500">*</span></label>' .
-			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" required class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 placeholder:cv:text-gray-400 focus:cv:outline-none focus:cv:border-primary focus:cv:ring-2 focus:cv:ring-primary/20 cv:transition-all" placeholder="' . esc_attr__( 'Your name', 'cartvai' ) . '">' .
+			'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245" required class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 cv:placeholder:text-gray-400 cv:focus:outline-none cv:focus:border-primary cv:focus:ring-2 cv:focus:ring-primary/20 cv:transition-all" placeholder="' . esc_attr__( 'Your name', 'cartvai' ) . '">' .
 			'</div>',
 		'email'   => '<div class="cv-form-group cv:space-y-1.5">' .
 			'<label for="email" class="cv:block cv:text-xs cv:font-bold cv:text-gray-700 cv:uppercase cv:tracking-wider">' . esc_html__( 'Email', 'cartvai' ) . ' <span class="cv:text-red-500">*</span></label>' .
-			'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" required class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 placeholder:cv:text-gray-400 focus:cv:outline-none focus:cv:border-primary focus:cv:ring-2 focus:cv:ring-primary/20 cv:transition-all" placeholder="' . esc_attr__( 'your@email.com', 'cartvai' ) . '">' .
+			'<input id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) . '" size="30" maxlength="100" required class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 cv:placeholder:text-gray-400 cv:focus:outline-none cv:focus:border-primary cv:focus:ring-2 cv:focus:ring-primary/20 cv:transition-all" placeholder="' . esc_attr__( 'your@email.com', 'cartvai' ) . '">' .
 			'</div>',
 		'url'     => '<div class="cv-form-group cv:space-y-1.5">' .
 			'<label for="url" class="cv:block cv:text-xs cv:font-bold cv:text-gray-700 cv:uppercase cv:tracking-wider">' . esc_html__( 'Website', 'cartvai' ) . '</label>' .
-			'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 placeholder:cv:text-gray-400 focus:cv:outline-none focus:cv:border-primary focus:cv:ring-2 focus:cv:ring-primary/20 cv:transition-all" placeholder="https://example.com">' .
+			'<input id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" maxlength="200" class="cv-input cv:w-full cv:px-3.5 cv:py-2.5 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 cv:placeholder:text-gray-400 cv:focus:outline-none cv:focus:border-primary cv:focus:ring-2 cv:focus:ring-primary/20 cv:transition-all" placeholder="https://example.com">' .
 			'</div></div>',
 		'cookies' => '<div class="cv-cookies-consent cv:flex cv:items-start cv:gap-2.5 cv:text-xs cv:text-gray-600 cv:cursor-pointer cv:my-3">' .
-			'<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" class="cv:w-4 cv:h-4 cv:mt-0.5 cv:rounded cv:border-gray-300 cv:text-primary focus:cv:ring-primary">' .
+			'<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" class="cv:w-4 cv:h-4 cv:mt-0.5 cv:rounded cv:border-gray-300 cv:text-primary cv:focus:ring-primary">' .
 			'<label for="wp-comment-cookies-consent" class="cv:cursor-pointer">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'cartvai' ) . '</label>' .
 			'</div>',
 	);
@@ -90,11 +90,11 @@ $comment_count = (int) get_comments_number();
 			'class_form'           => 'cv-comment-form cv:space-y-4',
 			'comment_field'        => '<div class="cv-comment-field cv:space-y-1.5 cv:mb-4">' .
 				'<label for="comment" class="cv:block cv:text-xs cv:font-bold cv:text-gray-700 cv:uppercase cv:tracking-wider">' . esc_html__( 'Comment', 'cartvai' ) . ' <span class="cv:text-red-500">*</span></label>' .
-				'<textarea id="comment" name="comment" cols="45" rows="5" maxlength="65525" required class="cv-textarea cv:w-full cv:px-4 cv:py-3 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 placeholder:cv:text-gray-400 focus:cv:outline-none focus:cv:border-primary focus:cv:ring-2 focus:cv:ring-primary/20 cv:transition-all cv:resize-y cv:min-h-[120px]" placeholder="' . esc_attr__( 'Write your comment or review here...', 'cartvai' ) . '"></textarea>' .
+				'<textarea id="comment" name="comment" cols="45" rows="5" maxlength="65525" required class="cv-textarea cv:w-full cv:px-4 cv:py-3 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:text-sm cv:text-gray-900 cv:placeholder:text-gray-400 cv:focus:outline-none cv:focus:border-primary cv:focus:ring-2 cv:focus:ring-primary/20 cv:transition-all cv:resize-y cv:min-h-[120px]" placeholder="' . esc_attr__( 'Write your comment or review here...', 'cartvai' ) . '"></textarea>' .
 				'</div>',
 			'fields'               => $fields,
 			'submit_button'        => '<button type="submit" name="%1$s" id="%2$s" class="%3$s">%4$s</button>',
-			'class_submit'         => 'cv-btn cv-btn-primary cv:inline-flex cv:items-center cv:justify-center cv:gap-2 cv:px-6 cv:py-3 cv:rounded-xl cv:text-sm cv:font-bold cv:bg-primary cv:text-white hover:cv:bg-primary-hover cv:transition-all cv:shadow-sm hover:cv:shadow-md hover:cv:-translate-y-0.5 cv:cursor-pointer',
+			'class_submit'         => 'cv-btn cv-btn-primary cv:inline-flex cv:items-center cv:justify-center cv:gap-2 cv:px-6 cv:py-3 cv:rounded-xl cv:text-sm cv:font-bold cv:bg-primary cv:text-white cv:hover:bg-primary-hover cv:transition-all cv:shadow-sm cv:hover:shadow-md cv:hover:-translate-y-0.5 cv:cursor-pointer',
 			'submit_field'         => '<div class="form-submit cv:pt-2">%1$s %2$s</div>',
 		)
 	);

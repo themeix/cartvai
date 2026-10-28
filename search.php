@@ -72,7 +72,7 @@ $cartvai_total_found  = (int) $wp_query->found_posts;
 					echo cartvai_render_product_card( get_the_ID() ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Rendering API handles escaping.
 				} else {
 					?>
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cv:bg-white cv:rounded-2xl cv:border cv:border-gray-100 cv:p-5 cv:shadow-xs hover:cv:shadow-md cv:transition-all cv:flex cv:flex-col' ); ?>>
+					<article id="post-<?php the_ID(); ?>" <?php post_class( 'cv:bg-white cv:rounded-2xl cv:border cv:border-gray-100 cv:p-5 cv:shadow-xs cv:hover:shadow-md cv:transition-all cv:flex cv:flex-col' ); ?>>
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div class="cv:aspect-video cv:rounded-xl cv:overflow-hidden cv:mb-4 cv:bg-gray-100">
 								<a href="<?php the_permalink(); ?>">
@@ -82,7 +82,7 @@ $cartvai_total_found  = (int) $wp_query->found_posts;
 						<?php endif; ?>
 
 						<h2 class="cv:text-base cv:font-bold cv:text-gray-900 cv:mb-2 cv:line-clamp-2">
-							<a href="<?php the_permalink(); ?>" class="hover:cv:text-primary cv:transition-colors">
+							<a href="<?php the_permalink(); ?>" class="cv:hover:text-primary cv:transition-colors">
 								<?php the_title(); ?>
 							</a>
 						</h2>
@@ -91,7 +91,7 @@ $cartvai_total_found  = (int) $wp_query->found_posts;
 							<?php the_excerpt(); ?>
 						</div>
 
-						<a href="<?php the_permalink(); ?>" class="cv:text-xs cv:font-bold cv:text-primary hover:cv:underline cv:inline-flex cv:items-center cv:gap-1">
+						<a href="<?php the_permalink(); ?>" class="cv:text-xs cv:font-bold cv:text-primary cv:hover:underline cv:inline-flex cv:items-center cv:gap-1">
 							<span><?php esc_html_e( 'View Details', 'cartvai' ); ?></span>
 							<svg class="cv:w-3 cv:h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
 						</a>
@@ -135,7 +135,7 @@ $cartvai_total_found  = (int) $wp_query->found_posts;
 			</p>
 
 			<div class="cv:flex cv:flex-wrap cv:items-center cv:justify-center cv:gap-3">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-5 cv:py-2.5 cv:rounded-xl cv:bg-gray-900 hover:cv:bg-primary cv:text-white cv:text-xs cv:font-semibold cv:transition-colors">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-flex cv:items-center cv:gap-2 cv:px-5 cv:py-2.5 cv:rounded-xl cv:bg-gray-900 cv:hover:bg-primary cv:text-white cv:text-xs cv:font-semibold cv:transition-colors">
 					<svg class="cv:w-4 cv:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
 					<span><?php esc_html_e( 'Return to Home', 'cartvai' ); ?></span>
 				</a>

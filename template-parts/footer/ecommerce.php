@@ -51,7 +51,7 @@ if ( 3 === $footer_cols ) {
 					<?php dynamic_sidebar( 'footer-1' ); ?>
 				<?php else : ?>
 					<div class="cv:mb-4">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:text-2xl cv:font-black cv:tracking-tight cv:text-white hover:cv:text-primary cv:transition-colors">
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:text-2xl cv:font-black cv:tracking-tight cv:text-white cv:hover:text-primary cv:transition-colors">
 							<?php bloginfo( 'name' ); ?>
 						</a>
 					</div>
@@ -66,7 +66,7 @@ if ( 3 === $footer_cols ) {
 							<div class="cv:flex cv:items-center cv:gap-3 cv:text-sm">
 								<svg class="cv:w-4 cv:h-4 cv:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
 								<span class="cv:text-gray-400"><?php esc_html_e( 'Helpline:', 'cartvai' ); ?></span>
-								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="cv:font-bold cv:text-white hover:cv:text-primary">
+								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="cv:font-bold cv:text-white cv:hover:text-primary">
 									<?php echo esc_html( $contact_phone ); ?>
 								</a>
 							</div>
@@ -76,7 +76,7 @@ if ( 3 === $footer_cols ) {
 							<div class="cv:flex cv:items-center cv:gap-3 cv:text-sm">
 								<svg class="cv:w-4 cv:h-4 cv:text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
 								<span class="cv:text-gray-400"><?php esc_html_e( 'Email:', 'cartvai' ); ?></span>
-								<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="cv:font-medium cv:text-white hover:cv:text-primary">
+								<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="cv:font-medium cv:text-white cv:hover:text-primary">
 									<?php echo esc_html( $contact_email ); ?>
 								</a>
 							</div>
@@ -108,10 +108,10 @@ if ( 3 === $footer_cols ) {
 						<?php esc_html_e( 'Quick Links', 'cartvai' ); ?>
 					</h3>
 					<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0">
-						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Cart', 'cartvai' ); ?></a></li>
-						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Checkout', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/shop/' ) ); ?>" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'All Products', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/cart/' ) ); ?>" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Cart', 'cartvai' ); ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/checkout/' ) ); ?>" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Checkout', 'cartvai' ); ?></a></li>
 					</ul>
 				<?php endif; ?>
 			</div>
@@ -140,10 +140,10 @@ if ( 3 === $footer_cols ) {
 							<?php esc_html_e( 'Customer Care', 'cartvai' ); ?>
 						</h3>
 						<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0">
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Order Tracking', 'cartvai' ); ?></a></li>
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Shipping Policy', 'cartvai' ); ?></a></li>
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Returns & Refund', 'cartvai' ); ?></a></li>
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Help & FAQ', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Order Tracking', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Shipping Policy', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Returns & Refund', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Help & FAQ', 'cartvai' ); ?></a></li>
 						</ul>
 					<?php endif; ?>
 				</div>
@@ -159,9 +159,9 @@ if ( 3 === $footer_cols ) {
 							<?php esc_html_e( 'Help & Information', 'cartvai' ); ?>
 						</h3>
 						<ul class="cv:space-y-2.5 cv:text-sm cv:list-none cv:pl-0 cv:p-0 cv:m-0">
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai' ); ?></a></li>
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Terms of Service', 'cartvai' ); ?></a></li>
-							<li><a href="#" class="hover:cv:text-white cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Privacy Policy', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Terms of Service', 'cartvai' ); ?></a></li>
+							<li><a href="#" class="cv:hover:text-white cv:transition-colors"><?php esc_html_e( 'Contact Us', 'cartvai' ); ?></a></li>
 						</ul>
 					<?php endif; ?>
 				</div>

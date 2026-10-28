@@ -18,9 +18,7 @@ $cartvai_term  = get_queried_object();
 $product_count = $cartvai_term && ! empty( $cartvai_term->count ) ? (int) $cartvai_term->count : (int) $GLOBALS['wp_query']->found_posts;
 $shop_page_id  = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'shop_page_id', 0 ) : 0;
 $shop_url      = $shop_page_id ? get_permalink( $shop_page_id ) : home_url( '/shop/' );
-$cartvai_shop_columns = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_columns', 4 ) ) : 4;
-$cartvai_shop_gap     = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_gap', 24 ) ) : 24;
-$cartvai_grid_style   = sprintf( 'grid-template-columns:repeat(%d,1fr);gap:%dpx', $cartvai_shop_columns, $cartvai_shop_gap );
+$cartvai_grid_style = ( class_exists( 'CARTVAI_Shop_Page' ) && method_exists( 'CARTVAI_Shop_Page', 'get_shop_grid_style' ) ) ? CARTVAI_Shop_Page::get_shop_grid_style() : '';
 ?>
 
 <!-- Modern Category Hero Header -->
@@ -29,9 +27,9 @@ $cartvai_grid_style   = sprintf( 'grid-template-columns:repeat(%d,1fr);gap:%dpx'
 		<div class="cv:flex cv:flex-col cv:md:flex-row cv:md:items-center cv:md:justify-between cv:gap-4">
 			<div>
 				<nav class="cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-slate-600 cv:mb-2" aria-label="Breadcrumb">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 					<span class="cv:text-slate-400">/</span>
-					<a href="<?php echo esc_url( $shop_url ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
+					<a href="<?php echo esc_url( $shop_url ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Shop', 'cartvai' ); ?></a>
 					<span class="cv:text-slate-400">/</span>
 					<span class="cv:text-slate-900 cv:font-semibold"><?php echo esc_html( $cartvai_term ? $cartvai_term->name : __( 'Category', 'cartvai' ) ); ?></span>
 				</nav>

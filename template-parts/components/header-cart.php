@@ -17,7 +17,7 @@ $cart_count = class_exists( 'CARTVAI_Cart' ) ? (int) CARTVAI_Cart::get_count() :
 $cart_url   = home_url( '/cart/' );
 ?>
 <div class="cartvai-header-cart-slot cv:relative cv:inline-flex cv:items-center">
-	<button type="button" id="cartvaiMiniCartTrigger" class="cv-cart-btn cv:relative cv:inline-flex cv:items-center cv:gap-2.5 cv:px-4 cv:py-2.5 cv:rounded-xl cv:bg-gray-50 cv:border cv:border-gray-200/90 hover:cv:bg-white hover:cv:border-primary/50 hover:cv:shadow-xs cv:text-gray-900 cv:text-sm cv:font-semibold cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>">
+	<button type="button" id="cartvaiMiniCartTrigger" class="cv-cart-btn cv:relative cv:inline-flex cv:items-center cv:gap-2.5 cv:px-4 cv:py-2.5 cv:rounded-xl cv:bg-gray-50 cv:border cv:border-gray-200/90 cv:hover:bg-white cv:hover:border-primary/50 cv:hover:shadow-xs cv:text-gray-900 cv:text-sm cv:font-semibold cv:transition-all" data-cartvai-mini-cart-toggle aria-label="<?php esc_attr_e( 'Cart', 'cartvai' ); ?>" data-cart-url="<?php echo esc_url( $cart_url ); ?>">
 		<svg class="cv:w-5 cv:h-5 cv:text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 			<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
 		</svg>

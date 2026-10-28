@@ -19,7 +19,7 @@ get_header();
 			while ( have_posts() ) :
 				the_post();
 				?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cv:bg-white cv:rounded-xl cv:border cv:border-gray-200 cv:overflow-hidden cv:shadow-sm hover:cv:shadow-md cv:transition' ); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'cv:bg-white cv:rounded-xl cv:border cv:border-gray-200 cv:overflow-hidden cv:shadow-sm cv:hover:shadow-md cv:transition' ); ?>>
 					<?php if ( has_post_thumbnail() ) : ?>
 						<div class="cv:aspect-video cv:overflow-hidden cv:bg-gray-100">
 							<a href="<?php the_permalink(); ?>">
@@ -30,7 +30,7 @@ get_header();
 
 					<div class="cv:p-6">
 						<h2 class="cv:text-xl cv:font-semibold cv:text-gray-900 cv:mb-2">
-							<a href="<?php the_permalink(); ?>" class="hover:cv:text-primary">
+							<a href="<?php the_permalink(); ?>" class="cv:hover:text-primary">
 								<?php the_title(); ?>
 							</a>
 						</h2>

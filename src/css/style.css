@@ -13,6 +13,19 @@
   --color-primary: var(--cartvai-primary, #2563eb);
   --color-primary-hover: var(--cartvai-primary-hover, #1d4ed8);
   --container-7xl: var(--cv-container-max-width, 80rem);
+
+  /* Cartvai plugin design tokens (same as the plugin's storefront/account
+     builds) so plugin markup like cv:text-cartvai-primary, cv:text-2xs
+     compiles here too; colors follow the Cartvai Design-tab settings. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1rem;
+  --text-3xs: 0.625rem;
+  --text-3xs--line-height: 0.875rem;
+  --color-cartvai-primary: var(--cartvai-primary, #2563eb);
+  --color-cartvai-primary-hover: var(--cartvai-primary-deep, #1d4ed8);
+  --color-cartvai-primary-light: var(--cartvai-primary-light, #eff6ff);
+  --color-cartvai-border: var(--cartvai-border, #e2e8f0);
+  --color-cartvai-text: var(--cartvai-text, #0f172a);
 }
 
 /* ==========================================================================
