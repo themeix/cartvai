@@ -72,7 +72,7 @@ $has_settings_fn = class_exists( 'CARTVAI_Settings' );
 				<svg class="cv:w-4 cv:h-4 cv:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
 				<span>
 					<?php esc_html_e( 'Admin tip: Go to', 'cartvai' ); ?>
-					<a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>" class="cv:underline hover:cv:text-white" style="color:inherit;">
+					<a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>" class="cv:underline cv:hover:text-white" style="color:inherit;">
 						<?php esc_html_e( 'Appearance → Menus', 'cartvai' ); ?>
 					</a>
 					<?php esc_html_e( '→ assign a menu to "Mega Menu Bar" to control these nav items.', 'cartvai' ); ?>
@@ -186,7 +186,7 @@ $has_settings_fn = class_exists( 'CARTVAI_Settings' );
 										$sub_link = get_term_link( $subcat );
 										if ( is_wp_error( $sub_link ) ) continue;
 										?>
-										<a href="<?php echo esc_url( $sub_link ); ?>" class="cv:text-xs cv:font-semibold cv:px-2.5 cv:py-1 cv:rounded-md cv:bg-white cv:border cv:border-gray-200 cv:text-gray-700 hover:cv:border-primary hover:cv:text-primary cv:transition-colors cv:whitespace-nowrap">
+										<a href="<?php echo esc_url( $sub_link ); ?>" class="cv:text-xs cv:font-semibold cv:px-2.5 cv:py-1 cv:rounded-md cv:bg-white cv:border cv:border-gray-200 cv:text-gray-700 cv:hover:border-primary cv:hover:text-primary cv:transition-colors cv:whitespace-nowrap">
 											<?php echo esc_html( $subcat->name ); ?>
 										</a>
 									<?php endforeach; ?>

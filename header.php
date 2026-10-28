@@ -52,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_body_open(); ?>
 
 <div id="page" class="cv-site cv:min-h-screen cv:flex cv:flex-col">
-	<a class="skip-link screen-reader-text cv:sr-only focus:cv:not-sr-only focus:cv:fixed focus:cv:top-4 focus:cv:left-4 focus:cv:z-[999999] focus:cv:p-4 focus:cv:bg-white focus:cv:text-gray-900 focus:cv:rounded-xl focus:cv:shadow-2xl focus:cv:font-bold focus:cv:outline-2 focus:cv:outline-primary" href="#primary">
+	<a class="skip-link screen-reader-text cv:sr-only cv:focus:not-sr-only cv:focus:fixed cv:focus:top-4 cv:focus:left-4 cv:focus:z-[999999] cv:focus:p-4 cv:focus:bg-white cv:focus:text-gray-900 cv:focus:rounded-xl cv:focus:shadow-2xl cv:focus:font-bold cv:focus:outline-2 cv:focus:outline-primary" href="#primary">
 		<?php esc_html_e( 'Skip to content', 'cartvai' ); ?>
 	</a>
 

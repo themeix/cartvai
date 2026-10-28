@@ -40,14 +40,14 @@ get_header();
 				<header class="cv-entry__header cv:mb-8 cv:sm:mb-10">
 					<!-- Breadcrumb -->
 					<nav class="cv-entry__breadcrumb cv:flex cv:items-center cv:gap-2 cv:text-xs cv:font-medium cv:text-gray-400 cv:mb-4 cv:overflow-x-auto cv:whitespace-nowrap" aria-label="Breadcrumb">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php esc_html_e( 'Home', 'cartvai' ); ?></a>
 						<span>/</span>
 						<?php if ( $blog_page_id ) : ?>
-							<a href="<?php echo esc_url( $blog_url ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php echo esc_html( get_the_title( $blog_page_id ) ); ?></a>
+							<a href="<?php echo esc_url( $blog_url ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php echo esc_html( get_the_title( $blog_page_id ) ); ?></a>
 							<span>/</span>
 						<?php endif; ?>
 						<?php if ( $primary_cat ) : ?>
-							<a href="<?php echo esc_url( get_category_link( $primary_cat->term_id ) ); ?>" class="hover:cv:text-primary cv:transition-colors"><?php echo esc_html( $primary_cat->name ); ?></a>
+							<a href="<?php echo esc_url( get_category_link( $primary_cat->term_id ) ); ?>" class="cv:hover:text-primary cv:transition-colors"><?php echo esc_html( $primary_cat->name ); ?></a>
 							<span>/</span>
 						<?php endif; ?>
 						<span class="cv:text-gray-600 cv:truncate cv:max-w-xs"><?php the_title(); ?></span>
@@ -55,7 +55,7 @@ get_header();
 
 					<?php if ( $primary_cat ) : ?>
 						<div class="cv-entry__category cv:mb-4">
-							<a href="<?php echo esc_url( get_category_link( $primary_cat->term_id ) ); ?>" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:px-3.5 cv:py-1 cv:rounded-full cv:text-xs cv:font-bold cv:bg-blue-50 cv:text-primary hover:cv:bg-primary hover:cv:text-white cv:transition-all">
+							<a href="<?php echo esc_url( get_category_link( $primary_cat->term_id ) ); ?>" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:px-3.5 cv:py-1 cv:rounded-full cv:text-xs cv:font-bold cv:bg-blue-50 cv:text-primary cv:hover:bg-primary cv:hover:text-white cv:transition-all">
 								<span><?php echo esc_html( $primary_cat->name ); ?></span>
 							</a>
 						</div>
@@ -86,7 +86,7 @@ get_header();
 						</div>
 
 						<div class="cv:flex cv:items-center cv:gap-2">
-							<button type="button" class="cv-copy-link-btn cv:inline-flex cv:items-center cv:gap-2 cv:px-3.5 cv:py-2 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white hover:cv:bg-gray-50 hover:cv:border-gray-300 cv:text-xs cv:font-semibold cv:text-gray-700 cv:transition-all cv:shadow-xs cv:cursor-pointer" data-url="<?php echo esc_url( get_permalink() ); ?>" title="<?php esc_attr_e( 'Copy link to article', 'cartvai' ); ?>">
+							<button type="button" class="cv-copy-link-btn cv:inline-flex cv:items-center cv:gap-2 cv:px-3.5 cv:py-2 cv:rounded-xl cv:border cv:border-gray-200 cv:bg-white cv:hover:bg-gray-50 cv:hover:border-gray-300 cv:text-xs cv:font-semibold cv:text-gray-700 cv:transition-all cv:shadow-xs cv:cursor-pointer" data-url="<?php echo esc_url( get_permalink() ); ?>" title="<?php esc_attr_e( 'Copy link to article', 'cartvai' ); ?>">
 								<svg class="cv:w-4 cv:h-4 cv:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
 								<span class="cv-copy-link-text"><?php esc_html_e( 'Share', 'cartvai' ); ?></span>
 							</button>
@@ -133,7 +133,7 @@ get_header();
 					<div class="cv-entry__tags-section cv:pt-8 cv:mt-12 cv:border-t cv:border-gray-100 cv:flex cv:flex-wrap cv:items-center cv:gap-2">
 						<span class="cv:text-xs cv:font-bold cv:text-gray-400 cv:uppercase cv:tracking-wider cv:mr-1"><?php esc_html_e( 'Tags:', 'cartvai' ); ?></span>
 						<?php foreach ( $tags as $tag ) : ?>
-							<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="cv:inline-flex cv:items-center cv:px-3 cv:py-1.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-700 cv:text-xs cv:font-medium cv:transition-colors">
+							<a href="<?php echo esc_url( get_tag_link( $tag->term_id ) ); ?>" class="cv:inline-flex cv:items-center cv:px-3 cv:py-1.5 cv:rounded-xl cv:bg-gray-100 cv:hover:bg-gray-200 cv:text-gray-700 cv:text-xs cv:font-medium cv:transition-colors">
 								#<?php echo esc_html( $tag->name ); ?>
 							</a>
 						<?php endforeach; ?>
@@ -164,12 +164,12 @@ get_header();
 					?>
 					<nav class="cv-entry__post-nav cv:mt-10 cv:pt-8 cv:border-t cv:border-gray-100 cv:grid cv:grid-cols-1 cv:sm:grid-cols-2 cv:gap-4" aria-label="<?php esc_attr_e( 'Post navigation', 'cartvai' ); ?>">
 						<?php if ( $prev_post ) : ?>
-							<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" class="cv:group cv:p-5 cv:rounded-2xl cv:border cv:border-gray-100 hover:cv:border-gray-200 cv:bg-gray-50/50 hover:cv:bg-gray-50 cv:transition-all cv:flex cv:flex-col cv:justify-between">
-								<span class="cv:inline-flex cv:items-center cv:gap-1.5 cv:text-xs cv:font-semibold cv:text-gray-400 group-hover:cv:text-primary cv:transition-colors cv:mb-2">
+							<a href="<?php echo esc_url( get_permalink( $prev_post->ID ) ); ?>" class="cv:group cv:p-5 cv:rounded-2xl cv:border cv:border-gray-100 cv:hover:border-gray-200 cv:bg-gray-50/50 cv:hover:bg-gray-50 cv:transition-all cv:flex cv:flex-col cv:justify-between">
+								<span class="cv:inline-flex cv:items-center cv:gap-1.5 cv:text-xs cv:font-semibold cv:text-gray-400 cv:group-hover:text-primary cv:transition-colors cv:mb-2">
 									<svg class="cv:w-4 cv:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
 									<span><?php esc_html_e( 'Previous Article', 'cartvai' ); ?></span>
 								</span>
-								<span class="cv:text-sm cv:font-bold cv:text-gray-900 group-hover:cv:text-primary cv:transition-colors cv:line-clamp-2">
+								<span class="cv:text-sm cv:font-bold cv:text-gray-900 cv:group-hover:text-primary cv:transition-colors cv:line-clamp-2">
 									<?php echo esc_html( get_the_title( $prev_post->ID ) ); ?>
 								</span>
 							</a>
@@ -178,12 +178,12 @@ get_header();
 						<?php endif; ?>
 
 						<?php if ( $next_post ) : ?>
-							<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" class="cv:group cv:p-5 cv:rounded-2xl cv:border cv:border-gray-100 hover:cv:border-gray-200 cv:bg-gray-50/50 hover:cv:bg-gray-50 cv:transition-all cv:flex cv:flex-col cv:justify-between cv:sm:text-right">
-								<span class="cv:inline-flex cv:items-center cv:justify-end cv:gap-1.5 cv:text-xs cv:font-semibold cv:text-gray-400 group-hover:cv:text-primary cv:transition-colors cv:mb-2">
+							<a href="<?php echo esc_url( get_permalink( $next_post->ID ) ); ?>" class="cv:group cv:p-5 cv:rounded-2xl cv:border cv:border-gray-100 cv:hover:border-gray-200 cv:bg-gray-50/50 cv:hover:bg-gray-50 cv:transition-all cv:flex cv:flex-col cv:justify-between cv:sm:text-right">
+								<span class="cv:inline-flex cv:items-center cv:justify-end cv:gap-1.5 cv:text-xs cv:font-semibold cv:text-gray-400 cv:group-hover:text-primary cv:transition-colors cv:mb-2">
 									<span><?php esc_html_e( 'Next Article', 'cartvai' ); ?></span>
 									<svg class="cv:w-4 cv:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
 								</span>
-								<span class="cv:text-sm cv:font-bold cv:text-gray-900 group-hover:cv:text-primary cv:transition-colors cv:line-clamp-2">
+								<span class="cv:text-sm cv:font-bold cv:text-gray-900 cv:group-hover:text-primary cv:transition-colors cv:line-clamp-2">
 									<?php echo esc_html( get_the_title( $next_post->ID ) ); ?>
 								</span>
 							</a>

@@ -319,7 +319,7 @@ function cartvai_comment_callback( $comment, $args, $depth ) {
 	);
 	?>
 	<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( 'cv-comment-item ' . ( $is_reply ? 'cv-comment-reply' : '' ), $comment ); ?>>
-		<article id="div-comment-<?php comment_ID(); ?>" class="cv-comment-body cv:group cv:p-5 cv:sm:p-6 cv:rounded-2xl cv:bg-gray-50/70 cv:border cv:border-gray-100/80 hover:cv:border-gray-200 cv:transition-all">
+		<article id="div-comment-<?php comment_ID(); ?>" class="cv-comment-body cv:group cv:p-5 cv:sm:p-6 cv:rounded-2xl cv:bg-gray-50/70 cv:border cv:border-gray-100/80 cv:hover:border-gray-200 cv:transition-all">
 			<header class="cv-comment-meta cv:flex cv:items-center cv:justify-between cv:gap-4 cv:mb-3">
 				<div class="cv:flex cv:items-center cv:gap-3.5">
 					<?php if ( 0 !== (int) $args['avatar_size'] ) : ?>

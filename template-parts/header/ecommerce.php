@@ -47,13 +47,13 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 				</div>
 				<div class="cv:hidden cv:md:flex cv:items-center cv:gap-6 cv:text-gray-400">
 					<?php if ( ! empty( $contact_phone ) ) : ?>
-						<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="hover:cv:text-white cv:transition-colors cv:flex cv:items-center cv:gap-1.5">
+						<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $contact_phone ) ); ?>" class="cv:hover:text-white cv:transition-colors cv:flex cv:items-center cv:gap-1.5">
 							<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
 							<span><?php echo esc_html( $contact_phone ); ?></span>
 						</a>
 					<?php endif; ?>
 					<?php if ( ! empty( $contact_email ) ) : ?>
-						<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="hover:cv:text-white cv:transition-colors cv:flex cv:items-center cv:gap-1.5">
+						<a href="mailto:<?php echo esc_attr( $contact_email ); ?>" class="cv:hover:text-white cv:transition-colors cv:flex cv:items-center cv:gap-1.5">
 							<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
 							<span><?php echo esc_html( $contact_email ); ?></span>
 						</a>
@@ -82,14 +82,14 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 					<div class="cv-site-branding cv:flex cv:flex-col cv:items-start">
 						<div class="cv-site-logo cv:max-w-[190px] cv:sm:max-w-[250px] cv:flex cv:items-center [&_img]:cv:max-h-11 [&_img]:cv:w-auto [&_img]:cv:object-contain [&_img]:cv:block"><?php the_custom_logo(); ?></div>
 						<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 hover:cv:text-gray-900 cv:transition-colors">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv-site-description cv:text-[10px] cv:font-semibold cv:uppercase cv:tracking-widest cv:mt-1 cv:leading-tight cv:text-gray-500 cv:hover:text-gray-900 cv:transition-colors">
 								<?php echo esc_html( $site_tagline ); ?>
 							</a>
 						<?php endif; ?>
 					</div>
 				<?php else : ?>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="cv:inline-flex cv:flex-col">
-						<span class="cv-site-title cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 hover:cv:text-primary cv:transition-colors cv:break-words cv:line-clamp-2 cv:leading-tight">
+						<span class="cv-site-title cv:text-xl cv:sm:text-2xl cv:font-black cv:tracking-tight cv:text-gray-950 cv:hover:text-primary cv:transition-colors cv:break-words cv:line-clamp-2 cv:leading-tight">
 							<?php bloginfo( 'name' ); ?>
 						</span>
 						<?php if ( $show_tagline && ! empty( $site_tagline ) ) : ?>
@@ -109,7 +109,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 			<!-- User & Cart Utilities + Mobile Toggle -->
 			<div class="cv:flex cv:items-center cv:gap-3 cv:shrink-0">
 				<!-- Customer Account Link -->
-				<a href="<?php echo esc_url( $account_url ); ?>" class="cv:hidden cv:sm:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:text-gray-700 hover:cv:text-gray-950 hover:cv:bg-gray-100 cv:transition-all" title="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>" aria-label="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>">
+				<a href="<?php echo esc_url( $account_url ); ?>" class="cv:hidden cv:sm:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:text-gray-700 cv:hover:text-gray-950 cv:hover:bg-gray-100 cv:transition-all" title="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>" aria-label="<?php echo is_user_logged_in() ? esc_attr__( 'Account', 'cartvai' ) : esc_attr__( 'Sign In', 'cartvai' ); ?>">
 					<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
 					</svg>
@@ -118,7 +118,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 				<?php get_template_part( 'template-parts/components/header-cart' ); ?>
 
 				<!-- Mobile Hamburger Button -->
-				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 hover:cv:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai' ); ?>">
+				<button type="button" class="cv-mobile-menu-toggle cv:md:hidden cv:inline-flex cv:items-center cv:justify-center cv:p-2.5 cv:rounded-xl cv:bg-gray-100 cv:hover:bg-gray-200 cv:text-gray-900 cv:transition-colors" aria-expanded="false" aria-controls="cv-mobile-drawer" aria-label="<?php esc_attr_e( 'Open Navigation Menu', 'cartvai' ); ?>">
 					<svg class="cv:w-5 cv:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
 				</button>
 			</div>
@@ -149,7 +149,7 @@ if ( $popular_categories_enabled && class_exists( 'CARTVAI_CPT' ) ) {
 				<div class="cv:hidden cv:lg:flex cv:items-center cv:gap-2 cv:py-3">
 					<span class="cv:text-xs cv:font-bold cv:text-gray-400 cv:uppercase cv:tracking-wider"><?php esc_html_e( 'Popular:', 'cartvai' ); ?></span>
 					<?php foreach ( $categories as $cat ) : ?>
-						<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="cv:text-xs cv:font-semibold cv:px-3 cv:py-1.5 cv:rounded-lg cv:bg-white cv:border cv:border-gray-200/90 cv:text-slate-700 hover:cv:border-primary hover:cv:text-primary cv:shadow-2xs cv:transition-all">
+						<a href="<?php echo esc_url( get_term_link( $cat ) ); ?>" class="cv:text-xs cv:font-semibold cv:px-3 cv:py-1.5 cv:rounded-lg cv:bg-white cv:border cv:border-gray-200/90 cv:text-slate-700 cv:hover:border-primary cv:hover:text-primary cv:shadow-2xs cv:transition-all">
 							<?php echo esc_html( $cat->name ); ?>
 						</a>
 					<?php endforeach; ?>

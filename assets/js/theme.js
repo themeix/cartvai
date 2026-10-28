@@ -11,22 +11,22 @@
 								${u.category&&u.date?'<span class="cv:text-gray-300">•</span>':""}
 								${u.date?`<span>${t(u.date)}</span>`:""}
 							</div>`:"";const P=u.price_html&&u.price_html.trim()!==""?`<div class="cv:text-xs cv:mt-1 cv:flex cv:items-center cv:gap-1.5 cv:leading-none">${u.price_html}</div>`:"";h+=`
-						<a href="${t(u.url)}" class="cv-search-result-item cv:flex cv:items-center cv:gap-3 cv:px-4 cv:py-2.5 hover:cv:bg-slate-50 cv:transition-colors cv:text-left cv:group cv:no-underline">
+						<a href="${t(u.url)}" class="cv-search-result-item cv:flex cv:items-center cv:gap-3 cv:px-4 cv:py-2.5 cv:hover:bg-slate-50 cv:transition-colors cv:text-left cv:group cv:no-underline">
 							${R}
 							<div class="cv:flex-1 cv:min-w-0">
 								${E}
-								<h4 class="cv:text-sm cv:font-semibold cv:text-gray-900 group-hover:cv:text-primary cv:transition-colors cv:truncate cv:leading-snug cv:m-0 cv:p-0" style="margin: 0 !important; padding: 0 !important;">
+								<h4 class="cv:text-sm cv:font-semibold cv:text-gray-900 cv:group-hover:text-primary cv:transition-colors cv:truncate cv:leading-snug cv:m-0 cv:p-0" style="margin: 0 !important; padding: 0 !important;">
 									${i(u.title,v)}
 								</h4>
 								${P}
 							</div>
-							<svg class="cv:w-4 cv:h-4 cv:text-gray-300 group-hover:cv:text-primary group-hover:cv:translate-x-0.5 cv:transition-all cv:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<svg class="cv:w-4 cv:h-4 cv:text-gray-300 cv:group-hover:text-primary cv:group-hover:translate-x-0.5 cv:transition-all cv:shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 							</svg>
 						</a>
 					`}),h+="</div>",x>m.length&&(h+=`
 						<div class="cv:px-4 cv:py-3 cv:bg-gray-50 cv:border-t cv:border-gray-100 cv:text-center">
-							<a href="${t(b)}" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:text-xs cv:font-bold cv:text-primary hover:cv:underline">
+							<a href="${t(b)}" class="cv:inline-flex cv:items-center cv:gap-1.5 cv:text-xs cv:font-bold cv:text-primary cv:hover:underline">
 								<span>View all ${x} results for "${t(v)}"</span>
 								<svg class="cv:w-3.5 cv:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
