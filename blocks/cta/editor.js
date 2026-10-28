@@ -166,6 +166,7 @@
 		edit: function (props) {
 			var attributes = props.attributes;
 			var setAttributes = props.setAttributes;
+			var blockProps = useBlockProps();
 			var theme = themePresets[attributes.colorScheme] || themePresets['brand-dark'];
 
 			var containerClasses = 'cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:my-6';
