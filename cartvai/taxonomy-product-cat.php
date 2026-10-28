@@ -18,6 +18,9 @@ $cartvai_term  = get_queried_object();
 $product_count = $cartvai_term && ! empty( $cartvai_term->count ) ? (int) $cartvai_term->count : (int) $GLOBALS['wp_query']->found_posts;
 $shop_page_id  = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'shop_page_id', 0 ) : 0;
 $shop_url      = $shop_page_id ? get_permalink( $shop_page_id ) : home_url( '/shop/' );
+$cartvai_shop_columns = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_columns', 4 ) ) : 4;
+$cartvai_shop_gap     = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_gap', 24 ) ) : 24;
+$cartvai_grid_style   = sprintf( 'grid-template-columns:repeat(%d,1fr);gap:%dpx', $cartvai_shop_columns, $cartvai_shop_gap );
 ?>
 
 <!-- Modern Category Hero Header -->
@@ -65,7 +68,7 @@ $shop_url      = $shop_page_id ? get_permalink( $shop_page_id ) : home_url( '/sh
 <div class="cv-category-container cv:max-w-7xl cv:mx-auto cv:px-4 cv:sm:px-6 cv:lg:px-8 cv:pb-16">
 	<?php if ( have_posts() ) : ?>
 		<h2 class="cv:sr-only"><?php esc_html_e( 'Products List', 'cartvai' ); ?></h2>
-		<div class="cv:grid cv:grid-cols-1 cv:sm:grid-cols-2 cv:md:grid-cols-3 cv:lg:grid-cols-4 cv:gap-6">
+		<div class="cartvai-shop-grid" style="<?php echo esc_attr( $cartvai_grid_style ); ?>">
 			<?php
 			while ( have_posts() ) :
 				the_post();
