@@ -663,6 +663,26 @@ function cartvai_theme_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Footer About Text
+	$wp_customize->add_setting(
+		'cartvai_footer_about_text',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_textarea_field',
+			'capability'        => $cap,
+		)
+	);
+
+	$wp_customize->add_control(
+		'cartvai_footer_about_text',
+		array(
+			'label'       => esc_html__( 'Footer About Text', 'cartvai' ),
+			'description' => esc_html__( 'Short brand description shown under the logo. Falls back to the site tagline if empty.', 'cartvai' ),
+			'section'     => 'cartvai_theme_footer',
+			'type'        => 'textarea',
+		)
+	);
+
 	// Store Physical Address
 	$wp_customize->add_setting(
 		'cartvai_footer_store_address',
@@ -1170,6 +1190,8 @@ function cartvai_theme_sync_customizer_to_settings( $wp_customize ) {
 		'footer_style'                     => 'cartvai_footer_style',
 		'footer_columns'                   => 'cartvai_footer_columns',
 		'footer_copyright_text'            => 'cartvai_footer_copyright_text',
+		'footer_about_text'                => 'cartvai_footer_about_text',
+		'footer_store_address'             => 'cartvai_footer_store_address',
 
 		// Header & Navbar Styling
 		'top_bar_bg_color'                 => 'cartvai_top_bar_bg_color',

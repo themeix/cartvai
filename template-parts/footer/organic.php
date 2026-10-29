@@ -17,9 +17,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $about_text    = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
-$contact_phone = cartvai_theme_option( 'contact_phone', '09678812525' );
-$contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
-$store_address = cartvai_theme_option( 'footer_store_address', 'Level-5, Noor Tower, 110 Bir Uttam CR Dutta Rd, Dhaka 1205' );
+$contact_phone = cartvai_theme_option( 'contact_phone', '' );
+$contact_email = cartvai_theme_option( 'contact_email', '' );
+$store_address = cartvai_theme_option( 'footer_store_address', '' );
 
 // Copyright template tags replacement
 $raw_copyright  = cartvai_theme_option( 'footer_copyright_text', '© {year} {site_name}. All Rights Reserved.' );

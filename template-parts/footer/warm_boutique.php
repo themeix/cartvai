@@ -15,10 +15,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$about_text    = cartvai_theme_option( 'footer_about_text', __( 'Timeless elegance, crafted for you.', 'cartvai' ) );
-$contact_phone = cartvai_theme_option( 'contact_phone', '+880 1885-132466' );
-$contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
-$store_address = cartvai_theme_option( 'footer_store_address', 'Dhaka, Bangladesh' );
+$about_text    = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
+$contact_phone = cartvai_theme_option( 'contact_phone', '' );
+$contact_email = cartvai_theme_option( 'contact_email', '' );
+$store_address = cartvai_theme_option( 'footer_store_address', '' );
 
 // Copyright template tags replacement
 $raw_copyright  = cartvai_theme_option( 'footer_copyright_text', '© {year} {site_name}. All Rights Reserved.' );

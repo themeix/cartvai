@@ -18,8 +18,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $about_text    = cartvai_theme_option( 'footer_about_text', get_bloginfo( 'description' ) );
-$contact_phone = cartvai_theme_option( 'contact_phone', '+1 (800) 123-4567' );
-$contact_email = cartvai_theme_option( 'contact_email', 'support@cartvai.com' );
+$contact_phone = cartvai_theme_option( 'contact_phone', '' );
+$contact_email = cartvai_theme_option( 'contact_email', '' );
 $security_note = cartvai_theme_option( 'footer_security_note', __( 'Guaranteed Safe Checkout', 'cartvai' ) );
 $footer_cols   = (int) cartvai_theme_option( 'footer_columns', 4 );
 
