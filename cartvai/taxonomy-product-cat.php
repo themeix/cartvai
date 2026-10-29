@@ -18,9 +18,9 @@ $cartvai_term  = get_queried_object();
 $product_count = $cartvai_term && ! empty( $cartvai_term->count ) ? (int) $cartvai_term->count : (int) $GLOBALS['wp_query']->found_posts;
 $shop_page_id  = function_exists( 'CARTVAI_Settings::get' ) ? (int) CARTVAI_Settings::get( 'shop_page_id', 0 ) : 0;
 $shop_url      = $shop_page_id ? get_permalink( $shop_page_id ) : home_url( '/shop/' );
-$cartvai_shop_columns = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_columns', 4 ) ) : 4;
-$cartvai_shop_gap     = class_exists( 'CARTVAI_Settings' ) ? absint( CARTVAI_Settings::get( 'shop_page_gap', 24 ) ) : 24;
-$cartvai_grid_style   = sprintf( 'grid-template-columns:repeat(%d,1fr);gap:%dpx', $cartvai_shop_columns, $cartvai_shop_gap );
+$cartvai_grid_style   = class_exists( 'CARTVAI_Shop_Page' )
+	? CARTVAI_Shop_Page::get_shop_grid_style()
+	: 'grid-template-columns:repeat(4,1fr);gap:24px';
 ?>
 
 <!-- Modern Category Hero Header -->
